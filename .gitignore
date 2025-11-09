@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/figma-proxy/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -58,6 +59,10 @@ Thumbs.db
 logs/
 *.log
 
-# Documentation (temporary)
-*.md
+# Figma data exports
+figma-data-*.json
+*.figma.json
+
+# Documentation (keep docs folder)
+!docs/**/*.md
 !README.md

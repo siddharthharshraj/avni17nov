@@ -49,9 +49,9 @@ export default function Header() {
         {/* Logo Component */}
         <Link 
           href="/" 
-          className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-[11px]"
+          className="absolute left-4 sm:left-6 lg:left-8 2xl:left-12 top-1/2 -translate-y-1/2 flex items-center gap-2 md:gap-[11px]"
         >
-          <div className="relative w-[49px] h-[45px]">
+          <div className="relative w-10 h-9 md:w-[49px] md:h-[45px]">
             <Image
               src="/logos/header-logo.png"
               alt="Avni Logo"
@@ -60,16 +60,16 @@ export default function Header() {
               priority
             />
           </div>
-          <span className="font-anek font-bold text-[32px] leading-[40px] text-[#000000]">Avni</span>
+          <span className="font-anek font-bold text-2xl md:text-3xl lg:text-[32px] leading-tight text-[#000000]">Avni</span>
         </Link>
 
         {/* Mobile Menu */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 lg:hidden">
+        <div className="absolute right-4 sm:right-6 lg:right-8 2xl:right-12 top-1/2 -translate-y-1/2">
           <MobileMenu isOpen={isMobileMenuOpen} onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
         </div>
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <div className="hidden lg:flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-8">
+        <div className="max-lg:!hidden hidden lg:flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-8">
         <div 
           className="relative"
           onMouseEnter={() => handleMouseEnter('products')}
@@ -127,7 +127,7 @@ export default function Header() {
         </div>
 
         {/* Right Side Actions - Desktop only */}
-        <div className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 items-center gap-4">
+        <div className="max-lg:!hidden hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 items-center gap-4">
         {/* Login */}
         <div>
           <Link

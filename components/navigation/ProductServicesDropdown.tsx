@@ -24,7 +24,7 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
   if (!isOpen) return null;
 
   return (
-    <>
+    <div className="hidden lg:block">
       {/* Backdrop with fade-in animation */}
       <div 
         className="fixed inset-0 top-[72px] bg-black/10 z-40 animate-in fade-in duration-500"
@@ -205,6 +205,6 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

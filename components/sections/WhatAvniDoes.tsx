@@ -25,11 +25,21 @@ export default function WhatAvniDoes() {
           </p>
         </div>
 
-        {/* Feature 1: Build Trust - Image Right, Content Left */}
-        <div className="mb-16 md:mb-20 lg:mb-24">
+        {/* Feature 1: Build Trust - Image First on Mobile, Content Left on Desktop */}
+        <div className="mb-12 md:mb-16 lg:mb-24 pb-12 md:pb-16 lg:pb-0 border-b lg:border-b-0 border-gray-200">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
-            {/* Content Left */}
-            <div className="w-full lg:w-1/2">
+            {/* Image - First on mobile, Right on desktop */}
+            <div className="w-full lg:w-1/2 lg:order-2 relative aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/build-trust.png"
+                alt="Build Trust With One Source Of Truth"
+                fill
+                className="object-cover"
+              />
+            </div>
+            
+            {/* Content - Second on mobile, Left on desktop */}
+            <div className="w-full lg:w-1/2 lg:order-1">
               <h3 className="font-anek font-bold text-2xl md:text-3xl lg:text-[36px] leading-tight lg:leading-[40px] text-[#0b2540] mb-4 md:mb-6 text-center lg:text-left">
                 Build Trust With One Source Of Truth
               </h3>
@@ -48,21 +58,11 @@ export default function WhatAvniDoes() {
                 </Link>
               </div>
             </div>
-            
-            {/* Image Right */}
-            <div className="w-full lg:w-1/2 relative aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="/images/build-trust.png"
-                alt="Build Trust With One Source Of Truth"
-                fill
-                className="object-cover"
-              />
-            </div>
           </div>
         </div>
 
         {/* Feature 2: Simplify Data - Image Left, Content Right */}
-        <div className="mb-16 md:mb-20 lg:mb-24">
+        <div className="mb-12 md:mb-16 lg:mb-24 pb-12 md:pb-16 lg:pb-0 border-b lg:border-b-0 border-gray-200">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
             {/* Image Left */}
             <div className="w-full lg:w-1/2 relative aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -97,11 +97,21 @@ export default function WhatAvniDoes() {
           </div>
         </div>
 
-        {/* Feature 3: Steer Programs - Image Right, Content Left */}
+        {/* Feature 3: Steer Programs - Image First on Mobile, Content Left on Desktop */}
         <div>
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
-            {/* Content Left */}
-            <div className="w-full lg:w-1/2">
+            {/* Image - First on mobile, Right on desktop */}
+            <div className="w-full lg:w-1/2 lg:order-2 relative aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/steer-programs.png"
+                alt="Steer Your Programs With Insight And Agility"
+                fill
+                className="object-cover"
+              />
+            </div>
+            
+            {/* Content - Second on mobile, Left on desktop */}
+            <div className="w-full lg:w-1/2 lg:order-1">
               <h3 className="font-anek font-bold text-2xl md:text-3xl lg:text-[36px] leading-tight lg:leading-[40px] text-[#0b2540] mb-4 md:mb-6 text-center lg:text-left">
                 Steer Your Programs With Insight And Agility
               </h3>
@@ -119,16 +129,6 @@ export default function WhatAvniDoes() {
                   Read More →
                 </Link>
               </div>
-            </div>
-            
-            {/* Image Right */}
-            <div className="w-full lg:w-1/2 relative aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="/images/steer-programs.png"
-                alt="Steer Your Programs With Insight And Agility"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
