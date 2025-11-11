@@ -180,7 +180,7 @@ netlify deploy --prod
 **Netlify Build Settings:**
 - Build command: `npm run build`
 - Publish directory: `out`
-- Node version: `18`
+- Node version: `20` (required for Next.js 16)
 
 ---
 
