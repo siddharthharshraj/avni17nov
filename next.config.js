@@ -5,6 +5,10 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 31536000,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,10 +24,12 @@ const nextConfig = {
   // Optimize production builds
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+    reactRemoveProperties: process.env.NODE_ENV === 'production',
   },
   // Optimize package imports
   experimental: {
     optimizePackageImports: ['lucide-react', 'react-google-recaptcha', 'react-phone-number-input'],
+    optimizeCss: true,
   },
   // Performance optimizations
   poweredByHeader: false,
@@ -34,6 +40,8 @@ const nextConfig = {
   optimizeFonts: true,
   // Minify CSS
   swcMinify: true,
+  // Production source maps
+  productionBrowserSourceMaps: false,
 }
 
 module.exports = nextConfig

@@ -83,7 +83,7 @@ export default function Hero() {
         {/* Hero Image */}
         <div className="w-full lg:w-1/2 order-1 lg:order-2 relative">
           <div className="relative aspect-square max-w-md md:max-w-lg lg:max-w-none mx-auto">
-          {/* Vector 1 */}
+          {/* Vector 1 - Base layer, highest priority */}
           <div className="absolute inset-0">
             <Image
               src="/vector-1.png"
@@ -93,11 +93,12 @@ export default function Hero() {
               priority
               fetchPriority="high"
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
-              quality={90}
+              quality={75}
+              loading="eager"
             />
           </div>
           
-          {/* Vector 2 */}
+          {/* Vector 2 - Second layer */}
           <div className="absolute inset-0">
             <Image
               src="/vector-2.png"
@@ -105,37 +106,35 @@ export default function Hero() {
               fill
               className="object-contain"
               priority
-              fetchPriority="high"
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
-              quality={90}
+              quality={75}
+              loading="eager"
             />
           </div>
           
-          {/* Vector 4 */}
+          {/* Vector 4 - Third layer */}
           <div className="absolute inset-0">
             <Image
               src="/vector-4.png"
               alt=""
               fill
               className="object-contain"
-              priority
-              fetchPriority="high"
+              loading="lazy"
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
-              quality={90}
+              quality={75}
             />
           </div>
           
-          {/* Vector 3 */}
+          {/* Vector 3 - Top layer */}
           <div className="absolute inset-0">
             <Image
               src="/vector-3.png"
               alt=""
               fill
               className="object-contain"
-              priority
-              fetchPriority="high"
+              loading="lazy"
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
-              quality={90}
+              quality={75}
             />
           </div>
           
