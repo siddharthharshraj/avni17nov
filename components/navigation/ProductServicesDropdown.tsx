@@ -19,7 +19,7 @@ interface ProductServicesDropdownProps {
 }
 
 export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter, onMouseLeave }: ProductServicesDropdownProps) {
-  const [activeTab, setActiveTab] = useState('use-cases');
+  const [activeTab, setActiveTab] = useState('services');
 
   if (!isOpen) return null;
 
@@ -33,7 +33,7 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
 
       {/* Dropdown Panel - Opaque White Background with slide-down animation */}
       <div 
-        className="absolute left-0 right-0 top-[72px] bg-white h-[393px] z-50 shadow-2xl border-t border-gray-100 animate-slideDown"
+        className="absolute left-0 right-0 top-[72px] bg-white h-[450px] z-50 shadow-2xl border-t border-gray-100 animate-slideDown"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
@@ -66,17 +66,17 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
           </div>
 
           {/* Vertical Divider Line - Left */}
-          <div className="absolute left-[265px] top-[44px] w-[1px] h-[305px] bg-[rgba(0,0,0,0.1)]" />
+          <div className="absolute left-[265px] top-[44px] w-[1px] h-[362px] bg-[rgba(0,0,0,0.1)]" />
 
           {/* Services Grid - Middle Section: x=305, y=44 */}
           {activeTab === 'services' && (
-            <div className="absolute left-[305px] top-[44px] w-[680px]">
-              <div className="grid grid-cols-2 gap-x-[62px] gap-y-[28px]">
+            <div className="absolute left-[305px] top-[44px] w-[720px] pb-[20px]">
+              <div className="grid grid-cols-2 gap-x-[48px] gap-y-[28px]">
                 {servicesItems.map((service) => (
                   <Link
                     key={service.id}
                     href={service.link}
-                    className="flex gap-[16px] group"
+                    className="flex gap-[16px] group p-[6px] rounded-[12px] transition-all hover:bg-[#fff5f0] hover:shadow-sm"
                     onClick={onClose}
                   >
                     {/* Icon: 30x30 */}
@@ -91,7 +91,7 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
 
                     {/* Content */}
                     <div className="flex-1">
-                      <h4 className="font-anek font-medium text-[18px] leading-[20px] text-[rgba(0,0,0,0.7)] mb-[8px] group-hover:text-[#419372] transition-colors">
+                      <h4 className="font-anek font-semibold text-[18px] leading-[20px] text-[rgba(0,0,0,0.8)] mb-[8px] transition-colors duration-200">
                         {service.title}
                       </h4>
                       <p className="font-noto text-[14px] leading-[20px] text-[#878787]">
@@ -106,13 +106,13 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
 
           {/* Use Cases Grid - Middle Section: x=305, y=44 */}
           {activeTab === 'use-cases' && (
-            <div className="absolute left-[305px] top-[44px] w-[680px]">
-              <div className="grid grid-cols-2 gap-x-[62px] gap-y-[28px]">
+            <div className="absolute left-[305px] top-[44px] w-[720px] pb-[32px]">
+              <div className="grid grid-cols-2 gap-x-[48px] gap-y-[32px]">
                 {useCasesItems.map((useCase) => (
                   <Link
                     key={useCase.id}
                     href={useCase.link}
-                    className="flex gap-[16px] group"
+                    className="flex gap-[16px] group p-[6px] rounded-[12px] transition-all hover:bg-[#fff5f0] hover:shadow-sm"
                     onClick={onClose}
                   >
                     {/* Icon: 30x30 */}
@@ -127,7 +127,7 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
 
                     {/* Content */}
                     <div className="flex-1">
-                      <h4 className="font-anek font-medium text-[18px] leading-[20px] text-[rgba(0,0,0,0.7)] mb-[8px] group-hover:text-[#419372] transition-colors">
+                      <h4 className="font-anek font-semibold text-[18px] leading-[20px] text-[rgba(0,0,0,0.8)] mb-[8px] transition-colors duration-200">
                         {useCase.title}
                       </h4>
                       <p className="font-noto text-[14px] leading-[20px] text-[#878787]">
@@ -141,10 +141,10 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
           )}
 
           {/* Vertical Divider Line - Right */}
-          <div className="absolute left-[1025px] top-[44px] w-[1px] h-[305px] bg-[rgba(0,0,0,0.1)]" />
+          <div className="absolute left-[1055px] top-[44px] w-[1px] h-[362px] bg-[rgba(0,0,0,0.1)]" />
 
           {/* Right Side Content - Conditional based on active tab */}
-          <div className="absolute left-[1065px] top-[44px] w-[283px]">
+          <div className="absolute left-[1095px] top-[44px] w-[283px]">
             {/* Services Tab - Still in Doubt Section */}
             {activeTab === 'services' && (
               <div>

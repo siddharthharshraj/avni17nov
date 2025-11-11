@@ -22,14 +22,13 @@ export default function Hero() {
           
           {/* Main Heading */}
           <h1 className="font-anek font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-[86px] leading-tight md:leading-tight lg:leading-[1.05] text-[#0b2540] mb-4 md:mb-6 lg:mb-[19px] text-center lg:text-left">
-            <span className="relative inline-block">
-              Digitise
-              <span className="absolute bottom-[6px] md:bottom-[12px] lg:bottom-[18px] left-0 w-full h-[12px] md:h-[18px] lg:h-[27px] bg-[#FFD166] -z-10"></span>
-            </span>{" "}
-            your<br />
-            <span className="relative inline-block">
+            <span className="relative inline z-10">
+              Digitise your
+              <span className="absolute bottom-[2px] md:bottom-[4px] lg:bottom-[8px] left-0 right-0 h-[10px] md:h-[14px] lg:h-[18px] bg-[#FFD84D] z-[-1]"></span>
+            </span><br />
+            <span className="relative inline z-10">
               field-work,
-              <span className="absolute bottom-[6px] md:bottom-[12px] lg:bottom-[18px] left-0 w-full h-[12px] md:h-[18px] lg:h-[27px] bg-[#FFD166] -z-10"></span>
+              <span className="absolute bottom-[2px] md:bottom-[4px] lg:bottom-[8px] left-0 right-0 h-[10px] md:h-[14px] lg:h-[18px] bg-[#FFD84D] z-[-1]"></span>
             </span><br />
             Transform Lives!
           </h1>
@@ -42,7 +41,7 @@ export default function Hero() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6 md:mb-8 lg:mb-[30px] justify-center lg:justify-start">
             <Link
-              href="/trial"
+              href="/signup"
               className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 h-12 md:h-[48px] bg-[#419372] text-[#f6f9fb] rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#419372]/90 transition-all"
             >
               Sign Up for Free Trial
@@ -76,7 +75,7 @@ export default function Hero() {
             <div className="relative pl-4 md:pl-[22px] text-center sm:text-left">
               <div className="absolute left-0 top-0 w-[4px] h-[32px] bg-[#FFD166] hidden sm:block"></div>
               <p className="font-anek font-bold text-xl md:text-2xl lg:text-[24px] leading-tight text-[#000000] mb-2">60+</p>
-              <p className="font-anek font-medium text-sm md:text-base lg:text-[20px] leading-tight text-[#000000]">NGOs Empowered</p>
+              <p className="font-anek font-medium text-sm md:text-base lg:text-[20px] leading-tight text-[#000000] whitespace-nowrap">NGOs Empowered</p>
             </div>
           </div>
         </div>
@@ -91,6 +90,10 @@ export default function Hero() {
               alt=""
               fill
               className="object-contain"
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
+              quality={90}
             />
           </div>
           
@@ -101,6 +104,10 @@ export default function Hero() {
               alt=""
               fill
               className="object-contain"
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
+              quality={90}
             />
           </div>
           
@@ -111,6 +118,10 @@ export default function Hero() {
               alt=""
               fill
               className="object-contain"
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
+              quality={90}
             />
           </div>
           
@@ -121,6 +132,10 @@ export default function Hero() {
               alt=""
               fill
               className="object-contain"
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
+              quality={90}
             />
           </div>
           

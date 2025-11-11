@@ -7,12 +7,18 @@ const anekLatin = Anek_Latin({
   subsets: ["latin"],
   variable: "--font-anek-latin",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
+  adjustFontFallback: true,
 });
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
   variable: "--font-noto-sans",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -23,6 +29,10 @@ export const metadata: Metadata = {
   creator: "Avni",
   publisher: "Avni",
   metadataBase: new URL('https://avniproject.org'),
+  icons: {
+    icon: '/logos/avni-logo.png',
+    apple: '/logos/avni-logo.png',
+  },
   alternates: {
     canonical: '/',
   },
@@ -75,6 +85,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#419372" />
+        {/* Preload critical hero images for faster LCP */}
+        <link rel="preload" as="image" href="/vector-1.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/vector-2.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/vector-3.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/vector-4.png" fetchPriority="high" />
       </head>
       <body className="font-noto">
         <WebVitals />

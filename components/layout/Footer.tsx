@@ -78,6 +78,11 @@ export default function Footer() {
                   Code Of Conduct
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy-policy" className="font-noto font-semibold text-sm md:text-base leading-relaxed text-white hover:text-[#419372] transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 

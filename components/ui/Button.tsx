@@ -1,56 +1,59 @@
 /**
  * Reusable Button Component
- * Supports primary, secondary, and outline variants
+ * Modern, accessible button with consistent styling
  */
 
 import Link from 'next/link';
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { cn } from '@/lib/utils';
+import { COLORS, ANIMATIONS } from '@/lib/constants';
+import type { ButtonProps } from '@/lib/types';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline';
-export type ButtonSize = 'sm' | 'md' | 'lg';
+const variantStyles = {
+  primary: `bg-[${COLORS.primary}] text-white hover:bg-[#357a5e] border-2 border-[${COLORS.primary}]`,
+  secondary: `bg-white text-[${COLORS.darkNavy}] hover:bg-gray-50 border-2 border-gray-200`,
+  outline: `bg-transparent text-[${COLORS.primary}] border-2 border-[${COLORS.primary}] hover:bg-[${COLORS.primary}] hover:text-white`,
+} as const;
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  href?: string;
-  children: ReactNode;
-  fullWidth?: boolean;
-}
-
-const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-[#419372] text-white hover:bg-[#357a5e] border-2 border-[#419372]',
-  secondary: 'bg-white text-[#0b2540] hover:bg-gray-50 border-2 border-gray-200',
-  outline: 'bg-transparent text-[#419372] border-2 border-[#419372] hover:bg-[#419372] hover:text-white',
-};
-
-const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'px-[16px] py-[8px] text-[12px]',
-  md: 'px-[24px] py-[12px] text-[14px]',
-  lg: 'px-[32px] py-[16px] text-[16px]',
-};
+const sizeStyles = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-4 text-lg',
+} as const;
 
 export function Button({
   variant = 'primary',
   size = 'md',
   href,
   children,
-  fullWidth = false,
-  className = '',
+  disabled = false,
+  className,
   ...props
-}: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center rounded-[20px] font-anek font-medium transition-all duration-300';
-  const combinedStyles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${fullWidth ? 'w-full' : ''} ${className}`;
+}: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) {
+  const baseStyles = cn(
+    'inline-flex items-center justify-center rounded-full font-anek font-medium',
+    'transition-all focus:outline-none focus:ring-2 focus:ring-offset-2',
+    `duration-[${ANIMATIONS.normal}]`,
+    disabled && 'opacity-50 cursor-not-allowed',
+    variantStyles[variant],
+    sizeStyles[size],
+    className
+  );
 
-  if (href) {
+  if (href && !disabled) {
     return (
-      <Link href={href} className={combinedStyles}>
+      <Link href={href} className={baseStyles}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={combinedStyles} {...props}>
+    <button 
+      className={baseStyles} 
+      disabled={disabled}
+      {...props}
+    >
       {children}
     </button>
   );

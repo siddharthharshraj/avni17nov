@@ -15,9 +15,10 @@ import {
   servicesItems,
   useCasesItems,
   solutionsItems,
+  resourcesItems,
 } from '@/data/navigation';
 
-type SubmenuType = 'product-services' | 'solutions' | null;
+type SubmenuType = 'product-services' | 'solutions' | 'resources' | null;
 type ProductTab = 'services' | 'use-cases';
 
 interface MobileMenuProps {
@@ -129,12 +130,12 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
           className="fixed z-50 bg-white lg:hidden flex flex-col"
           style={{ 
             position: 'fixed',
-            top: '108px',
+            top: '72px',
             left: 0,
             right: 0,
             bottom: 0,
             width: '100vw',
-            height: 'calc(100vh - 108px)'
+            height: 'calc(100vh - 72px)'
           }}
         >
           {/* Header */}
@@ -205,16 +206,16 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                 <div className="h-px bg-gray-200"></div>
 
                 {/* Resources */}
-                <Link
-                  href="/resources"
-                  onClick={handleCloseAll}
+                <button
+                  onClick={() => handleSubmenuClick('resources')}
                   className="flex items-center justify-between w-full py-4 px-4 rounded-lg hover:bg-gray-50 transition-colors group"
                 >
                   <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#419372]">
                     Resources
                   </span>
                   <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372]" />
-                </Link>
+                </button>
+                <div className="h-px bg-gray-200"></div>
 
                 {/* CTA Buttons */}
                 <div className="pt-8 space-y-3">
@@ -278,7 +279,7 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
               </button>
               
               <h2 id="submenu-title" className="font-anek font-bold text-lg text-[#0b2540]">
-                {activeSubmenu === 'product-services' ? 'Product Services' : 'Solutions'}
+                {activeSubmenu === 'product-services' ? 'Product Services' : activeSubmenu === 'solutions' ? 'Solutions' : 'Resources'}
               </h2>
               
               <button
@@ -363,6 +364,41 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                 </div>
               </div>
             )}
+
+              {/* Resources Content */}
+              {activeSubmenu === 'resources' && (
+                <div>
+                  {/* Resources List */}
+                  <div className="px-6 py-6 space-y-2">
+                    {resourcesItems.map((item) => (
+                      <Link
+                        key={item.id}
+                        href={item.link}
+                        onClick={handleCloseAll}
+                        className="flex items-start gap-3 p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+                      >
+                        <div className="relative w-6 h-6 flex-shrink-0 mt-0.5">
+                          <Image
+                            src={item.icon}
+                            alt=""
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-anek font-semibold text-base text-[#0b2540] group-hover:text-[#419372] mb-1">
+                            {item.title}
+                          </h3>
+                          <p className="font-noto text-sm text-gray-600 leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372] flex-shrink-0 mt-1" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Solutions Content */}
               {activeSubmenu === 'solutions' && (

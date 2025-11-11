@@ -3,31 +3,45 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import ProductServicesDropdown from "@/components/navigation/ProductServicesDropdown";
 import SolutionsDropdown from "@/components/navigation/SolutionsDropdown";
+import ResourcesDropdown from "@/components/navigation/ResourcesDropdown";
 import MobileMenu from "@/components/layout/MobileMenu";
 import { useIsDesktop } from "@/hooks/useMediaQuery";
 
 export default function Header() {
+  const pathname = usePathname();
   const [isProductServicesOpen, setIsProductServicesOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isDesktop = useIsDesktop();
 
-  const handleMouseLeave = (dropdown: 'products' | 'solutions') => {
+  // Check if current path matches navigation item
+  const isActive = (path: string) => {
+    if (path === '/pricing' || path === '/about') {
+      return pathname === path;
+    }
+    return pathname?.startsWith(path);
+  };
+
+  const handleMouseLeave = (dropdown: 'products' | 'solutions' | 'resources') => {
     const timeout = setTimeout(() => {
       if (dropdown === 'products') {
         setIsProductServicesOpen(false);
-      } else {
+      } else if (dropdown === 'solutions') {
         setIsSolutionsOpen(false);
+      } else {
+        setIsResourcesOpen(false);
       }
     }, 10000); // 10 seconds delay
     setCloseTimeout(timeout);
   };
 
-  const handleMouseEnter = (dropdown: 'products' | 'solutions') => {
+  const handleMouseEnter = (dropdown: 'products' | 'solutions' | 'resources') => {
     // Clear any existing timeout
     if (closeTimeout) {
       clearTimeout(closeTimeout);
@@ -37,23 +51,29 @@ export default function Header() {
     if (dropdown === 'products') {
       setIsProductServicesOpen(true);
       setIsSolutionsOpen(false);
-    } else {
+      setIsResourcesOpen(false);
+    } else if (dropdown === 'solutions') {
       setIsSolutionsOpen(true);
       setIsProductServicesOpen(false);
+      setIsResourcesOpen(false);
+    } else {
+      setIsResourcesOpen(true);
+      setIsProductServicesOpen(false);
+      setIsSolutionsOpen(false);
     }
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-[#fefefe] h-[72px] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.03)] z-50">
-      <div className="relative max-w-7xl w-full h-full mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
+      <div className="relative max-w-[1440px] w-full h-full mx-auto px-6 lg:px-12">
         {/* Logo Component */}
         <Link 
           href="/" 
-          className="absolute left-4 sm:left-6 lg:left-8 2xl:left-12 top-1/2 -translate-y-1/2 flex items-center gap-2 md:gap-[11px]"
+          className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 flex items-center gap-2 md:gap-[11px]"
         >
           <div className="relative w-10 h-9 md:w-[49px] md:h-[45px]">
             <Image
-              src="/logos/header-logo.png"
+              src="/logos/avni-logo.png"
               alt="Avni Logo"
               fill
               className="object-contain"
@@ -64,78 +84,89 @@ export default function Header() {
         </Link>
 
         {/* Mobile Menu */}
-        <div className="absolute right-4 sm:right-6 lg:right-8 2xl:right-12 top-1/2 -translate-y-1/2">
+        <div className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 lg:hidden">
           <MobileMenu isOpen={isMobileMenuOpen} onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
         </div>
 
-        {/* Desktop Navigation - Hidden on mobile */}
-        <div className="max-lg:!hidden hidden lg:flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-8">
+        {/* Desktop Navigation - Starts after logo */}
+        <div className="max-lg:!hidden hidden lg:flex items-center absolute left-[200px] top-1/2 -translate-y-1/2 gap-8">
         <div 
-          className="relative"
+          className="relative group"
           onMouseEnter={() => handleMouseEnter('products')}
           onMouseLeave={() => handleMouseLeave('products')}
         >
           <button 
-            className="flex items-center gap-[16px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors"
+            className="flex items-center gap-[16px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative"
           >
             Product Services
             <ChevronDown className={`w-[20px] h-[20px] transition-transform duration-300 ${isProductServicesOpen ? 'rotate-180' : ''}`} />
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/services') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </button>
         </div>
         
         {/* Solutions */}
         <div 
-          className="relative"
+          className="relative group"
           onMouseEnter={() => handleMouseEnter('solutions')}
           onMouseLeave={() => handleMouseLeave('solutions')}
         >
           <button 
-            className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors"
+            className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative"
           >
             Solutions
             <ChevronDown className={`w-[20px] h-[20px] transition-transform duration-300 ${isSolutionsOpen ? 'rotate-180' : ''}`} />
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/solutions') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </button>
         </div>
         
         {/* Pricing */}
-        <div>
+        <div className="relative group">
           <Link
             href="/pricing"
-            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors"
+            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative inline-block"
           >
             Pricing
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/pricing') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </Link>
         </div>
         
         {/* About */}
-        <div>
+        <div className="relative group">
           <Link
             href="/about"
-            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors"
+            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative inline-block"
           >
             About
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/about') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </Link>
         </div>
         
         {/* Resources */}
-        <div>
-          <button className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors">
+        <div 
+          className="relative group"
+          onMouseEnter={() => handleMouseEnter('resources')}
+          onMouseLeave={() => handleMouseLeave('resources')}
+        >
+          <button className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative">
             Resources
-            <ChevronDown className="w-[20px] h-[20px]" />
+            <ChevronDown className={`w-[20px] h-[20px] transition-transform duration-300 ${isResourcesOpen ? 'rotate-180' : ''}`} />
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/resources') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </button>
         </div>
         </div>
 
         {/* Right Side Actions - Desktop only */}
-        <div className="max-lg:!hidden hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 items-center gap-4">
+        <div className="max-lg:!hidden hidden lg:flex absolute right-12 top-1/2 -translate-y-1/2 items-center gap-4">
         {/* Login */}
         <div>
-          <Link
-            href="/login"
+          <a
+            href="https://app.avniproject.org/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors"
           >
             Login
-          </Link>
+          </a>
         </div>
 
         {/* Separator */}
@@ -177,6 +208,14 @@ export default function Header() {
         onClose={() => setIsSolutionsOpen(false)}
         onMouseEnter={() => handleMouseEnter('solutions')}
         onMouseLeave={() => handleMouseLeave('solutions')}
+      />
+
+      {/* Resources Dropdown */}
+      <ResourcesDropdown 
+        isOpen={isResourcesOpen} 
+        onClose={() => setIsResourcesOpen(false)}
+        onMouseEnter={() => handleMouseEnter('resources')}
+        onMouseLeave={() => handleMouseLeave('resources')}
       />
     </header>
   );

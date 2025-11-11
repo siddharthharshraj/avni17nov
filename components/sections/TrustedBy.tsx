@@ -34,6 +34,8 @@ export default function TrustedBy() {
                     alt={partner.name}
                     fill
                     className="object-contain transition-all"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 140px, (max-width: 1024px) 160px, 180px"
                     style={{
                       filter: partner.name === "Calcutta Kids" ? "invert(1) grayscale(1)" : "grayscale(1)"
                     }}
@@ -62,6 +64,8 @@ export default function TrustedBy() {
                     alt={partner.name}
                     fill
                     className="object-contain transition-all"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 140px, (max-width: 1024px) 160px, 180px"
                     style={{
                       filter: partner.name === "Calcutta Kids" ? "invert(1) grayscale(1)" : "grayscale(1)"
                     }}

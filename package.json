@@ -2,27 +2,68 @@
   "name": "avni-website",
   "version": "1.0.0",
   "private": true,
+  "description": "Avni - Empowering NGOs with simple, sustainable digital tools",
+  "keywords": [
+    "NGO",
+    "digital tools",
+    "field work",
+    "impact measurement",
+    "open source"
+  ],
+  "author": "Avni Project",
+  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
+    "build:analyze": "ANALYZE=true next build",
+    "export": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "rm -rf .next out",
+    "prebuild": "npm run clean && npm run validate:featured",
+    "postbuild": "next-sitemap",
+    "seo:audit": "node scripts/seo-audit.js",
+    "seo:test": "npm run seo:audit && npm run build",
+    "docker:build": "docker build -t avni-website .",
+    "docker:run": "docker run -p 3000:3000 avni-website",
+    "list:titles": "node scripts/list-content-titles.js",
+    "featured:help": "cat FEATURED_CONTENT_GUIDE.md",
+    "validate:featured": "node scripts/validate-featured-content.js"
   },
   "dependencies": {
-    "next": "14.2.15",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.446.0",
+    "next": "^16.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "lucide-react": "^0.446.0"
+    "react-google-recaptcha": "^3.1.0",
+    "react-phone-number-input": "^3.4.13",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-google-recaptcha": "^2.1.9",
     "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
+    "eslint-config-prettier": "^9.1.0",
     "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.14",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

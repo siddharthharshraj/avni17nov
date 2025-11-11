@@ -1,68 +1,148 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Avni Project - Optimized for Netlify Deployment
+# Only essential files for production deployment
 
-# dependencies
+# Dependencies
 /node_modules
-/figma-proxy/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
-# testing
+# Testing
 /coverage
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__/
+__mocks__/
 
-# next.js
+# Next.js Build
 /.next/
 /out/
+.next
 
-# production
+# Production Build
 /build
+/dist
 
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
+# Environment Variables
 .env
 .env*.local
 .env.production
 .env.development
+.env.test
 
-# vercel
-.vercel
-
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
-# Backup files
-*.backup
-*.bak
-*.tmp
-
-# IDE
+# IDE & Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.project
+.classpath
+.settings/
+*.sublime-*
 
-# OS
+# OS Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
 
 # Logs
 logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
 
-# Figma data exports
+# Temporary Files
+*.tmp
+*.temp
+*.backup
+*.bak
+*.cache
+.cache/
+
+# Documentation (EXCLUDE ALL EXCEPT README.md and content/)
+*.md
+!README.md
+!content/**/*.md
+!content/**/*.mdx
+
+# Docs folder (all documentation files)
+docs/
+
+# Exclude SEO handbooks (not needed in production)
+google-seo-handbook.md
+
+# Figma & Design Files
 figma-data-*.json
 *.figma.json
+*.sketch
+*.fig
+*.xd
 
-# Documentation (keep docs folder)
-!docs/**/*.md
-!README.md
+# Docker files are INCLUDED for easy deployment
+!Dockerfile
+!docker-compose.yml
+!.dockerignore
+
+# Git
+.git/
+
+# Vercel (using Netlify instead)
+.vercel
+
+# Misc Development Files
+.eslintcache
+.stylelintcache
+.prettiercache
+
+# Large media files (should be optimized and in public/)
+*.psd
+*.ai
+*.raw
+*.mov
+*.mp4
+*.avi
+
+# Database files (if any)
+*.sqlite
+*.db
+
+# Security
+*.pem
+*.key
+*.cert
+
+# CI/CD (keep only Netlify config)
+.github/
+.gitlab-ci.yml
+.travis.yml
+circle.yml
+
+# Keep only essential config files
+!netlify.toml
+!next.config.js
+!next-sitemap.config.js
+!package.json
+!tsconfig.json
+!tailwind.config.ts
+!postcss.config.js
+!.prettierrc
+!.eslintrc.json
+!.nvmrc

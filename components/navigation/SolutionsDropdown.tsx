@@ -42,7 +42,7 @@ export default function SolutionsDropdown({ isOpen, onClose, onMouseEnter, onMou
                 <Link
                   key={solution.id}
                   href={solution.link}
-                  className="flex gap-[12px] group"
+                  className="flex gap-[12px] group p-[6px] rounded-[12px] transition-all hover:bg-[#fff5f0] hover:shadow-sm"
                   onClick={onClose}
                 >
                   {/* Icon: 30x30 */}
@@ -57,7 +57,7 @@ export default function SolutionsDropdown({ isOpen, onClose, onMouseEnter, onMou
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h4 className="font-anek font-medium text-[16px] leading-[20px] text-[rgba(0,0,0,0.8)] mb-[6px] group-hover:text-[#419372] transition-colors">
+                    <h4 className="font-anek font-semibold text-[16px] leading-[20px] text-[rgba(0,0,0,0.8)] mb-[6px] transition-colors duration-200">
                       {solution.title}
                     </h4>
                     <p className="font-noto text-[13px] leading-[18px] text-[#878787]">

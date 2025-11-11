@@ -1,0 +1,37 @@
+# Avni Project - Robots.txt
+# https://avniproject.org
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow private/admin areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+
+# Allow specific bots full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay for aggressive bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemap locations
+Sitemap: https://avniproject.org/sitemap.xml
+Sitemap: https://avniproject.org/sitemap-0.xml
+
+# Host
+Host: https://avniproject.org

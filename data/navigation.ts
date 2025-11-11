@@ -50,28 +50,28 @@ export const servicesItems: ServiceItem[] = [
     title: 'Avni Cloud',
     description: 'Secure, Reliable Hosting That Keeps Your Program Data Safe And Accessible Anytime',
     icon: '/icons/navigation/cloud.svg',
-    link: '/services/avni-cloud',
+    link: '/services#avni-cloud',
   },
   {
     id: 'dedicated-hosting',
     title: 'Dedicated Hosting',
     description: 'End-To-End Guidance To Help Your Team Adopt, Use, And Grow Confidently With Avni',
     icon: '/icons/navigation/dedicated-hosting.svg',
-    link: '/services/dedicated-hosting',
+    link: '/services#dedicated-hosting',
   },
   {
     id: 'training-support',
     title: 'Training & Support',
     description: 'End-To-End Guidance To Help Your Team Adapt, Use, And Grow Confidently With Avni',
     icon: '/icons/navigation/training_support.svg',
-    link: '/services/training-support',
+    link: '/services#training-support',
   },
   {
     id: 'implementation',
     title: 'Implementation',
     description: 'Expert Assistance In Setting Up And Tailoring Avni To Your Program\'s Unique Workflows',
     icon: '/icons/navigation/implementation.svg',
-    link: '/services/implementation',
+    link: '/services#implementation',
   },
 ];
 
@@ -81,35 +81,35 @@ export const useCasesItems: UseCaseItem[] = [
     title: 'Case Management',
     description: 'Track Individual And Household Progress Over Time With Organized, Field-Ready Case Records',
     icon: '/icons/navigation/case-mgmt.svg',
-    link: '/services/case-management',
+    link: '/use-cases#case-management',
   },
   {
     id: 'reporting',
     title: 'Reporting',
     description: 'Generate Accurate, Real-Time Reports To Monitor Program Performance And Demonstrate Impact',
     icon: '/icons/navigation/reporting.svg',
-    link: '/services/reporting',
+    link: '/use-cases#reporting',
   },
   {
     id: 'mobile-medical-units',
     title: 'Mobile Medical Units & Camps',
     description: 'Empower Field Teams To Collect Data Offline During Visits And Community Camps With Ease',
     icon: '/icons/navigation/mmu-units.svg',
-    link: '/services/mobile-medical-units',
+    link: '/use-cases#mobile-medical-units',
   },
   {
     id: 'surveys',
-    title: 'Surverys',
+    title: 'Surveys',
     description: 'Design And Deploy Quick, Customisable Surveys To Capture Feedback And Measure Outcomes',
     icon: '/icons/navigation/survey.svg',
-    link: '/services/surveys',
+    link: '/use-cases#surveys',
   },
   {
     id: 'cohort-research',
     title: 'Cohort Based Research Studies',
     description: 'Manage Longitudinal Studies With Structured Data Collection And Built-In Participant Tracking',
     icon: '/icons/navigation/cohort.svg',
-    link: '/services/cohort-research',
+    link: '/use-cases#cohort-research',
   },
 ];
 
@@ -127,56 +127,112 @@ export const solutionsItems: SolutionItem[] = [
     title: 'Education',
     description: 'Tracking Learning Progress To Improve Education Quality',
     icon: '/icons/navigation/education.svg',
-    link: '/solutions/education',
+    link: '/solutions?solution=Education',
   },
   {
     id: 'healthcare',
     title: 'Healthcare',
     description: 'Strengthening Community Health With Real-Time Data',
     icon: '/icons/navigation/healthcare.svg',
-    link: '/solutions/healthcare',
+    link: '/solutions?solution=Healthcare',
   },
   {
     id: 'water-sanitation',
-    title: 'Water& Sanitation',
+    title: 'Water & Sanitation',
     description: 'Driving Clean Water And Hygiene Through Data',
     icon: '/icons/navigation/water.svg',
-    link: '/solutions/water-sanitation',
+    link: '/solutions?solution=Water & Sanitation',
   },
   {
     id: 'waste-management',
     title: 'Waste Management',
     description: 'Empowering Waste-Pickers With Digital Tracking Tools',
     icon: '/icons/navigation/waste.svg',
-    link: '/solutions/waste-management',
+    link: '/solutions?solution=Waste Management',
   },
   {
     id: 'social-security',
     title: 'Social Security',
     description: 'Ensuring Inclusion Through Accurate Beneficiary Data',
     icon: '/icons/navigation/social-security.svg',
-    link: '/solutions/social-security',
+    link: '/solutions?solution=Social Security',
   },
   {
     id: 'livelihood',
     title: 'Livelihood',
     description: 'Boosting Income Programs With Data-Driven Insights',
     icon: '/icons/navigation/livlihood.svg',
-    link: '/solutions/livelihood',
+    link: '/solutions?solution=Livelihood',
   },
   {
     id: 'human-rights',
     title: 'Human Rights',
     description: 'Documenting And Defending Rights With Secure Data',
     icon: '/icons/navigation/human.svg',
-    link: '/solutions/human-rights',
+    link: '/solutions?solution=Human Rights',
   },
   {
     id: 'legal-aid',
     title: 'Legal Aid',
     description: 'Managing Legal Cases Efficiently With Digital Systems',
     icon: '/icons/navigation/legal-aid.svg',
-    link: '/solutions/legal-aid',
+    link: '/solutions?solution=Legal Aid',
+  },
+];
+
+/**
+ * Resources Items - Resources dropdown menu items
+ */
+export interface ResourceItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
+}
+
+export const resourcesItems: ResourceItem[] = [
+  {
+    id: 'case-studies',
+    title: 'Case Studies',
+    description: 'Real Stories Of Digital Transformation In Action',
+    icon: '/icons/resources/case-studies.svg',
+    link: '/resources/case-studies',
+  },
+  {
+    id: 'blog',
+    title: 'Blog',
+    description: 'Stories, Ideas, And Insights From Field And Avni Community',
+    icon: '/icons/resources/blog.svg',
+    link: '/blog',
+  },
+  {
+    id: 'events',
+    title: 'Events',
+    description: 'Stay Updated On Upcoming Avni Activities And Meetups',
+    icon: '/icons/resources/events.svg',
+    link: '/resources/events',
+  },
+  {
+    id: 'media-gallery',
+    title: 'Media Gallery',
+    description: 'Discover On-Ground Stories And Live Sessions From Avni',
+    icon: '/icons/resources/media-gallery.svg',
+    link: '/resources/media-gallery',
+  },
+  {
+    id: 'documentation',
+    title: 'Documentation',
+    description: 'Explore In-Depth Guides And Implementation Details',
+    icon: '/icons/resources/documentation.svg',
+    link: '/resources/documentation',
+  },
+  {
+    id: 'faq',
+    title: 'FAQ',
+    description: 'Quick Answers To Help You Get Started And Go Further',
+    icon: '/icons/resources/faq.svg',
+    link: '/resources/faq',
   },
 ];
 

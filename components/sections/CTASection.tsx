@@ -12,14 +12,13 @@ export default function CTASection() {
   return (
     <Section spacing="xl" className="bg-white overflow-hidden">
       <Container>
-        <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16 lg:gap-20 xl:gap-[100px]">
-          {/* Left Side - Vector 6 contains the complete design */}
-          <div className="relative flex-shrink-0 w-full lg:w-[540px] aspect-[540/440]">
-            {/* Vector 6 - Complete image with organic background blobs */}
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
+          {/* Left Side - Team Image with Organic Blob Background */}
+          <div className="relative flex-shrink-0 w-full lg:w-[700px] xl:w-[800px] aspect-[540/440]">
             <div className="relative w-full h-full">
               <Image
-                src="/vector-6.png"
-                alt="Field team working together"
+                src="/images/built2.png"
+                alt="Built by Non-Profits, For Non-Profits - Field team working together"
                 fill
                 className="object-contain"
                 priority

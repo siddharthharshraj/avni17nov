@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
@@ -8,16 +9,24 @@ const nextConfig = {
         pathname: '/api/mcp/asset/**',
       },
     ],
-    formats: ['image/avif', 'image/webp'],
   },
-  // Enable React strict mode for better development experience
+  // Enable React strict mode
   reactStrictMode: true,
-  // Optimize production builds
-  swcMinify: true,
   // Compress responses
   compress: true,
-  // Generate standalone output for optimal deployment
-  output: 'standalone',
+  // Optimize production builds
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Optimize package imports
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
+  // Performance optimizations
+  poweredByHeader: false,
+  // Output for Netlify
+  output: 'export',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
