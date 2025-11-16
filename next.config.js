@@ -33,8 +33,8 @@ const nextConfig = {
   },
   // Performance optimizations
   poweredByHeader: false,
-  // Output for Netlify (disabled for development)
-  // output: 'export',
+  // Output for Netlify static export
+  output: 'export',
   trailingSlash: true,
   // Production source maps
   productionBrowserSourceMaps: false,
