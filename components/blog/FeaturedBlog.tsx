@@ -21,7 +21,7 @@ export default function FeaturedBlog({ blog }: FeaturedBlogProps) {
         <div className="w-full lg:w-[400px] flex-shrink-0">
           <div className="relative w-full h-[280px] lg:h-[320px] rounded-[16px] overflow-hidden">
             <Image
-              src={frontmatter.image}
+              src={frontmatter.image || '/images/blog-placeholder.jpg'}
               alt={frontmatter.title}
               fill
               className="object-cover"

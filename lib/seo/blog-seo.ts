@@ -108,8 +108,8 @@ export function generateBlogSEO(blog: Blog): Metadata {
     other: {
       'article:published_time': publishedTime,
       'article:modified_time': modifiedTime,
-      'article:author': frontmatter.author || 'Avni Team',
-      'article:section': frontmatter.category,
+      'article:author': typeof frontmatter.author === 'string' ? frontmatter.author : (frontmatter.author?.name || 'Avni Team'),
+      'article:section': frontmatter.category || 'General',
       'article:tag': (frontmatter.tags || []).join(','),
     },
   };

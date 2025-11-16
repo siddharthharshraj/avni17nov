@@ -33,8 +33,8 @@ const nextConfig = {
   },
   // Performance optimizations
   poweredByHeader: false,
-  // Output for Netlify static export
-  output: 'export',
+  // Use Netlify Next.js runtime (not static export) to support API routes
+  // output: 'export',
   trailingSlash: true,
   // Production source maps
   productionBrowserSourceMaps: false,

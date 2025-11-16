@@ -48,7 +48,7 @@ export default function BlogClient({ featuredBlog, blogs }: BlogClientProps) {
 
       // Category filter
       const matchesCategory = selectedCategories.length === 0 || 
-        selectedCategories.includes(blog.frontmatter.category);
+        (blog.frontmatter.category && selectedCategories.includes(blog.frontmatter.category));
 
       return matchesSearch && matchesCategory;
     });
