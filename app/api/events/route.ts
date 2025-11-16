@@ -12,9 +12,17 @@ const CALENDAR_ID = 'c_1f28563b52f3a01f8f7ceee9c339700e8dbb256a398571f131db0ec35
 
 // Load Service Account credentials from secure config file
 const getServiceAccount = () => {
-  const serviceAccountPath = path.join(process.cwd(), 'config', 'secrets', 'google-service-account.json');
-  const serviceAccountData = fs.readFileSync(serviceAccountPath, 'utf8');
-  return JSON.parse(serviceAccountData);
+  try {
+    const serviceAccountPath = path.join(process.cwd(), 'config', 'secrets', 'google-service-account.json');
+    if (!fs.existsSync(serviceAccountPath)) {
+      return null;
+    }
+    const serviceAccountData = fs.readFileSync(serviceAccountPath, 'utf8');
+    return JSON.parse(serviceAccountData);
+  } catch (error) {
+    console.warn('Google service account not configured');
+    return null;
+  }
 };
 
 // Get service account - will be loaded when API is called
@@ -41,6 +49,15 @@ export async function GET() {
     // Load service account credentials
     if (!SERVICE_ACCOUNT) {
       SERVICE_ACCOUNT = getServiceAccount();
+    }
+
+    // If no service account configured, return empty events
+    if (!SERVICE_ACCOUNT) {
+      return NextResponse.json({
+        featured: null,
+        upcoming: [],
+        past: [],
+      });
     }
 
     // Create JWT auth client

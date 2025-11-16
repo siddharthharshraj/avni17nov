@@ -57,9 +57,17 @@ export default function EventsContent() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="text-center">
-          <p className="font-noto text-red-600">Error loading events: {error}</p>
+      <div className="w-full">
+        <EventHero />
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16">
+          <div className="text-center py-12">
+            <p className="font-anek font-bold text-[24px] text-[#0b2540] mb-4">
+              Events Coming Soon
+            </p>
+            <p className="font-noto text-[18px] text-[#6B7280]">
+              We're working on bringing you exciting events. Check back later!
+            </p>
+          </div>
         </div>
       </div>
     );
