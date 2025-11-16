@@ -5,22 +5,27 @@
 
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import * as path from 'path';
-import * as fs from 'fs';
 
 const CALENDAR_ID = 'c_1f28563b52f3a01f8f7ceee9c339700e8dbb256a398571f131db0ec351c214de@group.calendar.google.com';
 
-// Load Service Account credentials from secure config file
+// Get Service Account credentials from environment variables
 const getServiceAccount = () => {
   try {
-    const serviceAccountPath = path.join(process.cwd(), 'config', 'secrets', 'google-service-account.json');
-    if (!fs.existsSync(serviceAccountPath)) {
+    // Check if environment variables are set
+    const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+    const privateKey = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
+
+    if (!clientEmail || !privateKey) {
+      console.warn('Google Calendar credentials not configured in environment variables');
       return null;
     }
-    const serviceAccountData = fs.readFileSync(serviceAccountPath, 'utf8');
-    return JSON.parse(serviceAccountData);
+
+    return {
+      client_email: clientEmail,
+      private_key: privateKey.replace(/\\n/g, '\n'), // Handle escaped newlines
+    };
   } catch (error) {
-    console.warn('Google service account not configured');
+    console.warn('Error loading Google service account:', error);
     return null;
   }
 };
