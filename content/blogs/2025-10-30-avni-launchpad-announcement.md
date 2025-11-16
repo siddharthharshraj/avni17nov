@@ -9,6 +9,7 @@ featuredImage:
   src: /blog-images/2025-10-30-avni-launchpad-announcement/featured.png
   alt: Featured image for 2025-10-30-avni-launchpad-announcement
 published: true
+featured: true
 slug: 2025-10-30-avni-launchpad-announcement
 category: Avni News
 ---
