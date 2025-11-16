@@ -43,6 +43,7 @@ export default function Newsletter() {
         }, 5000);
       }
     } catch (error) {
+      console.error('Newsletter subscription error:', error);
       setStatus('error');
       setMessage('Network error. Please check your connection and try again.');
       
