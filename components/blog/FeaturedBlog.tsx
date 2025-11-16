@@ -53,8 +53,8 @@ export default function FeaturedBlog({ blog }: FeaturedBlogProps) {
             {frontmatter.title}
           </h2>
 
-          {/* Description */}
-          <p className="font-noto text-base md:text-lg leading-relaxed text-[#000000]/70 mb-6">
+          {/* Description - Limited to 2 lines */}
+          <p className="font-noto text-base md:text-lg leading-relaxed text-[#000000]/70 mb-6 line-clamp-2">
             {frontmatter.description}
           </p>
 

@@ -12,6 +12,7 @@ published: true
 featured: true
 slug: 2025-10-30-avni-launchpad-announcement
 category: Avni News
+description: Announcing the Avni Launchpad Cohort 1 - A unique cohort-based program tailored for NGOs ready to take their first big step in digital transformation.
 ---
 
 <a href="https://forms.gle/zD2A4cPRtpdcczPe9" target="_blank" rel="noopener noreferrer">
