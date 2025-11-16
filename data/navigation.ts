@@ -234,6 +234,13 @@ export const resourcesItems: ResourceItem[] = [
     icon: '/icons/resources/faq.svg',
     link: '/resources/faq',
   },
+  {
+    id: 'demo',
+    title: 'Demo Accounts',
+    description: 'Explore Avni In Action Using Our Functional Demo Accounts',
+    icon: '/icons/resources/demo1.svg',
+    link: '/demo',
+  },
 ];
 
 /**

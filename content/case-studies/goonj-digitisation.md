@@ -8,6 +8,7 @@ date: "2024-09-21"
 author: "Avni Team"
 readTime: "8 min read"
 tags: ["Livelihood", "Inventory Management", "Offline Data Collection"]
+featured: true
 ---
 
 # How Goonj Uses Avni To Digitise Offline Data Collection And Inventory Flow

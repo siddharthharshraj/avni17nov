@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "id": "user-story",
+      "name": "User Story",
+      "slug": "user-story",
+      "color": "#FF8854",
+      "bgColor": "#FFF5F0",
+      "description": "Real stories from organizations using Avni to transform their field operations"
+    },
+    {
+      "id": "technical-story",
+      "name": "Technical Story",
+      "slug": "technical-story",
+      "color": "#419372",
+      "bgColor": "#F0F9F5",
+      "description": "Deep dives into Avni's technical architecture and implementation details"
+    },
+    {
+      "id": "avni-news",
+      "name": "Avni News",
+      "slug": "avni-news",
+      "color": "#0B2540",
+      "bgColor": "#E9EAF8",
+      "description": "Latest updates, releases, and announcements from the Avni team"
+    },
+    {
+      "id": "sector",
+      "name": "Sector",
+      "slug": "sector",
+      "color": "#FBA57F",
+      "bgColor": "#FFF5F0",
+      "description": "Sector-specific insights covering healthcare, education, WASH, and more"
+    }
+  ]
+}

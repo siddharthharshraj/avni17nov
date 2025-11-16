@@ -227,9 +227,12 @@ function UseCasesContent() {
 
                   {/* Try Avni Button */}
                   <div className="pt-2">
-                    <button className="px-6 py-3 border-2 border-[#419372] text-[#419372] font-anek font-semibold text-[16px] rounded-full hover:bg-[#419372] hover:text-white transition-all">
+                    <Link 
+                      href="/demo"
+                      className="inline-block px-6 py-3 border-2 border-[#419372] text-[#419372] font-anek font-semibold text-[16px] rounded-full hover:bg-[#419372] hover:text-white transition-all"
+                    >
                       Try Avni →
-                    </button>
+                    </Link>
                   </div>
                 </div>
 

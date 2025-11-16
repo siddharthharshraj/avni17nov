@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "figma": {
+      "command": "node",
+      "args": [
+        "-e",
+        "const https = require('https'); const token = 'figd_vUrTWSz4v210PJ-4ryyigo_KVNG7sdkJPN7mT5eM'; console.log('Figma MCP Proxy Ready');"
+      ]
+    }
+  }
+}

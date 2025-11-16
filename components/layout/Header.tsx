@@ -37,7 +37,7 @@ export default function Header() {
       } else {
         setIsResourcesOpen(false);
       }
-    }, 10000); // 10 seconds delay
+    }, 300); // 300ms delay for smooth UX
     setCloseTimeout(timeout);
   };
 
@@ -64,23 +64,22 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[#fefefe] h-[72px] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.03)] z-50">
+    <header className="fixed top-0 left-0 right-0 bg-white h-[72px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.08)] border-b border-gray-100 z-50">
       <div className="relative max-w-[1440px] w-full h-full mx-auto px-6 lg:px-12">
         {/* Logo Component */}
         <Link 
           href="/" 
           className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 flex items-center gap-2 md:gap-[11px]"
         >
-          <div className="relative w-10 h-9 md:w-[49px] md:h-[45px]">
+          <div className="relative w-[80px] h-9 md:w-[100px] md:h-[45px]">
             <Image
-              src="/logos/avni-logo.png"
+              src="/header-logo.png"
               alt="Avni Logo"
               fill
               className="object-contain"
               priority
             />
           </div>
-          <span className="font-anek font-bold text-2xl md:text-3xl lg:text-[32px] leading-tight text-[#000000]">Avni</span>
         </Link>
 
         {/* Mobile Menu */}
@@ -96,10 +95,10 @@ export default function Header() {
           onMouseLeave={() => handleMouseLeave('products')}
         >
           <button 
-            className="flex items-center gap-[16px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative"
+            className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors relative"
           >
             Product Services
-            <ChevronDown className={`w-[20px] h-[20px] transition-transform duration-300 ${isProductServicesOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown className="w-[20px] h-[20px]" />
             <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/services') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </button>
         </div>
@@ -111,19 +110,26 @@ export default function Header() {
           onMouseLeave={() => handleMouseLeave('solutions')}
         >
           <button 
-            className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative"
+            className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors relative"
           >
             Solutions
-            <ChevronDown className={`w-[20px] h-[20px] transition-transform duration-300 ${isSolutionsOpen ? 'rotate-180' : ''}`} />
-            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/solutions') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
+            <ChevronDown className="w-[20px] h-[20px]" />
+            <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
           </button>
         </div>
         
         {/* Pricing */}
-        <div className="relative group">
+        <div 
+          className="relative group"
+          onMouseEnter={() => {
+            setIsProductServicesOpen(false);
+            setIsSolutionsOpen(false);
+            setIsResourcesOpen(false);
+          }}
+        >
           <Link
             href="/pricing"
-            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative inline-block"
+            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors relative inline-block"
           >
             Pricing
             <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/pricing') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
@@ -131,10 +137,17 @@ export default function Header() {
         </div>
         
         {/* About */}
-        <div className="relative group">
+        <div 
+          className="relative group"
+          onMouseEnter={() => {
+            setIsProductServicesOpen(false);
+            setIsSolutionsOpen(false);
+            setIsResourcesOpen(false);
+          }}
+        >
           <Link
             href="/about"
-            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative inline-block"
+            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors relative inline-block"
           >
             About
             <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/about') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
@@ -147,9 +160,9 @@ export default function Header() {
           onMouseEnter={() => handleMouseEnter('resources')}
           onMouseLeave={() => handleMouseLeave('resources')}
         >
-          <button className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors relative">
+          <button className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors relative">
             Resources
-            <ChevronDown className={`w-[20px] h-[20px] transition-transform duration-300 ${isResourcesOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown className="w-[20px] h-[20px]" />
             <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/resources') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </button>
         </div>
@@ -163,7 +176,7 @@ export default function Header() {
             href="https://app.avniproject.org/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors"
+            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors"
           >
             Login
           </a>
@@ -176,7 +189,7 @@ export default function Header() {
         <div>
           <Link
             href="/signup"
-            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] hover:text-primary transition-colors"
+            className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors"
           >
             Sign up
           </Link>

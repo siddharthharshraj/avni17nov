@@ -28,13 +28,13 @@ const nextConfig = {
   // Optimize package imports and code splitting
   experimental: {
     optimizePackageImports: ['lucide-react', 'react-google-recaptcha', 'react-phone-number-input'],
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled - requires critters package
     webpackBuildWorker: true,
   },
   // Performance optimizations
   poweredByHeader: false,
-  // Output for Netlify
-  output: 'export',
+  // Output for Netlify (disabled for development)
+  // output: 'export',
   trailingSlash: true,
   // Production source maps
   productionBrowserSourceMaps: false,

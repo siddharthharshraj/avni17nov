@@ -12,6 +12,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import Newsletter from '@/components/sections/Newsletter';
 
 // Solution categories
 const solutions = [
@@ -390,28 +391,7 @@ function SolutionsContent() {
         </section>
 
         {/* Newsletter Section */}
-        <section className="relative px-6 lg:px-16 xl:px-24 py-20 lg:py-24 bg-[#e9eaf8]">
-          <div className="max-w-[800px] mx-auto text-center space-y-6">
-            <h2 className="font-anek font-bold text-[32px] lg:text-[36px] leading-[1.2] text-[#0b2540]">
-              Stay Connected With Avni
-            </h2>
-            
-            <p className="font-noto text-[18px] lg:text-[20px] leading-[1.6] text-[rgba(0,0,0,0.75)] max-w-[680px] mx-auto">
-              Get the latest updates, releases, and event news in your inbox. Join to engage with the growing Avni community.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-4 max-w-[540px] mx-auto">
-              <input
-                type="email"
-                placeholder="Enter Your Email"
-                className="w-full sm:flex-1 h-[52px] px-6 border border-[#d0d0d0] rounded-[26px] text-[16px] font-noto placeholder:text-[#999] focus:outline-none focus:border-[#419372] focus:ring-2 focus:ring-[#419372]/20 transition-all bg-white"
-              />
-              <button className="w-full sm:w-auto px-8 h-[52px] bg-[#419372] text-white font-anek font-semibold text-[18px] rounded-[26px] hover:bg-[#357a5e] active:scale-[0.98] transition-all shadow-md hover:shadow-lg whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </section>
+        <Newsletter />
       </main>
       <Footer />
     </>

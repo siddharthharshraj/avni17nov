@@ -11,6 +11,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
+import MarkdownContent from '@/components/ui/MarkdownContent';
 import { getCaseStudyBySlug, getAllCaseStudySlugs } from '@/lib/markdown';
 import { getSectorColor } from '@/lib/filters';
 
@@ -167,20 +168,7 @@ export default async function CaseStudyPage({
         <Section spacing="lg">
           <Container>
             <article className="max-w-4xl mx-auto">
-              <div
-                className="prose prose-lg max-w-none
-                  prose-headings:font-anek prose-headings:font-bold prose-headings:text-[#0b2540]
-                  prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4
-                  prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3
-                  prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6 prose-p:font-noto
-                  prose-a:text-[#419372] prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-                  prose-strong:text-gray-900 prose-strong:font-semibold
-                  prose-ul:my-6 prose-ol:my-6
-                  prose-li:text-gray-700 prose-li:mb-2 prose-li:font-noto
-                  prose-img:rounded-lg prose-img:shadow-lg prose-img:my-8
-                  prose-blockquote:border-l-4 prose-blockquote:border-[#419372] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:my-8"
-                dangerouslySetInnerHTML={{ __html: htmlContent || '' }}
-              />
+              <MarkdownContent htmlContent={htmlContent || ''} />
 
               {/* Tags */}
               {frontmatter.tags && frontmatter.tags.length > 0 && (

@@ -77,14 +77,19 @@ lerna-debug.log*
 *.cache
 .cache/
 
-# Documentation (EXCLUDE ALL EXCEPT README.md and content/)
-*.md
+# Documentation
+# Exclude docs folder (internal documentation)
+docs/
+*.tmp.md
+*.backup.md
+
+# Keep essential documentation
 !README.md
+!CONTRIBUTING.md
+!LICENSE
+!CODE_OF_CONDUCT.md
 !content/**/*.md
 !content/**/*.mdx
-
-# Docs folder (all documentation files)
-docs/
 
 # Exclude SEO handbooks (not needed in production)
 google-seo-handbook.md
@@ -95,6 +100,12 @@ figma-data-*.json
 *.sketch
 *.fig
 *.xd
+
+# Google Service Account & Secrets (IMPORTANT: Keep this private!)
+*-n5-*.json
+abiding-truth-*.json
+config/secrets/
+*.service-account.json
 
 # Docker files are INCLUDED for easy deployment
 !Dockerfile

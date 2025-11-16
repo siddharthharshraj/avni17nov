@@ -36,7 +36,7 @@ const benefits = [
 
 export default function WhyChooseAvni() {
   return (
-    <Section spacing="lg" className="bg-[#F5F5F5]">
+    <Section spacing="lg" className="bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-[60px]">
@@ -46,7 +46,7 @@ export default function WhyChooseAvni() {
           <h2 className="font-anek font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#0b2540] mb-4 md:mb-6">
             Why Choose Avni?
           </h2>
-          <p className="font-noto text-sm md:text-base leading-relaxed text-[#000000] max-w-3xl mx-auto px-4">
+          <p className="font-noto text-xl md:text-2xl lg:text-[22px] leading-relaxed text-[#4A4A4A] max-w-3xl mx-auto px-4">
             Still managing field data on paper? Avni helps you go digital — easily, affordably, and with the support you need at every step. Here's how we make your transition smooth and effective:
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function WhyChooseAvni() {
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="bg-white rounded-2xl p-6 md:p-8 text-center hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-2xl p-6 md:p-8 text-center shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition-all duration-300"
             >
               {/* Icon */}
               <div className="flex justify-center mb-4 md:mb-6">

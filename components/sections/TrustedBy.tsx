@@ -7,7 +7,7 @@ import { partners } from "@/data";
 
 export default function TrustedBy() {
   return (
-    <Section spacing="md">
+    <Section spacing="md" className="bg-[#E9EAF84D]">
       <div className="w-full">
         {/* Heading */}
         <div className="text-center mb-8 md:mb-12 lg:mb-[51px]">

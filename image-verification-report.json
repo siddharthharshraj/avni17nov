@@ -1,0 +1,61 @@
+{
+  "totalGatsbyPosts": 101,
+  "totalNextPosts": 111,
+  "totalGatsbyImages": 467,
+  "totalNextImages": 342,
+  "missingImages": [],
+  "brokenReferences": [
+    {
+      "post": "2019-12-19-community-health-service-programs-and-avni.md",
+      "image": "/img/chw-work-complexity.png \"CHW Work Complexity\"",
+      "alt": "CHW Work Complexity"
+    },
+    {
+      "post": "2019-12-19-community-health-service-programs-and-avni.md",
+      "image": "/img/screenshot-2019-12-12-at-6.44.01-pm.png \"Guiding CHW in counselling\"",
+      "alt": "Guiding CHW in counselling"
+    },
+    {
+      "post": "6-ways-Avni-is-helping-JSS-Maternal-Newborn-Child-health-programs.md",
+      "image": "/img/6-ways-how-Avni-is-helping-JSS-MCH-Phulwari-programs/JSSCP_Growth_Chart.jpg \"Automatically plotted growth chart in App\"",
+      "alt": "Automatically plotted growth chart in App"
+    },
+    {
+      "post": "6-ways-Avni-is-helping-JSS-Maternal-Newborn-Child-health-programs.md",
+      "image": "/img/6-ways-how-Avni-is-helping-JSS-MCH-Phulwari-programs/JSSCP_HRP_Alert2.png \"App highlighting high risk pregnancy based on entered data\"",
+      "alt": "App detecting high risk pregnancy based on entered data"
+    },
+    {
+      "post": "6-ways-Avni-is-helping-JSS-Maternal-Newborn-Child-health-programs.md",
+      "image": "/img/6-ways-how-Avni-is-helping-JSS-MCH-Phulwari-programs/JSSCP_paper_registers.jpg \"MCHW maintaining paper registers\"",
+      "alt": "MCHW maintaining paper registers"
+    },
+    {
+      "post": "6-ways-Avni-is-helping-JSS-Maternal-Newborn-Child-health-programs.md",
+      "image": "/img/6-ways-how-Avni-is-helping-JSS-MCH-Phulwari-programs/JSSCP_Reports_Phulwari.png \"Phulwari report\"",
+      "alt": "Phulwari report"
+    },
+    {
+      "post": "6-ways-Avni-is-helping-JSS-Maternal-Newborn-Child-health-programs.md",
+      "image": "/img/6-ways-how-Avni-is-helping-JSS-MCH-Phulwari-programs/JSSCP_Reports_HRP.png \"High risk pregnancy report\"",
+      "alt": "High risk pregnancy report"
+    },
+    {
+      "post": "community-health-service-programs-and-avni.md",
+      "image": "/img/chw-work-complexity.png \"CHW Work Complexity\"",
+      "alt": "CHW Work Complexity"
+    },
+    {
+      "post": "community-health-service-programs-and-avni.md",
+      "image": "/img/screenshot-2019-12-12-at-6.44.01-pm.png \"Guiding CHW in counselling\"",
+      "alt": "Guiding CHW in counselling"
+    },
+    {
+      "post": "reflections-of-the-avni-conference-2025.md",
+      "image": "/img/2025-02-11-reflections-of-the-avni-conference-2025/shivangi post (1",
+      "alt": "shivangi post (1)"
+    }
+  ],
+  "fixedImages": 43,
+  "errors": []
+}

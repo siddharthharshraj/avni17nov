@@ -1,0 +1,191 @@
+/**
+ * Normalize GitHub Projects v2 GraphQL Response
+ * Converts raw GraphQL data into a clean, usable format
+ */
+
+import type {
+  Project,
+  ProjectItem,
+  ProjectField,
+  NormalizedProjectData,
+  ProjectItemFieldValue,
+} from '@/types/github-project';
+
+export function normalizeProjectData(rawData: any): NormalizedProjectData {
+  const projectV2 = rawData.organization?.projectV2;
+
+  if (!projectV2) {
+    throw new Error('Project not found or not accessible');
+  }
+
+  // Normalize fields
+  const fields: ProjectField[] = (projectV2.fields?.nodes || []).map((field: any) => ({
+    id: field.id,
+    name: field.name,
+    dataType: field.dataType,
+    options: field.options || undefined,
+  }));
+
+  // Find the Status/Stage field for grouping (single-select field)
+  const groupByField = fields.find(
+    (f) => f.dataType === 'SINGLE_SELECT' && (f.name.toLowerCase().includes('status') || f.name.toLowerCase().includes('stage'))
+  )?.name || fields.find((f) => f.dataType === 'SINGLE_SELECT')?.name;
+
+  // Normalize project metadata
+  const project: Project = {
+    id: projectV2.id,
+    title: projectV2.title,
+    description: projectV2.shortDescription,
+    url: projectV2.url,
+    fields,
+    groupByField,
+  };
+
+  // Normalize items
+  const items: ProjectItem[] = (projectV2.items?.nodes || []).map((item: any) => {
+    // Extract field values
+    const fieldValues: ProjectItemFieldValue = {};
+    (item.fieldValues?.nodes || []).forEach((fieldValue: any) => {
+      const fieldName = fieldValue.field?.name;
+      if (!fieldName) return;
+
+      if (fieldValue.text !== undefined) {
+        fieldValues[fieldName] = fieldValue.text;
+      } else if (fieldValue.number !== undefined) {
+        fieldValues[fieldName] = fieldValue.number;
+      } else if (fieldValue.date !== undefined) {
+        fieldValues[fieldName] = fieldValue.date;
+      } else if (fieldValue.name !== undefined) {
+        fieldValues[fieldName] = fieldValue.name;
+      } else if (fieldValue.title !== undefined) {
+        fieldValues[fieldName] = fieldValue.title;
+      }
+    });
+
+    // Extract content (issue/PR data)
+    const content = item.content;
+    let normalizedContent: ProjectItem['content'];
+
+    if (content) {
+      if (content.__typename === 'DraftIssue') {
+        normalizedContent = undefined; // Draft issues have limited data
+      } else {
+        normalizedContent = {
+          number: content.number,
+          url: content.url,
+          repository: content.repository
+            ? `${content.repository.owner.login}/${content.repository.name}`
+            : undefined,
+          author: content.author
+            ? {
+                login: content.author.login,
+                avatarUrl: content.author.avatarUrl,
+              }
+            : undefined,
+          labels: (content.labels?.nodes || []).map((label: any) => ({
+            name: label.name,
+            color: label.color,
+          })),
+          state: content.state,
+        };
+      }
+    }
+
+    return {
+      id: item.id,
+      title: content?.title || 'Untitled',
+      contentType: item.type || 'DraftIssue',
+      content: normalizedContent,
+      fields: fieldValues,
+      createdAt: item.createdAt,
+      updatedAt: item.updatedAt,
+    };
+  });
+
+  // Group items by the groupByField
+  const columns: { [columnName: string]: ProjectItem[] } = {};
+
+  if (groupByField) {
+    // Get all possible column values from the field options
+    const groupField = fields.find((f) => f.name === groupByField);
+    if (groupField?.options) {
+      groupField.options.forEach((option) => {
+        columns[option.name] = [];
+      });
+    }
+
+    // Add "No Status" column for items without the field
+    columns['No Status'] = [];
+
+    // Distribute items into columns
+    items.forEach((item) => {
+      const columnValue = item.fields[groupByField];
+      if (columnValue && typeof columnValue === 'string') {
+        if (!columns[columnValue]) {
+          columns[columnValue] = [];
+        }
+        columns[columnValue].push(item);
+      } else {
+        columns['No Status'].push(item);
+      }
+    });
+  } else {
+    // No grouping field found, put all items in one column
+    columns['All Items'] = items;
+  }
+
+  return {
+    project,
+    items,
+    columns,
+    lastUpdated: new Date().toISOString(),
+  };
+}
+
+/**
+ * Fetch all project items with pagination
+ */
+export async function fetchAllProjectItems(
+  client: any,
+  owner: string,
+  projectNumber: number
+): Promise<any> {
+  let allItems: any[] = [];
+  let hasNextPage = true;
+  let cursor: string | null = null;
+  let projectData: any = null;
+
+  const { PROJECT_V2_QUERY } = await import('./github-queries');
+
+  while (hasNextPage) {
+    const result: { data: any; rateLimit: any } = await client.query(PROJECT_V2_QUERY, {
+      owner,
+      number: projectNumber,
+      after: cursor,
+    });
+
+    if (!projectData) {
+      projectData = result.data;
+    }
+
+    const items: any[] = result.data.organization?.projectV2?.items?.nodes || [];
+    allItems = allItems.concat(items);
+
+    const pageInfo: any = result.data.organization?.projectV2?.items?.pageInfo;
+    hasNextPage = pageInfo?.hasNextPage || false;
+    cursor = pageInfo?.endCursor || null;
+
+    // Safety limit: max 500 items
+    if (allItems.length >= 500) {
+      console.warn('Reached maximum item limit (500)');
+      break;
+    }
+  }
+
+  // Replace items with all fetched items
+  if (projectData?.organization?.projectV2) {
+    projectData.organization.projectV2.items.nodes = allItems;
+  }
+
+  return projectData;
+}

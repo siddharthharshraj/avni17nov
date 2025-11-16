@@ -8,7 +8,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { FEATURED_CASE_STUDIES, FEATURED_BLOGS } from '@/config/featured-content';
+import gfm from 'remark-gfm';
 
 const caseStudiesDirectory = path.join(process.cwd(), 'content/case-studies');
 const blogsDirectory = path.join(process.cwd(), 'content/blogs');
@@ -18,7 +18,7 @@ export interface CaseStudyFrontmatter {
   slug: string;
   sector: string;
   logo: string;
-  featured?: boolean; // Optional - determined by centralized config
+  featured?: boolean; // Optional - set in markdown front matter
   description: string;
   date: string;
   author?: string;
@@ -62,20 +62,18 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
-    // Convert markdown to HTML
+    // Convert markdown to HTML with GitHub Flavored Markdown support (tables, strikethrough, etc.)
     const processedContent = await remark()
+      .use(gfm)
       .use(html, { sanitize: false })
       .process(content);
     const htmlContent = processedContent.toString();
-
-    // Determine featured status from centralized config
-    const isFeatured = FEATURED_CASE_STUDIES.includes(data.title);
 
     return {
       slug,
       frontmatter: {
         ...data,
-        featured: isFeatured, // Override with centralized config
+        featured: data.featured || false, // Use featured from front matter
       } as CaseStudyFrontmatter,
       content,
       htmlContent,
@@ -164,15 +162,20 @@ export async function getAllSectors(): Promise<string[]> {
 
 export interface BlogFrontmatter {
   title: string;
-  slug: string;
-  category: string;
-  image: string;
+  slug?: string;
+  category?: string;
+  image?: string;
+  featuredImage?: string | { src: string; alt?: string; title?: string };
   featured?: boolean; // Optional - determined by centralized config
-  description: string;
+  description?: string;
   date: string;
-  author?: string;
+  author?: string | { name: string; avatar?: string };
+  authorTitle?: string; // Optional - author designation
   readTime?: string;
+  readingTime?: string;
   tags?: string[];
+  type?: 'blog' | 'case-study';
+  published?: boolean;
 }
 
 export interface Blog {
@@ -215,20 +218,18 @@ export async function getBlogBySlug(slug: string): Promise<Blog | null> {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
-    // Convert markdown to HTML
+    // Convert markdown to HTML with GitHub Flavored Markdown support (tables, strikethrough, etc.)
     const processedContent = await remark()
+      .use(gfm)
       .use(html, { sanitize: false })
       .process(content);
     const htmlContent = processedContent.toString();
-
-    // Determine featured status from centralized config
-    const isFeatured = FEATURED_BLOGS.includes(data.title);
 
     return {
       slug,
       frontmatter: {
         ...data,
-        featured: isFeatured, // Override with centralized config
+        featured: data.featured || false, // Use featured from front matter
       } as BlogFrontmatter,
       content,
       htmlContent,
@@ -260,22 +261,44 @@ export async function getAllBlogs(): Promise<Blog[]> {
 }
 
 /**
- * Get featured blog (only one should be featured)
+ * Get featured blog
+ * Priority:
+ * 1. If blog(s) have featured: true in front matter, use the LATEST one by date (handles multiple featured blogs)
+ * 2. Otherwise, use the most recent blog by date (automatic - 95% cases)
  */
 export async function getFeaturedBlog(): Promise<Blog | null> {
   const allBlogs = await getAllBlogs();
-  const featured = allBlogs.filter(blog => blog.frontmatter.featured);
   
-  // Return the most recent featured blog (in case multiple are marked as featured)
-  return featured.length > 0 ? featured[0] : null;
+  if (allBlogs.length === 0) {
+    return null;
+  }
+  
+  // Check for manual featured override(s)
+  const manuallyFeaturedBlogs = allBlogs.filter(blog => blog.frontmatter.featured === true);
+  
+  if (manuallyFeaturedBlogs.length > 0) {
+    // If multiple blogs are marked as featured, use the latest one by date
+    // (allBlogs is already sorted by date, so manuallyFeaturedBlogs will be too)
+    return manuallyFeaturedBlogs[0];
+  }
+  
+  // Default: return the most recent blog (already sorted by date)
+  return allBlogs[0];
 }
 
 /**
- * Get non-featured blogs
+ * Get non-featured blogs - excludes the featured blog (manual or automatic)
  */
 export async function getNonFeaturedBlogs(): Promise<Blog[]> {
   const allBlogs = await getAllBlogs();
-  return allBlogs.filter(blog => !blog.frontmatter.featured);
+  const featuredBlog = await getFeaturedBlog();
+  
+  if (!featuredBlog) {
+    return allBlogs;
+  }
+  
+  // Exclude the featured blog
+  return allBlogs.filter(blog => blog.slug !== featuredBlog.slug);
 }
 
 /**
@@ -284,7 +307,7 @@ export async function getNonFeaturedBlogs(): Promise<Blog[]> {
 export async function getBlogsByCategory(category: string): Promise<Blog[]> {
   const allBlogs = await getAllBlogs();
   return allBlogs.filter(blog => 
-    blog.frontmatter.category.toLowerCase() === category.toLowerCase()
+    blog.frontmatter.category?.toLowerCase() === category.toLowerCase()
   );
 }
 
@@ -297,8 +320,8 @@ export async function searchBlogs(query: string): Promise<Blog[]> {
   
   return allBlogs.filter(blog => 
     blog.frontmatter.title.toLowerCase().includes(lowerQuery) ||
-    blog.frontmatter.description.toLowerCase().includes(lowerQuery) ||
-    blog.frontmatter.category.toLowerCase().includes(lowerQuery)
+    blog.frontmatter.description?.toLowerCase().includes(lowerQuery) ||
+    blog.frontmatter.category?.toLowerCase().includes(lowerQuery)
   );
 }
 
@@ -307,6 +330,8 @@ export async function searchBlogs(query: string): Promise<Blog[]> {
  */
 export async function getAllBlogCategories(): Promise<string[]> {
   const allBlogs = await getAllBlogs();
-  const categories = allBlogs.map(blog => blog.frontmatter.category);
+  const categories = allBlogs
+    .map(blog => blog.frontmatter.category)
+    .filter((category): category is string => category !== undefined);
   return Array.from(new Set(categories)).sort();
 }

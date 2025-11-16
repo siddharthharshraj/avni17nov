@@ -1,0 +1,604 @@
+{
+  "totalPosts": 111,
+  "validPosts": 111,
+  "errors": [],
+  "warnings": [
+    {
+      "file": "2019-12-19-community-health-service-programs-and-avni.md",
+      "slug": "2019-12-19-community-health-service-programs-and-avni",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "2020-01-28-case-for-generic-open-source-products.md",
+      "slug": "2020-01-28-case-for-generic-open-source-products",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "2022-05-03-field-visit-jnpct.md",
+      "slug": "2022-05-03-field-visit-jnpct",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2022-05-03-field-visit-sewa-rural-adolescent-and-sncu.md",
+      "slug": "2022-05-03-field-visit-sewa-rural-adolescent-and-sncu",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2022-12-08-apf-field-visit.md",
+      "slug": "2022-12-08-apf-field-visit",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2023-02-13-avni-release-announcement.md",
+      "slug": "2023-02-13-avni-release-announcement",
+      "warnings": [
+        "No meta description (will use excerpt)",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "2023-07-18-avni-sprint-udaipur-blog-by-taqi.md",
+      "slug": "2023-07-18-avni-sprint-udaipur-blog-by-taqi",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2023-07-26-udaipur-sprint-nupoor.md",
+      "slug": "2023-07-26-udaipur-sprint-nupoor",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2023-08-21-avni-release-4.0.0.md",
+      "slug": "2023-08-21-avni-release-4.0.0",
+      "warnings": [
+        "No meta description (will use excerpt)",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "2024-01-22-avni-conference-goa.md",
+      "slug": "2024-01-22-avni-conference-goa",
+      "warnings": [
+        "No featured image specified",
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2024-06-19-world-sickle-cell-day.md",
+      "slug": "2024-06-19-world-sickle-cell-day",
+      "warnings": [
+        "No featured image specified",
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2024-06-20-yenepoya-visit.md",
+      "slug": "2024-06-20-yenepoya-visit",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2024-06-25-digitising-adolescent-community-program-using-avni.md",
+      "slug": "2024-06-25-digitising-adolescent-community-program-using-avni",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2024-09-03-avni-retreat-2024.md",
+      "slug": "2024-09-03-avni-retreat-2024",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2024-09-17-My-First-Field-Visit-to-Harsha-Trust-Seeing-Avni’s-Impact-in-Action.md",
+      "slug": "2024-09-17-My-First-Field-Visit-to-Harsha-Trust-Seeing-Avni’s-Impact-in-Action",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2024-09-23-Query-Generation-Using-AI.md",
+      "slug": "2024-09-23-Query-Generation-Using-AI",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2024-10-14-avni-release-announcement.md",
+      "slug": "2024-10-14-avni-release-announcement",
+      "warnings": [
+        "No meta description (will use excerpt)",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "2024-11-27-Store-And-Use-of-Aadhaar-In-Avni-What-You-Need-to-Know.md",
+      "slug": "2024-11-27-Store-And-Use-of-Aadhaar-In-Avni-What-You-Need-to-Know",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2025-01-12-A-Visit-To-Centre-For-Social-Justice-In-Ahmedabad.md",
+      "slug": "2025-01-12-A-Visit-To-Centre-For-Social-Justice-In-Ahmedabad",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2025-01-29-avni-conf-2025-pooja-aggarwal.md",
+      "slug": "2025-01-29-avni-conf-2025-pooja-aggarwal",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2025-01-29-avni-conference-blog-kamesh.md",
+      "slug": "2025-01-29-avni-conference-blog-kamesh",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2025-01-31-my-reflections-from-avni-conf-2025.md",
+      "slug": "2025-01-31-my-reflections-from-avni-conf-2025",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2025-02-03-reflections-and-learnings-from-avni-2025-conference.md",
+      "slug": "2025-02-03-reflections-and-learnings-from-avni-2025-conference",
+      "warnings": [
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "2025-05-19-field-visit-to-iph.md",
+      "slug": "2025-05-19-field-visit-to-iph",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "2025-06-02-avni-release-announcement.md",
+      "slug": "2025-06-02-avni-release-announcement",
+      "warnings": [
+        "No meta description (will use excerpt)",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "2025-09-30-ai-cohort-1.md",
+      "slug": "2025-09-30-ai-cohort-1",
+      "warnings": [
+        "No meta description (will use excerpt)",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "2025-10-30-avni-launchpad-announcement.md",
+      "slug": "2025-10-30-avni-launchpad-announcement",
+      "warnings": [
+        "No meta description (will use excerpt)",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "A-Visit-To-Centre-For-Social-Justice-In-Ahmedabad.md",
+      "slug": "A-Visit-To-Centre-For-Social-Justice-In-Ahmedabad",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "My-First-Field-Visit-to-Harsha-Trust-Seeing-Avni’s-Impact-in-Action.md",
+      "slug": "My-First-Field-Visit-to-Harsha-Trust-Seeing-Avni’s-Impact-in-Action",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "Query-Generation-Using-AI.md",
+      "slug": "Query-Generation-Using-AI",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "Store-And-Use-of-Aadhaar-In-Avni-What-You-Need-to-Know.md",
+      "slug": "Store-And-Use-of-Aadhaar-In-Avni-What-You-Need-to-Know",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "Udaipur-Sprint-Vedant.md",
+      "slug": "Udaipur-Sprint-Vedant",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "a-review-of-2022.md",
+      "slug": "a-review-of-2022",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "a-review-of-2023.md",
+      "slug": "a-review-of-2023",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "ai-cohort-1.md",
+      "slug": "ai-cohort-1",
+      "warnings": [
+        "No featured image specified",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "apf-field-visit.md",
+      "slug": "apf-field-visit",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-cloud-annoucement.md",
+      "slug": "avni-cloud-annoucement",
+      "warnings": [
+        "No featured image specified",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "avni-conf-2025-pooja-aggarwal.md",
+      "slug": "avni-conf-2025-pooja-aggarwal",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-blog-kamesh.md",
+      "slug": "avni-conference-blog-kamesh",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-goa-all-days.md",
+      "slug": "avni-conference-goa-all-days",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-goa-day-1.md",
+      "slug": "avni-conference-goa-day-1",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-goa-day-2.md",
+      "slug": "avni-conference-goa-day-2",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-goa-day-3.md",
+      "slug": "avni-conference-goa-day-3",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-goa-day-4.md",
+      "slug": "avni-conference-goa-day-4",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-goa-day-5.md",
+      "slug": "avni-conference-goa-day-5",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-goa-takeaways_and_outcomes.md",
+      "slug": "avni-conference-goa-takeaways_and_outcomes",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-conference-goa.md",
+      "slug": "avni-conference-goa",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-in-2024.md",
+      "slug": "avni-in-2024",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-launchpad-announcement.md",
+      "slug": "avni-launchpad-announcement",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-release-3.39.0.md",
+      "slug": "avni-release-3.39.0",
+      "warnings": [
+        "No featured image specified",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "avni-release-4.0.0.md",
+      "slug": "avni-release-4.0.0",
+      "warnings": [
+        "No featured image specified",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "avni-release-announcement copy.md",
+      "slug": "avni-release-announcement copy",
+      "warnings": [
+        "No featured image specified",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "avni-release-announcement.md",
+      "slug": "avni-release-announcement",
+      "warnings": [
+        "No featured image specified",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "avni-retreat-2024.md",
+      "slug": "avni-retreat-2024",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-sprint-udaipur-blog-by-Salil.md",
+      "slug": "avni-sprint-udaipur-blog-by-Salil",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-sprint-udaipur-blog-by-dinesh.md",
+      "slug": "avni-sprint-udaipur-blog-by-dinesh",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-sprint-udaipur-blog-by-taqi.md",
+      "slug": "avni-sprint-udaipur-blog-by-taqi",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-sprint-udaipur-blog.md",
+      "slug": "avni-sprint-udaipur-blog",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "avni-sprint-udaipur-day-2.md",
+      "slug": "avni-sprint-udaipur-day-2",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "building-a-social-security-benefits-product.md",
+      "slug": "building-a-social-security-benefits-product",
+      "warnings": [
+        "No featured image specified",
+        "No meta description (will use excerpt)"
+      ]
+    },
+    {
+      "file": "case-for-generic-open-source-products.md",
+      "slug": "case-for-generic-open-source-products",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "community-health-service-programs-and-avni.md",
+      "slug": "community-health-service-programs-and-avni",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "digitising-adolescent-community-program-using-avni.md",
+      "slug": "digitising-adolescent-community-program-using-avni",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "exploring-tech4devs-impact-dalgo-sprint-avni-conference.md",
+      "slug": "exploring-tech4devs-impact-dalgo-sprint-avni-conference",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "field-visit-jnpct.md",
+      "slug": "field-visit-jnpct",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "field-visit-rejuvenating-water-bodies.md",
+      "slug": "field-visit-rejuvenating-water-bodies",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "field-visit-sewa-rural-adolescent-and-sncu.md",
+      "slug": "field-visit-sewa-rural-adolescent-and-sncu",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "field-visit-to-iph.md",
+      "slug": "field-visit-to-iph",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "field-visit-to-kollegal-government-hospital.md",
+      "slug": "field-visit-to-kollegal-government-hospital",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "from-privilege-to-purpose.md",
+      "slug": "from-privilege-to-purpose",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "how-we-delivered-offline-health-videos.md",
+      "slug": "how-we-delivered-offline-health-videos",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "my-reflections-from-avni-conf-2025.md",
+      "slug": "my-reflections-from-avni-conf-2025",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "my-reflections-from-first-Avni-field-visit-after-joining-as-ba.md",
+      "slug": "my-reflections-from-first-Avni-field-visit-after-joining-as-ba",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "no-more-fake-data-headaches.md",
+      "slug": "no-more-fake-data-headaches",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "opening-up.md",
+      "slug": "opening-up",
+      "warnings": [
+        "No featured image specified",
+        "No tags specified"
+      ]
+    },
+    {
+      "file": "reflections-and-learnings-from-avni-2025-conference.md",
+      "slug": "reflections-and-learnings-from-avni-2025-conference",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "reflections-of-the-avni-conference-2025.md",
+      "slug": "reflections-of-the-avni-conference-2025",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "savethechildren-golive.md",
+      "slug": "savethechildren-golive",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "udaipur-sprint-nupoor.md",
+      "slug": "udaipur-sprint-nupoor",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "udaipur-sprint-vinay.md",
+      "slug": "udaipur-sprint-vinay",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "world-sickle-cell-day.md",
+      "slug": "world-sickle-cell-day",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "yenepoya-visit.md",
+      "slug": "yenepoya-visit",
+      "warnings": [
+        "No featured image specified"
+      ]
+    },
+    {
+      "file": "ywnxt-project-update-1.md",
+      "slug": "ywnxt-project-update-1",
+      "warnings": [
+        "No featured image specified"
+      ]
+    }
+  ]
+}

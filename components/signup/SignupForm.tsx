@@ -256,28 +256,33 @@ export default function SignupForm() {
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-72px)] px-6 py-12">
-      <div className="bg-white rounded-[24px] shadow-[0_20px_40px_rgba(0,0,0,0.1)] p-8 md:p-12 max-w-2xl w-full">
-        {/* Header */}
+      <div className="max-w-2xl w-full">
+        {/* Header - Outside the box */}
         <div className="text-center mb-8">
+          <p className="font-anek font-semibold text-xs tracking-[0.18em] text-[#FF9B7A] uppercase mb-2">
+            SIGN UP FOR AVNI
+          </p>
           <h1 className="font-anek font-bold text-3xl md:text-4xl text-[#0b2540] mb-3">
             Start Your 30-Day Free Trial
           </h1>
-          <p className="font-noto text-base text-[#5a6c7d] leading-relaxed">
+          <p className="font-noto font-normal text-2xl text-[#000000]/80 leading-[30px] tracking-[0px] text-center mx-auto max-w-[703px]">
             Grow with Avni as a digital partner, helping organizations everywhere enhance their solutions and reach.
           </p>
         </div>
 
-        {/* Error Message */}
-        {status === 'error' && (
-          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6">
-            <p className="text-red-600 font-medium text-sm">
-              Oops! There was an error. Please try again.
-            </p>
-          </div>
-        )}
+        {/* Form Box - Starts from First Name */}
+        <div className="bg-white rounded-[24px] shadow-[0_20px_40px_rgba(0,0,0,0.1)] p-8 md:p-12">
+          {/* Error Message */}
+          {status === 'error' && (
+            <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6">
+              <p className="text-red-600 font-medium text-sm">
+                Oops! There was an error. Please try again.
+              </p>
+            </div>
+          )}
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -539,23 +544,24 @@ export default function SignupForm() {
             Log in
           </a>
         </p>
-      </div>
+        </div>
 
-      {/* Custom styles for phone input */}
-      <style jsx global>{`
-        .phone-input-custom {
-          padding: 12px 16px;
-        }
-        .phone-input-custom input {
-          border: none !important;
-          outline: none !important;
-          font-family: 'Noto Sans', sans-serif;
-          font-size: 14px;
-        }
-        .PhoneInputCountry {
-          margin-right: 8px;
-        }
-      `}</style>
+        {/* Custom styles for phone input */}
+        <style jsx global>{`
+          .phone-input-custom {
+            padding: 12px 16px;
+          }
+          .phone-input-custom input {
+            border: none !important;
+            outline: none !important;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 14px;
+          }
+          .PhoneInputCountry {
+            margin-right: 8px;
+          }
+        `}</style>
+      </div>
     </div>
   );
 }

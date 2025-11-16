@@ -1,23 +1,36 @@
 /**
- * Blog Post Page Template
- * Dynamic route for individual blog posts with full SEO optimization
+ * Blog Detail Page Template
+ * Matches Figma design with sticky sidebar behavior
+ * https://www.figma.com/design/mIajDP8cdoIgNPhIvkpnKP/Website---ready-for-dev?node-id=121-334
  */
 
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
+import { ArrowLeft } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { getBlogBySlug, getAllBlogSlugs } from '@/lib/markdown';
+import { getBlogBySlug, getAllBlogSlugs, getAllBlogs } from '@/lib/markdown';
+import { generateBlogSEO, generateBlogJSONLD, generateBlogBreadcrumbJSONLD } from '@/lib/seo/blog-seo';
+import { getSmartRelatedPosts } from '@/lib/blog/related-posts';
+import CategoryBadge from '@/components/blog/CategoryBadge';
+import WrittenBySection from '@/components/blog/WrittenBySection';
+import BlogContent from '@/components/blog/BlogContent';
+import BlogCard from '@/components/blog/BlogCard';
+import SmartStickySidebar from '@/components/blog/SmartStickySidebar';
+import BlogMetaInfo from '@/components/blog/BlogMetaInfo';
+import BlogShareCTA from '@/components/blog/BlogShareCTA';
 
 // Generate metadata for SEO
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const blog = await getBlogBySlug(params.slug);
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
 
   if (!blog) {
     return {
@@ -25,33 +38,7 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: `${blog.frontmatter.title} - Avni Blog`,
-    description: blog.frontmatter.description,
-    keywords: blog.frontmatter.tags || [],
-    openGraph: {
-      title: blog.frontmatter.title,
-      description: blog.frontmatter.description,
-      url: `/blog/${blog.slug}`,
-      type: 'article',
-      publishedTime: blog.frontmatter.date,
-      authors: [blog.frontmatter.author || 'Avni Team'],
-      images: [
-        {
-          url: blog.frontmatter.image,
-          width: 1200,
-          height: 630,
-          alt: blog.frontmatter.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: blog.frontmatter.title,
-      description: blog.frontmatter.description,
-      images: [blog.frontmatter.image],
-    },
-  };
+  return generateBlogSEO(blog);
 }
 
 // Generate static params for all blog posts
@@ -63,9 +50,10 @@ export async function generateStaticParams() {
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const blog = await getBlogBySlug(params.slug);
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
 
   if (!blog) {
     notFound();
@@ -73,140 +61,140 @@ export default async function BlogPostPage({
 
   const { frontmatter, htmlContent } = blog;
 
+  // Generate JSON-LD structured data
+  const blogJSONLD = generateBlogJSONLD(blog);
+  const breadcrumbJSONLD = generateBlogBreadcrumbJSONLD(blog);
+
+  // Get smart related posts using the new algorithm
+  const allBlogs = await getAllBlogs();
+  const relatedPosts = getSmartRelatedPosts(slug, allBlogs, 3);
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <Script
+        id="blog-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJSONLD) }}
+      />
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJSONLD) }}
+      />
+
       <Header />
 
       <main className="min-h-screen bg-white pt-[72px]">
-        {/* Article Header */}
-        <article className="max-w-4xl mx-auto px-6 py-12">
-          {/* Category Badge */}
-          <div className="mb-4">
-            <span className="inline-block px-3 py-1 bg-[#419372] text-white text-sm font-medium rounded-full">
-              {frontmatter.category}
-            </span>
-          </div>
-
-          {/* Title */}
-          <h1 className="font-anek font-bold text-4xl md:text-5xl lg:text-6xl text-[#0b2540] mb-4">
-            {frontmatter.title}
-          </h1>
-
-          {/* Meta Info */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-8">
-            <div className="flex items-center gap-2">
-              <span className="font-medium text-gray-900">{frontmatter.author || 'Avni Team'}</span>
+        {/* Header Section - Fully Responsive */}
+        <div className="bg-[#F8F9FA] border-b border-gray-200">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+            {/* Back to All Cases */}
+            <div className="pt-6 sm:pt-8 pb-4 sm:pb-6">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-[#419372] font-noto text-sm font-medium hover:underline"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span className="hidden sm:inline">Back to All Cases</span>
+                <span className="sm:hidden">Back</span>
+              </Link>
             </div>
-            <span>•</span>
-            <time dateTime={frontmatter.date}>
-              {new Date(frontmatter.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </time>
-            {frontmatter.readTime && (
-              <>
-                <span>•</span>
-                <span>{frontmatter.readTime}</span>
-              </>
-            )}
-          </div>
 
-          {/* Featured Image */}
-          {frontmatter.image && (
-            <div className="relative aspect-video w-full mb-12 rounded-xl overflow-hidden">
-              <Image
-                src={frontmatter.image}
-                alt={frontmatter.title}
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            {/* Header Content - Responsive */}
+            <div className="pb-8 sm:pb-10 md:pb-12">
+              {/* Category Badge */}
+              {frontmatter.category && (
+                <div className="mb-4 sm:mb-6">
+                  <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[#FFE5E5] text-[#FF6B6B] font-anek font-semibold text-xs uppercase tracking-wide rounded-md">
+                    {frontmatter.category}
+                  </span>
+                </div>
+              )}
+
+              {/* Title - Fluid Typography */}
+              <h1 className="font-anek font-bold text-[clamp(28px,5vw,56px)] text-[#0b2540] mb-4 sm:mb-6 leading-[1.2] max-w-[900px]">
+                {frontmatter.title}
+              </h1>
+
+              {/* Subtitle/Description - Responsive */}
+              {frontmatter.description && (
+                <p className="font-noto text-base sm:text-lg md:text-xl text-[#6B7280] leading-relaxed max-w-[800px]">
+                  {frontmatter.description}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Article Container - Responsive */}
+        <article className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 pb-12 sm:pb-16 mt-8 sm:mt-12">
+
+          {/* Blog Content - Main Column with Sidebar */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_310px] gap-8">
+            <div id="blog-content-area" className="min-w-0 overflow-hidden">
+              {/* Markdown Content - Images will appear in their markdown order */}
+              <BlogContent htmlContent={htmlContent || ''} />
+
+              {/* Written By & Tags Section */}
+              <WrittenBySection
+                author={frontmatter.author || 'Avni Team'}
+                authorTitle={frontmatter.authorTitle}
+                date={frontmatter.date}
+                tags={frontmatter.tags}
               />
             </div>
-          )}
 
-          {/* Content */}
-          <div
-            className="prose prose-lg max-w-none
-              prose-headings:font-anek prose-headings:font-bold prose-headings:text-[#0b2540]
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3
-              prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-              prose-a:text-[#419372] prose-a:no-underline hover:prose-a:underline
-              prose-strong:text-gray-900 prose-strong:font-semibold
-              prose-ul:my-6 prose-ol:my-6
-              prose-li:text-gray-700 prose-li:mb-2
-              prose-img:rounded-lg prose-img:shadow-lg
-              prose-code:text-[#419372] prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-              prose-blockquote:border-l-4 prose-blockquote:border-[#FFD84D] prose-blockquote:pl-4 prose-blockquote:italic"
-            dangerouslySetInnerHTML={{ __html: htmlContent || '' }}
-          />
+            {/* Sidebar - Desktop Only */}
+            <div className="hidden lg:block">
+              <SmartStickySidebar
+                date={frontmatter.date}
+                author={frontmatter.author || 'Avni Team'}
+                readTime={frontmatter.readTime || frontmatter.readingTime || '5 mins.'}
+                title={frontmatter.title}
+                slug={slug}
+              />
+            </div>
+          </div>
 
-          {/* Tags */}
-          {frontmatter.tags && frontmatter.tags.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <h3 className="font-anek font-semibold text-lg text-gray-900 mb-4">
-                Tags
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {frontmatter.tags.map((tag: string) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-                  >
-                    #{tag}
-                  </span>
+          {/* Mobile Sidebar - Show only on mobile */}
+          <div className="lg:hidden mt-12 space-y-4">
+            <BlogMetaInfo
+              date={frontmatter.date}
+              author={frontmatter.author || 'Avni Team'}
+              readTime={frontmatter.readTime || frontmatter.readingTime || '5 mins.'}
+            />
+            <BlogShareCTA
+              title={frontmatter.title}
+              slug={slug}
+            />
+          </div>
+
+        </article>
+
+        {/* Related Posts - Full width background */}
+        {relatedPosts.length > 0 && (
+          <div className="w-full bg-gradient-to-b from-[#E9EAF8]/40 to-[#E9EAF8]/60 py-16 lg:py-20">
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+              <div className="text-center mb-12">
+                <p className="font-anek font-semibold text-sm text-[#419372] uppercase tracking-wide mb-3">
+                  CONTINUE READING
+                </p>
+                <h2 className="font-anek font-bold text-3xl lg:text-4xl text-[#0b2540] mb-4">
+                  You Might Also Like
+                </h2>
+                <p className="font-noto text-base lg:text-lg text-[#6B7280] max-w-2xl mx-auto">
+                  Discover more insights and stories from the Avni community
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {relatedPosts.slice(0, 3).map((post) => (
+                  <BlogCard key={post.slug} blog={post} />
                 ))}
               </div>
             </div>
-          )}
-
-          {/* Author Bio */}
-          <div className="mt-12 p-6 bg-gray-50 rounded-xl">
-            <h3 className="font-anek font-semibold text-lg text-gray-900 mb-2">
-              About the Author
-            </h3>
-            <p className="text-gray-700">
-              {frontmatter.author || 'Avni Team'} is part of the Avni team, working to empower NGOs with digital tools for field operations.
-            </p>
           </div>
-
-          {/* Share Buttons */}
-          <div className="mt-8 flex items-center gap-4">
-            <span className="font-medium text-gray-900">Share:</span>
-            <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(`https://avniproject.org/blog/${blog.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-[#419372] transition-colors"
-            >
-              Twitter
-            </a>
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://avniproject.org/blog/${blog.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-[#419372] transition-colors"
-            >
-              LinkedIn
-            </a>
-          </div>
-
-          {/* Back to Blog */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-[#419372] hover:text-[#357a5e] font-medium transition-colors"
-            >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              Back to Blog
-            </Link>
-          </div>
-        </article>
+        )}
       </main>
 
       <Footer />

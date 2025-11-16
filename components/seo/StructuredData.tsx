@@ -3,8 +3,6 @@
  * Renders JSON-LD structured data for SEO
  */
 
-import Script from 'next/script';
-
 interface StructuredDataProps {
   data: Record<string, any> | Array<Record<string, any>>;
 }
@@ -15,7 +13,7 @@ export default function StructuredData({ data }: StructuredDataProps) {
   return (
     <>
       {jsonLd.map((item, index) => (
-        <Script
+        <script
           key={index}
           id={`structured-data-${index}`}
           type="application/ld+json"

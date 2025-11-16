@@ -36,18 +36,18 @@ const features = [
 
 export default function Transparency() {
   return (
-    <Section spacing="lg" className="bg-white">
+    <Section spacing="lg" className="bg-[#E9EAF84D]">
       <Container>
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-[60px]">
-          <p className="font-anek font-medium text-xs md:text-sm leading-tight text-[#fba47e] uppercase mb-3 md:mb-4">
+          <p className="font-anek font-medium text-sm md:text-base leading-tight text-[#fba47e] uppercase mb-4 md:mb-5">
             FOR DONORS
           </p>
-          <h2 className="font-anek font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#0b2540] mb-4 md:mb-6">
+          <h2 className="font-anek font-bold text-4xl md:text-5xl lg:text-[56px] leading-tight text-[#0b2540] mb-5 md:mb-6">
             Transparency You Can Trust
           </h2>
-          <p className="font-noto text-sm md:text-base leading-relaxed text-[#000000] max-w-3xl mx-auto px-4">
-            Avni gives funders <span className="bg-[#FFF4E6] px-1">real-time visibility and reliable data</span> — turning impact into measurable insight.
+          <p className="font-noto text-base md:text-lg lg:text-[20px] leading-relaxed text-[#4A4A4A] max-w-3xl mx-auto px-4">
+            Avni gives funders <span className="underline decoration-[#FFD84D] decoration-[3px] underline-offset-4">real-time visibility and reliable data</span> — turning impact into measurable insight.
           </p>
         </div>
 
@@ -70,12 +70,12 @@ export default function Transparency() {
               {/* Content */}
               <div className="flex-1">
                 {/* Title */}
-                <h3 className="font-anek font-bold text-lg md:text-xl leading-tight text-[#0b2540] mb-3">
+                <h3 className="font-anek font-bold text-xl md:text-2xl lg:text-[24px] leading-tight text-[#0b2540] mb-3">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="font-noto text-sm md:text-base leading-relaxed text-[#000000]">
+                <p className="font-noto text-base md:text-lg leading-relaxed text-[#4A4A4A]">
                   {feature.description}
                 </p>
               </div>

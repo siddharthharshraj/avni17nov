@@ -6,60 +6,87 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Blog } from '@/lib/markdown';
+import { getCategoryBadgeStyles } from '@/lib/categories';
 
 interface BlogCardProps {
   blog: Blog;
 }
 
-const getCategoryColor = (category: string): string => {
-  const colors: Record<string, string> = {
-    'User Story': 'bg-[#FEF3F2] text-[#B42318]',
-    'Technical Story': 'bg-[#FFF4ED] text-[#C4320A]',
-    'Sector': 'bg-[#FFF6ED] text-[#C4320A]',
-    'Avni News': 'bg-[#FFF1F3] text-[#C01048]',
-  };
-  return colors[category] || 'bg-gray-100 text-gray-700';
-};
-
 export default function BlogCard({ blog }: BlogCardProps) {
   const { frontmatter, slug } = blog;
+  
+  // Extract featured image src - support both 'image' and 'featuredImage' fields
+  const featuredImageSrc = typeof frontmatter.featuredImage === 'string' 
+    ? frontmatter.featuredImage 
+    : frontmatter.featuredImage?.src || frontmatter.image;
+  
+  // Use SVG fallback if no image provided OR if using old default path
+  const isDefaultOrMissing = !featuredImageSrc || 
+    featuredImageSrc.trim() === '' || 
+    featuredImageSrc.includes('default-blog.jpg') ||
+    featuredImageSrc.includes('default-blog.svg');
+  
+  const finalImageSrc = isDefaultOrMissing
+    ? '/images/blogs/default-blog-banner.svg'
+    : featuredImageSrc;
+  
+  // Always show image (either real or fallback SVG)
+  const hasValidImage = true;
 
   return (
-    <div className="bg-white rounded-[16px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.12)] transition-shadow duration-300">
-      {/* Image */}
-      <div className="relative w-full h-[240px] overflow-hidden">
-        <Image
-          src={frontmatter.image}
-          alt={frontmatter.title}
-          fill
-          className="object-cover hover:scale-105 transition-transform duration-500"
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
-      </div>
+    <div 
+      className="bg-white border border-[#E6E6E6] rounded-[8px] overflow-hidden hover:shadow-lg transition-shadow duration-300 
+                 w-full max-w-[402px] mx-auto
+                 sm:w-full md:w-[380px] lg:w-[402px]
+                 flex flex-col"
+    >
+      {/* Image - Always show (real image or SVG fallback) */}
+      {hasValidImage && (
+        <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] overflow-hidden flex-shrink-0">
+          <Image
+            src={finalImageSrc}
+            alt={frontmatter.title}
+            fill
+            className="object-cover hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 402px"
+            loading="lazy"
+          />
+        </div>
+      )}
 
       {/* Content */}
-      <div className="p-6">
-        {/* Category Badge */}
-        <div className="mb-3">
-          <span className={`inline-block px-3 py-1 rounded-full text-xs font-anek font-medium uppercase tracking-wide ${getCategoryColor(frontmatter.category)}`}>
-            {frontmatter.category}
-          </span>
-        </div>
+      <div className="p-4 sm:p-5 md:p-6 flex flex-col justify-between flex-grow min-h-[200px] sm:min-h-[220px] md:min-h-[225px]">
+        <div className="flex-grow">
+          {/* Category Badge - Only show if category exists */}
+          {frontmatter.category && (
+            <div className="mb-2 sm:mb-3">
+              <span 
+                className="inline-block px-2.5 py-1 sm:px-3 rounded-md text-xs font-anek font-semibold uppercase tracking-wide bg-[#FF8854] text-white"
+              >
+                {frontmatter.category}
+              </span>
+            </div>
+          )}
 
-        {/* Title */}
-        <h3 className="font-anek font-bold text-xl leading-tight text-[#0b2540] mb-3 line-clamp-2 min-h-[56px]">
-          {frontmatter.title}
-        </h3>
+          {/* Title - Responsive */}
+          <h3 
+            className="font-anek font-bold text-[#000000] mb-3 sm:mb-4 line-clamp-3
+                       text-lg sm:text-xl md:text-2xl
+                       leading-tight sm:leading-snug"
+          >
+            {frontmatter.title}
+          </h3>
+        </div>
 
         {/* Read More Button */}
         <Link
           href={`/blog/${slug}`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#419372] text-white rounded-full font-anek font-medium text-sm hover:bg-[#357a5e] transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 
+                     bg-[#419372] text-white rounded-full font-anek font-medium 
+                     text-sm hover:bg-[#357a5e] transition-colors self-start
+                     mt-auto"
         >
-          Read More
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          Read More →
         </Link>
       </div>
     </div>

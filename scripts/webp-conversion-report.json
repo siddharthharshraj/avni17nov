@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-11-13T07:34:06.948Z",
+  "stats": {
+    "total": 40,
+    "converted": 0,
+    "skipped": 39,
+    "errors": 1,
+    "originalSize": 29,
+    "webpSize": 0
+  },
+  "config": {
+    "quality": 80,
+    "effort": 6,
+    "directories": [
+      "public"
+    ],
+    "extensions": [
+      ".png",
+      ".jpg",
+      ".jpeg"
+    ],
+    "skipPatterns": [
+      "node_modules",
+      ".next",
+      "out",
+      ".git"
+    ]
+  }
+}

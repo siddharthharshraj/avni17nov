@@ -60,7 +60,7 @@ export default function Solutions() {
           <h2 className="font-anek font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#0b2540] mb-4 md:mb-6">
             Solutions That Power Your Programs
           </h2>
-          <p className="font-noto text-sm md:text-base leading-relaxed text-[#000000] max-w-3xl mx-auto">
+          <p className="font-noto text-xl md:text-2xl lg:text-[22px] leading-relaxed text-[#4A4A4A] max-w-3xl mx-auto">
             From case management to cohort studies, Avni adapts to diverse program needs — making data collection and monitoring effortless
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function Solutions() {
           {solutions.map((solution) => (
             <div
               key={solution.id}
-              className="bg-[#F5F5F5] rounded-2xl p-6 md:p-8 hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition-all duration-300"
             >
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
                 {/* Icon */}

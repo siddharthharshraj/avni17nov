@@ -12,7 +12,7 @@ export default function ImpactStories() {
   const story = impactStories[activeSector];
 
   return (
-    <Section spacing="lg" className="bg-[#F5F5F5]">
+    <Section spacing="lg" className="bg-[#E9EAF84D]">
       <Container>
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-[60px]">
@@ -22,21 +22,21 @@ export default function ImpactStories() {
           <h2 className="font-anek font-bold text-3xl md:text-4xl lg:text-5xl xl:text-[64px] leading-tight text-[#0b2540] mb-3 md:mb-4">
             Impact Stories
           </h2>
-          <p className="font-noto text-sm md:text-base lg:text-lg xl:text-[20px] leading-relaxed text-[#000000]">
+          <p className="font-noto text-xl md:text-2xl lg:text-[22px] leading-relaxed text-[#4A4A4A]">
             Empowering Every Mission, Adapting To Every Context
           </p>
         </div>
 
         {/* Sector Tabs */}
-        <div className="flex justify-center gap-3 md:gap-4 mb-12 md:mb-16 lg:mb-[60px] flex-wrap">
+        <div className="flex justify-start gap-3 md:gap-4 mb-12 md:mb-16 lg:mb-[60px] overflow-x-auto scrollbar-hide">
           {sectors.map((sector) => (
             <button
               key={sector}
               onClick={() => setActiveSector(sector)}
-              className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-anek font-medium text-xs md:text-sm leading-tight transition-all duration-300 ${
+              className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full font-anek font-bold text-[16px] leading-[16px] transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
                 activeSector === sector
-                  ? "bg-[#419372] text-white shadow-lg scale-105"
-                  : "bg-white text-[#0b2540] hover:bg-[#419372]/10 hover:scale-102"
+                  ? "bg-[#419372] text-white shadow-md"
+                  : "bg-white text-[#6B7280] hover:bg-[#419372]/10 hover:text-[#0b2540]"
               }`}
             >
               {sector}
@@ -50,7 +50,7 @@ export default function ImpactStories() {
           key={activeSector}
         >
           {/* Image */}
-          <div className="relative w-full lg:w-[420px] aspect-video lg:aspect-[3/2] rounded-2xl lg:rounded-[24px] overflow-hidden shadow-xl flex-shrink-0 animate-fadeIn">
+          <div className="relative w-full lg:w-1/2 aspect-video rounded-2xl lg:rounded-[24px] overflow-hidden shadow-xl flex-shrink-0 animate-fadeIn">
             <Image
               src={story.image}
               alt={story.title}
@@ -60,11 +60,11 @@ export default function ImpactStories() {
           </div>
 
           {/* Content */}
-          <div className="w-full lg:w-auto lg:flex-1 lg:max-w-[538px] animate-slideIn">
+          <div className="w-full lg:w-1/2 animate-slideIn">
             <h3 className="font-anek font-bold text-2xl md:text-3xl lg:text-[32px] leading-tight text-[#0b2540] mb-4 md:mb-5 lg:mb-[20px]">
               {story.title}
             </h3>
-            <p className="font-noto text-sm md:text-base lg:text-[16px] leading-relaxed lg:leading-[26px] text-[#000000] mb-6 md:mb-8 lg:mb-[32px]">
+            <p className="font-noto text-xl md:text-2xl lg:text-[22px] leading-relaxed text-[#4A4A4A] mb-6 md:mb-8 lg:mb-[32px]">
               {story.description}
             </p>
             <Link

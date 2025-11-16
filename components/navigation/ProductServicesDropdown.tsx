@@ -6,10 +6,10 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { productServicesTabs, servicesItems, useCasesItems, featuredBlog } from '@/data/navigation';
+import { productServicesTabs, servicesItems, useCasesItems } from '@/data/navigation';
 
 interface ProductServicesDropdownProps {
   isOpen: boolean;
@@ -18,8 +18,36 @@ interface ProductServicesDropdownProps {
   onMouseLeave?: () => void;
 }
 
+interface FeaturedBlogData {
+  title: string;
+  link: string;
+  image: string;
+}
+
 export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter, onMouseLeave }: ProductServicesDropdownProps) {
   const [activeTab, setActiveTab] = useState('services');
+  const [featuredBlog, setFeaturedBlog] = useState<FeaturedBlogData>({
+    title: 'How Goonj Uses Avni To Digitise Offline Data Collection And Inventory Flow >',
+    image: '/images/goonj-featured.webp',
+    link: '/blog/goonj-case-study',
+  });
+
+  // Fetch featured blog on mount
+  useEffect(() => {
+    async function fetchFeaturedBlog() {
+      try {
+        const response = await fetch('/api/featured-blog');
+        if (response.ok) {
+          const data = await response.json();
+          setFeaturedBlog(data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch featured blog:', error);
+        // Keep default fallback
+      }
+    }
+    fetchFeaturedBlog();
+  }, []);
 
   if (!isOpen) return null;
 
@@ -186,13 +214,13 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
                   className="block group"
                   onClick={onClose}
                 >
-                  <div className="relative w-[283px] h-[169px] rounded-[30px] overflow-hidden mb-[16px]">
+                  <div className="relative w-[283px] h-[169px] rounded-[30px] overflow-hidden mb-[16px] bg-[#f5f5f5]">
                     <Image
                       src={featuredBlog.image}
                       alt="Featured Blog"
                       width={283}
                       height={169}
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 
