@@ -19,12 +19,12 @@ export default function FeaturedBlog({ blog }: FeaturedBlogProps) {
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         {/* Left: Image */}
         <div className="w-full lg:w-[400px] flex-shrink-0">
-          <div className="relative w-full h-[280px] lg:h-[320px] rounded-[16px] overflow-hidden">
+          <div className="relative w-full h-[280px] lg:h-[320px] rounded-[16px] overflow-hidden bg-gray-50">
             <Image
               src={frontmatter.image || '/images/blog-placeholder.jpg'}
               alt={frontmatter.title}
               fill
-              className="object-cover"
+              className="object-contain"
               priority
               sizes="(max-width: 1024px) 100vw, 400px"
             />
