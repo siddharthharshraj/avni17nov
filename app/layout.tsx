@@ -3,6 +3,7 @@ import { Anek_Latin, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { WebVitals } from "./web-vitals";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/StructuredData";
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
 
 const anekLatin = Anek_Latin({
   subsets: ["latin"],
@@ -132,6 +133,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
       </head>
       <body className="font-noto">
+        <ServiceWorkerRegistration />
         <OrganizationSchema />
         <WebsiteSchema />
         {children}
