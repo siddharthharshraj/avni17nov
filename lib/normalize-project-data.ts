@@ -26,8 +26,10 @@ export function normalizeProjectData(rawData: any): NormalizedProjectData {
     options: field.options || undefined,
   }));
 
-  // Find the Status/Stage field for grouping (single-select field)
+  // Find the Release field for grouping (prioritize release/version fields)
   const groupByField = fields.find(
+    (f) => f.name.toLowerCase().includes('release') || f.name.toLowerCase().includes('version') || f.name.toLowerCase().includes('milestone')
+  )?.name || fields.find(
     (f) => f.dataType === 'SINGLE_SELECT' && (f.name.toLowerCase().includes('status') || f.name.toLowerCase().includes('stage'))
   )?.name || fields.find((f) => f.dataType === 'SINGLE_SELECT')?.name;
 
@@ -103,7 +105,7 @@ export function normalizeProjectData(rawData: any): NormalizedProjectData {
   });
 
   // Group items by the groupByField
-  const columns: { [columnName: string]: ProjectItem[] } = {};
+  let columns: { [columnName: string]: ProjectItem[] } = {};
 
   if (groupByField) {
     // Get all possible column values from the field options
@@ -129,6 +131,46 @@ export function normalizeProjectData(rawData: any): NormalizedProjectData {
         columns['No Status'].push(item);
       }
     });
+
+    // Sort columns by version number if grouping by release/version
+    if (groupByField.toLowerCase().includes('release') || 
+        groupByField.toLowerCase().includes('version') ||
+        groupByField.toLowerCase().includes('milestone')) {
+      const sortedColumns: { [columnName: string]: ProjectItem[] } = {};
+      const columnNames = Object.keys(columns).filter(name => name !== 'No Status');
+      
+      // Sort version numbers in descending order (newest first)
+      columnNames.sort((a, b) => {
+        // Extract version numbers (e.g., "16.0.0" -> [16, 0, 0])
+        const parseVersion = (v: string) => {
+          const match = v.match(/(\d+)\.(\d+)\.(\d+)/);
+          return match ? [parseInt(match[1]), parseInt(match[2]), parseInt(match[3])] : [0, 0, 0];
+        };
+        
+        const versionA = parseVersion(a);
+        const versionB = parseVersion(b);
+        
+        // Compare major, minor, patch in order
+        for (let i = 0; i < 3; i++) {
+          if (versionB[i] !== versionA[i]) {
+            return versionB[i] - versionA[i]; // Descending order
+          }
+        }
+        return 0;
+      });
+      
+      // Rebuild columns object in sorted order
+      columnNames.forEach(name => {
+        sortedColumns[name] = columns[name];
+      });
+      
+      // Add "No Status" at the end if it has items
+      if (columns['No Status'].length > 0) {
+        sortedColumns['No Status'] = columns['No Status'];
+      }
+      
+      columns = sortedColumns;
+    }
   } else {
     // No grouping field found, put all items in one column
     columns['All Items'] = items;
