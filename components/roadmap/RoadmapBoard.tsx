@@ -18,12 +18,13 @@ export default function RoadmapBoard() {
   const [lastUpdated, setLastUpdated] = useState<string>('');
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const fetchData = async () => {
+  const fetchData = async (forceRefresh: boolean = false) => {
     try {
       setLoading(true);
       setError(null);
 
-      const response = await fetch('/api/roadmap');
+      const url = forceRefresh ? '/api/roadmap?refresh=true' : '/api/roadmap';
+      const response = await fetch(url);
       const result = await response.json();
 
       if (result.success && result.data) {
@@ -118,7 +119,7 @@ export default function RoadmapBoard() {
             </pre>
           </div>
           <button
-            onClick={fetchData}
+            onClick={() => fetchData(true)}
             className="px-6 py-2 bg-[#419372] text-white rounded-full hover:bg-[#357a5e] transition-colors font-anek"
           >
             Try Again
@@ -167,7 +168,7 @@ export default function RoadmapBoard() {
             </span>
           )}
           <button
-            onClick={fetchData}
+            onClick={() => fetchData(true)}
             disabled={loading}
             className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-[10px] hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >

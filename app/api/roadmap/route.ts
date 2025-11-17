@@ -16,8 +16,18 @@ const CACHE_DURATION = 48 * 60 * 60 * 1000;
 let cachedData: any = null;
 let cacheTimestamp: number = 0;
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    // Check for force refresh parameter
+    const { searchParams } = new URL(request.url);
+    const forceRefresh = searchParams.get('refresh') === 'true';
+    
+    if (forceRefresh) {
+      console.log('Force refresh requested - bypassing cache');
+      cachedData = null;
+      cacheTimestamp = 0;
+    }
+    
     // Check cache
     const now = Date.now();
     if (cachedData && (now - cacheTimestamp) < CACHE_DURATION) {
