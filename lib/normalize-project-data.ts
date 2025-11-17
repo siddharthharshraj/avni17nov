@@ -27,11 +27,19 @@ export function normalizeProjectData(rawData: any): NormalizedProjectData {
   }));
 
   // Find the Release field for grouping (prioritize release/version fields)
-  const groupByField = fields.find(
+  const releaseField = fields.find(
     (f) => f.name.toLowerCase().includes('release') || f.name.toLowerCase().includes('version') || f.name.toLowerCase().includes('milestone')
-  )?.name || fields.find(
+  );
+  const statusField = fields.find(
     (f) => f.dataType === 'SINGLE_SELECT' && (f.name.toLowerCase().includes('status') || f.name.toLowerCase().includes('stage'))
-  )?.name || fields.find((f) => f.dataType === 'SINGLE_SELECT')?.name;
+  );
+  const anySelectField = fields.find((f) => f.dataType === 'SINGLE_SELECT');
+  
+  const groupByField = releaseField?.name || statusField?.name || anySelectField?.name;
+  
+  console.log('🔍 Debug - Available fields:', fields.map(f => ({ name: f.name, dataType: f.dataType })));
+  console.log('🎯 Debug - Selected groupByField:', groupByField);
+  console.log('✅ Debug - Release field found:', releaseField?.name);
 
   // Normalize project metadata
   const project: Project = {
