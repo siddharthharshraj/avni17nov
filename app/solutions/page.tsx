@@ -13,6 +13,7 @@ import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Newsletter from '@/components/sections/Newsletter';
+import { solutionCards } from '@/data/solution-cards';
 
 // Solution categories
 const solutions = [
@@ -267,6 +268,7 @@ function SolutionsContent() {
   }, [searchParams]);
 
   const currentContent = solutionContent[activeTab as keyof typeof solutionContent];
+  const currentCards = solutionCards[activeTab] || solutionCards['Education'];
 
   return (
     <>
@@ -343,7 +345,7 @@ function SolutionsContent() {
             <div className="mt-12">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {/* Content Cards */}
-                  {currentContent.cards.map((card, index) => (
+                  {currentCards.cards.map((card, index) => (
                     <Link
                       key={index}
                       href={card.link}
@@ -372,16 +374,16 @@ function SolutionsContent() {
 
                   {/* CTA Card */}
                   <Link
-                    href={currentContent.cta.link}
+                    href={currentCards.cta.link}
                     className="group bg-[#f7f9fc] rounded-[16px] p-6 flex flex-col items-center justify-center text-center space-y-4 shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.1)] transition-all"
                   >
-                    <div className="text-5xl">{currentContent.cta.icon}</div>
+                    <div className="text-5xl">{currentCards.cta.icon}</div>
                     <div className="space-y-2">
                       <h3 className="font-anek font-bold text-[18px] lg:text-[19px] leading-[1.3] text-[#0a1f3d]">
-                        {currentContent.cta.title}
+                        {currentCards.cta.title}
                       </h3>
                       <p className="font-noto text-[15px] leading-[1.5] text-[#5a6c7d]">
-                        {currentContent.cta.description}
+                        {currentCards.cta.description}
                       </p>
                     </div>
                   </Link>

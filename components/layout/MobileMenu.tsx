@@ -227,13 +227,15 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                     Sign Up for Free Trial
                   </Link>
                   
-                  <Link
-                    href="/demo"
+                  <a
+                    href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={handleCloseAll}
                     className="block w-full py-3 text-center font-anek font-semibold text-base text-[#419372] border-2 border-[#419372] rounded-full hover:bg-[#419372] hover:text-white transition-all"
                   >
-                    Request a Demo
-                  </Link>
+                    Schedule a Demo
+                  </a>
                   
                   <Link
                     href="/login"

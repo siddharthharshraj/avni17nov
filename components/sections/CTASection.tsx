@@ -57,12 +57,14 @@ export default function CTASection() {
                 >
                   Sign Up for Free Trial
                 </Link>
-                <Link
-                  href="/demo"
+                <a
+                  href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 md:px-8 py-3 md:py-3.5 border-2 border-[#419372] text-[#419372] rounded-full font-anek font-semibold text-sm md:text-base leading-tight hover:bg-[#419372] hover:text-white transition-all text-center"
                 >
                   Book A Demo
-                </Link>
+                </a>
               </div>
               
               {/* Second Row - Contact Sales */}

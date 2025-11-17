@@ -142,6 +142,7 @@ export default function AboutPage() {
                       alt={founder.name}
                       fill
                       className="object-cover"
+                      style={{ mixBlendMode: 'darken' }}
                     />
                   </div>
                   <h3 className="font-anek font-medium text-[20px] text-[#0b2540] mb-2">
@@ -182,6 +183,7 @@ export default function AboutPage() {
                       alt={member.name}
                       fill
                       className="object-cover"
+                      style={{ mixBlendMode: 'darken' }}
                     />
                   </div>
                   <h3 className="font-anek font-medium text-[16px] sm:text-[18px] text-[#0b2540] mb-2 text-center">

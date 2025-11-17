@@ -18,6 +18,7 @@ export interface CaseStudyFrontmatter {
   slug: string;
   sector: string;
   logo: string;
+  heroImage?: string; // Optional hero image for two-column layout
   featured?: boolean; // Optional - set in markdown front matter
   description: string;
   date: string;
@@ -154,6 +155,38 @@ export async function getAllSectors(): Promise<string[]> {
   const allCaseStudies = await getAllCaseStudies();
   const sectors = allCaseStudies.map(cs => cs.frontmatter.sector);
   return Array.from(new Set(sectors)).sort();
+}
+
+/**
+ * Get related case studies based on sector
+ */
+export async function getRelatedCaseStudies(
+  currentSlug: string,
+  limit: number = 3
+): Promise<CaseStudy[]> {
+  const currentCaseStudy = await getCaseStudyBySlug(currentSlug);
+  if (!currentCaseStudy) return [];
+
+  const allCaseStudies = await getAllCaseStudies();
+  
+  // Filter out current case study
+  const otherCaseStudies = allCaseStudies.filter(cs => cs.slug !== currentSlug);
+  
+  // Find related by sector first
+  const sameSector = otherCaseStudies.filter(
+    cs => cs.frontmatter.sector === currentCaseStudy.frontmatter.sector
+  );
+  
+  // If not enough, add others
+  const related = [...sameSector];
+  if (related.length < limit) {
+    const others = otherCaseStudies.filter(
+      cs => cs.frontmatter.sector !== currentCaseStudy.frontmatter.sector
+    );
+    related.push(...others);
+  }
+  
+  return related.slice(0, limit);
 }
 
 // ============================================================================

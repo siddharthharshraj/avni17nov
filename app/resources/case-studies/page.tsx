@@ -9,16 +9,25 @@ import Footer from '@/components/layout/Footer';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import { getFeaturedCaseStudy, getNonFeaturedCaseStudies } from '@/lib/markdown';
-import CaseStudiesClient from './CaseStudiesClient';
+import FeaturedCaseStudy from '@/components/case-studies/FeaturedCaseStudy';
+import CaseStudiesClient from '@/components/case-studies/CaseStudiesClient';
 
 export const metadata: Metadata = {
   title: 'Case Studies - Customer Journeys With Avni',
-  description: 'Discover how NGOs across India use Avni to digitize field operations, track impact, and scale their programs. Read real success stories and implementation case studies.',
-  keywords: ['case studies', 'NGO success stories', 'digital transformation', 'field work digitization', 'impact measurement'],
+  description: 'Discover how 60+ NGOs across India use Avni to digitize field operations, track impact, and scale their programs. Read real success stories and implementation case studies.',
+  keywords: ['case studies', 'NGO success stories', 'digital transformation', 'field work digitization', 'impact measurement', 'Avni platform'],
   openGraph: {
     title: 'Case Studies - Customer Journeys With Avni',
     description: 'Discover how NGOs use Avni to digitize field operations and scale impact.',
-    url: '/resources/case-studies',
+    url: 'https://avniproject.org/resources/case-studies',
+    siteName: 'Avni',
+    images: [{ url: '/images/og-case-studies.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Case Studies - Customer Journeys With Avni',
+    description: 'Discover how NGOs use Avni to digitize field operations.',
+    images: ['/images/og-case-studies.jpg'],
   },
 };
 
@@ -49,11 +58,17 @@ export default async function CaseStudiesPage() {
           </Container>
         </Section>
 
-        {/* Client-side components for search and filtering */}
-        <CaseStudiesClient 
-          featuredCaseStudy={featuredCaseStudy}
-          caseStudies={caseStudies}
-        />
+        {/* Featured Case Study */}
+        {featuredCaseStudy && (
+          <Section spacing="lg" className="bg-[#F5F5F5]">
+            <Container>
+              <FeaturedCaseStudy caseStudy={featuredCaseStudy} />
+            </Container>
+          </Section>
+        )}
+
+        {/* All Case Studies with Filters */}
+        <CaseStudiesClient key="case-studies-client" caseStudies={caseStudies} />
 
         {/* CTA Section */}
         <Section spacing="lg" className="bg-white">
@@ -73,7 +88,9 @@ export default async function CaseStudiesPage() {
                   Start Free Trial
                 </a>
                 <a
-                  href="/contact"
+                  href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-3 border-2 border-[#419372] text-[#419372] rounded-full font-anek font-medium text-base hover:bg-[#419372] hover:text-white transition-colors"
                 >
                   Schedule a Demo

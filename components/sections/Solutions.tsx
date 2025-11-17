@@ -15,7 +15,7 @@ const solutions = [
     description: "Track Individual And Household Progress Over Time With Organized, Field-Ready Case Records",
     icon: "/icons/case-management.png",
     cta: "Learn More >",
-    ctaLink: "/solutions/case-management",
+    ctaLink: "/use-cases#case-management",
   },
   {
     id: "reporting",
@@ -23,7 +23,7 @@ const solutions = [
     description: "Generate Accurate, Real-Time Reports To Monitor Program Performance And Demonstrate Impact",
     icon: "/icons/reporting.png",
     cta: "Learn More >",
-    ctaLink: "/solutions/reporting",
+    ctaLink: "/use-cases#reporting",
   },
   {
     id: "cohort-research",
@@ -31,7 +31,7 @@ const solutions = [
     description: "Manage Longitudinal Studies With Structured Data Collection And Built-In Participant Tracking",
     icon: "/icons/cohort-based.png",
     cta: "Learn More >",
-    ctaLink: "/solutions/research",
+    ctaLink: "/use-cases#cohort-research",
   },
   {
     id: "surveys",

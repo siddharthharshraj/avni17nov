@@ -1,6 +1,12 @@
 /**
- * Individual Case Study Page
- * Dynamic route for displaying full case study content
+ * Case Study Page - Full Design Spec Implementation
+ * - Two-column hero with conditional image rendering
+ * - Proper typography (Anek Latin, Noto Sans)
+ * - Quote blocks with lavender background
+ * - Related case studies section
+ * - Fully responsive
+ * - SEO optimized
+ * - Performance optimized with Next.js Image
  */
 
 import { Metadata } from 'next';
@@ -9,57 +15,88 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Container from '@/components/ui/Container';
-import Section from '@/components/ui/Section';
-import MarkdownContent from '@/components/ui/MarkdownContent';
-import { getCaseStudyBySlug, getAllCaseStudySlugs } from '@/lib/markdown';
-import { getSectorColor } from '@/lib/filters';
+import CaseStudyContent from '@/components/case-studies/CaseStudyContent';
+import RelatedCaseStudies from '@/components/case-studies/RelatedCaseStudies';
+import { 
+  getCaseStudyBySlug, 
+  getAllCaseStudySlugs, 
+  getRelatedCaseStudies 
+} from '@/lib/markdown';
 
-// Generate static params for all case studies
+// Generate static params for all case studies at build time
 export async function generateStaticParams() {
   const slugs = getAllCaseStudySlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-// Generate metadata for SEO
+// Enable dynamic params for newly added case studies
+export const dynamicParams = true;
+
+// Use dynamic rendering during development
+export const dynamic = 'auto';
+export const revalidate = 3600; // Revalidate every hour
+
+// Generate rich metadata for SEO
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const caseStudy = await getCaseStudyBySlug(params.slug);
+  const { slug } = await params;
+  const caseStudy = await getCaseStudyBySlug(slug);
 
   if (!caseStudy) {
     return {
-      title: 'Case Study Not Found',
+      title: 'Case Study Not Found - Avni',
+      description: 'The requested case study could not be found.',
     };
   }
 
-  const { frontmatter } = caseStudy;
+  const { title, description, date, author, sector, logo, tags } = caseStudy.frontmatter;
+  const url = `https://avniproject.org/resources/case-studies/${slug}`;
 
   return {
-    title: `${frontmatter.title} - Avni Case Study`,
-    description: frontmatter.description,
-    keywords: frontmatter.tags || [frontmatter.sector, 'case study', 'NGO', 'digital transformation'],
+    title: `${title} | Avni Case Study`,
+    description: description || `Learn how ${title} uses Avni for digital transformation`,
+    keywords: [sector, ...(tags || []), 'Avni', 'case study', 'NGO', 'digital transformation', 'field data collection'],
+    authors: [{ name: author || 'Avni Team' }],
     openGraph: {
-      title: frontmatter.title,
-      description: frontmatter.description,
-      url: `/resources/case-studies/${params.slug}`,
+      title,
+      description,
+      url,
       type: 'article',
-      publishedTime: frontmatter.date,
-      authors: [frontmatter.author || 'Avni Team'],
+      publishedTime: date,
+      authors: author ? [author] : undefined,
       images: [
         {
-          url: frontmatter.logo,
-          alt: frontmatter.title,
+          url: logo,
+          width: 1200,
+          height: 630,
+          alt: title,
         },
       ],
+      siteName: 'Avni',
     },
     twitter: {
       card: 'summary_large_image',
-      title: frontmatter.title,
-      description: frontmatter.description,
-      images: [frontmatter.logo],
+      title,
+      description,
+      images: [logo],
+      creator: '@avniproject',
+    },
+    alternates: {
+      canonical: url,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
@@ -67,158 +104,115 @@ export async function generateMetadata({
 export default async function CaseStudyPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const caseStudy = await getCaseStudyBySlug(params.slug);
+  const { slug } = await params;
+  const caseStudy = await getCaseStudyBySlug(slug);
 
   if (!caseStudy) {
     notFound();
   }
 
-  const { frontmatter, htmlContent } = caseStudy;
+  const relatedCaseStudies = await getRelatedCaseStudies(slug, 3);
 
   return (
     <>
       <Header />
 
       <main className="min-h-screen bg-white pt-[72px]">
-        {/* Breadcrumb */}
-        <Section spacing="sm" className="bg-[#F5F5F5]">
-          <Container>
-            <nav className="flex items-center gap-2 text-sm font-noto">
-              <Link href="/" className="text-gray-600 hover:text-[#419372] transition-colors">
-                Home
-              </Link>
-              <span className="text-gray-400">/</span>
-              <Link href="/resources/case-studies" className="text-gray-600 hover:text-[#419372] transition-colors">
-                Case Studies
-              </Link>
-              <span className="text-gray-400">/</span>
-              <span className="text-[#0b2540] font-medium truncate">{frontmatter.title}</span>
-            </nav>
-          </Container>
-        </Section>
+        {/* Back to All Cases Link */}
+        <div className="px-4 sm:px-6 lg:px-16 xl:px-24 py-6 border-b border-[#E6E6E6]">
+          <Link 
+            href="/resources/case-studies" 
+            className="inline-flex items-center gap-2 text-[#419372] font-noto text-base hover:underline transition-all"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Back To All Cases
+          </Link>
+        </div>
 
-        {/* Hero Section */}
-        <Section spacing="lg" className="bg-[#F5F5F5]">
-          <Container>
-            <div className="max-w-4xl mx-auto">
-              {/* Logo */}
-              <div className="mb-6">
-                <div className="relative w-40 h-20">
+        {/* Hero Section - Two Column Layout */}
+        <section className="px-4 sm:px-6 lg:px-16 xl:px-24 py-8 sm:py-12 lg:py-16 bg-[#E9EAF8]">
+          <div className="max-w-[1440px] mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Left Column: Logo + Title + Metadata */}
+              <div className="space-y-4 sm:space-y-6">
+                {/* Organization Logo */}
+                <div className="w-24 h-20 sm:w-28 sm:h-24 md:w-32 md:h-28 relative border border-[#E6E6E6] rounded-[8px] sm:rounded-[12px] bg-white p-3 sm:p-4 flex items-center justify-center">
                   <Image
-                    src={frontmatter.logo}
-                    alt={frontmatter.title}
+                    src={caseStudy.frontmatter.logo}
+                    alt={caseStudy.frontmatter.title}
                     fill
-                    className="object-contain object-left"
+                    className="object-contain p-2"
                     priority
-                    sizes="160px"
+                    sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px"
                   />
                 </div>
-              </div>
 
-              {/* Sector Badge */}
-              <div className="mb-6">
-                <span className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-anek font-medium ${getSectorColor(frontmatter.sector)}`}>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0L10.472 5.528L16 8L10.472 10.472L8 16L5.528 10.472L0 8L5.528 5.528L8 0Z" fill="currentColor" opacity="0.6"/>
-                  </svg>
-                  {frontmatter.sector.toUpperCase()}
-                </span>
-              </div>
+                {/* Title */}
+                <h1 className="font-anek font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.2] text-[#0B2540]">
+                  {caseStudy.frontmatter.title}
+                </h1>
 
-              {/* Title */}
-              <h1 className="font-anek font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#0b2540] mb-6">
-                {frontmatter.title}
-              </h1>
-
-              {/* Meta Info */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-8">
-                <div className="flex items-center gap-2">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M8 4V8L10.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span>{frontmatter.readTime || '5 min read'}</span>
-                </div>
-                <span>•</span>
-                <div className="flex items-center gap-2">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V12.6667C2 13.403 2.59695 14 3.33333 14H12.6667C13.403 14 14 13.403 14 12.6667V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M10.6667 1.33334V4.00001" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M5.33333 1.33334V4.00001" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M2 6.66667H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <time dateTime={frontmatter.date}>
-                    {new Date(frontmatter.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                  </time>
-                </div>
-                {frontmatter.author && (
-                  <>
-                    <span>•</span>
-                    <span>By {frontmatter.author}</span>
-                  </>
-                )}
-              </div>
-            </div>
-          </Container>
-        </Section>
-
-        {/* Content */}
-        <Section spacing="lg">
-          <Container>
-            <article className="max-w-4xl mx-auto">
-              <MarkdownContent htmlContent={htmlContent || ''} />
-
-              {/* Tags */}
-              {frontmatter.tags && frontmatter.tags.length > 0 && (
-                <div className="mt-12 pt-8 border-t border-gray-200">
-                  <h3 className="font-anek font-semibold text-lg text-gray-900 mb-4">
-                    Related Topics
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {frontmatter.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-4 py-2 bg-gray-100 text-gray-700 text-sm rounded-full font-noto hover:bg-gray-200 transition-colors"
-                      >
-                        {tag}
+                {/* Metadata */}
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[#666666] font-noto">
+                  {caseStudy.frontmatter.readTime && (
+                    <>
+                      <span className="inline-flex items-center gap-1.5">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="sm:w-4 sm:h-4">
+                          <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" strokeWidth="1.5"/>
+                          <path d="M8 4V8L10.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                        </svg>
+                        {caseStudy.frontmatter.readTime}
                       </span>
-                    ))}
-                  </div>
+                      <span className="hidden sm:inline">•</span>
+                    </>
+                  )}
+                  <time dateTime={caseStudy.frontmatter.date} className="hidden sm:inline">
+                    {new Date(caseStudy.frontmatter.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                  </time>
+                  {caseStudy.frontmatter.author && (
+                    <>
+                      <span className="hidden sm:inline">•</span>
+                      <span className="hidden sm:inline">By {caseStudy.frontmatter.author}</span>
+                    </>
+                  )}
+                </div>
+
+                {/* Sector Tag */}
+                <div>
+                  <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[#FFF5F0] text-[#FF8854] text-xs sm:text-sm font-anek font-semibold rounded-full uppercase tracking-wide">
+                    {caseStudy.frontmatter.sector}
+                  </span>
+                </div>
+              </div>
+
+              {/* Right Column: Hero Image (if exists) */}
+              {caseStudy.frontmatter.heroImage && (
+                <div className="relative aspect-[16/9] lg:aspect-[4/3] rounded-[12px] sm:rounded-[16px] overflow-hidden shadow-lg">
+                  <Image
+                    src={caseStudy.frontmatter.heroImage}
+                    alt={caseStudy.frontmatter.title}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
               )}
-            </article>
-          </Container>
-        </Section>
-
-        {/* CTA Section */}
-        <Section spacing="lg" className="bg-[#F5F5F5]">
-          <Container>
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#419372] to-[#357a5e] rounded-[24px] p-8 md:p-12 text-center text-white">
-              <h2 className="font-anek font-bold text-3xl md:text-4xl mb-4">
-                Ready to Transform Your Field Operations?
-              </h2>
-              <p className="font-noto text-lg mb-8 opacity-90">
-                Join 60+ NGOs using Avni to digitize their field work and measure impact.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/trial"
-                  className="px-8 py-3 bg-white text-[#419372] font-anek font-medium rounded-full hover:bg-gray-100 transition-colors"
-                >
-                  Start Free Trial
-                </Link>
-                <Link
-                  href="/resources/case-studies"
-                  className="px-8 py-3 border-2 border-white text-white font-anek font-medium rounded-full hover:bg-white hover:text-[#419372] transition-colors"
-                >
-                  View More Case Studies
-                </Link>
-              </div>
             </div>
-          </Container>
-        </Section>
+          </div>
+        </section>
+
+        {/* Main Content */}
+        <CaseStudyContent content={caseStudy.content} />
+
+        {/* Related Case Studies */}
+        {relatedCaseStudies.length > 0 && (
+          <RelatedCaseStudies caseStudies={relatedCaseStudies} />
+        )}
       </main>
 
       <Footer />

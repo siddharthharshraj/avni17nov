@@ -225,7 +225,7 @@ export const resourcesItems: ResourceItem[] = [
     title: 'Documentation',
     description: 'Explore In-Depth Guides And Implementation Details',
     icon: '/icons/resources/documentation.svg',
-    link: '/resources/documentation',
+    link: 'https://avni.readme.io/docs/getting-started',
   },
   {
     id: 'faq',

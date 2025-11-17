@@ -39,6 +39,12 @@ export default function BlogClient({ featuredBlog, blogs }: BlogClientProps) {
     setCurrentPage(1); // Reset to first page on filter
   }, []);
 
+  // Handle category filter
+  const handleCategoryChange = useCallback((categories: string[]) => {
+    setSelectedCategories(categories);
+    setCurrentPage(1); // Reset to first page on filter
+  }, []);
+
   // Filter blogs based on search and categories
   const filteredBlogs = useMemo(() => {
     return blogs.filter((blog) => {
@@ -83,7 +89,7 @@ export default function BlogClient({ featuredBlog, blogs }: BlogClientProps) {
         <Container>
           {/* Wrapper with relative positioning for dropdown */}
           <div className="relative">
-            <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center">
+            <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center mb-6">
               {/* Search */}
               <div className="flex-1">
                 <BlogSearch onSearch={handleSearch} />
@@ -96,6 +102,71 @@ export default function BlogClient({ featuredBlog, blogs }: BlogClientProps) {
                   onFilterChange={handleFilterChange}
                 />
               </div>
+            </div>
+
+            {/* Results Count and Active Filters */}
+            <div className="space-y-4">
+              {/* Count */}
+              <p className="font-noto text-base text-gray-600">
+                Showing {filteredBlogs.length} blog{filteredBlogs.length === 1 ? '' : 's'}
+                {(searchQuery || selectedCategories.length > 0) && (
+                  <> with active filters</>
+                )}
+              </p>
+
+              {/* Active Filters */}
+              {(searchQuery || selectedCategories.length > 0) && (
+                <div className="flex flex-wrap items-center gap-2">
+                  {/* Search Query Badge */}
+                  {searchQuery && (
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#419372] text-white rounded-full text-sm font-anek">
+                      <span>Search: "{searchQuery}"</span>
+                      <button
+                        onClick={() => handleSearch('')}
+                        className="hover:bg-white/20 rounded-full p-0.5 transition-colors"
+                        aria-label="Clear search"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                        </svg>
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Category Badges */}
+                  {selectedCategories.map((category) => (
+                    <div
+                      key={category}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#FF8854] text-white rounded-full text-sm font-anek"
+                    >
+                      <span>{category}</span>
+                      <button
+                        onClick={() => handleCategoryChange(selectedCategories.filter(c => c !== category))}
+                        className="hover:bg-white/20 rounded-full p-0.5 transition-colors"
+                        aria-label={`Remove ${category} filter`}
+                      >
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                        </svg>
+                      </button>
+                    </div>
+                  ))}
+
+                  {/* Clear All Button */}
+                  <button
+                    onClick={() => {
+                      handleSearch('');
+                      handleCategoryChange([]);
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-gray-300 text-gray-700 rounded-full text-sm font-anek font-medium hover:bg-gray-50 transition-colors"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                    Clear All
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </Container>

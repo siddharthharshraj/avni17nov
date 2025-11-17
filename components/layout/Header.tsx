@@ -197,12 +197,14 @@ export default function Header() {
 
         {/* Request Demo Button */}
         <div>
-          <Link
-            href="/demo"
+          <a
+            href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center w-[142px] h-[36px] border-2 border-primary rounded-[28px] font-anek font-medium text-[16px] leading-[16px] text-primary hover:bg-primary hover:text-white transition-all"
           >
-            Request a Demo
-          </Link>
+            Schedule a Demo
+          </a>
         </div>
         </div>
       </div>

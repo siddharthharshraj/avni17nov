@@ -20,24 +20,24 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link href="/introduction" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/getting-started" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   Introduction
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/design" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/architecture" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   Design
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/database-guide" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/database-guide" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   Database Guide
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/features" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/environment-setup-guides" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   Features
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/roadmap" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
@@ -74,9 +74,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/code-of-conduct" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/avni-code-of-conduct" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   Code Of Conduct
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/privacy-policy" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
@@ -93,12 +93,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link href="/getting-started" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/getting-started" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   Getting Started
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/case-studies" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/resources/case-studies" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   Case Studies
                 </Link>
               </li>
@@ -108,12 +108,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/resources/events" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   Events
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/resources/faq" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
                   FAQ
                 </Link>
               </li>

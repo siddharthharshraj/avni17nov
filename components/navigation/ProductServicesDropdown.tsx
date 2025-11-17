@@ -37,17 +37,30 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
   useEffect(() => {
     async function fetchFeaturedBlog() {
       try {
-        const response = await fetch('/api/featured-blog');
+        // Only fetch on client-side
+        if (typeof window === 'undefined') return;
+        
+        const response = await fetch('/api/featured-blog', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          cache: 'no-store',
+        });
+        
         if (response.ok) {
           const data = await response.json();
           setFeaturedBlog(data);
           setImageError(false); // Reset error state when new data loads
+        } else {
+          console.warn('Featured blog API returned non-OK status:', response.status);
         }
       } catch (error) {
-        console.error('Failed to fetch featured blog:', error);
-        // Keep default fallback
+        // Silently fail - use default fallback
+        // This is expected during development/build
       }
     }
+    
     fetchFeaturedBlog();
   }, []);
 

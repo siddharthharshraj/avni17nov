@@ -92,7 +92,9 @@ export default async function BlogPage() {
                   Start Free Trial
                 </a>
                 <a
-                  href="/contact"
+                  href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-3 border-2 border-[#419372] text-[#419372] rounded-full font-anek font-medium text-base hover:bg-[#419372] hover:text-white transition-colors"
                 >
                   Schedule a Demo

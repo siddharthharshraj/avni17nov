@@ -68,7 +68,7 @@ export default function ImpactStories() {
               {story.description}
             </p>
             <Link
-              href="/impact"
+              href={story.link}
               className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-3 border-2 border-[#419372] text-[#419372] rounded-full md:rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#419372] hover:text-white transition-all"
             >
               Read More →

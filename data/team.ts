@@ -96,7 +96,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Dinesh G',
-    image: '/images/team/dinesh_g.jpeg',
+    image: '/images/team/dinesh_g.png',
     linkedin: 'https://www.linkedin.com/in/dinesh-g-293198315/',
   },
   {
@@ -136,7 +136,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Pooja Harmalkar',
-    image: '/images/team/pooja.jpeg',
+    image: '/images/team/pooja.png',
     linkedin: 'https://www.linkedin.com/in/pooja-harmalkar-60ba3698/',
   },
   {

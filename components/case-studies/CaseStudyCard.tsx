@@ -46,6 +46,20 @@ export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         {frontmatter.title}
       </h3>
 
+      {/* Tags */}
+      {frontmatter.tags && frontmatter.tags.length > 0 && (
+        <div className="flex flex-wrap gap-2 mb-4">
+          {frontmatter.tags.slice(0, 3).map((tag, index) => (
+            <span
+              key={index}
+              className="inline-block px-2.5 py-1 rounded-md text-xs font-anek font-semibold uppercase tracking-wide bg-[#FF8854] text-white"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
       {/* Bottom Section */}
       <div className="flex items-center justify-between mt-auto pt-4">
         {/* Read Time */}

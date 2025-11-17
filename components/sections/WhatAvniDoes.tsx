@@ -9,12 +9,12 @@ export default function WhatAvniDoes() {
       <Container>
         {/* Top Section - Heading */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20 max-w-4xl mx-auto">
-          <h3 className="font-anek font-medium text-xs md:text-sm leading-tight text-[#fba47e] uppercase mb-3 md:mb-4">
+          <h3 className="font-anek font-medium text-base md:text-lg lg:text-xl leading-tight text-[#fba47e] uppercase mb-3 md:mb-4">
             WHAT AVNI DOES?
           </h3>
           
           <h2 className="font-anek font-bold text-3xl md:text-4xl lg:text-[48px] leading-tight text-[#0b2540] mb-4 md:mb-5">
-            A <span className="underline decoration-[#FFD84D] decoration-[3px] underline-offset-4">Sustainable Digitisation</span> Solution
+            A <span className="bg-[#FFD84D] px-1">Sustainable Digitisation</span> Solution
           </h2>
           
           <p className="font-noto font-normal text-xl md:text-2xl lg:text-[22px] leading-relaxed text-[#4A4A4A] max-w-3xl mx-auto">
@@ -41,11 +41,11 @@ export default function WhatAvniDoes() {
                 Build Trust With One Source Of Truth
               </h3>
               <p className="font-noto text-xl md:text-2xl lg:text-[22px] leading-relaxed text-[#4A4A4A] mb-6 md:mb-8 text-left">
-                Give every stakeholder <span className="underline decoration-[#FFD84D] decoration-[3px] underline-offset-4">access to real-time, reliable information from a single platform</span>. Avni ensures consistency and transparency so your teams can make decisions with confidence.
+                Give every stakeholder <span className="bg-[#FFD84D] px-1">access to real-time, reliable information from a single platform</span>. Avni ensures consistency and transparency so your teams can make decisions with confidence.
               </p>
               <div className="flex justify-center lg:justify-start">
                 <Link 
-                  href="/features" 
+                  href="/resources/case-studies" 
                   className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#419372] text-[#419372] rounded-[20px] font-anek font-medium text-sm hover:bg-[#419372] hover:text-white transition-all"
                 >
                   Read More →
@@ -74,11 +74,11 @@ export default function WhatAvniDoes() {
                 Simplify Data Collection And Management
               </h3>
               <p className="font-noto text-xl md:text-2xl lg:text-[22px] leading-relaxed text-[#4A4A4A] mb-6 md:mb-8 text-left">
-                Free your teams from the burden of <span className="underline decoration-[#FFD84D] decoration-[3px] underline-offset-4">manual paperwork and scattered spreadsheets</span>. Avni streamlines field data collection so you can focus on what matters most — impact on the ground.
+                Free your teams from the burden of <span className="bg-[#FFD84D] px-1">manual paperwork and scattered spreadsheets</span>. Avni streamlines field data collection so you can focus on what matters most — impact on the ground.
               </p>
               <div className="flex justify-center lg:justify-start">
                 <Link 
-                  href="/features" 
+                  href="/resources/case-studies" 
                   className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#419372] text-[#419372] rounded-[20px] font-anek font-medium text-sm hover:bg-[#419372] hover:text-white transition-all"
                 >
                   Read More →
@@ -107,11 +107,11 @@ export default function WhatAvniDoes() {
                 Steer Your Programs With Insight And Agility
               </h3>
               <p className="font-noto text-xl md:text-2xl lg:text-[22px] leading-relaxed text-[#4A4A4A] mb-6 md:mb-8 text-left">
-                Access <span className="underline decoration-[#FFD84D] decoration-[3px] underline-offset-4">accurate, real-time data</span> that helps you adapt and improve your programs continuously. Use feedback from the field to respond faster and serve your communities more effectively.
+                Access <span className="bg-[#FFD84D] px-1">accurate, real-time data</span> that helps you adapt and improve your programs continuously. Use feedback from the field to respond faster and serve your communities more effectively.
               </p>
               <div className="flex justify-center lg:justify-start">
                 <Link 
-                  href="/features" 
+                  href="/resources/case-studies" 
                   className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#419372] text-[#419372] rounded-[20px] font-anek font-medium text-sm hover:bg-[#419372] hover:text-white transition-all"
                 >
                   Read More →

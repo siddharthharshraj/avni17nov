@@ -19,8 +19,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages && page !== currentPage) {
       onPageChange(page);
-      // Smooth scroll to top of blog section
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // No auto-scroll - user stays at current position
     }
   };
 

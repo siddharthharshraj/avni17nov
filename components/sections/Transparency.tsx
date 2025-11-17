@@ -47,7 +47,7 @@ export default function Transparency() {
             Transparency You Can Trust
           </h2>
           <p className="font-noto text-base md:text-lg lg:text-[20px] leading-relaxed text-[#4A4A4A] max-w-3xl mx-auto px-4">
-            Avni gives funders <span className="underline decoration-[#FFD84D] decoration-[3px] underline-offset-4">real-time visibility and reliable data</span> — turning impact into measurable insight.
+            Avni gives funders <span className="bg-[#FFD84D] px-1">real-time visibility and reliable data</span> — turning impact into measurable insight.
           </p>
         </div>
 

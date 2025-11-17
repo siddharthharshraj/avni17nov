@@ -45,12 +45,14 @@ export default function Hero() {
             >
               Sign Up for Free Trial
             </Link>
-            <Link
-              href="/about"
+            <a
+              href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 h-12 md:h-[48px] border-2 border-[#419372] text-[#419372] rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#419372] hover:text-white transition-all"
             >
-              Is Avni Right For You?
-            </Link>
+              Schedule a Demo
+            </a>
           </div>
           
           {/* Divider Line */}
