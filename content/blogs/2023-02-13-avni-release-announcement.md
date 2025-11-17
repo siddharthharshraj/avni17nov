@@ -3,7 +3,10 @@ title: Release announcement - February 2023
 date: '2023-02-13'
 author:
   name: The Avni Team
-tags: []
+tags:
+  - Product Release
+  - WhatsApp Integration
+  - Performance
 type: blog
 featuredImage:
   src: /blog-images/2023-02-13-avni-release-announcement/featured.png

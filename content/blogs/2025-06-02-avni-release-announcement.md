@@ -5,7 +5,10 @@ title: >-
 date: '2025-06-02'
 author:
   name: Avni Team
-tags: []
+tags:
+  - Product Release
+  - Dashboard
+  - Reporting
 type: blog
 featuredImage:
   src: /blog-images/2025-06-02-avni-release-announcement/featured.webp

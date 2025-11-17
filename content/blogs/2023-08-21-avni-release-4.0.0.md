@@ -3,7 +3,10 @@ title: Major Release Announcement - August 2023
 date: '2023-08-22'
 author:
   name: The Avni Team
-tags: []
+tags:
+  - Product Release
+  - Access Control
+  - Integration
 type: blog
 featuredImage:
   src: /blog-images/2023-08-21-avni-release-4.0.0/Access control in Avni.png

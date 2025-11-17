@@ -9,7 +9,10 @@ description: >-
 date: '2023-06-06'
 author: The Avni Team
 readTime: 3 min read
-tags: []
+tags:
+  - Product Release
+  - Dashboard
+  - API Integration
 ---
 Major Release 3.39.0 is now live, it includes following modifications to Avni application.
 

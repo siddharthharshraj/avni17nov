@@ -10,7 +10,10 @@ description: >-
 date: '2025-10-01'
 author: Avni Team
 readTime: 2 min read
-tags: []
+tags:
+  - Product Release
+  - AI Assistant
+  - Feature Update
 ---
 
 September was a month full of exciting updates! From smarter assistance to faster app building, here’s everything we worked on to make your Avni experience better.

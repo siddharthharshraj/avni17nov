@@ -3,7 +3,10 @@ title: Avni Launchpad - Digitize. Pilot. Transform
 date: '2025-10-31'
 author:
   name: Avni Team
-tags: []
+tags:
+  - Digital Transformation
+  - NGO Program
+  - Capacity Building
 type: blog
 featuredImage:
   src: /blog-images/2025-10-30-avni-launchpad-announcement/featured.png
@@ -73,17 +76,25 @@ You are an NGO who has
 | Week 7  | Dec 13       | App ready for pilot     |
 | Week 12 | Jan 30, 2026 | Learnings from the ground. Conclusion of the cohort |
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://forms.gle/zD2A4cPRtpdcczPe9" target="_blank" rel="noopener noreferrer" 
-     class="button is-primary is-medium"> 
-    Apply Now
+<div style="text-align: center; margin: 3rem 0;">
+  <a 
+    href="https://forms.gle/zD2A4cPRtpdcczPe9" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style="display: inline-block; padding: 14px 32px; background-color: #419372; color: white; border-radius: 50px; font-family: 'Anek Latin', sans-serif; font-weight: 600; font-size: 16px; text-decoration: none; transition: background-color 0.3s ease;"
+    onmouseover="this.style.backgroundColor='#357a5e'"
+    onmouseout="this.style.backgroundColor='#419372'"
+  >
+    🚀 Apply Now — Limited Seats!
   </a>
+  <p style="margin-top: 1rem; font-size: 14px; color: #5a6c7d; font-family: 'Noto Sans', sans-serif;">
+    ⏰ Applications close <span style="font-weight: 600; color: #419372;">Nov 21, 2025</span>
+  </p>
 </div>
+
 
 Contact for queries: **avnipartnerships@samanvayfoundation.org**
 
 Who's trusting Avni : [APF (Health)](https://avniproject.org/case-studies/2025-05-28-bridging-the-nutrition-gap-apf-odisha) | [Goonj (Community Development)](https://avniproject.org/case-studies/2025-09-03-how-goonj-uses-avni) | [ATECF (Water)](https://avniproject.org/case-studies/2025-04-30-restoring-waterbodies-avni-atecf) | [CInI-Tata Trusts (Education)](https://avniproject.org/case-studies/2024-09-19-Scaling-Rural-Education) | [Hasiru Dala (Social Security)](https://avniproject.org/case-studies/2025-08-01-empowering-waste-pickers) | [JNPCT (Malnutrition)](https://avniproject.org/case-studies/use-of-avni-in-jnpct-malnutrition-project-case-study) | [Maitrayana(Sports)](https://avniproject.org/case-studies/2025-07-31-scoring-for-equality) | [IHMP](https://avniproject.org/case-studies/2025-05-02-ihmp-strengthening-adolescent-health), [Jan Swasthya Sahyog](https://avniproject.org/case-studies/avni-for-sickle-cell-disease-screening-and-treatment), [Calcutta Kids](https://avniproject.org/case-studies/calcutta-kids-%E2%80%94-avni-implemented-for-maternal-and-child-health-program), Sewa Rural & 50+ organisations
-
-Learn more : [Join one of our upcoming webinars](/events) | [Read case studies](/case-studies) | [Read blogs](/blog)
 
 <br><br>

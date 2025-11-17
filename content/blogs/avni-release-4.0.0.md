@@ -9,7 +9,10 @@ description: >-
 date: '2023-08-22'
 author: The Avni Team
 readTime: 2 min read
-tags: []
+tags:
+  - Product Release
+  - Access Control
+  - Integration
 ---
 Major Release 4.0.0 is now live, it includes the following modifications to the Avni application
 

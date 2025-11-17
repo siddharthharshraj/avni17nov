@@ -10,7 +10,10 @@ description: >-
 date: '2025-09-30'
 author: 'Om Bhardwaj, Vinay Venu'
 readTime: 3 min read
-tags: []
+tags:
+  - Artificial Intelligence
+  - Innovation
+  - Product Development
 ---
 
 

@@ -3,7 +3,10 @@ title: Major Release announcement - October 2024
 date: '2024-10-15'
 author:
   name: The Avni Team
-tags: []
+tags:
+  - Product Release
+  - Feature Update
+  - Dashboard
 type: blog
 featuredImage:
   src: /blog-images/2024-10-14-avni-release-announcement/featured.png

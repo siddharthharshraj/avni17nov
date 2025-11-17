@@ -10,7 +10,10 @@ description: >-
 date: '2022-09-30'
 author: The Avni Team
 readTime: 2 min read
-tags: []
+tags:
+  - Product Release
+  - Feature Update
+  - Data Management
 ---
 
 
