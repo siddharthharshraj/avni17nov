@@ -12,7 +12,31 @@ import { founders, team } from '@/data/team';
 
 export const metadata: Metadata = {
   title: 'About Us - Avni | Shaping Tomorrow, Today',
-  description: 'Learn about Avni, an open-source platform supporting community health workers and grassroots organizations across India since 2016.',
+  description: 'Learn about Avni, an open-source platform supporting community health workers and grassroots organizations across India since 2016. Empowering field operations with sustainable digital tools.',
+  keywords: ['about avni', 'ngo platform', 'field work software', 'community health', 'open source', 'digital public good'],
+  openGraph: {
+    title: 'About Us - Avni',
+    description: 'Learn about Avni, an open-source platform supporting community health workers and grassroots organizations across India since 2016.',
+    url: 'https://avniproject.org/about',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'About Avni - Digital Platform for NGOs',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us - Avni',
+    description: 'Learn about Avni, an open-source platform supporting community health workers and grassroots organizations.',
+    images: ['/og-image.jpg'],
+  },
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {

@@ -7,8 +7,23 @@ import CloudHosting from "@/components/sections/pricing/CloudHosting";
 import PricingFAQ from "@/components/sections/pricing/PricingFAQ";
 
 export const metadata: Metadata = {
-  title: "Pricing - Transparent, Scalable, Affordable",
-  description: "Choose the Avni plan that fits your budget. From free self-service to fully managed solutions, we support your growth while keeping budgets in check.",
+  title: 'Pricing - Affordable Plans for NGOs | Avni',
+  description: 'Transparent pricing for Avni field work platform. Cloud hosting, dedicated support, and custom implementations. No hidden costs. Free trial available for NGOs.',
+  keywords: ['avni pricing', 'ngo software pricing', 'field work platform cost', 'cloud hosting ngo', 'affordable ngo software'],
+  openGraph: {
+    title: 'Pricing - Affordable Plans for NGOs | Avni',
+    description: 'Transparent pricing for Avni field work platform. Cloud hosting, dedicated support, and custom implementations.',
+    url: 'https://avniproject.org/pricing',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing - Affordable Plans for NGOs | Avni',
+    description: 'Transparent pricing for Avni field work platform.',
+  },
+  alternates: {
+    canonical: '/pricing',
+  },
 };
 
 export default function PricingPage() {

@@ -8,8 +8,23 @@ import Footer from '@/components/layout/Footer';
 import ContactContent from '@/components/contact/ContactContent';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Avni',
-  description: 'Reach out for product questions, support, partnerships, or anything you need to move your field operations forward',
+  title: 'Contact Us - Get in Touch | Avni',
+  description: 'Get in touch with the Avni team for questions, support, or collaboration opportunities. We are here to help your organization digitize field operations.',
+  keywords: ['contact avni', 'avni support', 'ngo software support', 'field work help'],
+  openGraph: {
+    title: 'Contact Us - Get in Touch | Avni',
+    description: 'Get in touch with the Avni team for questions, support, or collaboration opportunities.',
+    url: 'https://avniproject.org/contact',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Contact Us - Get in Touch | Avni',
+    description: 'Get in touch with the Avni team.',
+  },
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactPage() {
