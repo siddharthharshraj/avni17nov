@@ -9,7 +9,7 @@ import { useEffect, useState, useRef } from 'react';
 import RoadmapColumn from './RoadmapColumn';
 import RoadmapSkeleton from './RoadmapSkeleton';
 import type { NormalizedProjectData, ProjectField } from '@/types/github-project';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, ExternalLink } from 'lucide-react';
 
 export default function RoadmapBoard() {
   const [data, setData] = useState<NormalizedProjectData | null>(null);
@@ -167,14 +167,25 @@ export default function RoadmapBoard() {
               Updated: {lastUpdated}
             </span>
           )}
-          <button
-            onClick={() => fetchData(true)}
-            disabled={loading}
-            className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-[10px] hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''} text-[#419372]`} />
-            <span className="font-anek text-[13px] md:text-[14px] font-medium text-gray-700">Refresh</span>
-          </button>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/orgs/avniproject/projects/2/views/7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 bg-[#419372] text-white rounded-[10px] hover:bg-[#357a5e] hover:shadow-md transition-all font-anek text-[13px] md:text-[14px] font-semibold"
+            >
+              <ExternalLink className="w-4 h-4" />
+              <span>View on GitHub</span>
+            </a>
+            <button
+              onClick={() => fetchData(true)}
+              disabled={loading}
+              className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-[10px] hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''} text-[#419372]`} />
+              <span className="font-anek text-[13px] md:text-[14px] font-medium text-gray-700">Refresh</span>
+            </button>
+          </div>
         </div>
       </div>
 
