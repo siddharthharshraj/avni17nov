@@ -27,17 +27,24 @@ export function normalizeProjectData(rawData: any): NormalizedProjectData {
   }));
 
   // Find the Release field for grouping (prioritize release/version fields)
+  // IMPORTANT: Only look at SINGLE_SELECT fields (fields with dropdown options)
   const releaseField = fields.find(
-    (f) => f.name.toLowerCase().includes('release') || f.name.toLowerCase().includes('version') || f.name.toLowerCase().includes('milestone')
+    (f) => f.dataType === 'SINGLE_SELECT' && (
+      f.name.toLowerCase().includes('release') || 
+      f.name.toLowerCase().includes('version')
+    )
   );
   const statusField = fields.find(
-    (f) => f.dataType === 'SINGLE_SELECT' && (f.name.toLowerCase().includes('status') || f.name.toLowerCase().includes('stage'))
+    (f) => f.dataType === 'SINGLE_SELECT' && (
+      f.name.toLowerCase().includes('status') || 
+      f.name.toLowerCase().includes('stage')
+    )
   );
   const anySelectField = fields.find((f) => f.dataType === 'SINGLE_SELECT');
   
   const groupByField = releaseField?.name || statusField?.name || anySelectField?.name;
   
-  console.log('🔍 Debug - Available fields:', fields.map(f => ({ name: f.name, dataType: f.dataType })));
+  console.log('🔍 Debug - Available SINGLE_SELECT fields:', fields.filter(f => f.dataType === 'SINGLE_SELECT').map(f => f.name));
   console.log('🎯 Debug - Selected groupByField:', groupByField);
   console.log('✅ Debug - Release field found:', releaseField?.name);
 
