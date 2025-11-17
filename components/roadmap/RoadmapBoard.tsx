@@ -76,14 +76,14 @@ export default function RoadmapBoard() {
     // Initial fetch on component mount
     fetchData();
 
-    // AUTO-REFRESH: Fetches new data every 24 hours automatically
+    // AUTO-REFRESH: Fetches new data every 48 hours automatically
     // This ensures the roadmap stays up-to-date forever without manual intervention
-    // Combined with server-side 24-hour caching, this minimizes API calls
+    // Combined with server-side 48-hour caching, this minimizes API calls
     // Rate limit: With token, GitHub allows 5,000 requests/hour
-    // Usage: ~30 requests/month (well within limits, works forever)
+    // Usage: ~15 requests/month (well within limits, works forever)
     const interval = setInterval(() => {
       fetchData();
-    }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+    }, 48 * 60 * 60 * 1000); // 48 hours in milliseconds
 
     // Cleanup on unmount
     return () => clearInterval(interval);

@@ -1,7 +1,7 @@
 /**
  * GitHub Projects v2 API Route
  * Simple endpoint to fetch project board data
- * Caches for 24 hours to minimize API calls
+ * Caches for 48 hours to minimize API calls
  */
 
 import { NextResponse } from 'next/server';
@@ -9,8 +9,8 @@ import { createGitHubClient } from '@/lib/github-client';
 import { normalizeProjectData, fetchAllProjectItems } from '@/lib/normalize-project-data';
 import type { ProjectAPIResponse } from '@/types/github-project';
 
-// Cache duration: 24 hours
-const CACHE_DURATION = 24 * 60 * 60 * 1000;
+// Cache duration: 48 hours
+const CACHE_DURATION = 48 * 60 * 60 * 1000;
 
 // In-memory cache
 let cachedData: any = null;
