@@ -8,11 +8,11 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Newsletter from '@/components/sections/Newsletter';
+import SafeImage from '@/components/ui/SafeImage';
 import { solutionCards } from '@/data/solution-cards';
 
 // Solution categories
@@ -352,13 +352,14 @@ function SolutionsContent() {
                       className="group bg-white rounded-[16px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.12)] transition-all"
                     >
                       <div className="relative aspect-[4/3] bg-gray-100">
-                        <Image
+                        <SafeImage
                           src={card.image}
                           alt={card.title}
                           fill
                           className="object-cover"
                           loading="lazy"
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          fallbackSrc="/images/hero-image.jpg"
                         />
                       </div>
                       <div className="p-5 space-y-2">

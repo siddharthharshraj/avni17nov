@@ -47,14 +47,14 @@ export const solutionCards: Record<string, { cards: SolutionCard[]; cta: Solutio
     cards: [
       {
         type: 'case-study',
-        image: '/images/case-studies/6-ways-how-Avni-is-helping-JSS-MCH-Phulwari-programs/jss-mch-hero.jpg',
+        image: '/images/case-studies/6-ways-how-Avni-is-helping-JSS-MCH-Phulwari-programs/JSSCP_supervisor.jpg',
         title: 'Improving Maternal & Child Health Outcomes - Calcutta Kids',
         label: 'Case Study',
         link: '/resources/case-studies/calcutta-kids-healthcare'
       },
       {
         type: 'blog',
-        image: '/images/case-studies/2024-06-25-digitising-adolescent-community-program-using-avni/ihmp-cover.jpg',
+        image: '/images/case-studies/2024-06-25-digitising-adolescent-community-program-using-avni/adolescents.png',
         title: 'Digitising Adolescent Community Program Using Avni',
         label: 'Blog',
         link: '/blog/2024-06-25-digitising-adolescent-community-program-using-avni'
@@ -102,7 +102,7 @@ export const solutionCards: Record<string, { cards: SolutionCard[]; cta: Solutio
       },
       {
         type: 'case-study',
-        image: '/images/case-studies/2025-08-01-empowering-waste-pickers/hasiru-dala-cover.jpg',
+        image: '/images/steer-programs.png',
         title: 'Scaling Impact for Waste Pickers Using Avni',
         label: 'Case Study',
         link: '/resources/case-studies/empowering-waste-pickers'
@@ -126,7 +126,7 @@ export const solutionCards: Record<string, { cards: SolutionCard[]; cta: Solutio
       },
       {
         type: 'case-study',
-        image: '/images/case-studies/2025-05-28-bridging-the-nutrition-gap-apf-odisha/apf-cover.jpg',
+        image: '/images/case-studies/2024-06-25-digitising-adolescent-community-program-using-avni/adolescents.png',
         title: 'Bridging the Nutrition Gap - APF Odisha',
         label: 'Case Study',
         link: '/resources/case-studies/bridging-the-nutrition-gap-apf-odisha'
@@ -143,14 +143,14 @@ export const solutionCards: Record<string, { cards: SolutionCard[]; cta: Solutio
     cards: [
       {
         type: 'case-study',
-        image: '/images/case-studies/2025-09-03-how-goonj-uses-avni/goonj-cover.jpg',
+        image: '/images/goonj-featured.jpg',
         title: 'How Goonj Uses Avni To Digitise Data Collection',
         label: 'Case Study',
         link: '/resources/case-studies/how-goonj-uses-avni'
       },
       {
         type: 'case-study',
-        image: '/images/case-studies/2024-11-27-Project-Potential-Bihar-Health-Access-Digitisation-Case-study/project-potential-cover.jpg',
+        image: '/images/case-studies/6-ways-how-Avni-is-helping-JSS-MCH-Phulwari-programs/JSSCP_supervisor.jpg',
         title: 'Empowering Healthcare Access in Bihar - Project Potential',
         label: 'Case Study',
         link: '/resources/case-studies/project-potential-bihar-health-access-digitisation-case-study'
@@ -191,7 +191,7 @@ export const solutionCards: Record<string, { cards: SolutionCard[]; cta: Solutio
     cards: [
       {
         type: 'case-study',
-        image: '/images/case-studies/2025-07-31-scoring-for-equality/maitrayana-cover.jpg',
+        image: '/images/education_impactstory.png',
         title: 'Scoring for Equality - Maitrayana Uses Avni for Sports Impact',
         label: 'Case Study',
         link: '/resources/case-studies/scoring-for-equality'
