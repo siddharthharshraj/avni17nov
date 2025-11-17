@@ -31,6 +31,7 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
     image: '/images/goonj-featured.webp',
     link: '/blog/goonj-case-study',
   });
+  const [imageError, setImageError] = useState(false);
 
   // Fetch featured blog on mount
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
         if (response.ok) {
           const data = await response.json();
           setFeaturedBlog(data);
+          setImageError(false); // Reset error state when new data loads
         }
       } catch (error) {
         console.error('Failed to fetch featured blog:', error);
@@ -214,17 +216,27 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
                   className="block group"
                   onClick={onClose}
                 >
-                  <div className="relative w-[283px] h-[169px] rounded-[30px] overflow-hidden mb-[16px] bg-[#f5f5f5]">
-                    <Image
-                      src={featuredBlog.image}
-                      alt="Featured Blog"
-                      width={283}
-                      height={169}
-                      className="object-contain group-hover:scale-105 transition-transform duration-300"
-                    />
+                  <div className="relative w-[283px] h-[169px] rounded-[30px] overflow-hidden mb-[16px] bg-gradient-to-br from-gray-100 to-gray-50">
+                    {!imageError ? (
+                      <Image
+                        src={featuredBlog.image}
+                        alt="Featured Blog"
+                        fill
+                        sizes="283px"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={() => setImageError(true)}
+                        priority
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <svg className="w-16 h-16 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    )}
                   </div>
 
-                  <p className="font-anek font-medium text-[16px] leading-[20px] text-[rgba(0,0,0,0.7)] capitalize group-hover:text-[#419372] transition-colors w-[283px]">
+                  <p className="font-anek font-medium text-[16px] leading-[20px] text-[rgba(0,0,0,0.7)] group-hover:text-[#419372] transition-colors w-[283px] line-clamp-2">
                     {featuredBlog.title}
                   </p>
                 </Link>
