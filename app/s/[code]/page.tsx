@@ -1,6 +1,11 @@
 import { redirect } from 'next/navigation';
-import fs from 'fs/promises';
-import path from 'path';
+import { Redis } from '@upstash/redis';
+
+// Initialize Upstash Redis client
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
 interface PageProps {
   params: {
@@ -12,11 +17,8 @@ export default async function ShortUrlRedirect({ params }: PageProps) {
   const { code } = params;
 
   try {
-    // Read from JSON file
-    const filePath = path.join(process.cwd(), 'public', 'short-urls.json');
-    const data = await fs.readFile(filePath, 'utf-8');
-    const urls = JSON.parse(data);
-    const urlData = urls[code];
+    // Get URL from Redis
+    const urlData = await redis.get<string>(code);
 
     if (urlData) {
       // Redirect to the original URL

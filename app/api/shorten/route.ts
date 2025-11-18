@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { Redis } from '@upstash/redis';
+
+// Initialize Upstash Redis client
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
 // Generate random 5-character code
 function generateCode(): string {
@@ -10,26 +15,6 @@ function generateCode(): string {
     code += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return code;
-}
-
-// Path to JSON file
-const getFilePath = () => path.join(process.cwd(), 'public', 'short-urls.json');
-
-// Read URLs from file
-async function readUrls(): Promise<Record<string, string>> {
-  try {
-    const filePath = getFilePath();
-    const data = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(data);
-  } catch (error) {
-    return {};
-  }
-}
-
-// Write URLs to file
-async function writeUrls(urls: Record<string, string>): Promise<void> {
-  const filePath = getFilePath();
-  await fs.writeFile(filePath, JSON.stringify(urls, null, 2), 'utf-8');
 }
 
 export async function POST(request: NextRequest) {
@@ -43,14 +28,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Read existing URLs
-    const urls = await readUrls();
-
     // Generate unique code
     let code = generateCode();
     let attempts = 0;
     
-    while (attempts < 10 && urls[code]) {
+    // Ensure code is unique
+    while (attempts < 10) {
+      const existing = await redis.get(code);
+      if (!existing) break;
       code = generateCode();
       attempts++;
     }
@@ -62,9 +47,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Store the mapping
-    urls[code] = url;
-    await writeUrls(urls);
+    // Store the mapping in Redis (never expires)
+    await redis.set(code, url);
 
     // Get the current domain
     const host = request.headers.get('host') || 'avniproject.org';
@@ -99,8 +83,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const urls = await readUrls();
-    const url = urls[code];
+    const url = await redis.get(code);
 
     if (!url) {
       return NextResponse.json(
