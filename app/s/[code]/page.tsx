@@ -1,5 +1,4 @@
 import { redirect } from 'next/navigation';
-import { getStore } from '@netlify/blobs';
 
 interface PageProps {
   params: {
@@ -11,7 +10,8 @@ export default async function ShortUrlRedirect({ params }: PageProps) {
   const { code } = params;
 
   try {
-    // Get the URL from Netlify Blobs
+    // Try to get the URL from Netlify Blobs
+    const { getStore } = await import('@netlify/blobs');
     const store = getStore('short-urls');
     const urlData = await store.get(code, { type: 'text' });
 
@@ -21,6 +21,7 @@ export default async function ShortUrlRedirect({ params }: PageProps) {
     }
   } catch (error) {
     console.error('Error retrieving short URL:', error);
+    // Will fall through to 404 page below
   }
 
   // If URL not found or error, show 404 page

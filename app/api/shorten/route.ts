@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getStore } from '@netlify/blobs';
 
 // Generate random 5-character code
 function generateCode(): string {
@@ -22,42 +21,55 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get Netlify Blobs store
-    const store = getStore('short-urls');
+    // Try to use Netlify Blobs if available
+    try {
+      const { getStore } = await import('@netlify/blobs');
+      const store = getStore('short-urls');
 
-    // Generate unique code
-    let code = generateCode();
-    let attempts = 0;
-    
-    // Ensure code is unique (check if it already exists)
-    while (attempts < 10) {
-      const existing = await store.get(code, { type: 'text' });
-      if (!existing) break;
-      code = generateCode();
-      attempts++;
-    }
+      // Generate unique code
+      let code = generateCode();
+      let attempts = 0;
+      
+      // Ensure code is unique (check if it already exists)
+      while (attempts < 10) {
+        const existing = await store.get(code, { type: 'text' });
+        if (!existing) break;
+        code = generateCode();
+        attempts++;
+      }
 
-    if (attempts >= 10) {
+      if (attempts >= 10) {
+        return NextResponse.json(
+          { error: 'Failed to generate unique code. Please try again.' },
+          { status: 500 }
+        );
+      }
+
+      // Store the mapping
+      await store.set(code, url);
+
+      // Get the current domain
+      const host = request.headers.get('host') || 'avniproject.org';
+      const protocol = host.includes('localhost') ? 'http' : 'https';
+      const shortUrl = `${protocol}://${host}/s/${code}`;
+
+      return NextResponse.json({
+        success: true,
+        code,
+        shortUrl,
+        originalUrl: url,
+      });
+    } catch (blobError) {
+      // Netlify Blobs not available - return error with helpful message
+      console.error('Netlify Blobs not available:', blobError);
       return NextResponse.json(
-        { error: 'Failed to generate unique code. Please try again.' },
-        { status: 500 }
+        { 
+          error: 'URL shortener requires Netlify deployment. Please deploy to Netlify to use this feature.',
+          details: 'This feature uses Netlify Blobs which is only available on Netlify servers.'
+        },
+        { status: 503 }
       );
     }
-
-    // Store the mapping
-    await store.set(code, url);
-
-    // Get the current domain
-    const host = request.headers.get('host') || 'avniproject.org';
-    const protocol = host.includes('localhost') ? 'http' : 'https';
-    const shortUrl = `${protocol}://${host}/s/${code}`;
-
-    return NextResponse.json({
-      success: true,
-      code,
-      shortUrl,
-      originalUrl: url,
-    });
   } catch (error) {
     console.error('Error creating short URL:', error);
     return NextResponse.json(
@@ -80,20 +92,28 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const store = getStore('short-urls');
-    const url = await store.get(code, { type: 'text' });
+    try {
+      const { getStore } = await import('@netlify/blobs');
+      const store = getStore('short-urls');
+      const url = await store.get(code, { type: 'text' });
 
-    if (!url) {
+      if (!url) {
+        return NextResponse.json(
+          { error: 'Short URL not found' },
+          { status: 404 }
+        );
+      }
+
+      return NextResponse.json({
+        code,
+        url,
+      });
+    } catch (blobError) {
       return NextResponse.json(
-        { error: 'Short URL not found' },
-        { status: 404 }
+        { error: 'Netlify Blobs not available' },
+        { status: 503 }
       );
     }
-
-    return NextResponse.json({
-      code,
-      url,
-    });
   } catch (error) {
     console.error('Error retrieving short URL:', error);
     return NextResponse.json(
