@@ -70,13 +70,18 @@ export default async function BlogPostPage({
   const allBlogs = await getAllBlogs();
   const relatedPosts = getSmartRelatedPosts(slug, allBlogs, 3);
 
+  // Extract author name (handle both string and object types)
+  const authorName = typeof frontmatter.author === 'string' 
+    ? frontmatter.author 
+    : frontmatter.author?.name || 'Avni Team';
+
   return (
     <>
       {/* Analytics Tracker - Automatic for ALL blogs (current + future) */}
       <BlogAnalyticsTracker
         title={frontmatter.title}
         category={frontmatter.category}
-        author={frontmatter.author || 'Avni Team'}
+        author={authorName}
         tags={frontmatter.tags}
         date={frontmatter.date}
         slug={slug}
