@@ -50,8 +50,10 @@ export async function POST(request: NextRequest) {
     // Store the mapping in Redis (never expires)
     await redis.set(code, url);
 
-    // Always use production domain for short URLs
-    const shortUrl = `https://avniproject.org/s/${code}`;
+    // Auto-detect current domain for short URLs
+    const host = request.headers.get('host') || 'localhost';
+    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const shortUrl = `${protocol}://${host}/s/${code}`;
 
     return NextResponse.json({
       success: true,
