@@ -45,9 +45,12 @@ export const isAnalyticsEnabled = (): boolean => {
 export const pageview = (url: string): void => {
   if (!isAnalyticsEnabled()) return;
   
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    page_path: url,
-  });
+  // Check if gtag is available before calling
+  if (typeof window.gtag === 'function') {
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_path: url,
+    });
+  }
 };
 
 /**
@@ -56,11 +59,14 @@ export const pageview = (url: string): void => {
 export const event = ({ action, category, label, value }: GAEvent): void => {
   if (!isAnalyticsEnabled()) return;
 
-  window.gtag('event', action, {
-    event_category: category,
-    event_label: label,
-    value: value,
-  });
+  // Check if gtag is available before calling
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  }
 };
 
 // ============================================================================

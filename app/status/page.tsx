@@ -41,8 +41,11 @@ export default function AvniStatusPage() {
               <p className="font-noto text-lg text-[#5a6c7d] mb-2">
                 Check the current operational status of all Avni services
               </p>
-              <p className="font-noto text-sm text-[#5a6c7d]">
+              <p className="font-noto text-sm text-[#5a6c7d] mb-4">
                 View uptime, incidents, and scheduled maintenance
+              </p>
+              <p className="font-noto text-base text-[#419372] font-medium">
+                👇 Click here to view status
               </p>
             </div>
 

@@ -14,10 +14,13 @@ import { ArrowLeft, Download, Copy, Check, Facebook, Linkedin, Youtube } from 'l
 export default function AvniBrandKitPage() {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
   
-  // Auto-detect current domain
+  // Auto-detect current domain - initialize with empty string to avoid hydration mismatch
   const [websiteUrl, setWebsiteUrl] = useState('');
+  const [isMounted, setIsMounted] = useState(false);
   
   useEffect(() => {
+    // Mark component as mounted
+    setIsMounted(true);
     // Auto-detect the current website URL
     if (typeof window !== 'undefined') {
       const currentOrigin = window.location.origin;
@@ -76,21 +79,17 @@ export default function AvniBrandKitPage() {
   const brandAssets = [
     {
       name: 'Avni Logo (Full)',
-      file: 'avni-logo-full.png',
+      file: 'avni-logo-name.png',
       description: 'Primary logo with icon and text',
-      downloadUrl: '/images/brand/avni-logo-full.png',
+      downloadUrl: '/kit/avni-logo-name.png',
+      imagePath: '/kit/avni-logo-name.png',
     },
     {
       name: 'Avni Icon',
-      file: 'avni-icon.png',
+      file: 'logo.png',
       description: 'Standalone icon for social media',
-      downloadUrl: '/images/brand/avni-icon.png',
-    },
-    {
-      name: 'Avni Logo (White)',
-      file: 'avni-logo-white.png',
-      description: 'Logo for dark backgrounds',
-      downloadUrl: '/images/brand/avni-logo-white.png',
+      downloadUrl: '/kit/logo.png',
+      imagePath: '/kit/logo.png',
     },
   ];
 
@@ -161,38 +160,20 @@ export default function AvniBrandKitPage() {
           <h2 className="font-anek font-bold text-3xl text-[#0b2540] mb-6">
             Brand Assets
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {brandAssets.map((asset) => (
               <div
                 key={asset.name}
                 className="border border-[#E6E6E6] rounded-xl p-6 hover:shadow-lg transition-shadow"
               >
                 <div className="bg-[#FCFCFC] rounded-lg p-8 mb-4 flex items-center justify-center min-h-[200px] relative">
-                  {asset.name === 'Avni Logo (Full)' && (
-                    <Image
-                      src="/avni-logo.svg"
-                      alt="Avni Logo"
-                      width={200}
-                      height={60}
-                      className="object-contain"
-                    />
-                  )}
-                  {asset.name === 'Avni Icon' && (
-                    <div className="w-24 h-24 bg-[#419372] rounded-2xl flex items-center justify-center">
-                      <div className="text-white font-bold text-4xl">A</div>
-                    </div>
-                  )}
-                  {asset.name === 'Avni Logo (White)' && (
-                    <div className="bg-[#0b2540] p-8 rounded-lg">
-                      <Image
-                        src="/avni-logo.svg"
-                        alt="Avni Logo White"
-                        width={200}
-                        height={60}
-                        className="object-contain brightness-0 invert"
-                      />
-                    </div>
-                  )}
+                  <Image
+                    src={asset.imagePath}
+                    alt={asset.name}
+                    width={asset.name === 'Avni Icon' ? 120 : 250}
+                    height={asset.name === 'Avni Icon' ? 120 : 80}
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="font-anek font-semibold text-lg text-[#0b2540] mb-2">
                   {asset.name}
@@ -200,13 +181,14 @@ export default function AvniBrandKitPage() {
                 <p className="font-noto text-sm text-[#5a6c7d] mb-4">
                   {asset.description}
                 </p>
-                <button
-                  onClick={() => window.open(asset.downloadUrl, '_blank')}
+                <a
+                  href={asset.downloadUrl}
+                  download={asset.file}
                   className="inline-flex items-center gap-2 px-4 py-2 bg-[#419372] text-white font-anek font-medium text-sm rounded-lg hover:bg-[#357a5e] transition-colors w-full justify-center"
                 >
                   <Download className="w-4 h-4" />
                   Download
-                </button>
+                </a>
               </div>
             ))}
           </div>
