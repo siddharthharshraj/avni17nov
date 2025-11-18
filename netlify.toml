@@ -83,14 +83,7 @@
     Cache-Control = "public, max-age=0, must-revalidate"
     Link = "</fonts/*>; rel=preload; as=font; crossorigin"
 
-# Redirects for SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
-
-# 404 redirect
+# 404 redirect (optional - Next.js also handles 404 internally)
 [[redirects]]
   from = "/404"
   to = "/404/index.html"

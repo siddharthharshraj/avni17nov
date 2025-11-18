@@ -1,53 +1,55 @@
-import { headers } from 'next/headers';
-import { redirect } from 'next/navigation';
-import { Redis } from '@upstash/redis';
+"use client";
 
-// Initialize Upstash Redis client
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-});
+import { useEffect, useState } from "react";
 
-interface PageProps {
-  params: {
-    code: string;
-  };
-}
+export default function ShortUrlRedirect() {
+  const [code, setCode] = useState<string | null>(null);
+  const [isResolving, setIsResolving] = useState(true);
 
-export default async function ShortUrlRedirect({ params }: PageProps) {
-  // On Netlify, params can be empty ({}). Derive code from request URL as fallback.
-  let code = params?.code as string | undefined;
+  useEffect(() => {
+    // Derive code from current URL on the client
+    try {
+      const path = window.location.pathname; // e.g. /s/xsp0e
+      const segments = path.split("/").filter(Boolean);
+      if (segments[0] === "s" && segments[1]) {
+        const derivedCode = segments[1];
+        setCode(derivedCode);
 
-  if (!code) {
-    const h = await headers();
-    const rawUrl =
-      h.get('x-nf-request-url') ||
-      h.get('x-forwarded-url') ||
-      undefined;
-
-    if (rawUrl) {
-      try {
-        const url = new URL(rawUrl);
-        const segments = url.pathname.split('/').filter(Boolean);
-        // Expecting /s/{code}
-        if (segments[0] === 's' && segments[1]) {
-          code = segments[1];
-        }
-      } catch (e) {
-        console.error('Error parsing request URL for short code:', e);
+        // Call API to resolve the long URL and redirect
+        fetch(`/api/shorten?code=${encodeURIComponent(derivedCode)}`)
+          .then(async (res) => {
+            if (!res.ok) return;
+            const data = await res.json();
+            if (data?.url) {
+              window.location.href = data.url as string;
+            } else {
+              setIsResolving(false);
+            }
+          })
+          .catch(() => {
+            setIsResolving(false);
+          });
+      } else {
+        setIsResolving(false);
       }
+    } catch {
+      setIsResolving(false);
     }
-  }
+  }, []);
 
-  try {
-    if (code) {
-      const urlData = await redis.get<string>(code);
-      if (urlData) {
-        redirect(urlData);
-      }
-    }
-  } catch (error) {
-    console.error('Error retrieving short URL:', error);
+  if (isResolving) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center px-6">
+        <div className="max-w-md text-center">
+          <h1 className="font-anek font-bold text-3xl text-[#0b2540] mb-4">
+            Redirecting...
+          </h1>
+          <p className="font-noto text-[#5a6c7d]">
+            Please wait while we take you to the original link.
+          </p>
+        </div>
+      </div>
+    );
   }
 
   // If URL not found or error, show clean 404 page
@@ -59,26 +61,15 @@ export default async function ShortUrlRedirect({ params }: PageProps) {
           Short URL Not Found
         </h2>
         <p className="font-noto text-[#5a6c7d] mb-8">
-          The short URL <span className="font-mono text-[#419372]">/s/{code ?? ''}</span> does not exist or has expired.
+          The short URL <span className="font-mono text-[#419372]">/s/{code ?? ""}</span> does not exist or has expired.
         </p>
         <a
           href="/"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#419372] text-white font-anek font-medium rounded-lg hover:bg-[#357a5e] transition-colors"
         >
-           Back to Home
+          ← Back to Home
         </a>
       </div>
     </div>
   );
-}
-
-// Generate metadata for the page
-export async function generateMetadata() {
-  return {
-    title: 'Redirecting... | Avni',
-    robots: {
-      index: false,
-      follow: false,
-    },
-  };
 }
