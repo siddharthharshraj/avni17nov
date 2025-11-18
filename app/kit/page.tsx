@@ -34,11 +34,9 @@ export default function AvniBrandKitPage() {
   const [utmTerm, setUtmTerm] = useState('');
   const [generatedLinks, setGeneratedLinks] = useState<Record<string, string>>({});
   
-  // URL Shortener state
-  const [longUrl, setLongUrl] = useState('');
-  const [shortUrl, setShortUrl] = useState('');
-  const [isShortening, setIsShortening] = useState(false);
-  const [shortenError, setShortenError] = useState('');
+  // URL Shortener state for UTM links
+  const [shortenedLinks, setShortenedLinks] = useState<Record<string, string>>({});
+  const [shorteningInProgress, setShorteningInProgress] = useState<Record<string, boolean>>({});
 
   const socialPlatforms = [
     { id: 'facebook', name: 'Facebook', color: '#1877F2', icon: Facebook },
@@ -105,15 +103,9 @@ export default function AvniBrandKitPage() {
     setTimeout(() => setCopiedItem(null), 2000);
   };
 
-  const handleShortenUrl = async () => {
-    if (!longUrl || !longUrl.startsWith('http')) {
-      setShortenError('Please enter a valid URL starting with http:// or https://');
-      return;
-    }
-
-    setIsShortening(true);
-    setShortenError('');
-    setShortUrl('');
+  const handleShortenUtmLink = async (platform: string, longUrl: string) => {
+    // Set shortening in progress for this platform
+    setShorteningInProgress(prev => ({ ...prev, [platform]: true }));
 
     try {
       const response = await fetch('/api/shorten', {
@@ -127,14 +119,13 @@ export default function AvniBrandKitPage() {
       const data = await response.json();
 
       if (data.success) {
-        setShortUrl(data.shortUrl);
-      } else {
-        setShortenError(data.error || 'Failed to create short URL');
+        // Store the shortened URL for this platform
+        setShortenedLinks(prev => ({ ...prev, [platform]: data.shortUrl }));
       }
     } catch (error) {
-      setShortenError('Network error. Please try again.');
+      console.error('Error shortening URL:', error);
     } finally {
-      setIsShortening(false);
+      setShorteningInProgress(prev => ({ ...prev, [platform]: false }));
     }
   };
 
@@ -326,82 +317,6 @@ export default function AvniBrandKitPage() {
           </div>
         </section>
 
-        {/* URL Shortener Section */}
-        <section className="mb-16">
-          <h2 className="font-anek font-bold text-3xl text-[#0b2540] mb-6">
-            URL Shortener
-          </h2>
-          <div className="border border-[#E6E6E6] rounded-xl p-6 lg:p-8">
-            <p className="font-noto text-sm text-[#5a6c7d] mb-6">
-              Create short, trackable URLs for social media and campaigns. Instantly generate short links like <span className="font-mono text-[#419372]">avniproject.org/s/abc12</span>
-            </p>
-
-            <div className="space-y-6">
-              {/* Long URL Input */}
-              <div>
-                <label className="block font-anek font-semibold text-sm text-[#0b2540] mb-2">
-                  Long URL <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="url"
-                  value={longUrl}
-                  onChange={(e) => setLongUrl(e.target.value)}
-                  placeholder="https://avniproject.org/blog/your-article"
-                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372]"
-                />
-              </div>
-
-              {/* Error Message */}
-              {shortenError && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                  <p className="font-noto text-sm text-red-700">{shortenError}</p>
-                </div>
-              )}
-
-              {/* Generate Button */}
-              <button
-                onClick={handleShortenUrl}
-                disabled={isShortening || !longUrl}
-                className="w-full px-6 py-3 bg-[#419372] text-white font-anek font-semibold rounded-lg hover:bg-[#357a5e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isShortening ? 'Creating Short URL...' : 'Shorten URL'}
-              </button>
-
-              {/* Short URL Result */}
-              {shortUrl && (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <div className="flex-1">
-                      <p className="font-anek font-semibold text-sm text-[#0b2540] mb-2">
-                        ✅ Short URL Created!
-                      </p>
-                      <code className="block font-mono text-sm text-[#419372] bg-white px-4 py-3 rounded border border-green-200 break-all">
-                        {shortUrl}
-                      </code>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => handleCopy(shortUrl, 'shortUrl')}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-[#419372] text-white font-anek text-sm rounded-lg hover:bg-[#357a5e] transition-colors"
-                  >
-                    {copiedItem === 'shortUrl' ? (
-                      <>
-                        <Check className="w-4 h-4" />
-                        Copied!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-4 h-4" />
-                        Copy Shortened URL
-                      </>
-                    )}
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-
         {/* UTM Link Generator Section */}
         <section className="mb-16">
           <h2 className="font-anek font-bold text-3xl text-[#0b2540] mb-6">
@@ -552,30 +467,78 @@ export default function AvniBrandKitPage() {
                       key={source}
                       className="border border-[#E6E6E6] rounded-lg p-4"
                     >
-                      <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center justify-between mb-3">
                         <span className="font-anek font-semibold text-sm text-[#0b2540] capitalize">
                           {source}
                         </span>
-                        <button
-                          onClick={() => handleCopy(link, source)}
-                          className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#419372] text-white font-anek text-xs rounded hover:bg-[#357a5e] transition-colors"
-                        >
-                          {copiedItem === source ? (
-                            <>
-                              <Check className="w-3 h-3" />
-                              Copied!
-                            </>
-                          ) : (
-                            <>
-                              <Copy className="w-3 h-3" />
-                              Copy Link
-                            </>
-                          )}
-                        </button>
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => handleCopy(link, source)}
+                            className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#419372] text-white font-anek text-xs rounded hover:bg-[#357a5e] transition-colors"
+                          >
+                            {copiedItem === source ? (
+                              <>
+                                <Check className="w-3 h-3" />
+                                Copied!
+                              </>
+                            ) : (
+                              <>
+                                <Copy className="w-3 h-3" />
+                                Copy Link
+                              </>
+                            )}
+                          </button>
+                          <button
+                            onClick={() => handleShortenUtmLink(source, link)}
+                            disabled={shorteningInProgress[source]}
+                            className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#FF8854] text-white font-anek text-xs rounded hover:bg-[#e67740] transition-colors disabled:opacity-50"
+                          >
+                            {shorteningInProgress[source] ? (
+                              'Shortening...'
+                            ) : shortenedLinks[source] ? (
+                              <>
+                                <Check className="w-3 h-3" />
+                                Shortened
+                              </>
+                            ) : (
+                              'Shorten URL'
+                            )}
+                          </button>
+                        </div>
                       </div>
-                      <code className="block font-mono text-xs text-[#5a6c7d] bg-[#FCFCFC] px-3 py-2 rounded break-all">
+                      <code className="block font-mono text-xs text-[#5a6c7d] bg-[#FCFCFC] px-3 py-2 rounded break-all mb-3">
                         {link}
                       </code>
+                      
+                      {/* Shortened URL */}
+                      {shortenedLinks[source] && (
+                        <div className="mt-3 pt-3 border-t border-[#E6E6E6]">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="font-anek font-semibold text-xs text-[#419372]">
+                              ✨ Shortened URL
+                            </span>
+                            <button
+                              onClick={() => handleCopy(shortenedLinks[source], `${source}-short`)}
+                              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#419372] text-white font-anek text-xs rounded hover:bg-[#357a5e] transition-colors"
+                            >
+                              {copiedItem === `${source}-short` ? (
+                                <>
+                                  <Check className="w-3 h-3" />
+                                  Copied!
+                                </>
+                              ) : (
+                                <>
+                                  <Copy className="w-3 h-3" />
+                                  Copy Shortened URL
+                                </>
+                              )}
+                            </button>
+                          </div>
+                          <code className="block font-mono text-xs text-[#419372] bg-green-50 px-3 py-2 rounded break-all font-semibold">
+                            {shortenedLinks[source]}
+                          </code>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
