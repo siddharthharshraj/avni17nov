@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Use Edge Runtime for Netlify Blobs compatibility
+export const runtime = 'edge';
+
 // Generate random 5-character code
 function generateCode(): string {
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
