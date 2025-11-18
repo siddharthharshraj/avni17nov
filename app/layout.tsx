@@ -94,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${anekLatin.variable} ${notoSans.variable}`}>
+    <html lang="en" className={`${anekLatin.variable} ${notoSans.variable}`} suppressHydrationWarning>
       <head>
         {/* SEO Meta Tags */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
