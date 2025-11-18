@@ -133,7 +133,7 @@ export default function AvniStatusPage() {
         {/* Quick Links */}
         <div className="mt-6 text-center">
           <a
-            href="https://avniproject.org"
+            href="/"
             className="inline-flex items-center gap-2 font-noto text-sm text-[#419372] hover:underline"
           >
             ← Back to Avni Website

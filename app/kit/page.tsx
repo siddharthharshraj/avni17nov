@@ -6,15 +6,23 @@
  * Contains brand assets, colors, typography, and UTM link generator
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Download, Copy, Check } from 'lucide-react';
 
 export default function AvniBrandKitPage() {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
   
-  // UTM Generator State
-  const [websiteUrl, setWebsiteUrl] = useState('https://avniproject.org');
+  // Auto-detect current domain
+  const [websiteUrl, setWebsiteUrl] = useState('');
+  
+  useEffect(() => {
+    // Auto-detect the current website URL
+    if (typeof window !== 'undefined') {
+      const currentOrigin = window.location.origin;
+      setWebsiteUrl(currentOrigin);
+    }
+  }, []);
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
   const [utmMedium, setUtmMedium] = useState('');
   const [utmCampaign, setUtmCampaign] = useState('');
@@ -126,7 +134,7 @@ export default function AvniBrandKitPage() {
       <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-4">
           <Link
-            href="https://avniproject.org"
+            href="/"
             className="inline-flex items-center gap-2 text-[#419372] font-noto text-sm font-medium hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -285,18 +293,22 @@ export default function AvniBrandKitPage() {
             </p>
 
             <div className="space-y-6">
-              {/* Website URL */}
+              {/* Website URL - Auto-detected */}
               <div>
                 <label className="block font-anek font-semibold text-sm text-[#0b2540] mb-2">
                   Website URL <span className="text-red-500">*</span>
+                  <span className="font-normal text-[#419372] ml-2 text-xs">(Auto-detected)</span>
                 </label>
                 <input
                   type="url"
                   value={websiteUrl}
                   onChange={(e) => setWebsiteUrl(e.target.value)}
-                  placeholder="https://avniproject.org"
-                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372]"
+                  placeholder="Auto-detecting current domain..."
+                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372] bg-[#FCFCFC]"
                 />
+                <p className="font-noto text-xs text-[#5a6c7d] mt-1">
+                  Current domain is automatically detected. Edit if needed.
+                </p>
               </div>
 
               {/* Platform Selection */}
