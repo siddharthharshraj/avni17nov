@@ -33,6 +33,12 @@ export default function AvniBrandKitPage() {
   const [utmContent, setUtmContent] = useState('');
   const [utmTerm, setUtmTerm] = useState('');
   const [generatedLinks, setGeneratedLinks] = useState<Record<string, string>>({});
+  
+  // URL Shortener state
+  const [longUrl, setLongUrl] = useState('');
+  const [shortUrl, setShortUrl] = useState('');
+  const [isShortening, setIsShortening] = useState(false);
+  const [shortenError, setShortenError] = useState('');
 
   const socialPlatforms = [
     { id: 'facebook', name: 'Facebook', color: '#1877F2', icon: Facebook },
@@ -97,6 +103,39 @@ export default function AvniBrandKitPage() {
     navigator.clipboard.writeText(text);
     setCopiedItem(id);
     setTimeout(() => setCopiedItem(null), 2000);
+  };
+
+  const handleShortenUrl = async () => {
+    if (!longUrl || !longUrl.startsWith('http')) {
+      setShortenError('Please enter a valid URL starting with http:// or https://');
+      return;
+    }
+
+    setIsShortening(true);
+    setShortenError('');
+    setShortUrl('');
+
+    try {
+      const response = await fetch('/api/shorten', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url: longUrl }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setShortUrl(data.shortUrl);
+      } else {
+        setShortenError(data.error || 'Failed to create short URL');
+      }
+    } catch (error) {
+      setShortenError('Network error. Please try again.');
+    } finally {
+      setIsShortening(false);
+    }
   };
 
   const toggleSource = (sourceId: string) => {
@@ -284,6 +323,82 @@ export default function AvniBrandKitPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* URL Shortener Section */}
+        <section className="mb-16">
+          <h2 className="font-anek font-bold text-3xl text-[#0b2540] mb-6">
+            URL Shortener
+          </h2>
+          <div className="border border-[#E6E6E6] rounded-xl p-6 lg:p-8">
+            <p className="font-noto text-sm text-[#5a6c7d] mb-6">
+              Create short, trackable URLs for social media and campaigns. Instantly generate short links like <span className="font-mono text-[#419372]">avniproject.org/s/abc12</span>
+            </p>
+
+            <div className="space-y-6">
+              {/* Long URL Input */}
+              <div>
+                <label className="block font-anek font-semibold text-sm text-[#0b2540] mb-2">
+                  Long URL <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="url"
+                  value={longUrl}
+                  onChange={(e) => setLongUrl(e.target.value)}
+                  placeholder="https://avniproject.org/blog/your-article"
+                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372]"
+                />
+              </div>
+
+              {/* Error Message */}
+              {shortenError && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                  <p className="font-noto text-sm text-red-700">{shortenError}</p>
+                </div>
+              )}
+
+              {/* Generate Button */}
+              <button
+                onClick={handleShortenUrl}
+                disabled={isShortening || !longUrl}
+                className="w-full px-6 py-3 bg-[#419372] text-white font-anek font-semibold rounded-lg hover:bg-[#357a5e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isShortening ? 'Creating Short URL...' : 'Shorten URL'}
+              </button>
+
+              {/* Short URL Result */}
+              {shortUrl && (
+                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div className="flex-1">
+                      <p className="font-anek font-semibold text-sm text-[#0b2540] mb-2">
+                        ✅ Short URL Created!
+                      </p>
+                      <code className="block font-mono text-sm text-[#419372] bg-white px-4 py-3 rounded border border-green-200 break-all">
+                        {shortUrl}
+                      </code>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => handleCopy(shortUrl, 'shortUrl')}
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-[#419372] text-white font-anek text-sm rounded-lg hover:bg-[#357a5e] transition-colors"
+                  >
+                    {copiedItem === 'shortUrl' ? (
+                      <>
+                        <Check className="w-4 h-4" />
+                        Copied!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        Copy Shortened URL
+                      </>
+                    )}
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
