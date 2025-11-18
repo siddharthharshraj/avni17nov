@@ -6,6 +6,8 @@
 'use client';
 
 import { useState } from 'react';
+import { useAnalytics } from '@/hooks/useAnalytics';
+import { trackForm, trackConversion } from '@/lib/analytics';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,11 +17,28 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [formStarted, setFormStarted] = useState(false);
+
+  // Analytics tracking
+  const { trackFormInteraction } = useAnalytics({ category: 'Contact Form' });
+
+  // Track form start on first field interaction
+  const handleFormStart = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackForm.start('contact_form');
+      console.log('[Analytics] Contact form started');
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMessage('');
+
+    // Track form submission attempt
+    trackForm.submit('contact_form');
+    console.log('[Analytics] Contact form submitted');
 
     try {
       const response = await fetch('/api/contact', {
@@ -34,14 +53,23 @@ export default function ContactForm() {
         throw new Error('Failed to send message');
       }
 
+      // Track successful submission
       setStatus('success');
+      trackForm.success('contact_form');
+      trackConversion.contactFormSubmit();
+      console.log('[Analytics] Contact form success - conversion tracked!');
+
       setFormData({ name: '', email: '', message: '' });
+      setFormStarted(false); // Reset for next submission
       
       // Reset success message after 5 seconds
       setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
+      // Track form error
       setStatus('error');
       setErrorMessage('Failed to send message. Please try again.');
+      trackForm.error('contact_form', 'api_error');
+      console.log('[Analytics] Contact form error tracked');
     }
   };
 
@@ -59,6 +87,10 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            onFocus={() => {
+              handleFormStart();
+              trackForm.fieldFocus('contact_form', 'name');
+            }}
             placeholder="Your Full Name"
             className="w-full h-[60px] md:h-[80px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#419372] focus:border-transparent"
           />
@@ -75,6 +107,10 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onFocus={() => {
+              handleFormStart();
+              trackForm.fieldFocus('contact_form', 'email');
+            }}
             placeholder="Your Organisational Email Id"
             className="w-full h-[60px] md:h-[80px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#419372] focus:border-transparent"
           />
@@ -90,6 +126,10 @@ export default function ContactForm() {
             required
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            onFocus={() => {
+              handleFormStart();
+              trackForm.fieldFocus('contact_form', 'message');
+            }}
             placeholder="Your message..."
             className="w-full h-[180px] md:h-[250px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#419372] focus:border-transparent resize-none"
           />

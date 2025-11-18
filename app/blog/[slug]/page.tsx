@@ -22,6 +22,7 @@ import BlogCard from '@/components/blog/BlogCard';
 import SmartStickySidebar from '@/components/blog/SmartStickySidebar';
 import BlogMetaInfo from '@/components/blog/BlogMetaInfo';
 import BlogShareCTA from '@/components/blog/BlogShareCTA';
+import BlogAnalyticsTracker from '@/components/blog/BlogAnalyticsTracker';
 
 // Generate metadata for SEO
 export async function generateMetadata({
@@ -71,6 +72,16 @@ export default async function BlogPostPage({
 
   return (
     <>
+      {/* Analytics Tracker - Automatic for ALL blogs (current + future) */}
+      <BlogAnalyticsTracker
+        title={frontmatter.title}
+        category={frontmatter.category}
+        author={frontmatter.author || 'Avni Team'}
+        tags={frontmatter.tags}
+        date={frontmatter.date}
+        slug={slug}
+      />
+
       {/* JSON-LD Structured Data */}
       <Script
         id="blog-jsonld"

@@ -17,6 +17,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CaseStudyContent from '@/components/case-studies/CaseStudyContent';
 import RelatedCaseStudies from '@/components/case-studies/RelatedCaseStudies';
+import CaseStudyAnalyticsTracker from '@/components/case-studies/CaseStudyAnalyticsTracker';
 import { 
   getCaseStudyBySlug, 
   getAllCaseStudySlugs, 
@@ -117,6 +118,16 @@ export default async function CaseStudyPage({
 
   return (
     <>
+      {/* Analytics Tracker - Automatic for ALL case studies (current + future) */}
+      <CaseStudyAnalyticsTracker
+        title={caseStudy.frontmatter.title}
+        sector={caseStudy.frontmatter.sector}
+        author={caseStudy.frontmatter.author}
+        tags={caseStudy.frontmatter.tags}
+        date={caseStudy.frontmatter.date}
+        slug={slug}
+      />
+
       <Header />
 
       <main className="min-h-screen bg-white pt-[72px]">

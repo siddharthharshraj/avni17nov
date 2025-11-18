@@ -9,9 +9,16 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const FIGMA_TOKEN = 'figd_vUrTWSz4v210PJ-4ryyigo_KVNG7sdkJPN7mT5eM';
+// Load from environment variable for security
+const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
 const FILE_KEY = process.argv[2] || 'mIajDP8cdoIgNPhIvkpnKP';
 const NODE_ID = process.argv[3] || '202:4642';
+
+if (!FIGMA_TOKEN) {
+  console.error('❌ ERROR: FIGMA_TOKEN not found in environment variables');
+  console.error('Please set FIGMA_TOKEN in your .env file or environment');
+  process.exit(1);
+}
 
 function fetchFigmaFile(fileKey, nodeId) {
   const encodedNodeId = encodeURIComponent(nodeId);

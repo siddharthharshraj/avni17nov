@@ -9,6 +9,8 @@ import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import 'react-phone-number-input/style.css';
+import { useAnalytics } from '@/hooks/useAnalytics';
+import { trackForm, trackConversion, trackCTA } from '@/lib/analytics';
 
 // Dynamically import ReCAPTCHA to avoid SSR issues
 const ReCAPTCHA = dynamic(() => import('react-google-recaptcha'), { ssr: false });
@@ -35,6 +37,19 @@ export default function SignupForm() {
   const [status, setStatus] = useState<'initial' | 'success' | 'error'>('initial');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [validationErrors, setValidationErrors] = useState<ValidationErrors>({});
+  const [formStarted, setFormStarted] = useState(false);
+
+  // Analytics tracking
+  const { trackFormInteraction } = useAnalytics({ category: 'Signup Form' });
+
+  // Track form start on first field interaction
+  const handleFormStart = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackForm.start('signup_form');
+      console.log('[Analytics] Signup form started');
+    }
+  };
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -151,11 +166,20 @@ export default function SignupForm() {
 
     if (isSubmitting) return;
 
+    // Track form submission
+    trackForm.submit('signup_form');
+    console.log('[Analytics] Signup form submitted');
+
     // Validate form
     const errors = validateForm();
     
     if (Object.keys(errors).length > 0) {
       setValidationErrors(errors);
+      // Track validation errors
+      Object.keys(errors).forEach(field => {
+        trackForm.validationError('signup_form', field);
+      });
+      console.log('[Analytics] Signup form validation errors:', Object.keys(errors));
       return;
     }
 
@@ -189,6 +213,13 @@ export default function SignupForm() {
 
       if (response.ok) {
         setStatus('success');
+        
+        // Track successful signup - MAJOR CONVERSION!
+        trackForm.success('signup_form');
+        trackConversion.signupComplete();
+        trackCTA.signupClick('signup_page');
+        console.log('[Analytics] 🎉 SIGNUP SUCCESS - Conversion tracked!');
+        
         // Set cookie to prevent duplicate submissions
         document.cookie = `avni_signup_${formData.email}=true; max-age=86400; path=/`;
       } else {
@@ -197,6 +228,10 @@ export default function SignupForm() {
     } catch (error) {
       console.error('Error:', error);
       setStatus('error');
+      
+      // Track signup error
+      trackForm.error('signup_form', 'api_error');
+      console.log('[Analytics] Signup form error tracked');
     } finally {
       setIsSubmitting(false);
     }
