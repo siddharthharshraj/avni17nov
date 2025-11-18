@@ -5,8 +5,8 @@
 
 export const siteConfig = {
   name: 'Avni',
-  title: 'Avni - Digital Field Work Platform for NGOs',
-  description: 'Empower your NGO with Avni - a simple, sustainable digital platform for field data collection, case management, and impact measurement. Open source, made in India, AI-powered.',
+  title: 'Open-source AI-powered Offline-capable Data collection and Reporting platform for Non-profits',
+  description: 'Open-source AI-powered platform for offline data collection and reporting. Built for non-profits with case management, mobile data collection, and intelligent reporting. Made in India.',
   url: 'https://avniproject.org',
   ogImage: '/og-image.jpg',
   twitterHandle: '@avniproject',
@@ -69,9 +69,9 @@ export const siteConfig = {
 // Page-specific SEO metadata
 export const pageMetadata = {
   home: {
-    title: 'Avni - Digitise Your Field Work, Transform Lives',
-    description: 'Empower NGOs with simple, sustainable digital tools for field data collection, case management, and impact measurement. Open source, made in India, AI-powered.',
-    keywords: ['field data collection', 'NGO software', 'mobile health', 'case management', 'impact measurement'],
+    title: 'Open-source AI-powered Offline-capable Data collection and Reporting platform for Non-profits',
+    description: 'Open-source AI-powered platform for offline data collection and reporting. Built for non-profits with case management, mobile data collection, and intelligent reporting.',
+    keywords: ['open source', 'AI-powered', 'offline data collection', 'reporting platform', 'non-profits', 'NGO software', 'field data collection', 'case management'],
   },
   
   about: {

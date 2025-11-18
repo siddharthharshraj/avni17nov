@@ -28,11 +28,11 @@ const notoSans = Noto_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Avni - Field Data Collection & Monitoring Platform for NGOs",
+    default: "Open-source AI-powered Offline-capable Data collection and Reporting platform for Non-profits",
     template: "%s | Avni"
   },
-  description: "Digitize your field work with Avni - a powerful platform for case management, reporting, cohort studies, and mobile data collection. Built for NGOs and healthcare programs.",
-  keywords: ["field data collection", "case management", "mobile health", "NGO software", "healthcare monitoring", "data collection platform", "digital field work", "mobile data collection", "NGO technology"],
+  description: "Open-source AI-powered platform for offline data collection and reporting. Built for non-profits with case management, mobile data collection, and intelligent reporting. Digitize your field work with Avni.",
+  keywords: ["open source", "AI-powered", "offline data collection", "reporting platform", "non-profits", "NGO software", "field data collection", "case management", "mobile health", "offline-capable", "data reporting", "nonprofit technology"],
   authors: [{ name: "Avni" }],
   creator: "Avni",
   publisher: "Avni",
