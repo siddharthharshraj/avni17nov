@@ -1,4 +1,6 @@
 import { redirect } from 'next/navigation';
+import fs from 'fs/promises';
+import path from 'path';
 
 interface PageProps {
   params: {
@@ -10,10 +12,11 @@ export default async function ShortUrlRedirect({ params }: PageProps) {
   const { code } = params;
 
   try {
-    // Try to get the URL from Netlify Blobs
-    const { getStore } = await import('@netlify/blobs');
-    const store = getStore('short-urls');
-    const urlData = await store.get(code, { type: 'text' });
+    // Read from JSON file
+    const filePath = path.join(process.cwd(), 'public', 'short-urls.json');
+    const data = await fs.readFile(filePath, 'utf-8');
+    const urls = JSON.parse(data);
+    const urlData = urls[code];
 
     if (urlData) {
       // Redirect to the original URL

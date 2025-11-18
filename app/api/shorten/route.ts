@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-// Use Edge Runtime for Netlify Blobs compatibility
-export const runtime = 'edge';
+import fs from 'fs/promises';
+import path from 'path';
 
 // Generate random 5-character code
 function generateCode(): string {
@@ -11,6 +10,26 @@ function generateCode(): string {
     code += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return code;
+}
+
+// Path to JSON file
+const getFilePath = () => path.join(process.cwd(), 'public', 'short-urls.json');
+
+// Read URLs from file
+async function readUrls(): Promise<Record<string, string>> {
+  try {
+    const filePath = getFilePath();
+    const data = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    return {};
+  }
+}
+
+// Write URLs to file
+async function writeUrls(urls: Record<string, string>): Promise<void> {
+  const filePath = getFilePath();
+  await fs.writeFile(filePath, JSON.stringify(urls, null, 2), 'utf-8');
 }
 
 export async function POST(request: NextRequest) {
@@ -24,55 +43,40 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Try to use Netlify Blobs if available
-    try {
-      const { getStore } = await import('@netlify/blobs');
-      const store = getStore('short-urls');
+    // Read existing URLs
+    const urls = await readUrls();
 
-      // Generate unique code
-      let code = generateCode();
-      let attempts = 0;
-      
-      // Ensure code is unique (check if it already exists)
-      while (attempts < 10) {
-        const existing = await store.get(code, { type: 'text' });
-        if (!existing) break;
-        code = generateCode();
-        attempts++;
-      }
+    // Generate unique code
+    let code = generateCode();
+    let attempts = 0;
+    
+    while (attempts < 10 && urls[code]) {
+      code = generateCode();
+      attempts++;
+    }
 
-      if (attempts >= 10) {
-        return NextResponse.json(
-          { error: 'Failed to generate unique code. Please try again.' },
-          { status: 500 }
-        );
-      }
-
-      // Store the mapping
-      await store.set(code, url);
-
-      // Get the current domain
-      const host = request.headers.get('host') || 'avniproject.org';
-      const protocol = host.includes('localhost') ? 'http' : 'https';
-      const shortUrl = `${protocol}://${host}/s/${code}`;
-
-      return NextResponse.json({
-        success: true,
-        code,
-        shortUrl,
-        originalUrl: url,
-      });
-    } catch (blobError) {
-      // Netlify Blobs not available - return error with helpful message
-      console.error('Netlify Blobs not available:', blobError);
+    if (attempts >= 10) {
       return NextResponse.json(
-        { 
-          error: 'URL shortener requires Netlify deployment. Please deploy to Netlify to use this feature.',
-          details: 'This feature uses Netlify Blobs which is only available on Netlify servers.'
-        },
-        { status: 503 }
+        { error: 'Failed to generate unique code. Please try again.' },
+        { status: 500 }
       );
     }
+
+    // Store the mapping
+    urls[code] = url;
+    await writeUrls(urls);
+
+    // Get the current domain
+    const host = request.headers.get('host') || 'avniproject.org';
+    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const shortUrl = `${protocol}://${host}/s/${code}`;
+
+    return NextResponse.json({
+      success: true,
+      code,
+      shortUrl,
+      originalUrl: url,
+    });
   } catch (error) {
     console.error('Error creating short URL:', error);
     return NextResponse.json(
@@ -95,28 +99,20 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    try {
-      const { getStore } = await import('@netlify/blobs');
-      const store = getStore('short-urls');
-      const url = await store.get(code, { type: 'text' });
+    const urls = await readUrls();
+    const url = urls[code];
 
-      if (!url) {
-        return NextResponse.json(
-          { error: 'Short URL not found' },
-          { status: 404 }
-        );
-      }
-
-      return NextResponse.json({
-        code,
-        url,
-      });
-    } catch (blobError) {
+    if (!url) {
       return NextResponse.json(
-        { error: 'Netlify Blobs not available' },
-        { status: 503 }
+        { error: 'Short URL not found' },
+        { status: 404 }
       );
     }
+
+    return NextResponse.json({
+      code,
+      url,
+    });
   } catch (error) {
     console.error('Error retrieving short URL:', error);
     return NextResponse.json(
