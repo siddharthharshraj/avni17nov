@@ -14,20 +14,26 @@
 'use client';
 
 import Script from 'next/script';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { pageview, GA_MEASUREMENT_ID } from '@/lib/analytics';
 
-export default function GoogleAnalytics() {
+// Separate component for page tracking to handle useSearchParams with Suspense
+function PageViewTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
     if (!GA_MEASUREMENT_ID) return;
 
-    const url = pathname + searchParams.toString();
+    const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : '');
     pageview(url);
   }, [pathname, searchParams]);
+
+  return null;
+}
+
+export default function GoogleAnalytics() {
 
   if (!GA_MEASUREMENT_ID) {
     console.warn('Google Analytics: NEXT_PUBLIC_GA_MEASUREMENT_ID is not set');
@@ -36,6 +42,11 @@ export default function GoogleAnalytics() {
 
   return (
     <>
+      {/* Page View Tracker with Suspense for useSearchParams */}
+      <Suspense fallback={null}>
+        <PageViewTracker />
+      </Suspense>
+
       {/* Google Analytics gtag.js */}
       <Script
         strategy="afterInteractive"
