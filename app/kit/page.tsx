@@ -8,7 +8,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Download, Copy, Check } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowLeft, Download, Copy, Check, Facebook, Linkedin, Youtube } from 'lucide-react';
 
 export default function AvniBrandKitPage() {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
@@ -31,10 +32,10 @@ export default function AvniBrandKitPage() {
   const [generatedLinks, setGeneratedLinks] = useState<Record<string, string>>({});
 
   const socialPlatforms = [
-    { id: 'facebook', name: 'Facebook', color: '#1877F2' },
-    { id: 'linkedin', name: 'LinkedIn', color: '#0A66C2' },
-    { id: 'twitter', name: 'Twitter', color: '#1DA1F2' },
-    { id: 'youtube', name: 'YouTube', color: '#FF0000' },
+    { id: 'facebook', name: 'Facebook', color: '#1877F2', icon: Facebook },
+    { id: 'linkedin', name: 'LinkedIn', color: '#0A66C2', icon: Linkedin },
+    { id: 'twitter', name: 'X (Twitter)', color: '#000000', icon: 'X' },
+    { id: 'youtube', name: 'YouTube', color: '#FF0000', icon: Youtube },
   ];
 
   const brandColors = [
@@ -166,10 +167,32 @@ export default function AvniBrandKitPage() {
                 key={asset.name}
                 className="border border-[#E6E6E6] rounded-xl p-6 hover:shadow-lg transition-shadow"
               >
-                <div className="bg-[#FCFCFC] rounded-lg p-8 mb-4 flex items-center justify-center min-h-[200px]">
-                  <div className="text-center text-[#5a6c7d]">
-                    {asset.name}
-                  </div>
+                <div className="bg-[#FCFCFC] rounded-lg p-8 mb-4 flex items-center justify-center min-h-[200px] relative">
+                  {asset.name === 'Avni Logo (Full)' && (
+                    <Image
+                      src="/avni-logo.svg"
+                      alt="Avni Logo"
+                      width={200}
+                      height={60}
+                      className="object-contain"
+                    />
+                  )}
+                  {asset.name === 'Avni Icon' && (
+                    <div className="w-24 h-24 bg-[#419372] rounded-2xl flex items-center justify-center">
+                      <div className="text-white font-bold text-4xl">A</div>
+                    </div>
+                  )}
+                  {asset.name === 'Avni Logo (White)' && (
+                    <div className="bg-[#0b2540] p-8 rounded-lg">
+                      <Image
+                        src="/avni-logo.svg"
+                        alt="Avni Logo White"
+                        width={200}
+                        height={60}
+                        className="object-contain brightness-0 invert"
+                      />
+                    </div>
+                  )}
                 </div>
                 <h3 className="font-anek font-semibold text-lg text-[#0b2540] mb-2">
                   {asset.name}
@@ -317,23 +340,39 @@ export default function AvniBrandKitPage() {
                   Select Platforms <span className="text-red-500">*</span>
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {socialPlatforms.map((platform) => (
-                    <button
-                      key={platform.id}
-                      onClick={() => toggleSource(platform.id)}
-                      className={`flex items-center justify-center gap-2 px-4 py-3 border-2 rounded-lg font-anek font-medium text-sm transition-all ${
-                        selectedSources.includes(platform.id)
-                          ? 'border-[#419372] bg-[#419372] text-white'
-                          : 'border-[#E6E6E6] text-[#5a6c7d] hover:border-[#419372]'
-                      }`}
-                    >
-                      <div
-                        className="w-3 h-3 rounded-full"
-                        style={{ backgroundColor: selectedSources.includes(platform.id) ? 'white' : platform.color }}
-                      />
-                      {platform.name}
-                    </button>
-                  ))}
+                  {socialPlatforms.map((platform) => {
+                    const Icon = platform.icon;
+                    const isSelected = selectedSources.includes(platform.id);
+                    
+                    return (
+                      <button
+                        key={platform.id}
+                        onClick={() => toggleSource(platform.id)}
+                        className={`flex items-center justify-center gap-2 px-4 py-3 border-2 rounded-lg font-anek font-medium text-sm transition-all ${
+                          isSelected
+                            ? 'border-[#419372] bg-[#419372] text-white'
+                            : 'border-[#E6E6E6] text-[#5a6c7d] hover:border-[#419372]'
+                        }`}
+                      >
+                        {Icon === 'X' ? (
+                          <svg
+                            className="w-4 h-4"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            style={{ color: isSelected ? 'white' : platform.color }}
+                          >
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                          </svg>
+                        ) : (
+                          <Icon 
+                            className="w-4 h-4" 
+                            style={{ color: isSelected ? 'white' : platform.color }}
+                          />
+                        )}
+                        {platform.name}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
