@@ -199,10 +199,11 @@ export interface BlogFrontmatter {
   category?: string;
   image?: string;
   featuredImage?: string | { src: string; alt?: string; title?: string };
+  featuredimage?: string; // Alternative lowercase version for compatibility
   featured?: boolean; // Optional - determined by centralized config
   description?: string;
   date: string;
-  author?: string | { name: string; avatar?: string };
+  author?: string | { name: string; avatar?: string; image?: string; title?: string };
   authorTitle?: string; // Optional - author designation
   readTime?: string;
   readingTime?: string;

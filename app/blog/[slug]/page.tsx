@@ -192,16 +192,19 @@ export default async function BlogPostPage({
         {relatedPosts.length > 0 && (
           <div className="w-full bg-gradient-to-b from-[#E9EAF8]/40 to-[#E9EAF8]/60 py-16 lg:py-20">
             <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-              <div className="text-center mb-12">
-                <p className="font-anek font-semibold text-sm text-[#419372] uppercase tracking-wide mb-3">
-                  CONTINUE READING
-                </p>
-                <h2 className="font-anek font-bold text-3xl lg:text-4xl text-[#0b2540] mb-4">
-                  You Might Also Like
+              <div className="mb-12">
+                <h2 
+                  className="font-anek font-bold text-[#0B2540]"
+                  style={{
+                    fontSize: '36px',
+                    lineHeight: '40px',
+                    letterSpacing: '0px',
+                    width: '219px',
+                    height: '40px'
+                  }}
+                >
+                  Related Posts
                 </h2>
-                <p className="font-noto text-base lg:text-lg text-[#6B7280] max-w-2xl mx-auto">
-                  Discover more insights and stories from the Avni community
-                </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {relatedPosts.slice(0, 3).map((post) => (

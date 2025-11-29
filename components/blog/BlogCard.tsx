@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Blog Card Component
  * Individual blog post card with image, category, title, and read more button
@@ -5,6 +7,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { Blog } from '@/lib/markdown';
 import { getCategoryBadgeStyles } from '@/lib/categories';
 
@@ -14,11 +17,16 @@ interface BlogCardProps {
 
 export default function BlogCard({ blog }: BlogCardProps) {
   const { frontmatter, slug } = blog;
+  const [mounted, setMounted] = useState(false);
   
-  // Extract featured image src - support both 'image' and 'featuredImage' fields
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  // Extract featured image src - support 'image', 'featuredImage', and 'featuredimage' fields
   const featuredImageSrc = typeof frontmatter.featuredImage === 'string' 
     ? frontmatter.featuredImage 
-    : frontmatter.featuredImage?.src || frontmatter.image;
+    : frontmatter.featuredImage?.src || frontmatter.featuredimage || frontmatter.image;
   
   // Use SVG fallback if no image provided OR if using old default path
   const isDefaultOrMissing = !featuredImageSrc || 
@@ -41,7 +49,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
                  flex flex-col"
     >
       {/* Image - Always show (real image or SVG fallback) */}
-      {hasValidImage && (
+      {hasValidImage && mounted && (
         <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] overflow-hidden flex-shrink-0 bg-gray-50">
           <Image
             src={finalImageSrc}
