@@ -6,15 +6,10 @@ author:
 tags:
   - Avni Conference 2025
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2025-02-03-reflections-and-learnings-from-avni-2025-conference/featured.webp
-  alt: >-
-    Featured image for
-    2025-02-03-reflections-and-learnings-from-avni-2025-conference
-published: true
+published: True
 slug: 2025-02-03-reflections-and-learnings-from-avni-2025-conference
 category: User Story
+featuredimage: /blog-images/2025-02-03-reflections-and-learnings-from-avni-2025-conference/featured.webp
 ---
 
 

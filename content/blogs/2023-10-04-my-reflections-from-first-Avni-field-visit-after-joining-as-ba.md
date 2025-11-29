@@ -7,23 +7,11 @@ tags:
   - Field Visits
   - Health
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2023-10-04-my-reflections-from-first-Avni-field-visit-after-joining-as-ba/featured.jpg
-  alt: >-
-    Featured image for
-    2023-10-04-my-reflections-from-first-Avni-field-visit-after-joining-as-ba
-published: true
-description: >-
-  During my field expedition in Gujarat, I had the privilege of witnessing the
-  grassroots activities where Avni is making a significant impact. Sewa Rural
-  and Jashoda Narottam Public Charity Trust (JNPCT), both long-standing NGOs
-  dedicated to serving the tribal communities of Gujarat, have harnessed the
-  power of Avni to enhance their work. Join me on this journey as we delve into
-  the tangible results and transformative potential of Avni in the heart of
-  Gujarat's tribal regions.
+published: True
+description: During my field expedition in Gujarat, I had the privilege of witnessing the grassroots activities where Avni is making a significant impact. Sewa Rural and Jashoda Narottam Public Charity Trust (JNPCT), both long-standing NGOs dedicated to serving the tribal communities of Gujarat, have harnessed the power of Avni to enhance their work. Join me on this journey as we delve into the tangible results and transformative potential of Avni in the heart of Gujarat's tribal regions.
 slug: 2023-10-04-my-reflections-from-first-Avni-field-visit-after-joining-as-ba
 category: Sector
+featuredimage: /blog-images/2023-10-04-my-reflections-from-first-Avni-field-visit-after-joining-as-ba/featured.jpg
 ---
 I joined Samanvay and Avni team as a Business Analyst 4 months back. My role is that of a bridge between the programs team of community based organisations and the development team at Avni to ensure that the requirements are clearly understood and the solution using Avni is satisfactorily delivered. For this, an important part is to understand the programs properly.
 

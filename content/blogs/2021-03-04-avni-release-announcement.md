@@ -9,7 +9,7 @@ slug: 2021-03-04-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/2021-03-04-avni-release-announcement/approval.png
 ---
 
 A new release of Avni field app and Avni admin app is available.

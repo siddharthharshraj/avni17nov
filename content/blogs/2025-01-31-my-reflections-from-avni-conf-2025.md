@@ -6,12 +6,10 @@ author:
 tags:
   - Avni Conference 2025
 type: blog
-featuredImage:
-  src: /blog-images/2025-01-31-my-reflections-from-avni-conf-2025/featured.webp
-  alt: Featured image for 2025-01-31-my-reflections-from-avni-conf-2025
-published: true
+published: True
 slug: 2025-01-31-my-reflections-from-avni-conf-2025
 category: User Story
+featuredimage: /blog-images/2025-01-31-my-reflections-from-avni-conf-2025/featured.webp
 ---
 
 ![featured](/blog-images/2025-01-31-my-reflections-from-avni-conf-2025/featured.webp)

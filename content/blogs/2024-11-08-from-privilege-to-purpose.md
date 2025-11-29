@@ -6,16 +6,11 @@ author:
 tags:
   - Field Visits
 type: blog
-featuredImage:
-  src: /blog-images/2024-11-08-from-privilege-to-purpose/featured.jpeg
-  alt: Featured image for 2024-11-08-from-privilege-to-purpose
-published: true
-description: >-
-  Disclaimer - The suggestions in this blog reflect solely my personal opinions.
-  Avni, Samanvay, and Goonj do not engage in policy recommendations, and the
-  views expressed here are not representative of these organizations.
+published: True
+description: Disclaimer - The suggestions in this blog reflect solely my personal opinions. Avni, Samanvay, and Goonj do not engage in policy recommendations, and the views expressed here are not representative of these organizations.
 slug: 2024-11-08-from-privilege-to-purpose
 category: Sector
+featuredimage: /blog-images/2024-11-08-from-privilege-to-purpose/featured.jpeg
 ---
 
 Every field visit reminds me of how much privileged I am, and this one was no exception. Among Goonj's various initiatives, we witnessed one of their impactful community projects.

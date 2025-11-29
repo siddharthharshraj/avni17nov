@@ -9,7 +9,7 @@ slug: 2023-03-29-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/default-blog-banner.png
 ---
 
 Patch Release 3.37.17 is now live. This release includes minor code changes to fix the performance issue on individual search.

@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Avni Conference, Goa, January 2023 - Day 4
-date: 2023-01-16T16:00:00.000Z
+date: '2023-01-16'
 author: Utkarsh Hathi
 description: This blogpost covers the fourth day of the Avni conference which includes the participation of various NGOs who have been using Avni in their programs.
 

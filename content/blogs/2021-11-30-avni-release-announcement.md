@@ -9,7 +9,7 @@ slug: 2021-11-30-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/default-blog-banner.png
 ---
 
 ### New features

@@ -9,7 +9,7 @@ slug: 2023-01-13-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/2023-01-09-avni-release-announcement/sync_work_flows.png
 ---
 
 Release 3.36 is now live. Please note that this is a major release. Please see the [detailed release notes](https://github.com/avniproject/avni-product/releases/tag/v3.36.5) for more information.

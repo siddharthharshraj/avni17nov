@@ -9,6 +9,7 @@ author: Vedant Raval
 readTime: 2 min read
 tags:
   - Udaipur Sprint 2023 July
+featuredimage: /blog-images/2023-07-18-Udaipur-Sprint-Vedant/avni-team.jpeg
 ---
 
 ## _khamma Ghani !!_

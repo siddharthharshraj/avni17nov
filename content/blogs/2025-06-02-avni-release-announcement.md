@@ -1,7 +1,5 @@
 ---
-title: >-
-  Avni Release 13.0.0 -  Empowering Community-Level Work with Enhanced
-  Dashboards, Bulk User Management, and More!
+title: Avni Release 13.0.0 -  Empowering Community-Level Work with Enhanced Dashboards, Bulk User Management, and More!
 date: '2025-06-02'
 author:
   name: Avni Team
@@ -10,12 +8,10 @@ tags:
   - Dashboard
   - Reporting
 type: blog
-featuredImage:
-  src: /blog-images/2025-06-02-avni-release-announcement/featured.webp
-  alt: Featured image for 2025-06-02-avni-release-announcement
-published: true
+published: True
 slug: 2025-06-02-avni-release-announcement
 category: Avni News
+featuredimage: /blog-images/2025-06-02-avni-release-announcement/featured.webp
 ---
 ![img-01](/blog-images/2025-06-02-avni-release-announcement/img-01.webp)
 

@@ -7,15 +7,10 @@ tags:
   - Health
   - Knowledge
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2024-06-25-digitising-adolescent-community-program-using-avni/featured.png
-  alt: >-
-    Featured image for
-    2024-06-25-digitising-adolescent-community-program-using-avni
-published: true
+published: True
 slug: 2024-06-25-digitising-adolescent-community-program-using-avni
 category: Sector
+featuredimage: /blog-images/2024-06-25-digitising-adolescent-community-program-using-avni/featured.png
 ---
 
 ![featured](/blog-images/2024-06-25-digitising-adolescent-community-program-using-avni/featured.png)

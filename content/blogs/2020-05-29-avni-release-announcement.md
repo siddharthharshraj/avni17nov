@@ -9,7 +9,7 @@ slug: 2020-05-29-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/app_designer_entry.png
 ---
 
 A new release of Avni field app and Avni admin app is available.

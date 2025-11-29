@@ -9,7 +9,7 @@ slug: 2023-06-06-avni-release-3.39.0
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/default-blog-banner.png
 ---
 
 Major Release 3.39.0 is now live, it includes following modifications to Avni application.

@@ -9,7 +9,7 @@ slug: 2023-06-12-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/default-blog-banner.png
 ---
 
 Patch Release 3.39.1 is now live. 

@@ -16,6 +16,7 @@ description: >-
   helps.
 slug: 2019-12-19-community-health-service-programs-and-avni
 category: Sector
+featuredimage: /img/chw-work-complexity.png
 ---
 ## **Community health**
 

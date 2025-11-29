@@ -6,12 +6,10 @@ author:
 tags:
   - Udaipur Sprint 2023 July
 type: blog
-featuredImage:
-  src: /blog-images/2023-07-26-udaipur-sprint-nupoor/featured.jpg
-  alt: Featured image for 2023-07-26-udaipur-sprint-nupoor
-published: true
+published: True
 slug: 2023-07-26-udaipur-sprint-nupoor
 category: Avni News
+featuredimage: /blog-images/2023-07-26-udaipur-sprint-nupoor/featured.jpg
 ---
 
 ![Image from Reflections from the Udaipur Sprint - A Blend of Productivity and Joy](/blog-images/2023-07-26-udaipur-sprint-nupoor/img-04.png)

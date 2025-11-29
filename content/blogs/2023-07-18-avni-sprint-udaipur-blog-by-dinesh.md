@@ -9,6 +9,7 @@ author: Dinesh G
 readTime: 4 min read
 tags:
   - Udaipur Sprint 2023 July
+featuredimage: /blog-images/2023-07-18-avni-sprint-udaipur-blog-by-dinesh/dicussion.jpeg
 ---
 
 # Avni Conference, Udaipur, July 2023

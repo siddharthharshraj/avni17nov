@@ -9,7 +9,7 @@ slug: 2022-03-01-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/features/RD_skip_logic.gif
 ---
 
 TLDR : In February we worked on some amazing features. Rule Designer and Canned Analytics eliminate the last of the hurdles in making Avni self-serviceable, at least and definitely for the small projects and survey type usecases. Images and other media will now be accessible from Reports in a secure manner. Fixing a leakage on quality when data uploaded via CSV. They now pass through a net of validations. 

@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Avni Conference, Goa, January 2023 - Day 4
-date: 2023-01-16T15:00:00.000Z
+date: '2023-01-16'
 author: Beulah  Evanjalin
 description: In this blog, we have covered the happenings of the fourth day of the Avni Conference at Goa, January 2023. 
 

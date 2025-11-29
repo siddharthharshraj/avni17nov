@@ -13,6 +13,7 @@ tags:
   - Community
   - Open Source
   - Collaboration
+featuredimage: /img/default-blog-banner.png
 ---
 
 ### Hello

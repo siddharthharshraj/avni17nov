@@ -1,22 +1,15 @@
 ---
-title: >-
-  Store and Use of Aadhaar in a community service data collection platform -
-  What you need to know
+title: Store and Use of Aadhaar in a community service data collection platform - What you need to know
 date: '2024-11-27'
 author:
   name: Arjun Khandelwal & Vinay Venu
 tags:
   - Knowledge
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2024-11-27-Store-And-Use-of-Aadhaar-In-Avni-What-You-Need-to-Know/Aadhaar_blog.png
-  alt: >-
-    Featured image for
-    2024-11-27-Store-And-Use-of-Aadhaar-In-Avni-What-You-Need-to-Know
-published: true
+published: True
 slug: 2024-11-27-Store-And-Use-of-Aadhaar-In-Avni-What-You-Need-to-Know
 category: Technical Story
+featuredimage: /blog-images/2024-11-27-Store-And-Use-of-Aadhaar-In-Avni-What-You-Need-to-Know/Aadhaar_blog.png
 ---
 
 ## Context

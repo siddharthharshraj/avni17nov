@@ -6,20 +6,11 @@ author:
 tags:
   - Knowledge
 type: blog
-featuredImage:
-  src: /blog-images/avni-appsheet-comparison/avni_appsheet_product_comparison.png
-  alt: Featured image for avni-appsheet-comparison
-published: true
-description: >-
-  Avni is sometimes compared with other products available in the market and
-  nonprofit organisations are interested in know why they should choose Avni.
-  Hence, this is the first in series of posts where we discuss how Avni compares
-  with these options - in the context of the frontline social/development
-  programs done by nonprofit organisations. In this blog, we cover Avni's
-  comparison with AppSheet. We have left out the virtues of open source from the
-  scope of these posts.
+published: True
+description: Avni is sometimes compared with other products available in the market and nonprofit organisations are interested in know why they should choose Avni. Hence, this is the first in series of posts where we discuss how Avni compares with these options - in the context of the frontline social/development programs done by nonprofit organisations. In this blog, we cover Avni's comparison with AppSheet. We have left out the virtues of open source from the scope of these posts.
 slug: avni-appsheet-comparison
 category: Technical Story
+featuredimage: /blog-images/avni-appsheet-comparison/avni_appsheet_product_comparison.png
 ---
 
 ![Avni appsheet product comparison](/blog-images/avni-appsheet-comparison/avni_appsheet_product_comparison.png)

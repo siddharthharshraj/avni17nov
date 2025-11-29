@@ -9,7 +9,7 @@ slug: 2023-05-29-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/default-blog-banner.png
 ---
 
 Patch Release 3.38.5 is now live. This release includes minor code changes to add support for translations.

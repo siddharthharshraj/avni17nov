@@ -6,12 +6,10 @@ author:
 tags:
   - Technology
 type: blog
-featuredImage:
-  src: /blog-images/2024-09-23-Query-Generation-Using-AI/featured.png
-  alt: Featured image for 2024-09-23-Query-Generation-Using-AI
-published: true
+published: True
 slug: 2024-09-23-Query-Generation-Using-AI
 category: Technical Story
+featuredimage: /blog-images/2024-09-23-Query-Generation-Using-AI/featured.png
 ---
 
 ### Context

@@ -117,8 +117,22 @@ export default async function BlogPostPage({
               </Link>
             </div>
 
-            {/* Header Content - Responsive */}
-            <div className="pb-8 sm:pb-10 md:pb-12">
+            {/* Header Content - Responsive with Read Time */}
+            <div className="pb-8 sm:pb-10 md:pb-12 relative">
+              {/* Read Time - Top Right (Desktop/Tablet) */}
+              {(frontmatter.readTime || frontmatter.readingTime) && (
+                <div className="hidden sm:block absolute top-0 right-0">
+                  <div className="text-right">
+                    <p className="font-anek font-bold text-xs sm:text-sm uppercase mb-1" style={{ color: 'rgba(0, 0, 0, 0.5)' }}>
+                      EST. READ TIME
+                    </p>
+                    <p className="font-anek font-semibold text-base sm:text-lg text-[#0b2540]">
+                      {frontmatter.readTime || frontmatter.readingTime}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Category Badge */}
               {frontmatter.category && (
                 <div className="mb-4 sm:mb-6">
@@ -129,7 +143,7 @@ export default async function BlogPostPage({
               )}
 
               {/* Title - Fluid Typography */}
-              <h1 className="font-anek font-bold text-[clamp(28px,5vw,56px)] text-[#0b2540] mb-4 sm:mb-6 leading-[1.2] max-w-[900px]">
+              <h1 className="font-anek font-bold text-[clamp(28px,5vw,56px)] text-[#0b2540] mb-4 sm:mb-6 leading-[1.2] max-w-[900px] pr-0 sm:pr-32">
                 {frontmatter.title}
               </h1>
 
@@ -145,6 +159,15 @@ export default async function BlogPostPage({
 
         {/* Article Container - Responsive */}
         <article className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 pb-12 sm:pb-16 mt-8 sm:mt-12">
+
+          {/* Mobile Meta Info - Show at TOP on mobile only */}
+          <div className="lg:hidden mb-8">
+            <BlogMetaInfo
+              date={frontmatter.date}
+              author={frontmatter.author || 'Avni Team'}
+              readTime={frontmatter.readTime || frontmatter.readingTime || '5 mins.'}
+            />
+          </div>
 
           {/* Blog Content - Main Column with Sidebar */}
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_310px] gap-8">
@@ -173,13 +196,8 @@ export default async function BlogPostPage({
             </div>
           </div>
 
-          {/* Mobile Sidebar - Show only on mobile */}
-          <div className="lg:hidden mt-12 space-y-4">
-            <BlogMetaInfo
-              date={frontmatter.date}
-              author={frontmatter.author || 'Avni Team'}
-              readTime={frontmatter.readTime || frontmatter.readingTime || '5 mins.'}
-            />
+          {/* Mobile Share CTA - Show only on mobile at bottom */}
+          <div className="lg:hidden mt-12">
             <BlogShareCTA
               title={frontmatter.title}
               slug={slug}

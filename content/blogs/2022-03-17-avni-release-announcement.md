@@ -9,7 +9,7 @@ slug: 2022-03-17-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/features/QuestionGroup-AD.png
 ---
 
 ### New features

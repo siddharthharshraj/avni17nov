@@ -7,13 +7,10 @@ tags:
   - Health
   - Field Visits
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2022-12-08-apf-field-visit/interaction_with_POSHAN_sathi_users.jpeg
-  alt: Featured image for 2022-12-08-apf-field-visit
-published: true
+published: True
 slug: 2022-12-08-apf-field-visit
 category: Sector
+featuredimage: /blog-images/2022-12-08-apf-field-visit/interaction_with_POSHAN_sathi_users.jpeg
 ---
 8th December, 2022 was an eventful day in my life. I went on a client visit to understand issues with the usage of one of our flagship software products, Avni. We were able to resolve some of the issues on the spot and made our client happy. No, it was not a foreign trip. Sorry our clients were not in suits. Nor we discussed in AC rooms.
 

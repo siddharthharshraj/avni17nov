@@ -7,17 +7,11 @@ tags:
   - User stories
   - Health
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/how-avni-has-become-pillar-of-community-MIS-at-ASHWINI/featured.jpg
-  alt: Featured image for how-avni-has-become-pillar-of-community-MIS-at-ASHWINI
-published: true
-description: >-
-  ASHWINI team shares how Avni has become a major part of managing information
-  of beneficiaries in their community health programme in Gudalur district of
-  Tamil Nadu.
+published: True
+description: ASHWINI team shares how Avni has become a major part of managing information of beneficiaries in their community health programme in Gudalur district of Tamil Nadu.
 slug: how-avni-has-become-pillar-of-community-MIS-at-ASHWINI
 category: Sector
+featuredimage: /blog-images/how-avni-has-become-pillar-of-community-MIS-at-ASHWINI/featured.jpg
 ---
 ![Image from How Avni has become a pillar of community health program at ASHWINI](/blog-images/how-avni-has-become-pillar-of-community-MIS-at-ASHWINI/featured.jpg)
 

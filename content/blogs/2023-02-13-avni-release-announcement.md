@@ -8,12 +8,10 @@ tags:
   - WhatsApp Integration
   - Performance
 type: blog
-featuredImage:
-  src: /blog-images/2023-02-13-avni-release-announcement/featured.png
-  alt: Featured image for 2023-02-13-avni-release-announcement
-published: true
+published: True
 slug: 2023-02-13-avni-release-announcement
 category: Avni News
+featuredimage: /blog-images/2023-02-13-avni-release-announcement/featured.png
 ---
 
 Release 3.37 is now live. This release includes App Stability, Whatsapp (Glific) Integration, Feature Enhancements and Bug fixes. 

@@ -7,15 +7,10 @@ tags:
   - Health
   - Field Visits
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2025-01-12-A-Visit-To-Centre-For-Social-Justice-In-Ahmedabad/featured.webp
-  alt: >-
-    Featured image for
-    2025-01-12-A-Visit-To-Centre-For-Social-Justice-In-Ahmedabad
-published: true
+published: True
 slug: 2025-01-12-A-Visit-To-Centre-For-Social-Justice-In-Ahmedabad
 category: Avni News
+featuredimage: /blog-images/2025-01-12-A-Visit-To-Centre-For-Social-Justice-In-Ahmedabad/featured.webp
 ---
 
 

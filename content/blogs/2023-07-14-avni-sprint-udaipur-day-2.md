@@ -1,20 +1,16 @@
 ---
-title: 'Avni Sprint, Udaipur, July 2023 - Day 2'
+title: Avni Sprint, Udaipur, July 2023 - Day 2
 date: '2023-07-14'
 author:
   name: Himesh R
 tags:
   - Udaipur Sprint 2023 July
 type: blog
-featuredImage:
-  src: /blog-images/2023-07-14-avni-sprint-udaipur-day-2/featured.jpg
-  alt: Featured image for 2023-07-14-avni-sprint-udaipur-day-2
-published: true
-description: >-
-  In this blog, I have covered the happenings of the second day of the Avni
-  sprint at Udaipur, July 2023.
+published: True
+description: In this blog, I have covered the happenings of the second day of the Avni sprint at Udaipur, July 2023.
 slug: 2023-07-14-avni-sprint-udaipur-day-2
 category: Sector
+featuredimage: /blog-images/2023-07-14-avni-sprint-udaipur-day-2/featured.jpg
 ---
 
 The Tech4Dev sponsored, Avni sprint in Udaipur was conducted from 9th - 14th July 2023. After a hectic start to the sprint on the first day, on day 2, we set out to achieve few of the team objectives for the sprint:

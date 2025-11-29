@@ -9,7 +9,7 @@ slug: 2023-04-12-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/2023-04-12-avni-release-announcement/clientSubjectViewMsgs.gif
 ---
 
 Major Release 3.38.00 is now live, it includes following modifications to Avni application.

@@ -6,12 +6,10 @@ author:
 tags:
   - Avni Conference 2025
 type: blog
-featuredImage:
-  src: /blog-images/2025-01-29-avni-conference-blog-kamesh/featured.webp
-  alt: Featured image for 2025-01-29-avni-conference-blog-kamesh
-published: true
+published: True
 slug: 2025-01-29-avni-conference-blog-kamesh
 category: User Story
+featuredimage: /blog-images/2025-01-29-avni-conference-blog-kamesh/featured.webp
 ---
 
 I’m Kamesh Bhariya, a Business Analyst in the Implementation team at Samanvay Research & Development Foundation. My role focuses on gathering requirements and designing solutions for onboarded NGOs, ensuring their programs are effectively built and implemented in the Avni app.

@@ -9,7 +9,7 @@ slug: 2022-10-20-avni-release-announcement copy
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/2022-09-30-avni-release-announcement/assignment.png
 ---
 
 Release 3.34 is now live. This release includes minor changes and bug fixes to the application. Notable changes are given below. Please see the [detailed release notes](https://github.com/avniproject/avni-product/releases/tag/v3.34.0) for more information. 

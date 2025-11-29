@@ -9,7 +9,7 @@ slug: 2023-07-05-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/2023-07-05-avni-release-announcement/customDashboardShowAndSave.gif
 ---
 
 Release 3.40.0 is now live.  

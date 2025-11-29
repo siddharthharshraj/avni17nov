@@ -14,22 +14,22 @@ interface FeaturedBlogProps {
 export default function FeaturedBlog({ blog }: FeaturedBlogProps) {
   const { frontmatter, slug } = blog;
 
-  // Extract featured image - support both 'image' and 'featuredImage' fields
+  // Extract featured image - support 'featuredImage', 'featuredimage', and 'image' fields
   const featuredImageSrc = typeof frontmatter.featuredImage === 'string' 
     ? frontmatter.featuredImage 
-    : frontmatter.featuredImage?.src || frontmatter.image;
+    : frontmatter.featuredImage?.src || frontmatter.featuredimage || frontmatter.image;
 
   return (
     <div className="bg-white rounded-[24px] p-8 md:p-10 lg:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-shadow">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         {/* Left: Image */}
         <div className="w-full lg:w-[400px] flex-shrink-0">
-          <div className="relative w-full h-[280px] lg:h-[320px] rounded-[16px] overflow-hidden bg-gray-50">
+          <div className="relative w-full h-[240px] lg:h-[260px] rounded-[16px] overflow-hidden bg-gray-50">
             <Image
               src={featuredImageSrc || '/images/blog-placeholder.jpg'}
               alt={frontmatter.title}
               fill
-              className="object-contain"
+              className="object-cover"
               priority
               sizes="(max-width: 1024px) 100vw, 400px"
             />

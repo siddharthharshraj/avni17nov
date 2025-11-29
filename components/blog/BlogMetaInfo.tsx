@@ -23,7 +23,7 @@ export default function BlogMetaInfo({ date, author, readTime }: BlogMetaInfoPro
   });
 
   return (
-    <div className="bg-white border border-[#EBEBEB] rounded-[20px] p-6" style={{ width: '310px' }}>
+    <div className="bg-white border border-[#EBEBEB] rounded-[20px] p-6 w-full lg:w-[310px]">
       {/* DATE */}
       <div className="mb-6">
         <p className="font-anek font-bold text-[16px] leading-[16px] tracking-[0px] uppercase mb-2" style={{ color: 'rgba(0, 0, 0, 0.7)' }}>

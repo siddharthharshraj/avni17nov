@@ -9,7 +9,7 @@ slug: 2023-03-02-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/2023-03-02-avni-release-announcement/ApprovalScreenAlignmentAndStylingFix_AdobeExpress.gif
 ---
 
 Patch Release 3.37.16 is now live. This release includes minor code changes to

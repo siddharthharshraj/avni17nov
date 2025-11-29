@@ -9,7 +9,7 @@ slug: 2022-09-02-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/2022-09-02-avni-release-announcement/middle_name_1.png
 ---
 
 ## New features

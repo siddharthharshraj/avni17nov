@@ -1,23 +1,16 @@
 ---
-title: 'Avni Sprint, Udaipur, July 2023'
+title: Avni Sprint, Udaipur, July 2023
 date: '2023-07-18'
 author:
   name: Beulah Evanjalin A
 tags:
   - Udaipur Sprint 2023 July
 type: blog
-featuredImage:
-  src: /blog-images/2023-07-18-avni-sprint-udaipur-blog/img-01.jpg
-  alt: Featured image for 2023-07-18-avni-sprint-udaipur-blog
-published: true
-description: >-
-  This blog describes a four-day sprint journey in Udaipur, Rajasthan, where
-  work, play, and cultural immersion intertwine. It highlights the arrival and
-  preparation, team building, thought-provoking discussions, exploring Avni (the
-  project focus), cultural immersion experiences, role clarification, team
-  alignment, reflection, and departure
+published: True
+description: This blog describes a four-day sprint journey in Udaipur, Rajasthan, where work, play, and cultural immersion intertwine. It highlights the arrival and preparation, team building, thought-provoking discussions, exploring Avni (the project focus), cultural immersion experiences, role clarification, team alignment, reflection, and departure
 slug: 2023-07-18-avni-sprint-udaipur-blog
 category: Avni News
+featuredimage: /blog-images/2023-07-18-avni-sprint-udaipur-blog/img-01.jpg
 ---
 
 # A Four-Day Sprint Journey in Udaipur: A Blend of Work, Play, and Cultural Immersion

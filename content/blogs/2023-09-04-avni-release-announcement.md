@@ -9,7 +9,7 @@ slug: 2023-09-04-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/default-blog-banner.png
 ---
 
 Patch Release 4.0.1 is now live. Yay!!

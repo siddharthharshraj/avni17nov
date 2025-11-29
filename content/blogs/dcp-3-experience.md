@@ -1,5 +1,5 @@
 ---
-title: 'DCP 3.0: A Mentor''s experience of the final module'
+title: "DCP 3.0: A Mentor's experience of the final module"
 date: '2025-11-12'
 author:
   name: Himesh R
@@ -10,15 +10,11 @@ tags:
   - Data Catalyst Program
   - Social Impact
 type: blog
-featuredImage:
-  src: /blog-images/dcp-3-experience/BuildFactTableExercise.png
-  alt: Featured image for dcp-3-experience
-published: true
-description: >-
-  Learning about data pipelines, witnessing grant pitches, and gaining insights
-  into opportunities and challenges for NGOs in executing a data strategy.
+published: True
+description: Learning about data pipelines, witnessing grant pitches, and gaining insights into opportunities and challenges for NGOs in executing a data strategy.
 slug: dcp-3-experience
 category: User Story
+featuredimage: /blog-images/dcp-3-experience/dcp-3-module-2-group.jpg
 ---
 
 The Data Catalyst Program (DCP) 3.0 once again brought me to Mirage Hotel, Mumbai for its second and final workshop from November 3-5, 2025. I met up with Anto at the airport, and since both of us felt like walking all the way from the airport to our hotel, a short distance of just 1.5 kms, we did just that, navigating some deadlocked traffic and scarce footpaths. At the hotel lobby, I met Athiruban, from my mentee organization [Sristi Foundation](https://sristivillage.org/) and we were both excited to pair on our Grant Pitch presentation.

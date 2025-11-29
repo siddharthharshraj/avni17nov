@@ -9,7 +9,7 @@ slug: 2022-05-04-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/features/Sync_settings.png
 ---
 
 ### New features

@@ -6,12 +6,10 @@ author:
 tags:
   - Avni Conference 2025
 type: blog
-featuredImage:
-  src: /blog-images/2025-01-29-avni-conf-2025-pooja-aggarwal/featured.webp
-  alt: Featured image for 2025-01-29-avni-conf-2025-pooja-aggarwal
-published: true
+published: True
 slug: 2025-01-29-avni-conf-2025-pooja-aggarwal
 category: Sector
+featuredimage: /blog-images/2025-01-29-avni-conf-2025-pooja-aggarwal/featured.webp
 ---
 
 

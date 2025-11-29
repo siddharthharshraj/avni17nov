@@ -6,16 +6,11 @@ author:
 tags:
   - Avni Conference 2025
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2025-02-11-reflections-of-the-avni-conference-2025/featured.webp
-  alt: Featured image for 2025-02-11-reflections-of-the-avni-conference-2025
-published: true
-description: >-
-  Insights and key takeaways from the Avni Conference, exploring how technology
-  empowers NGOs
+published: True
+description: Insights and key takeaways from the Avni Conference, exploring how technology empowers NGOs
 slug: 2025-02-11-reflections-of-the-avni-conference-2025
 category: Avni News
+featuredimage: /blog-images/2025-02-11-reflections-of-the-avni-conference-2025/featured.webp
 ---
 
 

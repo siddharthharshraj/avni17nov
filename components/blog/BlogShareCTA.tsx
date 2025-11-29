@@ -29,14 +29,14 @@ export default function BlogShareCTA({
   };
 
   return (
-    <div className="bg-white border border-[#EBEBEB] rounded-[20px] p-6" style={{ width: '310px', minHeight: '347px' }}>
+    <div className="bg-white border border-[#EBEBEB] rounded-[20px] p-4 sm:p-6 w-full lg:w-[310px]">
       {/* SHARE POST */}
       <div className="mb-6">
-        <p className="font-anek font-bold text-[16px] leading-[16px] tracking-[0px] uppercase mb-4" style={{ color: 'rgba(0, 0, 0, 0.7)' }}>
+        <p className="font-anek font-bold text-sm sm:text-[16px] leading-[16px] tracking-[0px] uppercase mb-4" style={{ color: 'rgba(0, 0, 0, 0.7)' }}>
           SHARE POST
         </p>
         
-        <div className="flex gap-3">
+        <div className="flex gap-3 sm:gap-4">
           {/* Facebook */}
           <a
             href={shareLinks.facebook}
@@ -50,6 +50,7 @@ export default function BlogShareCTA({
               alt="Facebook"
               width={36}
               height={36}
+              className="w-9 h-9 sm:w-10 sm:h-10"
             />
           </a>
 
@@ -66,6 +67,7 @@ export default function BlogShareCTA({
               alt="LinkedIn"
               width={36}
               height={36}
+              className="w-9 h-9 sm:w-10 sm:h-10"
             />
           </a>
 
@@ -82,6 +84,7 @@ export default function BlogShareCTA({
               alt="X (Twitter)"
               width={36}
               height={36}
+              className="w-9 h-9 sm:w-10 sm:h-10"
             />
           </a>
         </div>
@@ -89,15 +92,15 @@ export default function BlogShareCTA({
 
       {/* GET STARTED */}
       <div className="pt-6 border-t border-[#EBEBEB]">
-        <p className="font-anek font-bold text-[16px] leading-[16px] tracking-[0px] uppercase mb-4" style={{ color: 'rgba(0, 0, 0, 0.7)' }}>
+        <p className="font-anek font-bold text-sm sm:text-[16px] leading-[16px] tracking-[0px] uppercase mb-4" style={{ color: 'rgba(0, 0, 0, 0.7)' }}>
           GET STARTED
         </p>
 
-        <div className="flex flex-col items-start gap-3">
+        <div className="flex flex-col items-stretch sm:items-start gap-3">
           {/* Sign Up Button - Compact design */}
           <Link
             href="/get-started"
-            className="bg-[#419372] text-white font-anek font-semibold text-center rounded-full hover:bg-[#357a5e] transition-colors px-8 py-3"
+            className="bg-[#419372] text-white font-anek font-semibold text-center rounded-full hover:bg-[#357a5e] transition-colors px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base"
           >
             Sign Up for Free
           </Link>
@@ -105,7 +108,7 @@ export default function BlogShareCTA({
           {/* Contact Button - Compact design */}
           <Link
             href="/contact"
-            className="text-[#419372] font-anek font-semibold text-center rounded-full hover:bg-[#419372] hover:text-white transition-colors border-2 border-[#419372] px-8 py-3"
+            className="text-[#419372] font-anek font-semibold text-center rounded-full hover:bg-[#419372] hover:text-white transition-colors border-2 border-[#419372] px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base"
           >
             Contact Us
           </Link>

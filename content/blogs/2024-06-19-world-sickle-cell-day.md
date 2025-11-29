@@ -10,6 +10,7 @@ type: blog
 published: true
 slug: 2024-06-19-world-sickle-cell-day
 category: Sector
+featuredimage: /blog-images/2024-06-18-world-sickle-cell-day/SCD.png
 ---
 
 ![SCD](/blog-images/2024-06-18-world-sickle-cell-day/SCD.png)

@@ -17,6 +17,7 @@ description: >
   to efficient, real-time digital workflows.
 slug: 2025-05-19-field-visit-to-iph
 category: Sector
+featuredimage: /blog-images/2025-05-19-siddharth-iph-blog/s2.webp
 ---
 
 

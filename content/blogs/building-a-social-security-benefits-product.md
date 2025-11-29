@@ -9,6 +9,7 @@ type: blog
 published: true
 slug: building-a-social-security-benefits-product
 category: User Story
+featuredimage: /blog-images/2025-06-14-building-a-social-security-benefit-product/1.png
 ---
 
 

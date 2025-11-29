@@ -7,15 +7,11 @@ tags:
   - Case Study
   - Skill development and employment
 type: blog
-featuredImage:
-  src: /blog-images/2022-01-22-ywnxt-project-update-1/ywnxt-final-solution.png
-  alt: Featured image for 2022-01-22-ywnxt-project-update-1
-published: true
-description: >-
-  This is the story of an Avni implementation that eventually became something
-  entirely different. 
+published: True
+description: This is the story of an Avni implementation that eventually became something entirely different. 
 slug: 2022-01-22-ywnxt-project-update-1
 category: User Story
+featuredimage: /blog-images/2022-01-22-ywnxt-project-update-1/ywnxt-final-solution.png
 ---
 
 Young Warrior NXT

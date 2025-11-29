@@ -9,7 +9,7 @@ slug: 2022-07-13-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/features/repeatable-question.gif
 ---
 
 ### New features

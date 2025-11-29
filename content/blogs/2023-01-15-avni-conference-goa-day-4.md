@@ -1,20 +1,16 @@
 ---
-title: 'Avni Conference, Goa, January 2023 - Day 4'
+title: Avni Conference, Goa, January 2023 - Day 4
 date: '2023-01-15'
 author:
   name: Sachin Kadam
 tags:
   - Avni Conference 2023
 type: blog
-featuredImage:
-  src: /blog-images/2023-01-15-avni-conference-goa-day-4/arjun.jpeg
-  alt: Featured image for 2023-01-15-avni-conference-goa-day-4
-published: true
-description: >-
-  In this blog, we have covered the happenings of the fourth day of the Avni
-  Conference at Goa, January 2023.
+published: True
+description: In this blog, we have covered the happenings of the fourth day of the Avni Conference at Goa, January 2023.
 slug: 2023-01-15-avni-conference-goa-day-4
 category: Avni News
+featuredimage: /blog-images/2023-01-15-avni-conference-goa-day-4/arjun.jpeg
 ---
 
 This is the first day of our Goa conference where the Avni team interacted with our clients. The conference was scheduled at 9.30 am. Before that, we gave ourselves an energy boost, with an early morning beach walk and a sumptuous breakfast.

@@ -1,5 +1,5 @@
 ---
-title: 'Empowering the Children and Communities in Tea Plantations of Assam, India'
+title: Empowering the Children and Communities in Tea Plantations of Assam, India
 date: '2022-01-12'
 author:
   name: Nupoor Khandelwal
@@ -7,16 +7,11 @@ tags:
   - Case Study
   - Child Protection
 type: blog
-featuredImage:
-  src: /blog-images/2021-12-30-savethechildren-golive/STCATP_banner.png
-  alt: Featured image for 2021-12-30-savethechildren-golive
-published: true
-description: >-
-  Save the Children joined the Avni user's family as they rolled out the app in
-  their Assam tea plantation project to protect children from labour,
-  trafficking and other vulnerabilities. 
+published: True
+description: Save the Children joined the Avni user's family as they rolled out the app in their Assam tea plantation project to protect children from labour, trafficking and other vulnerabilities. 
 slug: 2021-12-30-savethechildren-golive
 category: Sector
+featuredimage: /blog-images/2021-12-30-savethechildren-golive/STCATP_banner.png
 ---
 
 ![STCATP banner](/blog-images/2021-12-30-savethechildren-golive/STCATP_banner.png)

@@ -1,7 +1,5 @@
 ---
-title: >-
-  Field Visit to Kollegal Government Hospital – How Avni is Transforming Public
-  Health Data Collection
+title: Field Visit to Kollegal Government Hospital – How Avni is Transforming Public Health Data Collection
 date: '2025-05-19'
 author:
   name: Rishika Methi
@@ -10,18 +8,13 @@ tags:
   - Field Visit
   - Digital Health
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2025-06-12-field-visit-to-kollegal-government-hospital/featured.webp
-  alt: Featured image for 2025-06-12-field-visit-to-kollegal-government-hospital
-published: true
-description: >
-  A firsthand account of how Avni is revolutionizing grassroots healthcare
-  through digital data tools.  Insights from a business development associate's
-  field visit to Kollegal Government Hospital, highlighting the shift  from
-  paper-based systems to efficient, real-time digital workflows.
+published: True
+description: >-
+  A firsthand account of how Avni is revolutionizing grassroots healthcare through digital data tools.  Insights from a business development associate's field visit to Kollegal Government Hospital, highlighting the shift  from paper-based systems to efficient, real-time digital workflows.
+  
 slug: 2025-06-12-field-visit-to-kollegal-government-hospital
 category: Sector
+featuredimage: /blog-images/2025-06-12-field-visit-to-kollegal-government-hospital/featured.webp
 ---
 
 As a Business Development Associate at Avni, I recently had the privilege of visiting Kollegal Government Hospital during a monthly health camp organized by the Institute of Public Health (IPH) in Chamarajanagar district, Karnataka. This wasn’t just a routine site visit—it was a window into the real-world impact of digital healthcare tools.

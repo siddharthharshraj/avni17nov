@@ -21,15 +21,17 @@ export async function getFeaturedBlogForNav() {
       return null;
     }
     
-    // Extract image from featuredImage object or fallback to image field
+    // Extract image from featuredImage/featuredimage object or fallback to image field
     let image = '/images/blog-placeholder.jpg';
-    if (selectedBlog.frontmatter.featuredImage) {
+    const featuredImageSrc = selectedBlog.frontmatter.featuredImage || selectedBlog.frontmatter.featuredimage;
+    
+    if (featuredImageSrc) {
       // Handle featuredImage object: { src: '...', alt: '...' }
-      if (typeof selectedBlog.frontmatter.featuredImage === 'object') {
-        image = selectedBlog.frontmatter.featuredImage.src || image;
-      } else if (typeof selectedBlog.frontmatter.featuredImage === 'string') {
+      if (typeof featuredImageSrc === 'object') {
+        image = featuredImageSrc.src || image;
+      } else if (typeof featuredImageSrc === 'string') {
         // Handle string directly
-        image = selectedBlog.frontmatter.featuredImage;
+        image = featuredImageSrc;
       }
     } else if (selectedBlog.frontmatter.image) {
       // Fallback to image field

@@ -9,6 +9,7 @@ type: blog
 published: true
 slug: 2024-01-22-avni-conference-goa
 category: Avni News
+featuredimage: /blog-images/2024-06-03-avni-conference-goa/Avni Conference 2024 NGOs talk collage.jpg
 ---
 
 # Introduction

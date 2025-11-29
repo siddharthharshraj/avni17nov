@@ -7,7 +7,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { Blog } from '@/lib/markdown';
 import { getCategoryBadgeStyles } from '@/lib/categories';
 
@@ -17,11 +16,6 @@ interface BlogCardProps {
 
 export default function BlogCard({ blog }: BlogCardProps) {
   const { frontmatter, slug } = blog;
-  const [mounted, setMounted] = useState(false);
-  
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   
   // Extract featured image src - support 'image', 'featuredImage', and 'featuredimage' fields
   const featuredImageSrc = typeof frontmatter.featuredImage === 'string' 
@@ -32,14 +26,12 @@ export default function BlogCard({ blog }: BlogCardProps) {
   const isDefaultOrMissing = !featuredImageSrc || 
     featuredImageSrc.trim() === '' || 
     featuredImageSrc.includes('default-blog.jpg') ||
-    featuredImageSrc.includes('default-blog.svg');
+    featuredImageSrc.includes('default-blog.svg') ||
+    featuredImageSrc.includes('default-blog-banner.png');
   
   const finalImageSrc = isDefaultOrMissing
-    ? '/images/blogs/default-blog-banner.svg'
+    ? '/images/blogs/default-blog-banner.png'
     : featuredImageSrc;
-  
-  // Always show image (either real or fallback SVG)
-  const hasValidImage = true;
 
   return (
     <div 
@@ -47,20 +39,20 @@ export default function BlogCard({ blog }: BlogCardProps) {
                  w-full max-w-[402px] mx-auto
                  sm:w-full md:w-[380px] lg:w-[402px]
                  flex flex-col"
+      suppressHydrationWarning
     >
       {/* Image - Always show (real image or SVG fallback) */}
-      {hasValidImage && mounted && (
-        <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] overflow-hidden flex-shrink-0 bg-gray-50">
-          <Image
-            src={finalImageSrc}
-            alt={frontmatter.title}
-            fill
-            className="object-contain hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 402px"
-            loading="lazy"
-          />
-        </div>
-      )}
+      <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] overflow-hidden flex-shrink-0 bg-gray-50" suppressHydrationWarning>
+        <Image
+          src={finalImageSrc}
+          alt={frontmatter.title}
+          fill
+          className="object-contain hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 402px"
+          loading="lazy"
+          priority={false}
+        />
+      </div>
 
       {/* Content */}
       <div className="p-4 sm:p-5 md:p-6 flex flex-col justify-between flex-grow min-h-[200px] sm:min-h-[220px] md:min-h-[225px]">

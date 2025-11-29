@@ -7,12 +7,10 @@ tags:
   - Health
   - Field Visits
 type: blog
-featuredImage:
-  src: /blog-images/2024-06-20-yenepoya-visit/Continuum-of-care.JPG
-  alt: Featured image for 2024-06-20-yenepoya-visit
-published: true
+published: True
 slug: 2024-06-20-yenepoya-visit
 category: Sector
+featuredimage: /blog-images/2024-06-20-yenepoya-visit/Continuum-of-care.JPG
 ---
 
 ## In this blog post, I will share my experience and key insights from my recent visit to Yenepoya Deemed to be University - Mangalore.

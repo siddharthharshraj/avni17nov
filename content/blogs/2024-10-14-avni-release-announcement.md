@@ -8,12 +8,10 @@ tags:
   - Feature Update
   - Dashboard
 type: blog
-featuredImage:
-  src: /blog-images/2024-10-14-avni-release-announcement/featured.png
-  alt: Featured image for 2024-10-14-avni-release-announcement
-published: true
+published: True
 slug: 2024-10-14-avni-release-announcement
 category: Avni News
+featuredimage: /blog-images/2024-10-14-avni-release-announcement/featured.png
 ---
 
 ![featured](/blog-images/2024-10-14-avni-release-announcement/featured.png)

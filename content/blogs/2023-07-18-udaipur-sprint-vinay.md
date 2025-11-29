@@ -11,6 +11,7 @@ author: Vinay Venu
 readTime: 2 min read
 tags:
   - Udaipur Sprint 2023 July
+featuredimage: /blog-images/2023-07-18-udaipur-sprint-vinay/team-pic.jpeg
 ---
 
 It feels like yesterday that we had our Goa sprint. I was surprised when I started getting emails about the Udaipur sprint. 

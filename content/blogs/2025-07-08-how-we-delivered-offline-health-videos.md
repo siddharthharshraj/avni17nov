@@ -13,6 +13,7 @@ author: 'Pushpanathan.J (Kannan), ASHWINI Gudalur'
 readTime: 4 min read
 tags:
   - Health
+featuredimage: /images/blogs/default-blog-banner.png
 ---
 
 

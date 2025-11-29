@@ -13,6 +13,7 @@ author: Pooja Harmalkar
 readTime: 8 min read
 tags:
   - Knowledge
+featuredimage: /blog-images/2025-06-12-no-more-fake-data-headaches/1.png
 ---
 
 ## Generating Realistic Dummy Data for Avni UAT using AI

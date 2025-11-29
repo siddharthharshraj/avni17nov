@@ -1,17 +1,15 @@
 ---
-title: 'Avni Sprint, Udaipur, July 2023'
+title: Avni Sprint, Udaipur, July 2023
 date: '2023-07-15'
 author:
   name: Mohammed Taqi
 tags:
   - Udaipur Sprint 2023 July
 type: blog
-featuredImage:
-  src: /blog-images/2023-07-18-avni-sprint-udaipur-blog-by-taqi/featured.jpeg
-  alt: Featured image for 2023-07-18-avni-sprint-udaipur-blog-by-taqi
-published: true
+published: True
 slug: 2023-07-18-avni-sprint-udaipur-blog-by-taqi
 category: Avni News
+featuredimage: /blog-images/2023-07-18-avni-sprint-udaipur-blog-by-taqi/featured.jpeg
 ---
 
 So my excitement started somewhere around mid-June when Arjun informed us that we would be participating in the Tech4Dev sponsored Udaipur sprint.

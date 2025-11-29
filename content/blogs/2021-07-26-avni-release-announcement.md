@@ -9,7 +9,7 @@ slug: 2021-07-26-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/default-blog-banner.png
 ---
 
 Note: There is no update to the Android app. 

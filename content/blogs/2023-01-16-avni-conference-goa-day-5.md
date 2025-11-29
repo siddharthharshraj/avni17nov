@@ -1,20 +1,16 @@
 ---
-title: 'Avni Conference, Goa, January 2023 - Day 5'
+title: Avni Conference, Goa, January 2023 - Day 5
 date: '2023-01-16'
 author:
   name: Nupoor Khandelwal
 tags:
   - Avni Conference 2023
 type: blog
-featuredImage:
-  src: /blog-images/2023-01-16-avni-conference-goa-day-5/Lahi.jpg
-  alt: Featured image for 2023-01-16-avni-conference-goa-day-5
-published: true
-description: >-
-  This blogpost covers the fifth day of the Avni conference which includes the
-  participation of various NGOs who have been using Avni in their programs.
+published: True
+description: This blogpost covers the fifth day of the Avni conference which includes the participation of various NGOs who have been using Avni in their programs.
 slug: 2023-01-16-avni-conference-goa-day-5
 category: Avni News
+featuredimage: /blog-images/2023-01-16-avni-conference-goa-day-5/Lahi.jpg
 ---
 
 ### Wave se darr nhi lagta, ___ se lagta hai….

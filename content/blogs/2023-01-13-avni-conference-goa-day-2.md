@@ -1,20 +1,16 @@
 ---
-title: 'Avni Conference, Goa, January 2023 - Day 2'
+title: Avni Conference, Goa, January 2023 - Day 2
 date: '2023-01-13'
 author:
   name: Mohammed Taqi Afsar
 tags:
   - Avni Conference 2023
 type: blog
-featuredImage:
-  src: /blog-images/2023-01-13-avni-conference-goa-day-2/breakfast.jpeg
-  alt: Featured image for 2023-01-13-avni-conference-goa-day-2
-published: true
-description: >-
-  In this blog, we have covered the happenings of the second day of the Avni
-  Conference at Goa, January 2023.
+published: True
+description: In this blog, we have covered the happenings of the second day of the Avni Conference at Goa, January 2023.
 slug: 2023-01-13-avni-conference-goa-day-2
 category: Avni News
+featuredimage: /blog-images/2023-01-13-avni-conference-goa-day-2/breakfast.jpeg
 ---
 
 ## End of day 1

@@ -1,21 +1,16 @@
 ---
-title: 'Avni Conference, Goa, January 2023 - Day 3'
+title: Avni Conference, Goa, January 2023 - Day 3
 date: '2023-01-14'
 author:
   name: Vinay Venu
 tags:
   - Avni Conference 2023
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2023-01-14-avni-conference-goa-day-3/implementation-walkthrough.jpeg
-  alt: Featured image for 2023-01-14-avni-conference-goa-day-3
-published: true
-description: >-
-  In this blog, we have covered the happenings of the third day of the Avni
-  Conference at Goa, January 2023.
+published: True
+description: In this blog, we have covered the happenings of the third day of the Avni Conference at Goa, January 2023.
 slug: 2023-01-14-avni-conference-goa-day-3
 category: Avni News
+featuredimage: /blog-images/2023-01-14-avni-conference-goa-day-3/implementation-walkthrough.jpeg
 ---
 
 This is the last day the Avni team has for itself, and there is quite a lot to do. This is the second day, and I had blisters in my leg after a bare-foot run in the beach the previous day. I was not sure if I could get a run in today, but Taqi was insistent. We ended up running for about 10 minutes. Playing in the water was mandatory, and we didn't want to miss it. It is the best way to start a day in Goa.

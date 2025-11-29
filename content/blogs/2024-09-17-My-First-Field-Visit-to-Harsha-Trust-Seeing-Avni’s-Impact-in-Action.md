@@ -7,15 +7,10 @@ tags:
   - Field Visits
   - Health
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2024-09-17-My-First-Field-Visit-to-Harsha-Trust-Seeing-Avni’s-Impact-in-Action/featured.jpeg
-  alt: >-
-    Featured image for
-    2024-09-17-My-First-Field-Visit-to-Harsha-Trust-Seeing-Avni’s-Impact-in-Action
-published: true
+published: True
 slug: 2024-09-17-My-First-Field-Visit-to-Harsha-Trust-Seeing-Avni’s-Impact-in-Action
 category: Sector
+featuredimage: /blog-images/2024-09-17-My-First-Field-Visit-to-Harsha-Trust-Seeing-Avni’s-Impact-in-Action/featured.jpeg
 ---
 
 

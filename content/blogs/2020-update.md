@@ -6,15 +6,11 @@ author:
 tags:
   - Annual Update
 type: blog
-featuredImage:
-  src: /blog-images/2020-update/featured.jpg
-  alt: Featured image for 2020-update
-published: true
-description: >-
-  2020 has been a strange year. It has challenged and strengthened us as a team.
-  We share with you how we have grown in the past year and what's coming up.
+published: True
+description: 2020 has been a strange year. It has challenged and strengthened us as a team. We share with you how we have grown in the past year and what's coming up.
 slug: 2020-update
 category: Avni News
+featuredimage: /blog-images/2020-update/featured.jpg
 ---
 
 ![Image from 2020 Update](/blog-images/2020-update/img-03.png)

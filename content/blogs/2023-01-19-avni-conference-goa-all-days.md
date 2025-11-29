@@ -1,18 +1,16 @@
 ---
-title: 'Avni Conference, Goa, January 2023'
+title: Avni Conference, Goa, January 2023
 date: '2023-01-19'
 author:
   name: Achala Belokar
 tags:
   - Avni Conference 2023
 type: blog
-featuredImage:
-  src: /blog-images/2023-01-19-avni-conference-goa-all-days/avni-2022-retro.jpeg
-  alt: Featured image for 2023-01-19-avni-conference-goa-all-days
-published: true
-description: 'This blogpost covers the entire Avni conference in Goa, Jan 2023.'
+published: True
+description: This blogpost covers the entire Avni conference in Goa, Jan 2023.
 slug: 2023-01-19-avni-conference-goa-all-days
 category: Avni News
+featuredimage: /blog-images/2023-01-19-avni-conference-goa-all-days/avni-2022-retro.jpeg
 ---
 
 Everybody says Goa plans always fail but my team is different. We had planned our workation in Goa and successfully executed it. It was held between 12th jan to 16th jan.

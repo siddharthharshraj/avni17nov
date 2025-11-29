@@ -8,12 +8,10 @@ tags:
   - Access Control
   - Integration
 type: blog
-featuredImage:
-  src: /blog-images/2023-08-21-avni-release-4.0.0/Access control in Avni.png
-  alt: Featured image for 2023-08-21-avni-release-4.0.0
-published: true
+published: True
 slug: 2023-08-21-avni-release-4.0.0
 category: Avni News
+featuredimage: /blog-images/2023-08-21-avni-release-4.0.0/Access control in Avni.png
 ---
 Major Release 4.0.0 is now live, it includes the following modifications to the Avni application
 

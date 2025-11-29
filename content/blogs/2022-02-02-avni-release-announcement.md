@@ -9,7 +9,7 @@ slug: 2022-02-02-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/features/quick-form-edit.gif
 ---
 
 ### New features

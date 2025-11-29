@@ -7,19 +7,11 @@ tags:
   - User stories
   - Housing and Essential services for Urban Slums
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/shelter-journey-remoulding-data-collection-paper-kobotoolbox-avni/SA_lokmanya_nagar_view.jpg
-  alt: >-
-    Featured image for
-    shelter-journey-remoulding-data-collection-paper-kobotoolbox-avni
-published: true
-description: >-
-  Smita Kale, Monitoring and Evaluation Manager at Shelter Associates, shares
-  about their journey of moving from Paper based data collection to digital
-  systems, first using KoboToolbox and then to Avni.
+published: True
+description: Smita Kale, Monitoring and Evaluation Manager at Shelter Associates, shares about their journey of moving from Paper based data collection to digital systems, first using KoboToolbox and then to Avni.
 slug: shelter-journey-remoulding-data-collection-paper-kobotoolbox-avni
 category: User Story
+featuredimage: /blog-images/shelter-journey-remoulding-data-collection-paper-kobotoolbox-avni/SA_lokmanya_nagar_view.jpg
 ---
 ![Lokmanya nagar slum](/blog-images/shelter-journey-remoulding-data-collection-paper-kobotoolbox-avni/SA_lokmanya_nagar_view.jpg)
 

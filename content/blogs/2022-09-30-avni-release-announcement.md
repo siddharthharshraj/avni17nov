@@ -9,7 +9,7 @@ slug: 2022-09-30-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/default-blog-banner.png
 ---
 
 Happy Diwali to you !!!

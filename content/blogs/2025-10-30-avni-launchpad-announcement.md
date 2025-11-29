@@ -8,14 +8,12 @@ tags:
   - NGO Program
   - Capacity Building
 type: blog
-featuredImage:
-  src: /blog-images/2025-10-30-avni-launchpad-announcement/featured.png
-  alt: Featured image for 2025-10-30-avni-launchpad-announcement
-published: true
-featured: true
+published: True
+featured: True
 slug: 2025-10-30-avni-launchpad-announcement
 category: Avni News
 description: Announcing the Avni Launchpad Cohort 1 - A unique cohort-based program tailored for NGOs ready to take their first big step in digital transformation.
+featuredimage: /blog-images/2025-10-30-avni-launchpad-announcement/featured.png
 ---
 
 [![featured](/blog-images/2025-10-30-avni-launchpad-announcement/featured.png)](https://forms.gle/zD2A4cPRtpdcczPe9)

@@ -31,6 +31,12 @@ export default function SmartStickySidebar({
     const updatePosition = () => {
       if (!ctaRef.current) return;
 
+      // Only apply sticky behavior on desktop (lg breakpoint = 1024px)
+      if (window.innerWidth < 1024) {
+        setTranslateY(0);
+        return;
+      }
+
       const cta = ctaRef.current;
       const ctaHeight = cta.offsetHeight;
       const scrollY = window.scrollY;

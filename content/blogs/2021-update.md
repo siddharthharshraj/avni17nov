@@ -6,17 +6,11 @@ author:
 tags:
   - Annual Update
 type: blog
-featuredImage:
-  src: /blog-images/2021-update/featured.png
-  alt: Featured image for 2021-update
-published: true
-description: >-
-  2021 has been a year of mixed emotions going through Wave 2 of the pandemic,
-  hopes from the availability of vaccines and then again the scare of a new
-  wave. As we went through this, Avni product and community has both
-  consolidated and grown. Read on to know more.
+published: True
+description: 2021 has been a year of mixed emotions going through Wave 2 of the pandemic, hopes from the availability of vaccines and then again the scare of a new wave. As we went through this, Avni product and community has both consolidated and grown. Read on to know more.
 slug: 2021-update
 category: Sector
+featuredimage: /blog-images/2021-update/featured.png
 ---
 # Usage and Impact
 ----------------

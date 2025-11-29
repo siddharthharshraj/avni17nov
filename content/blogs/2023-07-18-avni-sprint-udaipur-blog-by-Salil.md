@@ -16,6 +16,7 @@ author: Salil Arora
 readTime: 3 min read
 tags:
   - Udaipur Sprint 2023 July
+featuredimage: /blog-images/2023-07-18-avni-sprint-udaipur-blog-by-Salil/Airport.jpeg
 ---
 
 

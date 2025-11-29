@@ -9,7 +9,7 @@ slug: 2021-11-04-avni-release-announcement
 category: Product Release
 tags:
   - Product Release
-featuredimage: 
+featuredimage: /img/2021-11-04-avni-release-announcement/rulefailures.png
 ---
 
 ### New features

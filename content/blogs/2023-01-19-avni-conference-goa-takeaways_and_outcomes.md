@@ -1,21 +1,16 @@
 ---
-title: 'Avni Conference, Goa, January 2023 - My Takeaways and Outcomes'
+title: Avni Conference, Goa, January 2023 - My Takeaways and Outcomes
 date: '2023-01-21'
 author:
   name: Maha Lakshme S
 tags:
   - Avni Conference 2023
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2023-01-19-avni-conference-goa-takeaways_and_outcomes/avni-tshirt-group-photo.jpg
-  alt: Featured image for 2023-01-19-avni-conference-goa-takeaways_and_outcomes
-published: true
-description: >-
-  In this blog, I have covered my takeaways and outcomes of the Avni Conference
-  at Goa, January 2023.
+published: True
+description: In this blog, I have covered my takeaways and outcomes of the Avni Conference at Goa, January 2023.
 slug: 2023-01-19-avni-conference-goa-takeaways_and_outcomes
 category: Avni News
+featuredimage: /blog-images/2023-01-19-avni-conference-goa-takeaways_and_outcomes/avni-tshirt-group-photo.jpg
 ---
 
 On hearing the word _Goa_, what comes to your mind? Beaches? Night life? Portuguese colony? For me it is the Avni Jan 2023 sprint! Since that’s where I met my people. For the first three days in Goa, I worked with my colleagues preparing for the conference and understanding the different implementations for which Avni product is used. The next 2 days(Sunday and Monday) were packed with NGOs presentations, Avni feature walkthrough and roadmap, and ofcourse lots of fun!

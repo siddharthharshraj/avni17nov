@@ -6,20 +6,11 @@ author:
 tags:
   - Avni Conference 2025
 type: blog
-featuredImage:
-  src: >-
-    /blog-images/2025-03-03-exploring-tech4devs-impact-dalgo-sprint-avni-conference/featured.webp
-  alt: >-
-    Featured image for
-    2025-03-03-exploring-tech4devs-impact-dalgo-sprint-avni-conference
-published: true
-description: >-
-  Attending the Dalgo Sprint and Avni Conference was an insightful experience. 
-  It provided an opportunity to understand how technology-driven tools like
-  Dalgo  and Avni are empowering NGOs in data collection, visualization, and
-  impact scaling.
+published: True
+description: Attending the Dalgo Sprint and Avni Conference was an insightful experience.  It provided an opportunity to understand how technology-driven tools like Dalgo  and Avni are empowering NGOs in data collection, visualization, and impact scaling.
 slug: 2025-03-03-exploring-tech4devs-impact-dalgo-sprint-avni-conference
 category: User Story
+featuredimage: /blog-images/2025-03-03-exploring-tech4devs-impact-dalgo-sprint-avni-conference/featured.webp
 ---
 
 ![img-01](/blog-images/2025-03-03-exploring-tech4devs-impact-dalgo-sprint-avni-conference/img-01.webp)
