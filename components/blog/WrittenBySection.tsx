@@ -11,12 +11,14 @@ import Image from "next/image";
 interface WrittenBySectionProps {
   author: string | { name: string; avatar?: string; image?: string; title?: string };
   authorTitle?: string;
+  date?: string;
   tags?: string[];
 }
 
 export default function WrittenBySection({
   author,
   authorTitle,
+  date,
   tags = [],
 }: WrittenBySectionProps) {
   const isStringAuthor = typeof author === "string";
@@ -28,6 +30,14 @@ export default function WrittenBySection({
   const finalTitle = isStringAuthor
     ? authorTitle || "Avni Team"
     : authorJobTitle || authorTitle || "Avni Team";
+
+  const formattedDate = date
+    ? new Date(date).toLocaleDateString('en-IN', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      })
+    : null;
 
   return (
     <div
@@ -73,6 +83,11 @@ export default function WrittenBySection({
               <p className="font-noto text-sm sm:text-[15px] text-[#6B7280] leading-[18px] sm:leading-[20px] break-words">
                 {finalTitle}
               </p>
+              {formattedDate && (
+                <p className="font-noto text-xs text-[#9CA3AF] mt-1">
+                  {formattedDate}
+                </p>
+              )}
             </div>
           </div>
         </div>
