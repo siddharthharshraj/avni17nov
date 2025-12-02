@@ -4,7 +4,7 @@ date: '2025-12-02'
 author:
   name: Md Taqi Afsar
   image: /images/team/taqi.jpeg
-  title: Product Manager
+  title: Avni Team
 tags:
   - JSS
   - Field Visit
