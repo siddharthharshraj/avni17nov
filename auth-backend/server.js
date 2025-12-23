@@ -164,6 +164,66 @@ app.get('/health', (req, res) => {
   });
 });
 
+// ============================================================================
+// TEMPORARY: HARDCODED EMAIL/PASSWORD AUTH FOR TESTING
+// ============================================================================
+
+const HARDCODED_USERS = [
+  {
+    email: 'admin@samanvayfoundation.org',
+    password: 'Incorrect@2026',
+    name: 'Admin User',
+    role: 'admin',
+    picture: 'https://ui-avatars.com/api/?name=Admin+User&background=419372&color=fff'
+  },
+  {
+    email: 'publisher@samanvayfoundation.org',
+    password: 'Incorrect@2026',
+    name: 'Publisher User',
+    role: 'author',
+    picture: 'https://ui-avatars.com/api/?name=Publisher+User&background=419372&color=fff'
+  }
+];
+
+// Simple email/password login (TEMPORARY FOR TESTING)
+app.post('/auth/login', (req, res) => {
+  try {
+    const { email, password } = req.body;
+    
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password required' });
+    }
+    
+    // Find user
+    const user = HARDCODED_USERS.find(u => u.email === email && u.password === password);
+    
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+    
+    // Create JWT
+    const { password: _, ...userWithoutPassword } = user;
+    const token = createJWT(userWithoutPassword);
+    
+    // Set cookie
+    res.cookie('cms_session', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'none',
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+      path: '/',
+    });
+    
+    res.json({ 
+      success: true, 
+      user: userWithoutPassword 
+    });
+  } catch (error) {
+    console.error('Login error:', error);
+    res.status(500).json({ error: 'Login failed' });
+  }
+});
+
 // Initiate Google OAuth
 app.get('/auth/google', 
   passport.authenticate('google', { 
