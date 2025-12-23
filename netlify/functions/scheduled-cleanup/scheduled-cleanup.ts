@@ -1,11 +1,14 @@
 /**
  * Netlify Scheduled Function
  * Runs every 6 hours to cleanup blogs unpublished for 48+ hours
+ * 
+ * To enable: Deploy to Netlify, then configure in Netlify UI:
+ * Functions → scheduled-cleanup → Add trigger → Cron expression: 0 */6 * * *
  */
 
-import type { Handler } from '@netlify/functions';
+import type { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
 
-const handler: Handler = async (event, context) => {
+const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   const CLEANUP_SECRET = process.env.CLEANUP_SECRET || 'change-this-secret';
   const SITE_URL = process.env.URL || 'http://localhost:3000';
 
