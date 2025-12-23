@@ -18,10 +18,6 @@ export const redis = REDIS_URL && REDIS_TOKEN ? new Redis({
   token: REDIS_TOKEN,
 }) : null;
 
-function isRedisAvailable(): redis is Redis {
-  return redis !== null;
-}
-
 const KEYS = {
   blog: (id: string) => `cms:blog:${id}`,
   blogs: (email: string) => `cms:blogs:${email}`,
@@ -41,7 +37,7 @@ const SESSION_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
 // ============================================================================
 
 export async function createBlog(draft: BlogDraft): Promise<{ notification?: string }> {
-  if (!isRedisAvailable() || !redis) {
+  if (!redis) {
     throw new Error('CMS storage unavailable - check Redis configuration');
   }
   const timestamp = Date.now();
@@ -137,7 +133,7 @@ export async function getAuthorBlogs(email: string): Promise<BlogDraft[]> {
 
 export async function getAllBlogs(): Promise<BlogDraft[]> {
   if (!redis) return [];
-  const blogIds = await redis.zrange(KEYS.allBlogs(), 0, -1, { rev: true });
+  const blogIds = await redis!.zrange(KEYS.allBlogs(), 0, -1, { rev: true });
   
   if (!blogIds || blogIds.length === 0) return [];
   
@@ -276,7 +272,7 @@ export async function getSnapshot(blogId: string, version: number): Promise<Blog
 // ============================================================================
 
 export async function createSession(session: Session): Promise<void> {
-  if (!isRedisAvailable() || !redis) {
+  if (!redis) {
     console.warn('[CMS] Session storage unavailable - using JWT-only mode');
     return;
   }
@@ -288,14 +284,14 @@ export async function createSession(session: Session): Promise<void> {
 }
 
 export async function getSession(token: string): Promise<Session | null> {
-  if (!isRedisAvailable() || !redis) return null;
+  if (!redis) return null;
   const data = await redis.get(KEYS.session(token));
   if (!data) return null;
   return JSON.parse(data as string);
 }
 
 export async function deleteSession(token: string): Promise<void> {
-  if (!isRedisAvailable() || !redis) return;
+  if (!redis) return;
   await redis.del(KEYS.session(token));
 }
 
