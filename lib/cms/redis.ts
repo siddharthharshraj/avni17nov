@@ -9,14 +9,29 @@ import { BlogDraft, InlineComment, BlogSnapshot, Session } from './types';
 const REDIS_URL = process.env.UPSTASH_REDIS_URL;
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_TOKEN;
 
-if (!REDIS_URL || !REDIS_TOKEN) {
-  console.warn('[CMS] Redis credentials missing - CMS features will be limited');
+function createRedis(): Redis | null {
+  if (!REDIS_URL || !REDIS_TOKEN) {
+    console.warn('[CMS] Redis credentials missing - CMS features will be limited');
+    return null;
+  }
+  return new Redis({
+    url: REDIS_URL,
+    token: REDIS_TOKEN,
+  });
 }
 
-export const redis = REDIS_URL && REDIS_TOKEN ? new Redis({
-  url: REDIS_URL,
-  token: REDIS_TOKEN,
-}) : null;
+export const redis = createRedis();
+
+/**
+ * Get Redis instance with runtime guard
+ * Throws if Redis is not configured - use for CMS operations that require Redis
+ */
+export function getRedis(): Redis {
+  if (!redis) {
+    throw new Error('CMS storage unavailable - Redis is not configured. Please check UPSTASH_REDIS_URL and UPSTASH_REDIS_TOKEN environment variables.');
+  }
+  return redis;
+}
 
 const KEYS = {
   blog: (id: string) => `cms:blog:${id}`,
@@ -37,22 +52,20 @@ const SESSION_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
 // ============================================================================
 
 export async function createBlog(draft: BlogDraft): Promise<{ notification?: string }> {
-  if (!redis) {
-    throw new Error('CMS storage unavailable - check Redis configuration');
-  }
+  const r = getRedis();
   const timestamp = Date.now();
   
   // Store blog
-  await redis.hset(KEYS.blog(draft.id), draft as any);
+  await r.hset(KEYS.blog(draft.id), draft as any);
   
   // Add to author's blog list (sorted by updatedAt)
-  await redis.zadd(KEYS.blogs(draft.authorEmail), {
+  await r.zadd(KEYS.blogs(draft.authorEmail), {
     score: timestamp,
     member: draft.id,
   });
   
   // Add to global blog list
-  await redis.zadd(KEYS.allBlogs(), {
+  await r.zadd(KEYS.allBlogs(), {
     score: timestamp,
     member: draft.id,
   });
@@ -71,7 +84,7 @@ export async function getBlog(id: string): Promise<BlogDraft | null> {
 }
 
 export async function updateBlog(id: string, updates: Partial<BlogDraft>): Promise<void> {
-  if (!redis) throw new Error('CMS storage unavailable');
+  const r = getRedis();
   const existing = await getBlog(id);
   if (!existing) throw new Error('Blog not found');
   
@@ -82,39 +95,39 @@ export async function updateBlog(id: string, updates: Partial<BlogDraft>): Promi
     updatedAt: new Date().toISOString(),
   };
   
-  await redis.hset(KEYS.blog(id), updated as any);
+  await r.hset(KEYS.blog(id), updated as any);
   
   // Update timestamp in sorted sets
   const timestamp = Date.now();
-  await redis.zadd(KEYS.blogs(existing.authorEmail), {
+  await r.zadd(KEYS.blogs(existing.authorEmail), {
     score: timestamp,
     member: id,
   });
-  await redis.zadd(KEYS.allBlogs(), {
+  await r.zadd(KEYS.allBlogs(), {
     score: timestamp,
     member: id,
   });
 }
 
 export async function deleteBlog(id: string): Promise<void> {
-  if (!redis) return;
+  const r = getRedis();
   const blog = await getBlog(id);
   if (!blog) return;
   
   // Delete blog
-  await redis.del(KEYS.blog(id));
+  await r.del(KEYS.blog(id));
   
   // Remove from author's list
-  await redis.zrem(KEYS.blogs(blog.authorEmail), id);
+  await r.zrem(KEYS.blogs(blog.authorEmail), id);
   
   // Remove from global list
-  await redis.zrem(KEYS.allBlogs(), id);
+  await r.zrem(KEYS.allBlogs(), id);
   
   // Delete comments
-  await redis.del(KEYS.comments(id));
+  await r.del(KEYS.comments(id));
   
   // Delete images list
-  await redis.del(KEYS.images(id));
+  await r.del(KEYS.images(id));
 }
 
 export async function getAuthorBlogs(email: string): Promise<BlogDraft[]> {
@@ -134,7 +147,7 @@ export async function getAuthorBlogs(email: string): Promise<BlogDraft[]> {
 
 export async function getAllBlogs(): Promise<BlogDraft[]> {
   if (!redis) return [];
-  const blogIds = await redis!.zrange(KEYS.allBlogs(), 0, -1, { rev: true });
+  const blogIds = await redis.zrange(KEYS.allBlogs(), 0, -1, { rev: true });
   
   if (!blogIds || blogIds.length === 0) return [];
   
@@ -185,8 +198,8 @@ async function enforceMaxBlogs(email: string): Promise<{ locked: string[]; notif
 // ============================================================================
 
 export async function addComment(comment: InlineComment): Promise<void> {
-  if (!redis) throw new Error('CMS storage unavailable');
-  await redis.rpush(KEYS.comments(comment.blogId), JSON.stringify(comment));
+  const r = getRedis();
+  await r.rpush(KEYS.comments(comment.blogId), JSON.stringify(comment));
 }
 
 export async function getComments(blogId: string): Promise<InlineComment[]> {
@@ -197,7 +210,7 @@ export async function getComments(blogId: string): Promise<InlineComment[]> {
 }
 
 export async function updateComment(blogId: string, commentId: string, updates: Partial<InlineComment>): Promise<void> {
-  if (!redis) throw new Error('CMS storage unavailable');
+  const r = getRedis();
   const comments = await getComments(blogId);
   const index = comments.findIndex(c => c.id === commentId);
   
@@ -207,25 +220,24 @@ export async function updateComment(blogId: string, commentId: string, updates: 
   comments[index] = updated;
   
   // Replace entire list
-  await redis.del(KEYS.comments(blogId));
+  await r.del(KEYS.comments(blogId));
   for (const comment of comments) {
-    await redis.rpush(KEYS.comments(blogId), JSON.stringify(comment));
+    await r.rpush(KEYS.comments(blogId), JSON.stringify(comment));
   }
 }
 
 export async function deleteComment(blogId: string, commentId: string): Promise<void> {
-  if (!redis) return;
+  const r = getRedis();
   const comments = await getComments(blogId);
   const filtered = comments.filter(c => c.id !== commentId);
   
-  await redis.del(KEYS.comments(blogId));
+  await r.del(KEYS.comments(blogId));
   for (const comment of filtered) {
-    await redis.rpush(KEYS.comments(blogId), JSON.stringify(comment));
+    await r.rpush(KEYS.comments(blogId), JSON.stringify(comment));
   }
 }
 
 export async function resolveComment(blogId: string, commentId: string, resolvedBy: string): Promise<void> {
-  if (!redis) return;
   await updateComment(blogId, commentId, {
     resolved: true,
     resolvedAt: new Date().toISOString(),
@@ -234,7 +246,6 @@ export async function resolveComment(blogId: string, commentId: string, resolved
 }
 
 export async function unresolveComment(blogId: string, commentId: string): Promise<void> {
-  if (!redis) return;
   await updateComment(blogId, commentId, {
     resolved: false,
     resolvedAt: undefined,
@@ -305,18 +316,21 @@ export async function refreshSession(token: string): Promise<void> {
 }
 
 // ============================================================================
-// IMAGE TRACKING
+// IMAGE TRACKING (non-critical - graceful noop if Redis unavailable)
 // ============================================================================
 
 export async function trackImage(blogId: string, imageUrl: string): Promise<void> {
+  if (!redis) return;
   await redis.sadd(KEYS.images(blogId), imageUrl);
 }
 
 export async function getTrackedImages(blogId: string): Promise<string[]> {
+  if (!redis) return [];
   const images = await redis.smembers(KEYS.images(blogId));
   return images as string[];
 }
 
 export async function clearTrackedImages(blogId: string): Promise<void> {
+  if (!redis) return;
   await redis.del(KEYS.images(blogId));
 }
