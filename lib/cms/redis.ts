@@ -68,13 +68,14 @@ export async function createBlog(draft: BlogDraft): Promise<{ notification?: str
 }
 
 export async function getBlog(id: string): Promise<BlogDraft | null> {
-  if (!isRedisAvailable()) return null;
+  if (!isRedisAvailable() || !redis) return null;
   const data = await redis.hgetall(KEYS.blog(id));
   if (!data || Object.keys(data).length === 0) return null;
   return data as unknown as BlogDraft;
 }
 
 export async function updateBlog(id: string, updates: Partial<BlogDraft>): Promise<void> {
+  if (!redis) throw new Error('CMS storage unavailable');
   const existing = await getBlog(id);
   if (!existing) throw new Error('Blog not found');
   
@@ -100,6 +101,7 @@ export async function updateBlog(id: string, updates: Partial<BlogDraft>): Promi
 }
 
 export async function deleteBlog(id: string): Promise<void> {
+  if (!redis) return;
   const blog = await getBlog(id);
   if (!blog) return;
   
@@ -134,6 +136,7 @@ export async function getAuthorBlogs(email: string): Promise<BlogDraft[]> {
 }
 
 export async function getAllBlogs(): Promise<BlogDraft[]> {
+  if (!redis) return [];
   const blogIds = await redis.zrange(KEYS.allBlogs(), 0, -1, { rev: true });
   
   if (!blogIds || blogIds.length === 0) return [];
@@ -146,11 +149,13 @@ export async function getAllBlogs(): Promise<BlogDraft[]> {
 }
 
 export async function getBlogsByStatus(status: string): Promise<BlogDraft[]> {
+  if (!redis) return [];
   const allBlogs = await getAllBlogs();
   return allBlogs.filter(b => b.status === status);
 }
 
 async function enforceMaxBlogs(email: string): Promise<{ locked: string[]; notification?: string }> {
+  if (!redis) return { locked: [] };
   const blogIds = await redis.zrange(KEYS.blogs(email), 0, -1, { rev: true });
   
   if (blogIds.length <= MAX_BLOGS_PER_AUTHOR) {
@@ -183,16 +188,19 @@ async function enforceMaxBlogs(email: string): Promise<{ locked: string[]; notif
 // ============================================================================
 
 export async function addComment(comment: InlineComment): Promise<void> {
+  if (!redis) throw new Error('CMS storage unavailable');
   await redis.rpush(KEYS.comments(comment.blogId), JSON.stringify(comment));
 }
 
 export async function getComments(blogId: string): Promise<InlineComment[]> {
+  if (!redis) return [];
   const comments = await redis.lrange(KEYS.comments(blogId), 0, -1);
   if (!comments) return [];
   return comments.map(c => JSON.parse(c as string));
 }
 
 export async function updateComment(blogId: string, commentId: string, updates: Partial<InlineComment>): Promise<void> {
+  if (!redis) throw new Error('CMS storage unavailable');
   const comments = await getComments(blogId);
   const index = comments.findIndex(c => c.id === commentId);
   
@@ -209,6 +217,7 @@ export async function updateComment(blogId: string, commentId: string, updates: 
 }
 
 export async function deleteComment(blogId: string, commentId: string): Promise<void> {
+  if (!redis) return;
   const comments = await getComments(blogId);
   const filtered = comments.filter(c => c.id !== commentId);
   
@@ -219,6 +228,7 @@ export async function deleteComment(blogId: string, commentId: string): Promise<
 }
 
 export async function resolveComment(blogId: string, commentId: string, resolvedBy: string): Promise<void> {
+  if (!redis) return;
   await updateComment(blogId, commentId, {
     resolved: true,
     resolvedAt: new Date().toISOString(),
@@ -227,6 +237,7 @@ export async function resolveComment(blogId: string, commentId: string, resolved
 }
 
 export async function unresolveComment(blogId: string, commentId: string): Promise<void> {
+  if (!redis) return;
   await updateComment(blogId, commentId, {
     resolved: false,
     resolvedAt: undefined,
@@ -239,6 +250,7 @@ export async function unresolveComment(blogId: string, commentId: string): Promi
 // ============================================================================
 
 export async function createSnapshot(snapshot: BlogSnapshot): Promise<void> {
+  if (!redis) return;
   await redis.hset(
     KEYS.snapshot(snapshot.blogId, snapshot.version),
     snapshot as any
@@ -253,6 +265,7 @@ export async function createSnapshot(snapshot: BlogSnapshot): Promise<void> {
 }
 
 export async function getSnapshot(blogId: string, version: number): Promise<BlogSnapshot | null> {
+  if (!redis) return null;
   const data = await redis.hgetall(KEYS.snapshot(blogId, version));
   if (!data || Object.keys(data).length === 0) return null;
   return data as unknown as BlogSnapshot;
@@ -263,7 +276,7 @@ export async function getSnapshot(blogId: string, version: number): Promise<Blog
 // ============================================================================
 
 export async function createSession(session: Session): Promise<void> {
-  if (!isRedisAvailable()) {
+  if (!isRedisAvailable() || !redis) {
     console.warn('[CMS] Session storage unavailable - using JWT-only mode');
     return;
   }
@@ -275,18 +288,19 @@ export async function createSession(session: Session): Promise<void> {
 }
 
 export async function getSession(token: string): Promise<Session | null> {
-  if (!isRedisAvailable()) return null;
+  if (!isRedisAvailable() || !redis) return null;
   const data = await redis.get(KEYS.session(token));
   if (!data) return null;
   return JSON.parse(data as string);
 }
 
 export async function deleteSession(token: string): Promise<void> {
-  if (!isRedisAvailable()) return;
+  if (!isRedisAvailable() || !redis) return;
   await redis.del(KEYS.session(token));
 }
 
 export async function refreshSession(token: string): Promise<void> {
+  if (!redis) return;
   const session = await getSession(token);
   if (!session) return;
   
