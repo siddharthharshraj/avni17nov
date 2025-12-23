@@ -118,6 +118,7 @@ export async function deleteBlog(id: string): Promise<void> {
 }
 
 export async function getAuthorBlogs(email: string): Promise<BlogDraft[]> {
+  if (!redis) return [];
   // Get blog IDs sorted by most recent
   const blogIds = await redis.zrange(KEYS.blogs(email), 0, -1, { rev: true });
   
