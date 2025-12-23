@@ -110,3 +110,8 @@
 # Enable Brotli compression
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Scheduled function to cleanup unpublished blogs after 48 hours
+[[functions]]
+  name = "scheduled-cleanup"
+  schedule = "0 */6 * * *"  # Run every 6 hours

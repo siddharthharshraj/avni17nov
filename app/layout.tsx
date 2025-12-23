@@ -132,6 +132,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#419372" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
         <meta name="format-detection" content="telephone=no" />
+        
+        {/* Umami Analytics */}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="21e234e7-c1ce-4494-8256-7fa3871e7c74"></script>
       </head>
       <body className="font-noto">
         <GoogleAnalytics />
