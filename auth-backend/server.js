@@ -187,14 +187,13 @@ app.get('/auth/google/callback',
       // Create JWT
       const token = createJWT(req.user);
       
-      // Set cookie
+      // Set cookie (no domain - let browser handle it)
       res.cookie('cms_session', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
+        sameSite: 'none', // Required for cross-site cookies
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         path: '/',
-        domain: process.env.NODE_ENV === 'production' ? '.netlify.app' : undefined,
       });
       
       // Redirect back to frontend
@@ -216,9 +215,8 @@ app.post('/auth/logout', (req, res) => {
   res.clearCookie('cms_session', {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
+    sameSite: 'none',
     path: '/',
-    domain: process.env.NODE_ENV === 'production' ? '.netlify.app' : undefined,
   });
   
   res.json({ success: true });
