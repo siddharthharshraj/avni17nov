@@ -42,6 +42,8 @@ next-env.d.ts
 # IDE & Editors
 .vscode/
 .idea/
+.windsurf/
+*.code-workspace
 *.swp
 *.swo
 *~
