@@ -107,6 +107,19 @@ export async function setSessionCookie(token: string): Promise<void> {
   });
 }
 
+export function getSessionCookieConfig() {
+  return {
+    name: COOKIE_NAME,
+    options: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax' as const,
+      maxAge: COOKIE_MAX_AGE,
+      path: '/',
+    }
+  };
+}
+
 export async function clearSessionCookie(): Promise<void> {
   const cookieStore = await cookies();
   cookieStore.delete(COOKIE_NAME);

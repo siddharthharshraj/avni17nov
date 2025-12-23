@@ -56,9 +56,6 @@ export async function POST(request: NextRequest) {
       console.warn('[CMS] Session storage failed, using JWT-only mode:', err.message)
     );
     
-    // Set session cookie (CRITICAL - must succeed)
-    await setSessionCookie(token);
-    
     // Log successful login (non-blocking)
     createAuditLog(user, 'login', {
       metadata: { sessionExpires: expiresAt },
@@ -66,10 +63,22 @@ export async function POST(request: NextRequest) {
       userAgent,
     }).catch(err => console.warn('[CMS] Audit log failed:', err.message));
     
-    return NextResponse.json({
+    // Create response with session cookie
+    const response = NextResponse.json({
       success: true,
       user,
     });
+    
+    // Set session cookie in response headers
+    response.cookies.set('cms_session', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 7 * 24 * 60 * 60, // 7 days
+      path: '/',
+    });
+    
+    return response;
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('[CMS] Auth error:', errorMessage);
