@@ -103,19 +103,21 @@ export async function createAuditLog(
   const logJson = JSON.stringify(log);
 
   // Store in user-specific sorted set (by timestamp)
-  await redis.zadd(AUDIT_USER_KEY(user.email), {
-    score,
-    member: logJson,
-  });
+  if (redis) {
+    await redis.zadd(AUDIT_USER_KEY(user.email), {
+      score,
+      member: logJson,
+    });
 
-  // Store in global sorted set
-  await redis.zadd(AUDIT_GLOBAL_KEY, {
-    score,
-    member: logJson,
-  });
+    // Store in global sorted set
+    await redis.zadd(AUDIT_GLOBAL_KEY, {
+      score,
+      member: logJson,
+    });
 
-  // Clean up old entries (older than 30 days)
-  await cleanupOldAuditLogs();
+    // Clean up old entries (older than 30 days)
+    await cleanupOldAuditLogs();
+  }
 
   return log;
   } catch (error) {
@@ -132,6 +134,7 @@ export async function getUserAuditLogs(
   limit: number = 100,
   offset: number = 0
 ): Promise<AuditLog[]> {
+  if (!redis) return [];
   const logs = await redis.zrange(
     AUDIT_USER_KEY(email),
     offset,
@@ -151,6 +154,7 @@ export async function getAllAuditLogs(
   limit: number = 100,
   offset: number = 0
 ): Promise<AuditLog[]> {
+  if (!redis) return [];
   const logs = await redis.zrange(
     AUDIT_GLOBAL_KEY,
     offset,
@@ -198,62 +202,74 @@ export async function getAuditStats(days: number = 30): Promise<{
   actionCounts: Record<string, number>;
   topUsers: Array<{ email: string; count: number }>;
 }> {
+  if (!redis) return { totalLogs: 0, uniqueUsers: 0, actionCounts: {}, topUsers: [] };
   const cutoffTime = Date.now() - (days * 24 * 60 * 60 * 1000);
   
   // Get all logs and filter by time
-  const allLogs = await redis.zrange(AUDIT_GLOBAL_KEY, 0, -1);
+  if (redis) {
+    const allLogs = await redis.zrange(AUDIT_GLOBAL_KEY, 0, -1);
 
-  if (!allLogs || allLogs.length === 0) {
+    if (!allLogs || allLogs.length === 0) {
+      return {
+        totalLogs: 0,
+        uniqueUsers: 0,
+        actionCounts: {},
+        topUsers: [],
+      };
+    }
+
+    const parsedLogs = allLogs
+      .map((log: any) => JSON.parse(log as string) as AuditLog)
+      .filter((log: AuditLog) => new Date(log.timestamp).getTime() >= cutoffTime);
+    
+    const uniqueUsers = new Set(parsedLogs.map((log: AuditLog) => log.userEmail));
+    
+    const actionCounts: Record<string, number> = {};
+    parsedLogs.forEach((log: AuditLog) => {
+      actionCounts[log.action] = (actionCounts[log.action] || 0) + 1;
+    });
+
+    const userCounts: Record<string, number> = {};
+    parsedLogs.forEach((log: AuditLog) => {
+      userCounts[log.userEmail] = (userCounts[log.userEmail] || 0) + 1;
+    });
+
+    const topUsers = Object.entries(userCounts)
+      .map(([email, count]) => ({ email, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10);
+
     return {
-      totalLogs: 0,
-      uniqueUsers: 0,
-      actionCounts: {},
-      topUsers: [],
+      totalLogs: parsedLogs.length,
+      uniqueUsers: uniqueUsers.size,
+      actionCounts,
+      topUsers,
     };
+  } else {
+    return { totalLogs: 0, uniqueUsers: 0, actionCounts: {}, topUsers: [] };
   }
-
-  const parsedLogs = allLogs
-    .map((log: any) => JSON.parse(log as string) as AuditLog)
-    .filter((log: AuditLog) => new Date(log.timestamp).getTime() >= cutoffTime);
-  
-  const uniqueUsers = new Set(parsedLogs.map((log: AuditLog) => log.userEmail));
-  
-  const actionCounts: Record<string, number> = {};
-  parsedLogs.forEach((log: AuditLog) => {
-    actionCounts[log.action] = (actionCounts[log.action] || 0) + 1;
-  });
-
-  const userCounts: Record<string, number> = {};
-  parsedLogs.forEach((log: AuditLog) => {
-    userCounts[log.userEmail] = (userCounts[log.userEmail] || 0) + 1;
-  });
-
-  const topUsers = Object.entries(userCounts)
-    .map(([email, count]) => ({ email, count }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 10);
-
-  return {
-    totalLogs: parsedLogs.length,
-    uniqueUsers: uniqueUsers.size,
-    actionCounts,
-    topUsers,
-  };
 }
 
 /**
  * Clean up audit logs older than retention period
  */
 async function cleanupOldAuditLogs(): Promise<void> {
+  if (!redis) return;
   const cutoffTime = Date.now() - (AUDIT_RETENTION_DAYS * 24 * 60 * 60 * 1000);
-
+  
   // Remove old entries from global log
-  await redis.zremrangebyscore(AUDIT_GLOBAL_KEY, 0, cutoffTime);
+  if (redis) {
+    await redis.zremrangebyscore(AUDIT_GLOBAL_KEY, 0, cutoffTime);
+  }
 
   // Remove old entries from user logs
   // Note: This is a simplified approach. In production, you might want to
   // track user keys separately for more efficient cleanup
-  const allLogs = await redis.zrange(AUDIT_GLOBAL_KEY, 0, -1);
+  if (redis) {
+    const allLogs = await redis.zrange(AUDIT_GLOBAL_KEY, 0, -1);
+    const uniqueEmails = new Set(
+      allLogs.map(log => JSON.parse(log as string).userEmail)
+    );
   const uniqueEmails = new Set(
     allLogs.map(log => JSON.parse(log as string).userEmail)
   );
@@ -270,6 +286,7 @@ export async function exportAuditLogs(
   startDate: string,
   endDate: string
 ): Promise<AuditLog[]> {
+  if (!redis) return [];
   const startTime = new Date(startDate).getTime();
   const endTime = new Date(endDate).getTime();
 

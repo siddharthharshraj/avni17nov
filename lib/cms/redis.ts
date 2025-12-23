@@ -41,7 +41,7 @@ const SESSION_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
 // ============================================================================
 
 export async function createBlog(draft: BlogDraft): Promise<{ notification?: string }> {
-  if (!isRedisAvailable()) {
+  if (!isRedisAvailable() || !redis) {
     throw new Error('CMS storage unavailable - check Redis configuration');
   }
   const timestamp = Date.now();
