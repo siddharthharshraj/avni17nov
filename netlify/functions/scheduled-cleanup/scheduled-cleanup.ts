@@ -3,7 +3,8 @@
  * Runs every 6 hours to cleanup blogs unpublished for 48+ hours
  * 
  * To enable: Deploy to Netlify, then configure in Netlify UI:
- * Functions → scheduled-cleanup → Add trigger → Cron expression: 0 */6 * * *
+ * Functions -> scheduled-cleanup -> Add trigger -> Cron expression: 0 star/6 star star star
+ * (Replace 'star' with asterisk symbol)
  */
 
 import type { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
