@@ -18,7 +18,7 @@ export const redis = REDIS_URL && REDIS_TOKEN ? new Redis({
   token: REDIS_TOKEN,
 }) : null;
 
-function isRedisAvailable(): boolean {
+function isRedisAvailable(): redis is Redis {
   return redis !== null;
 }
 
