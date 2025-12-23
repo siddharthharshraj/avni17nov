@@ -258,24 +258,20 @@ async function cleanupOldAuditLogs(): Promise<void> {
   const cutoffTime = Date.now() - (AUDIT_RETENTION_DAYS * 24 * 60 * 60 * 1000);
   
   // Remove old entries from global log
-  if (redis) {
-    await redis.zremrangebyscore(AUDIT_GLOBAL_KEY, 0, cutoffTime);
-  }
+  await redis.zremrangebyscore(AUDIT_GLOBAL_KEY, 0, cutoffTime);
 
   // Remove old entries from user logs
   // Note: This is a simplified approach. In production, you might want to
-  // track user keys separately for more efficient cleanup
-  if (redis) {
-    const allLogs = await redis.zrange(AUDIT_GLOBAL_KEY, 0, -1);
-    const uniqueEmails = new Set(
-      allLogs.map(log => JSON.parse(log as string).userEmail)
-    );
+  // track user emails separately for better performance
+  const allLogs = await redis.zrange(AUDIT_GLOBAL_KEY, 0, -1);
   const uniqueEmails = new Set(
     allLogs.map(log => JSON.parse(log as string).userEmail)
   );
 
   for (const email of uniqueEmails) {
-    await redis.zremrangebyscore(AUDIT_USER_KEY(email as string), 0, cutoffTime);
+    if (redis) {
+      await redis.zremrangebyscore(AUDIT_USER_KEY(email as string), 0, cutoffTime);
+    }
   }
 }
 

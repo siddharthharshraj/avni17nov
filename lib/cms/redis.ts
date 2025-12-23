@@ -68,7 +68,7 @@ export async function createBlog(draft: BlogDraft): Promise<{ notification?: str
 }
 
 export async function getBlog(id: string): Promise<BlogDraft | null> {
-  if (!isRedisAvailable() || !redis) return null;
+  if (!redis) return null;
   const data = await redis.hgetall(KEYS.blog(id));
   if (!data || Object.keys(data).length === 0) return null;
   return data as unknown as BlogDraft;
