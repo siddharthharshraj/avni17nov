@@ -6,14 +6,21 @@
 import { Redis } from '@upstash/redis';
 import { BlogDraft, InlineComment, BlogSnapshot, Session } from './types';
 
-if (!process.env.UPSTASH_REDIS_URL || !process.env.UPSTASH_REDIS_TOKEN) {
-  throw new Error('Missing Upstash Redis credentials');
+const REDIS_URL = process.env.UPSTASH_REDIS_URL;
+const REDIS_TOKEN = process.env.UPSTASH_REDIS_TOKEN;
+
+if (!REDIS_URL || !REDIS_TOKEN) {
+  console.warn('[CMS] Redis credentials missing - CMS features will be limited');
 }
 
-export const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_URL,
-  token: process.env.UPSTASH_REDIS_TOKEN,
-});
+export const redis = REDIS_URL && REDIS_TOKEN ? new Redis({
+  url: REDIS_URL,
+  token: REDIS_TOKEN,
+}) : null;
+
+function isRedisAvailable(): boolean {
+  return redis !== null;
+}
 
 const KEYS = {
   blog: (id: string) => `cms:blog:${id}`,
@@ -34,6 +41,9 @@ const SESSION_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
 // ============================================================================
 
 export async function createBlog(draft: BlogDraft): Promise<{ notification?: string }> {
+  if (!isRedisAvailable()) {
+    throw new Error('CMS storage unavailable - check Redis configuration');
+  }
   const timestamp = Date.now();
   
   // Store blog
@@ -58,6 +68,7 @@ export async function createBlog(draft: BlogDraft): Promise<{ notification?: str
 }
 
 export async function getBlog(id: string): Promise<BlogDraft | null> {
+  if (!isRedisAvailable()) return null;
   const data = await redis.hgetall(KEYS.blog(id));
   if (!data || Object.keys(data).length === 0) return null;
   return data as unknown as BlogDraft;
@@ -252,6 +263,10 @@ export async function getSnapshot(blogId: string, version: number): Promise<Blog
 // ============================================================================
 
 export async function createSession(session: Session): Promise<void> {
+  if (!isRedisAvailable()) {
+    console.warn('[CMS] Session storage unavailable - using JWT-only mode');
+    return;
+  }
   await redis.setex(
     KEYS.session(session.token),
     SESSION_TTL,
@@ -260,12 +275,14 @@ export async function createSession(session: Session): Promise<void> {
 }
 
 export async function getSession(token: string): Promise<Session | null> {
+  if (!isRedisAvailable()) return null;
   const data = await redis.get(KEYS.session(token));
   if (!data) return null;
   return JSON.parse(data as string);
 }
 
 export async function deleteSession(token: string): Promise<void> {
+  if (!isRedisAvailable()) return;
   await redis.del(KEYS.session(token));
 }
 

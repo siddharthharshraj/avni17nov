@@ -83,8 +83,9 @@ export async function createAuditLog(
     ipAddress?: string;
     userAgent?: string;
   }
-): Promise<AuditLog> {
-  const log: AuditLog = {
+): Promise<AuditLog | null> {
+  try {
+    const log: AuditLog = {
     id: `audit-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
     timestamp: new Date().toISOString(),
     userEmail: user.email,
@@ -117,6 +118,10 @@ export async function createAuditLog(
   await cleanupOldAuditLogs();
 
   return log;
+  } catch (error) {
+    console.warn('[CMS] Audit log failed:', error instanceof Error ? error.message : 'Unknown error');
+    return null;
+  }
 }
 
 /**

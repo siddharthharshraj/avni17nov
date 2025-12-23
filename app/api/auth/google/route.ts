@@ -25,8 +25,8 @@ export async function POST(request: NextRequest) {
     const user = await verifyGoogleToken(idToken);
     
     if (!user) {
-      // Log failed login attempt
-      await createAuditLog(
+      // Log failed login attempt (non-blocking)
+      createAuditLog(
         { email: 'unknown', name: 'Unknown', role: 'author' },
         'login_failed',
         {
@@ -34,10 +34,10 @@ export async function POST(request: NextRequest) {
           ipAddress,
           userAgent,
         }
-      );
+      ).catch(err => console.warn('[CMS] Audit log failed:', err.message));
       
       return NextResponse.json(
-        { error: 'Invalid token or unauthorized domain' },
+        { error: 'Invalid token or unauthorized domain. Please use your @samanvayfoundation.org email.' },
         { status: 401 }
       );
     }
@@ -51,24 +51,34 @@ export async function POST(request: NextRequest) {
       expiresAt,
     };
     
-    await createSession(session);
+    // Create session (non-blocking if Redis unavailable - JWT will work)
+    await createSession(session).catch(err => 
+      console.warn('[CMS] Session storage failed, using JWT-only mode:', err.message)
+    );
+    
+    // Set session cookie (CRITICAL - must succeed)
     await setSessionCookie(token);
     
-    // Log successful login
-    await createAuditLog(user, 'login', {
+    // Log successful login (non-blocking)
+    createAuditLog(user, 'login', {
       metadata: { sessionExpires: expiresAt },
       ipAddress,
       userAgent,
-    });
+    }).catch(err => console.warn('[CMS] Audit log failed:', err.message));
     
     return NextResponse.json({
       success: true,
       user,
     });
   } catch (error) {
-    console.error('Auth error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('[CMS] Auth error:', errorMessage);
+    
     return NextResponse.json(
-      { error: 'Authentication failed' },
+      { 
+        error: 'Authentication failed. Please try again.',
+        details: process.env.NODE_ENV === 'development' ? errorMessage : undefined
+      },
       { status: 500 }
     );
   }
