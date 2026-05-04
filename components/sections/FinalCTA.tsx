@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import Section from "@/components/ui/Section";
 
 export default function FinalCTA() {
   return (
-    <Section spacing="xl" className="bg-[#0e3b2e] text-white">
+    <section className="bg-[#0e3b2e] text-white py-20 md:py-24 lg:py-28 2xl:py-32">
       <Container>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="font-anek font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-5">
@@ -32,6 +31,6 @@ export default function FinalCTA() {
           </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }
