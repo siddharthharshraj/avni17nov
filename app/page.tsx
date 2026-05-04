@@ -25,6 +25,9 @@ const TrustedBy = dynamic(() => import("@/components/sections/TrustedBy"), {
 const WhatAvniDoes = dynamic(() => import("@/components/sections/WhatAvniDoes"), {
   loading: () => <div className="h-screen" />
 });
+const TheShift = dynamic(() => import("@/components/sections/TheShift"), {
+  loading: () => <div className="h-screen" />
+});
 const Transformation = dynamic(() => import("@/components/sections/Transformation"), {
   loading: () => <div className="h-screen" />
 });
@@ -35,6 +38,9 @@ const ImpactStories = dynamic(() => import("@/components/sections/ImpactStories"
   loading: () => <div className="h-screen" />
 });
 const WhyChooseAvni = dynamic(() => import("@/components/sections/WhyChooseAvni"), {
+  loading: () => <div className="h-screen" />
+});
+const WhyAvni = dynamic(() => import("@/components/sections/WhyAvni"), {
   loading: () => <div className="h-screen" />
 });
 const Impact = dynamic(() => import("@/components/sections/Impact"), {
@@ -55,6 +61,9 @@ const Testimonials = dynamic(() => import("@/components/sections/Testimonials"),
 const CTASection = dynamic(() => import("@/components/sections/CTASection"), {
   loading: () => <div className="h-screen" />
 });
+const FinalCTA = dynamic(() => import("@/components/sections/FinalCTA"), {
+  loading: () => <div className="h-screen" />
+});
 const Newsletter = dynamic(() => import("@/components/sections/Newsletter"), {
   loading: () => <div className="h-screen" />
 });
@@ -70,23 +79,30 @@ export default function Home() {
       <Header />
       <AnnouncementBanner />
       <main>
-        {/* Phase 1 redesign — sections follow the design-review brief.
-            Existing sections are kept alongside new ones so the team can
-            A/B compare. Phase 3 will trim the duplicates. */}
+        {/* Landing redesign — order follows the design-review brief.
+            Phase 2: TheShift / WhyAvni / FinalCTA replace WhatAvniDoes /
+            WhyChooseAvni / CTASection. Old components are still in
+            components/sections and kept on the page for A/B comparison
+            (rendered after the brief flow). Phase 3 will trim them. */}
         <Hero />                {/* 1. Hero */}
-        <Problem />             {/* 2. Problem (NEW) */}
-        <TrustedBy />
-        <WhatAvniDoes />        {/* 3. The Shift (Phase 2: reshape to 3 pillars) */}
-        <Transformation />      {/* 4. Before → After (NEW) */}
-        <HowItWorks />          {/* 5. How it works (NEW) */}
-        <WhyChooseAvni />       {/* 6. Why Avni (Phase 2: 5-tile + bigger Job aid) */}
-        <Impact />              {/* 7. Impact numbers (NEW) */}
+        <Problem />             {/* 2. Problem */}
+        <TheShift />            {/* 3. The Shift (3 pillars) */}
+        <Transformation />      {/* 4. Before → After */}
+        <HowItWorks />          {/* 5. How it works */}
+        <WhyAvni />             {/* 6. Why Avni (4 tiles + Job-aid hero) */}
+        <Impact />              {/* 7. Impact numbers */}
         <ImpactStories />       {/* 8. Stories */}
-        <WhoItsFor />           {/* 9. Who it's for (NEW) */}
+        <WhoItsFor />           {/* 9. Who it's for */}
+        <FinalCTA />            {/* 10. Final CTA (dark green band) */}
+
+        {/* --- Legacy sections kept for A/B; Phase 3 will remove --- */}
+        <TrustedBy />
+        <WhatAvniDoes />
+        <WhyChooseAvni />
         <Solutions />
         <Transparency />
         <Testimonials />
-        <CTASection />          {/* 10. Final CTA (Phase 2: dark green band) */}
+        <CTASection />
         <Newsletter />
       </main>
       <Footer />
