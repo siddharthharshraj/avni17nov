@@ -1,45 +1,29 @@
-# Avni Project - Optimized for Netlify Deployment
-# Only essential files for production deployment
-
 # Dependencies
 /node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
-# Testing
-/coverage
-*.test.ts
-*.test.tsx
-*.spec.ts
-*.spec.tsx
-__tests__/
-__mocks__/
-
-# Next.js Build
+# Next.js build artifacts
 /.next/
 /out/
-.next
 
-# Production Build
+# Production build
 /build
 /dist
 
-# Environment Variables
+# Environment files (do NOT commit secrets)
 .env
-.env*.local
-.env.production
-.env.development
-.env.test
+.env.local
+.env.*.local
 
-# TypeScript
+# Keep templates
+!.env.example
+
+# TypeScript build info
 *.tsbuildinfo
-next-env.d.ts
 
-# IDE & Editors
+# IDE & editors
 .vscode/
 .idea/
 .windsurf/
@@ -47,12 +31,8 @@ next-env.d.ts
 *.swp
 *.swo
 *~
-.project
-.classpath
-.settings/
-*.sublime-*
 
-# OS Files
+# OS files
 .DS_Store
 .DS_Store?
 ._*
@@ -68,94 +48,35 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 .pnpm-debug.log*
 
-# Temporary Files
+# Caches
+.eslintcache
+.stylelintcache
+.prettiercache
+.cache/
+
+# Temporary files
 *.tmp
 *.temp
 *.backup
 *.bak
-*.cache
-.cache/
 
-# Documentation
-# Exclude docs folder (internal documentation)
-docs/
-*.tmp.md
-*.backup.md
-
-# Keep essential documentation
-!README.md
-!CONTRIBUTING.md
-!LICENSE
-!CODE_OF_CONDUCT.md
-!content/**/*.md
-!content/**/*.mdx
-
-# Exclude SEO handbooks (not needed in production)
-google-seo-handbook.md
-
-# Figma & Design Files
-figma-data-*.json
-*.figma.json
-*.sketch
-*.fig
-*.xd
-
-# Google Service Account & Secrets (IMPORTANT: Keep this private!)
-*-n5-*.json
-abiding-truth-*.json
-config/secrets/
+# Secrets (service accounts, certs, keys)
 *.service-account.json
-
-# Docker files are INCLUDED for easy deployment
-!Dockerfile
-!docker-compose.yml
-!.dockerignore
-
-# Git
-.git/
-
-# Vercel (using Netlify instead)
-.vercel
-
-# Misc Development Files
-.eslintcache
-.stylelintcache
-.prettiercache
-
-# Large media files (should be optimized and in public/)
-*.psd
-*.ai
-*.raw
-*.mov
-*.mp4
-*.avi
-
-# Database files (if any)
-*.sqlite
-*.db
-
-# Security
+config/secrets/
 *.pem
 *.key
 *.cert
 
-# CI/CD (keep only Netlify config)
-.github/
-.gitlab-ci.yml
-.travis.yml
-circle.yml
+# Deploy provider artifacts
+.vercel
+.netlify
 
-# Keep only essential config files
-!netlify.toml
-!next.config.js
-!next-sitemap.config.js
-!package.json
-!tsconfig.json
-!tailwind.config.ts
-!postcss.config.js
-!.prettierrc
-!.eslintrc.json
-!.nvmrc
+# Local design exports we don't want to ship
+*.psd
+*.ai
+*.raw
+*.sketch
+*.fig
+*.xd

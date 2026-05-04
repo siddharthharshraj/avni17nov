@@ -1,0 +1,544 @@
+{
+  "file": {
+    "name": "Website - ready for dev",
+    "lastModified": "2025-11-14T12:11:37Z",
+    "version": "2317034242308909319",
+    "pages": 1
+  },
+  "pages": [
+    {
+      "name": "Homepage + navigation",
+      "id": "0:1",
+      "frameCount": 23,
+      "frames": [
+        {
+          "name": "Desktop - 6",
+          "id": "1:560",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 1024,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Desktop - 8",
+          "id": "1:662",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 1024,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Desktop - 9",
+          "id": "1:759",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 1024,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Solutions",
+          "id": "34:1608",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 2130,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Product Services - Use Cases",
+          "id": "34:1756",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 4620,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Product Services - Services",
+          "id": "34:2317",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 4142,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Case studies-list",
+          "id": "78:74",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 3000,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Case studies-list",
+          "id": "78:345",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 3000,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "blog-list",
+          "id": "78:654",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 3000,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "blog-list",
+          "id": "78:852",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 3000,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Demo Accounts",
+          "id": "162:126",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 2630,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Pricing",
+          "id": "162:334",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 2830,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Resources",
+          "id": "187:433",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 1024,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Homepage",
+          "id": "194:1013",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 9812,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "About",
+          "id": "197:2104",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 4250,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Case studies-page",
+          "id": "197:3285",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 7570,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Media Gallery - videos",
+          "id": "202:3919",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 2096,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Media Gallery - photos",
+          "id": "202:4091",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 2096,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Resources",
+          "id": "202:4248",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 2260,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        },
+        {
+          "name": "Contact Us",
+          "id": "202:4394",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 2000,
+          "layoutMode": null,
+          "background": "#fcfcfc"
+        }
+      ],
+      "textStyles": [
+        {
+          "family": "Anek Latin",
+          "weight": 500,
+          "size": 86,
+          "lineHeight": 90,
+          "letterSpacing": 0,
+          "sampleText": "Digitise your field-work,\nTransform Live"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 500,
+          "size": 72,
+          "lineHeight": 76,
+          "letterSpacing": 0,
+          "sampleText": "Impact Stories"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 700,
+          "size": 36,
+          "lineHeight": 32,
+          "letterSpacing": 0,
+          "sampleText": "Solutions that work for Every Use Case"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 700,
+          "size": 32,
+          "lineHeight": 40,
+          "letterSpacing": 0,
+          "sampleText": "Avni"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 700,
+          "size": 30,
+          "lineHeight": 30,
+          "letterSpacing": 0,
+          "sampleText": "About Goonj"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 400,
+          "size": 30,
+          "lineHeight": 44,
+          "letterSpacing": 0,
+          "sampleText": "“Avni’s offline capability and simple in"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 700,
+          "size": 24,
+          "lineHeight": 32,
+          "letterSpacing": 0,
+          "sampleText": "11.1 M"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 500,
+          "size": 24,
+          "lineHeight": 32,
+          "letterSpacing": 0,
+          "sampleText": "Education"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 400,
+          "size": 24,
+          "lineHeight": 32,
+          "letterSpacing": 0,
+          "sampleText": "Healthcare"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 500,
+          "size": 24,
+          "lineHeight": 30,
+          "letterSpacing": 0,
+          "sampleText": "Get the latest updates, releases, and ev"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 400,
+          "size": 24,
+          "lineHeight": 30,
+          "letterSpacing": 0,
+          "sampleText": "Whether you’re managing cases, running s"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 500,
+          "size": 20,
+          "lineHeight": 40,
+          "letterSpacing": 0,
+          "sampleText": "|"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 500,
+          "size": 20,
+          "lineHeight": 27,
+          "letterSpacing": 0,
+          "sampleText": "Empowering NGOs with simple, sustainable"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 700,
+          "size": 20,
+          "lineHeight": 26,
+          "letterSpacing": 0,
+          "sampleText": "Water Body Excavation"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 400,
+          "size": 20,
+          "lineHeight": 26,
+          "letterSpacing": 0,
+          "sampleText": " Pricing suited for non-profits. It is 7"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 500,
+          "size": 18,
+          "lineHeight": 20,
+          "letterSpacing": 0,
+          "sampleText": "Services"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 400,
+          "size": 18,
+          "lineHeight": 27,
+          "letterSpacing": 0,
+          "sampleText": "Samanvay Foundation\n147, 1st Floor, 10th"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 700,
+          "size": 18,
+          "lineHeight": 20,
+          "letterSpacing": 0,
+          "sampleText": "Leadership For Equity | Classroom at Tea"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 500,
+          "size": 16,
+          "lineHeight": 40,
+          "letterSpacing": 0,
+          "sampleText": "About"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 700,
+          "size": 16,
+          "lineHeight": 20,
+          "letterSpacing": 0,
+          "sampleText": "OPEN SOURCE • MADE IN INDIA • AI Powered"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 400,
+          "size": 16,
+          "lineHeight": 12,
+          "letterSpacing": 0,
+          "sampleText": "All Rights Reserved ©Avni-Project | Open"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 400,
+          "size": 16,
+          "lineHeight": 16,
+          "letterSpacing": 0,
+          "sampleText": "Download avni app"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 700,
+          "size": 16,
+          "lineHeight": 26,
+          "letterSpacing": 0,
+          "sampleText": "Avni App login"
+        },
+        {
+          "family": "Inter",
+          "weight": 400,
+          "size": 16,
+          "lineHeight": 19.363636016845703,
+          "letterSpacing": 0,
+          "sampleText": "40 NGOs \n25 States"
+        },
+        {
+          "family": "Anek Latin",
+          "weight": 500,
+          "size": 14,
+          "lineHeight": 20,
+          "letterSpacing": 0,
+          "sampleText": "Sign up for avni launchpad event - decem"
+        },
+        {
+          "family": "Noto Sans",
+          "weight": 400,
+          "size": 14,
+          "lineHeight": 20,
+          "letterSpacing": 0,
+          "sampleText": "Track individual and household progress "
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#000000",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#0b2540",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#1a1a1a",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#1e1e1e",
+          "usedAs": [
+            "stroke"
+          ]
+        },
+        {
+          "hex": "#419372",
+          "usedAs": [
+            "stroke",
+            "fill"
+          ]
+        },
+        {
+          "hex": "#878787",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#a6a6a6",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#cccccc",
+          "usedAs": [
+            "stroke"
+          ]
+        },
+        {
+          "hex": "#d9d9d9",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#e6e6e6",
+          "usedAs": [
+            "stroke"
+          ]
+        },
+        {
+          "hex": "#e9eaf8",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#ebebeb",
+          "usedAs": [
+            "stroke"
+          ]
+        },
+        {
+          "hex": "#f2f2f2",
+          "usedAs": [
+            "fill",
+            "stroke"
+          ]
+        },
+        {
+          "hex": "#f3763f",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#f3ca40",
+          "usedAs": [
+            "stroke"
+          ]
+        },
+        {
+          "hex": "#f6f9fc",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#fba57f",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#fcfcfc",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#fefefe",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#ff8854",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#fff8f8",
+          "usedAs": [
+            "fill"
+          ]
+        },
+        {
+          "hex": "#ffffff",
+          "usedAs": [
+            "fill",
+            "stroke"
+          ]
+        }
+      ]
+    }
+  ]
+}
