@@ -16,16 +16,31 @@ export const metadata: Metadata = generateSEOMetadata({
 });
 
 // Dynamic imports for below-the-fold components
+const Problem = dynamic(() => import("@/components/sections/Problem"), {
+  loading: () => <div className="h-screen" />
+});
 const TrustedBy = dynamic(() => import("@/components/sections/TrustedBy"), {
   loading: () => <div className="h-32" />
 });
 const WhatAvniDoes = dynamic(() => import("@/components/sections/WhatAvniDoes"), {
   loading: () => <div className="h-screen" />
 });
+const Transformation = dynamic(() => import("@/components/sections/Transformation"), {
+  loading: () => <div className="h-screen" />
+});
+const HowItWorks = dynamic(() => import("@/components/sections/HowItWorks"), {
+  loading: () => <div className="h-screen" />
+});
 const ImpactStories = dynamic(() => import("@/components/sections/ImpactStories"), {
   loading: () => <div className="h-screen" />
 });
 const WhyChooseAvni = dynamic(() => import("@/components/sections/WhyChooseAvni"), {
+  loading: () => <div className="h-screen" />
+});
+const Impact = dynamic(() => import("@/components/sections/Impact"), {
+  loading: () => <div className="h-screen" />
+});
+const WhoItsFor = dynamic(() => import("@/components/sections/WhoItsFor"), {
   loading: () => <div className="h-screen" />
 });
 const Solutions = dynamic(() => import("@/components/sections/Solutions"), {
@@ -55,15 +70,23 @@ export default function Home() {
       <Header />
       <AnnouncementBanner />
       <main>
-        <Hero />
+        {/* Phase 1 redesign — sections follow the design-review brief.
+            Existing sections are kept alongside new ones so the team can
+            A/B compare. Phase 3 will trim the duplicates. */}
+        <Hero />                {/* 1. Hero */}
+        <Problem />             {/* 2. Problem (NEW) */}
         <TrustedBy />
-        <WhatAvniDoes />
-        <ImpactStories />
-        <WhyChooseAvni />
+        <WhatAvniDoes />        {/* 3. The Shift (Phase 2: reshape to 3 pillars) */}
+        <Transformation />      {/* 4. Before → After (NEW) */}
+        <HowItWorks />          {/* 5. How it works (NEW) */}
+        <WhyChooseAvni />       {/* 6. Why Avni (Phase 2: 5-tile + bigger Job aid) */}
+        <Impact />              {/* 7. Impact numbers (NEW) */}
+        <ImpactStories />       {/* 8. Stories */}
+        <WhoItsFor />           {/* 9. Who it's for (NEW) */}
         <Solutions />
         <Transparency />
         <Testimonials />
-        <CTASection />
+        <CTASection />          {/* 10. Final CTA (Phase 2: dark green band) */}
         <Newsletter />
       </main>
       <Footer />
