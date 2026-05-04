@@ -129,7 +129,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href="https://avniproject.org/" />
-        <meta name="theme-color" content="#419372" />
+        <meta name="theme-color" content="#1F7A63" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
         <meta name="format-detection" content="telephone=no" />
         

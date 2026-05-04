@@ -100,7 +100,7 @@ export default function BlogShareCTA({
           {/* Sign Up Button - Compact design */}
           <Link
             href="/get-started"
-            className="bg-[#419372] text-white font-anek font-semibold text-center rounded-full hover:bg-[#357a5e] transition-colors px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base"
+            className="bg-[#1F7A63] text-white font-anek font-semibold text-center rounded-full hover:bg-[#155947] transition-colors px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base"
           >
             Sign Up for Free
           </Link>
@@ -108,7 +108,7 @@ export default function BlogShareCTA({
           {/* Contact Button - Compact design */}
           <Link
             href="/contact"
-            className="text-[#419372] font-anek font-semibold text-center rounded-full hover:bg-[#419372] hover:text-white transition-colors border-2 border-[#419372] px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base"
+            className="text-[#1F7A63] font-anek font-semibold text-center rounded-full hover:bg-[#1F7A63] hover:text-white transition-colors border-2 border-[#1F7A63] px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base"
           >
             Contact Us
           </Link>

@@ -46,7 +46,7 @@ export default function AvniBrandKitPage() {
   ];
 
   const brandColors = [
-    { name: 'Primary Green', hex: '#419372', usage: 'Primary brand color, CTAs, links' },
+    { name: 'Primary Green', hex: '#1F7A63', usage: 'Primary brand color, CTAs, links' },
     { name: 'Primary Dark', hex: '#0B2540', usage: 'Headings, dark text' },
     { name: 'Background', hex: '#FCFCFC', usage: 'Page background' },
     { name: 'Accent Orange', hex: '#FF8854', usage: 'Tags, highlights, badges' },
@@ -165,7 +165,7 @@ export default function AvniBrandKitPage() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[#419372] font-noto text-sm font-medium hover:underline"
+            className="inline-flex items-center gap-2 text-[#1F7A63] font-noto text-sm font-medium hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Avni Website
@@ -214,7 +214,7 @@ export default function AvniBrandKitPage() {
                 <a
                   href={asset.downloadUrl}
                   download={asset.file}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#419372] text-white font-anek font-medium text-sm rounded-lg hover:bg-[#357a5e] transition-colors w-full justify-center"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F7A63] text-white font-anek font-medium text-sm rounded-lg hover:bg-[#155947] transition-colors w-full justify-center"
                 >
                   <Download className="w-4 h-4" />
                   Download
@@ -332,14 +332,14 @@ export default function AvniBrandKitPage() {
               <div>
                 <label className="block font-anek font-semibold text-sm text-[#0b2540] mb-2">
                   Website URL <span className="text-red-500">*</span>
-                  <span className="font-normal text-[#419372] ml-2 text-xs">(Auto-detected)</span>
+                  <span className="font-normal text-[#1F7A63] ml-2 text-xs">(Auto-detected)</span>
                 </label>
                 <input
                   type="url"
                   value={websiteUrl}
                   onChange={(e) => setWebsiteUrl(e.target.value)}
                   placeholder="Auto-detecting current domain..."
-                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372] bg-[#FCFCFC]"
+                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#1F7A63] bg-[#FCFCFC]"
                 />
                 <p className="font-noto text-xs text-[#5a6c7d] mt-1">
                   Current domain is automatically detected. Edit if needed.
@@ -362,8 +362,8 @@ export default function AvniBrandKitPage() {
                         onClick={() => toggleSource(platform.id)}
                         className={`flex items-center justify-center gap-2 px-4 py-3 border-2 rounded-lg font-anek font-medium text-sm transition-all ${
                           isSelected
-                            ? 'border-[#419372] bg-[#419372] text-white'
-                            : 'border-[#E6E6E6] text-[#5a6c7d] hover:border-[#419372]'
+                            ? 'border-[#1F7A63] bg-[#1F7A63] text-white'
+                            : 'border-[#E6E6E6] text-[#5a6c7d] hover:border-[#1F7A63]'
                         }`}
                       >
                         {Icon === 'X' ? (
@@ -399,7 +399,7 @@ export default function AvniBrandKitPage() {
                   value={utmMedium}
                   onChange={(e) => setUtmMedium(e.target.value)}
                   placeholder="e.g., social, email, cpc"
-                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372]"
+                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#1F7A63]"
                 />
               </div>
 
@@ -414,7 +414,7 @@ export default function AvniBrandKitPage() {
                   value={utmCampaign}
                   onChange={(e) => setUtmCampaign(e.target.value)}
                   placeholder="e.g., summer_launch_2024"
-                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372]"
+                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#1F7A63]"
                 />
               </div>
 
@@ -429,7 +429,7 @@ export default function AvniBrandKitPage() {
                   value={utmContent}
                   onChange={(e) => setUtmContent(e.target.value)}
                   placeholder="e.g., banner_ad, text_link"
-                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372]"
+                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#1F7A63]"
                 />
               </div>
 
@@ -444,14 +444,14 @@ export default function AvniBrandKitPage() {
                   value={utmTerm}
                   onChange={(e) => setUtmTerm(e.target.value)}
                   placeholder="e.g., ngo_software"
-                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#419372]"
+                  className="w-full px-4 py-3 border border-[#E6E6E6] rounded-lg font-noto text-sm focus:outline-none focus:ring-2 focus:ring-[#1F7A63]"
                 />
               </div>
 
               {/* Generate Button */}
               <button
                 onClick={generateLinks}
-                className="w-full px-6 py-4 bg-[#419372] text-white font-anek font-semibold text-base rounded-lg hover:bg-[#357a5e] transition-colors"
+                className="w-full px-6 py-4 bg-[#1F7A63] text-white font-anek font-semibold text-base rounded-lg hover:bg-[#155947] transition-colors"
               >
                 Generate Links
               </button>
@@ -474,7 +474,7 @@ export default function AvniBrandKitPage() {
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => handleCopy(link, source)}
-                            className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#419372] text-white font-anek text-xs rounded hover:bg-[#357a5e] transition-colors"
+                            className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#1F7A63] text-white font-anek text-xs rounded hover:bg-[#155947] transition-colors"
                           >
                             {copiedItem === source ? (
                               <>
@@ -514,12 +514,12 @@ export default function AvniBrandKitPage() {
                       {shortenedLinks[source] && (
                         <div className="mt-3 pt-3 border-t border-[#E6E6E6]">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="font-anek font-semibold text-xs text-[#419372]">
+                            <span className="font-anek font-semibold text-xs text-[#1F7A63]">
                               ✨ Shortened URL
                             </span>
                             <button
                               onClick={() => handleCopy(shortenedLinks[source], `${source}-short`)}
-                              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#419372] text-white font-anek text-xs rounded hover:bg-[#357a5e] transition-colors"
+                              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#1F7A63] text-white font-anek text-xs rounded hover:bg-[#155947] transition-colors"
                             >
                               {copiedItem === `${source}-short` ? (
                                 <>
@@ -534,7 +534,7 @@ export default function AvniBrandKitPage() {
                               )}
                             </button>
                           </div>
-                          <code className="block font-mono text-xs text-[#419372] bg-green-50 px-3 py-2 rounded break-all font-semibold">
+                          <code className="block font-mono text-xs text-[#1F7A63] bg-green-50 px-3 py-2 rounded break-all font-semibold">
                             {shortenedLinks[source]}
                           </code>
                         </div>

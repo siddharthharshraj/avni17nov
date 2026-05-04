@@ -19,7 +19,7 @@ export default function AvniStatusPage() {
         {/* Status Card */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-[#E6E6E6]">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#419372] to-[#357a5e] px-8 py-6">
+          <div className="bg-gradient-to-r from-[#1F7A63] to-[#155947] px-8 py-6">
             <div className="flex items-center gap-3">
               <Activity className="w-8 h-8 text-white" />
               <h1 className="font-anek font-bold text-3xl text-white">
@@ -44,7 +44,7 @@ export default function AvniStatusPage() {
               <p className="font-noto text-sm text-[#5a6c7d] mb-4">
                 View uptime, incidents, and scheduled maintenance
               </p>
-              <p className="font-noto text-base text-[#419372] font-medium">
+              <p className="font-noto text-base text-[#1F7A63] font-medium">
                 👇 Click here to view status
               </p>
             </div>
@@ -52,7 +52,7 @@ export default function AvniStatusPage() {
             {/* Status Button */}
             <button
               onClick={handleStatusClick}
-              className="w-full group relative overflow-hidden bg-[#419372] hover:bg-[#357a5e] text-white rounded-xl px-8 py-6 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full group relative overflow-hidden bg-[#1F7A63] hover:bg-[#155947] text-white rounded-xl px-8 py-6 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
             >
               <div className="flex items-center justify-between">
                 <div className="text-left">
@@ -137,7 +137,7 @@ export default function AvniStatusPage() {
         <div className="mt-6 text-center">
           <a
             href="/"
-            className="inline-flex items-center gap-2 font-noto text-sm text-[#419372] hover:underline"
+            className="inline-flex items-center gap-2 font-noto text-sm text-[#1F7A63] hover:underline"
           >
             ← Back to Avni Website
           </a>

@@ -57,7 +57,7 @@ export default function AnnouncementBanner() {
           {/* Apply button */}
           <Link
             href="/apply"
-            className="bg-[#419372] text-white rounded-[6px] font-anek font-extrabold text-[9px] sm:text-[10px] lg:text-[11px] leading-tight hover:bg-[#357a5e] hover:scale-105 transition-all shadow-md uppercase tracking-wide px-2 sm:px-3 py-1 sm:py-1.5 whitespace-nowrap"
+            className="bg-[#1F7A63] text-white rounded-[6px] font-anek font-extrabold text-[9px] sm:text-[10px] lg:text-[11px] leading-tight hover:bg-[#155947] hover:scale-105 transition-all shadow-md uppercase tracking-wide px-2 sm:px-3 py-1 sm:py-1.5 whitespace-nowrap"
           >
             Apply!
           </Link>

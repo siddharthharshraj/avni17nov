@@ -116,7 +116,7 @@ export default function FAQPage() {
                   </p>
                   <button
                     onClick={() => setSearchQuery("")}
-                    className="inline-flex items-center justify-center h-12 md:h-14 px-6 md:px-8 bg-[#419372] text-white rounded-full font-noto font-medium text-[16px] md:text-[18px] leading-[20px] hover:bg-[#357a5e] transition-all"
+                    className="inline-flex items-center justify-center h-12 md:h-14 px-6 md:px-8 bg-[#1F7A63] text-white rounded-full font-noto font-medium text-[16px] md:text-[18px] leading-[20px] hover:bg-[#155947] transition-all"
                   >
                     Clear Search
                   </button>
@@ -138,7 +138,7 @@ export default function FAQPage() {
               </p>
               <a
                 href="mailto:avnipartnerships@samanvayfoundation.org?subject=Avni%20Support%20Query"
-                className="inline-flex items-center justify-center h-14 md:h-16 px-8 md:px-10 bg-[#419372] text-white rounded-full font-noto font-medium text-[18px] md:text-[20px] leading-[20px] hover:bg-[#357a5e] transition-all whitespace-nowrap"
+                className="inline-flex items-center justify-center h-14 md:h-16 px-8 md:px-10 bg-[#1F7A63] text-white rounded-full font-noto font-medium text-[18px] md:text-[20px] leading-[20px] hover:bg-[#155947] transition-all whitespace-nowrap"
               >
                 Contact Support
               </a>

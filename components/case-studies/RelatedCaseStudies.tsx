@@ -59,13 +59,13 @@ export default function RelatedCaseStudies({ caseStudies }: RelatedCaseStudiesPr
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-anek font-bold text-[18px] sm:text-[20px] leading-[1.3] text-[#0B2540] mb-4 group-hover:text-[#419372] transition-colors flex-grow line-clamp-3">
+                  <h3 className="font-anek font-bold text-[18px] sm:text-[20px] leading-[1.3] text-[#0B2540] mb-4 group-hover:text-[#1F7A63] transition-colors flex-grow line-clamp-3">
                     {caseStudy.frontmatter.title}
                   </h3>
 
                   {/* Read More Button */}
                   <div className="mt-auto pt-4 flex-shrink-0">
-                    <span className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#419372] text-white text-[14px] font-anek font-semibold rounded-full group-hover:bg-[#357a5e] transition-all">
+                    <span className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#1F7A63] text-white text-[14px] font-anek font-semibold rounded-full group-hover:bg-[#155947] transition-all">
                       Read More
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -82,7 +82,7 @@ export default function RelatedCaseStudies({ caseStudies }: RelatedCaseStudiesPr
         <div className="mt-10 sm:mt-12 text-center">
           <Link
             href="/resources/case-studies"
-            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-[#419372] text-[#419372] font-anek font-semibold text-base rounded-full hover:bg-[#419372] hover:text-white transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-[#1F7A63] text-[#1F7A63] font-anek font-semibold text-base rounded-full hover:bg-[#1F7A63] hover:text-white transition-all"
           >
             View All Case Studies
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

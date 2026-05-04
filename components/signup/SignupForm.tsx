@@ -260,7 +260,7 @@ export default function SignupForm() {
             </svg>
           </Link>
 
-          <div className="w-24 h-24 bg-[#419372] rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-24 h-24 bg-[#1F7A63] rounded-full flex items-center justify-center mx-auto mb-6">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -271,7 +271,7 @@ export default function SignupForm() {
           </h2>
 
           <p className="font-noto text-base md:text-lg text-[#5a6c7d] mb-8 leading-relaxed">
-            We've sent your login details to <strong className="text-[#419372]">{formData.email}</strong>.
+            We've sent your login details to <strong className="text-[#1F7A63]">{formData.email}</strong>.
             <br />
             Log in and begin creating impact with your team.
           </p>
@@ -280,7 +280,7 @@ export default function SignupForm() {
             href="https://app.avniproject.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-[#419372] text-white font-anek font-semibold text-base rounded-full hover:bg-[#357a5e] transition-all shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center px-8 py-4 bg-[#1F7A63] text-white font-anek font-semibold text-base rounded-full hover:bg-[#155947] transition-all shadow-lg hover:shadow-xl"
           >
             Get Started
           </a>
@@ -328,7 +328,7 @@ export default function SignupForm() {
                 type="text"
                 value={formData.firstName}
                 onChange={(e) => handleInputChange('firstName', e.target.value)}
-                className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#419372] ${
+                className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#1F7A63] ${
                   validationErrors.firstName ? 'border-red-300' : 'border-gray-200'
                 }`}
                 placeholder="First name"
@@ -347,7 +347,7 @@ export default function SignupForm() {
                 type="text"
                 value={formData.lastName}
                 onChange={(e) => handleInputChange('lastName', e.target.value)}
-                className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#419372] ${
+                className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#1F7A63] ${
                   validationErrors.lastName ? 'border-red-300' : 'border-gray-200'
                 }`}
                 placeholder="Last name"
@@ -368,7 +368,7 @@ export default function SignupForm() {
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#419372] ${
+              className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#1F7A63] ${
                 validationErrors.email ? 'border-red-300' : 'border-gray-200'
               }`}
               placeholder="Enter your email"
@@ -414,7 +414,7 @@ export default function SignupForm() {
               type="text"
               value={formData.organisationName}
               onChange={(e) => handleInputChange('organisationName', e.target.value)}
-              className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#419372] ${
+              className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#1F7A63] ${
                 validationErrors.organisationName ? 'border-red-300' : 'border-gray-200'
               }`}
               placeholder="Enter your organisation name"
@@ -436,7 +436,7 @@ export default function SignupForm() {
                 handleInputChange('sector', e.target.value);
                 setShowOtherSector(e.target.value === 'Other');
               }}
-              className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#419372] ${
+              className={`w-full px-4 py-3 border-2 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#1F7A63] ${
                 validationErrors.sector ? 'border-red-300' : 'border-gray-200'
               }`}
               required
@@ -467,7 +467,7 @@ export default function SignupForm() {
                 type="text"
                 value={formData.otherSector || ''}
                 onChange={(e) => handleInputChange('otherSector', e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#419372]"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#1F7A63]"
                 placeholder="Please describe your sector"
               />
             </div>
@@ -481,7 +481,7 @@ export default function SignupForm() {
             <select
               value={formData.sourceOfSignup || ''}
               onChange={(e) => handleInputChange('sourceOfSignup', e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#419372]"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl font-noto text-sm transition-colors focus:outline-none focus:border-[#1F7A63]"
             >
               <option value="">Select source</option>
               <option value="Social Media">Social Media</option>
@@ -529,12 +529,12 @@ export default function SignupForm() {
                     return newErrors;
                   });
                 }}
-                className="mt-1 w-4 h-4 text-[#419372] border-gray-300 rounded focus:ring-[#419372]"
+                className="mt-1 w-4 h-4 text-[#1F7A63] border-gray-300 rounded focus:ring-[#1F7A63]"
                 required
               />
               <span className="font-noto text-sm text-[#5a6c7d] leading-relaxed">
                 I agree with the{' '}
-                <Link href="/privacy-policy" target="_blank" className="text-[#419372] hover:underline font-medium">
+                <Link href="/privacy-policy" target="_blank" className="text-[#1F7A63] hover:underline font-medium">
                   Avni Privacy Policy
                 </Link>{' '}
                 and understand that my organization will process the data I collect in accordance with applicable data protection laws *
@@ -552,7 +552,7 @@ export default function SignupForm() {
                 type="checkbox"
                 checked={marketingConsent}
                 onChange={(e) => setMarketingConsent(e.target.checked)}
-                className="mt-1 w-4 h-4 text-[#419372] border-gray-300 rounded focus:ring-[#419372]"
+                className="mt-1 w-4 h-4 text-[#1F7A63] border-gray-300 rounded focus:ring-[#1F7A63]"
               />
               <span className="font-noto text-sm text-[#5a6c7d] leading-relaxed">
                 I would like to receive updates about Avni features and community news. I can unsubscribe at any time by clicking the link in any communication received.
@@ -564,8 +564,8 @@ export default function SignupForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full py-4 bg-[#419372] text-white font-anek font-semibold text-base rounded-full transition-all shadow-lg hover:shadow-xl ${
-              isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#357a5e]'
+            className={`w-full py-4 bg-[#1F7A63] text-white font-anek font-semibold text-base rounded-full transition-all shadow-lg hover:shadow-xl ${
+              isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#155947]'
             }`}
           >
             {isSubmitting ? 'Processing...' : 'Start Free Trial'}
@@ -575,7 +575,7 @@ export default function SignupForm() {
         {/* Additional Info */}
         <p className="text-center font-noto text-xs text-[#999999] mt-6">
           Already have an account?{' '}
-          <a href="https://app.avniproject.org" className="text-[#419372] hover:underline font-medium">
+          <a href="https://app.avniproject.org" className="text-[#1F7A63] hover:underline font-medium">
             Log in
           </a>
         </p>

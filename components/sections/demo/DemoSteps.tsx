@@ -11,7 +11,7 @@ const steps = [
           href="https://play.google.com/store/apps/details?id=com.openchsclient" 
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-[#419372] decoration-2 underline-offset-2 hover:text-[#419372] transition-colors"
+          className="underline decoration-[#1F7A63] decoration-2 underline-offset-2 hover:text-[#1F7A63] transition-colors"
         >
           Download Avni App
         </Link>{" "}

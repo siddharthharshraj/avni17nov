@@ -82,8 +82,8 @@ export default function BlogCard({ blog }: BlogCardProps) {
         <Link
           href={`/blog/${slug}`}
           className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 
-                     bg-[#419372] text-white rounded-full font-anek font-medium 
-                     text-sm hover:bg-[#357a5e] transition-colors self-start
+                     bg-[#1F7A63] text-white rounded-full font-anek font-medium 
+                     text-sm hover:bg-[#155947] transition-colors self-start
                      mt-auto"
         >
           Read More →

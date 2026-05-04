@@ -92,7 +92,7 @@ export default function ContactForm() {
               trackForm.fieldFocus('contact_form', 'name');
             }}
             placeholder="Your Full Name"
-            className="w-full h-[60px] md:h-[80px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#419372] focus:border-transparent"
+            className="w-full h-[60px] md:h-[80px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent"
           />
         </div>
 
@@ -112,7 +112,7 @@ export default function ContactForm() {
               trackForm.fieldFocus('contact_form', 'email');
             }}
             placeholder="Your Organisational Email Id"
-            className="w-full h-[60px] md:h-[80px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#419372] focus:border-transparent"
+            className="w-full h-[60px] md:h-[80px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent"
           />
         </div>
 
@@ -131,7 +131,7 @@ export default function ContactForm() {
               trackForm.fieldFocus('contact_form', 'message');
             }}
             placeholder="Your message..."
-            className="w-full h-[180px] md:h-[250px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#419372] focus:border-transparent resize-none"
+            className="w-full h-[180px] md:h-[250px] px-4 py-3 border border-[#EBEBEB] rounded-[20px] font-noto text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] placeholder:text-[#000000]/40 focus:outline-none focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent resize-none"
           />
         </div>
 
@@ -139,7 +139,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="inline-flex items-center justify-center px-6 md:px-8 py-2.5 md:py-3 bg-[#419372] text-white font-anek font-medium text-[14px] md:text-[16px] leading-[14px] md:leading-[16px] rounded-full hover:bg-[#357a5e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center justify-center px-6 md:px-8 py-2.5 md:py-3 bg-[#1F7A63] text-white font-anek font-medium text-[14px] md:text-[16px] leading-[14px] md:leading-[16px] rounded-full hover:bg-[#155947] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === 'loading' ? 'Sending...' : 'Submit Form'}
         </button>

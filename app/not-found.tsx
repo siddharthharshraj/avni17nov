@@ -59,7 +59,7 @@ export default function NotFound() {
           {/* Countdown */}
           <p className="font-noto text-sm text-[#999999] mb-8">
             Redirecting to homepage in{' '}
-            <span className="font-bold text-[#419372]">{countdown}</span>{' '}
+            <span className="font-bold text-[#1F7A63]">{countdown}</span>{' '}
             {countdown === 1 ? 'second' : 'seconds'}...
           </p>
 
@@ -67,13 +67,13 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#419372] text-white font-anek font-medium text-base rounded-full hover:bg-[#357a5e] transition-all"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#1F7A63] text-white font-anek font-medium text-base rounded-full hover:bg-[#155947] transition-all"
             >
               Go to Homepage
             </Link>
             <Link
               href="/solutions"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#419372] font-anek font-medium text-base rounded-full border-2 border-[#419372] hover:bg-[#419372] hover:text-white transition-all"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1F7A63] font-anek font-medium text-base rounded-full border-2 border-[#1F7A63] hover:bg-[#1F7A63] hover:text-white transition-all"
             >
               Explore Solutions
             </Link>
@@ -87,21 +87,21 @@ export default function NotFound() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/about"
-                className="font-noto text-sm text-[#419372] hover:underline"
+                className="font-noto text-sm text-[#1F7A63] hover:underline"
               >
                 About Us
               </Link>
               <span className="text-gray-300">|</span>
               <Link
                 href="/services"
-                className="font-noto text-sm text-[#419372] hover:underline"
+                className="font-noto text-sm text-[#1F7A63] hover:underline"
               >
                 Services
               </Link>
               <span className="text-gray-300">|</span>
               <Link
                 href="/use-cases"
-                className="font-noto text-sm text-[#419372] hover:underline"
+                className="font-noto text-sm text-[#1F7A63] hover:underline"
               >
                 Use Cases
               </Link>

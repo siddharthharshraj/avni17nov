@@ -96,12 +96,12 @@ export default function NewsletterSubscribe({
             placeholder={placeholder}
             required
             disabled={status === 'loading'}
-            className="flex-1 px-4 py-3 rounded-full border-2 border-[#E5E7EB] focus:border-[#419372] focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed font-noto text-[15px]"
+            className="flex-1 px-4 py-3 rounded-full border-2 border-[#E5E7EB] focus:border-[#1F7A63] focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed font-noto text-[15px]"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-6 py-3 bg-[#419372] text-white font-anek font-semibold rounded-full hover:bg-[#357a5e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+            className="px-6 py-3 bg-[#1F7A63] text-white font-anek font-semibold rounded-full hover:bg-[#155947] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
           >
             {status === 'loading' ? 'Subscribing...' : buttonText}
           </button>
@@ -127,7 +127,7 @@ export default function NewsletterSubscribe({
   // Card variant (with background and padding)
   if (variant === 'card') {
     return (
-      <div className={`bg-gradient-to-br from-[#419372]/10 to-[#419372]/5 rounded-[20px] p-8 ${className}`}>
+      <div className={`bg-gradient-to-br from-[#1F7A63]/10 to-[#1F7A63]/5 rounded-[20px] p-8 ${className}`}>
         <div className="text-center mb-6">
           <h3 className="font-anek font-bold text-[24px] text-[#0b2540] mb-2">
             Stay Updated
@@ -145,14 +145,14 @@ export default function NewsletterSubscribe({
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="First Name"
-                className="px-4 py-3 rounded-lg border-2 border-[#E5E7EB] focus:border-[#419372] focus:outline-none font-noto text-[15px]"
+                className="px-4 py-3 rounded-lg border-2 border-[#E5E7EB] focus:border-[#1F7A63] focus:outline-none font-noto text-[15px]"
               />
               <input
                 type="text"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder="Last Name"
-                className="px-4 py-3 rounded-lg border-2 border-[#E5E7EB] focus:border-[#419372] focus:outline-none font-noto text-[15px]"
+                className="px-4 py-3 rounded-lg border-2 border-[#E5E7EB] focus:border-[#1F7A63] focus:outline-none font-noto text-[15px]"
               />
             </div>
           )}
@@ -164,13 +164,13 @@ export default function NewsletterSubscribe({
             placeholder={placeholder}
             required
             disabled={status === 'loading'}
-            className="w-full px-4 py-3 rounded-lg border-2 border-[#E5E7EB] focus:border-[#419372] focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed font-noto text-[15px]"
+            className="w-full px-4 py-3 rounded-lg border-2 border-[#E5E7EB] focus:border-[#1F7A63] focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed font-noto text-[15px]"
           />
           
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="w-full px-6 py-3 bg-[#419372] text-white font-anek font-semibold rounded-lg hover:bg-[#357a5e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full px-6 py-3 bg-[#1F7A63] text-white font-anek font-semibold rounded-lg hover:bg-[#155947] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === 'loading' ? 'Subscribing...' : buttonText}
           </button>
@@ -207,14 +207,14 @@ export default function NewsletterSubscribe({
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="First Name"
-              className="px-4 py-3 rounded-full border-2 border-[#E5E7EB] focus:border-[#419372] focus:outline-none font-noto text-[15px]"
+              className="px-4 py-3 rounded-full border-2 border-[#E5E7EB] focus:border-[#1F7A63] focus:outline-none font-noto text-[15px]"
             />
             <input
               type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               placeholder="Last Name"
-              className="px-4 py-3 rounded-full border-2 border-[#E5E7EB] focus:border-[#419372] focus:outline-none font-noto text-[15px]"
+              className="px-4 py-3 rounded-full border-2 border-[#E5E7EB] focus:border-[#1F7A63] focus:outline-none font-noto text-[15px]"
             />
           </div>
         )}
@@ -227,12 +227,12 @@ export default function NewsletterSubscribe({
             placeholder={placeholder}
             required
             disabled={status === 'loading'}
-            className="flex-1 px-4 py-3 rounded-full border-2 border-[#E5E7EB] focus:border-[#419372] focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed font-noto text-[15px]"
+            className="flex-1 px-4 py-3 rounded-full border-2 border-[#E5E7EB] focus:border-[#1F7A63] focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed font-noto text-[15px]"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-8 py-3 bg-[#419372] text-white font-anek font-semibold rounded-full hover:bg-[#357a5e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+            className="px-8 py-3 bg-[#1F7A63] text-white font-anek font-semibold rounded-full hover:bg-[#155947] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
           >
             {status === 'loading' ? 'Subscribing...' : buttonText}
           </button>

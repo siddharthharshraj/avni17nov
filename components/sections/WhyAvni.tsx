@@ -44,8 +44,8 @@ export default function WhyAvni() {
               key={title}
               className="rounded-2xl bg-white border border-gray-100 p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#419372]/10 mb-4">
-                <Icon className="w-6 h-6 text-[#419372]" aria-hidden="true" />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1F7A63]/10 mb-4">
+                <Icon className="w-6 h-6 text-[#1F7A63]" aria-hidden="true" />
               </div>
               <h3 className="font-anek font-bold text-xl md:text-2xl text-[#0b2540] mb-2">
                 {title}

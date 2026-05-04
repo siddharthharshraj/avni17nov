@@ -68,7 +68,7 @@ export default function WrittenBySection({
                 />
               </div>
             ) : (
-              <div className="rounded-full bg-[#419372] flex items-center justify-center flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[66px] lg:h-[66px] aspect-square">
+              <div className="rounded-full bg-[#1F7A63] flex items-center justify-center flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[66px] lg:h-[66px] aspect-square">
                 <span className="font-anek font-bold text-lg sm:text-xl md:text-2xl text-white">
                   {authorName.charAt(0).toUpperCase()}
                 </span>

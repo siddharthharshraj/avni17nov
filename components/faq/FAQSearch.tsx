@@ -60,7 +60,7 @@ export default function FAQSearch({
           value={query}
           onChange={handleChange}
           placeholder={placeholder}
-          className="w-full h-[60px] md:h-[80px] pl-11 md:pl-12 pr-4 border border-[#CCCCCC] rounded-[12px] md:rounded-[16px] font-noto font-normal text-[14px] md:text-[16px] leading-[20px] text-[#000000] placeholder:text-[#999999] focus:outline-none focus:border-[#419372] focus:ring-2 focus:ring-[#419372]/20 transition-all"
+          className="w-full h-[60px] md:h-[80px] pl-11 md:pl-12 pr-4 border border-[#CCCCCC] rounded-[12px] md:rounded-[16px] font-noto font-normal text-[14px] md:text-[16px] leading-[20px] text-[#000000] placeholder:text-[#999999] focus:outline-none focus:border-[#1F7A63] focus:ring-2 focus:ring-[#1F7A63]/20 transition-all"
           aria-label="Search FAQs"
         />
       </div>

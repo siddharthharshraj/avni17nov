@@ -102,14 +102,14 @@ export default function FeaturedEvent({ event }: FeaturedEventProps) {
             href={event.htmlLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-[145px] h-[48px] bg-[#419372] text-[#F6F9FC] font-anek font-medium text-[20px] leading-[20px] tracking-[0px] capitalize rounded-[20px] hover:bg-[#357a5e] transition-colors mt-6"
+            className="inline-flex items-center justify-center w-[145px] h-[48px] bg-[#1F7A63] text-[#F6F9FC] font-anek font-medium text-[20px] leading-[20px] tracking-[0px] capitalize rounded-[20px] hover:bg-[#155947] transition-colors mt-6"
           >
             Register now
           </a>
         </div>
 
         {/* Event Image - Optional, can be removed in future */}
-        <div className="w-full md:w-[280px] lg:w-[318px] h-[280px] md:h-[318px] bg-[#419372] rounded-[16px] flex items-center justify-center flex-shrink-0 p-6 md:p-8">
+        <div className="w-full md:w-[280px] lg:w-[318px] h-[280px] md:h-[318px] bg-[#1F7A63] rounded-[16px] flex items-center justify-center flex-shrink-0 p-6 md:p-8">
           <div className="relative w-full h-full">
             <Image
               src="/logos/avni-logo.png"

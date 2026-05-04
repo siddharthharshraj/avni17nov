@@ -5,7 +5,7 @@
 
 // Brand Colors
 export const COLORS = {
-  primary: '#419372',
+  primary: '#1F7A63',
   secondary: '#fba57f', 
   accent: '#FFD84D',
   navy: '#0a1f3d',

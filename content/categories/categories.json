@@ -12,7 +12,7 @@
       "id": "technical-story",
       "name": "Technical Story",
       "slug": "technical-story",
-      "color": "#419372",
+      "color": "#1F7A63",
       "bgColor": "#F0F9F5",
       "description": "Deep dives into Avni's technical architecture and implementation details"
     },

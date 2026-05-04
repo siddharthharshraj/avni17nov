@@ -40,7 +40,7 @@ export default function ContactInfo() {
           <div className="flex items-start gap-2">
             <a
               href={`mailto:${email}`}
-              className="font-noto font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] hover:text-[#419372] transition-colors break-all flex-1 overflow-hidden"
+              className="font-noto font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#000000] hover:text-[#1F7A63] transition-colors break-all flex-1 overflow-hidden"
             >
               {email}
             </a>

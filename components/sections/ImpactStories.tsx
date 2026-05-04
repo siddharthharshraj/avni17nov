@@ -35,8 +35,8 @@ export default function ImpactStories() {
               onClick={() => setActiveSector(sector)}
               className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full font-anek font-bold text-[16px] leading-[16px] transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
                 activeSector === sector
-                  ? "bg-[#419372] text-white shadow-md"
-                  : "bg-white text-[#6B7280] hover:bg-[#419372]/10 hover:text-[#0b2540]"
+                  ? "bg-[#1F7A63] text-white shadow-md"
+                  : "bg-white text-[#6B7280] hover:bg-[#1F7A63]/10 hover:text-[#0b2540]"
               }`}
             >
               {sector}
@@ -69,7 +69,7 @@ export default function ImpactStories() {
             </p>
             <Link
               href={story.link}
-              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-3 border-2 border-[#419372] text-[#419372] rounded-full md:rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#419372] hover:text-white transition-all"
+              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-3 border-2 border-[#1F7A63] text-[#1F7A63] rounded-full md:rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#1F7A63] hover:text-white transition-all"
             >
               Read More →
             </Link>

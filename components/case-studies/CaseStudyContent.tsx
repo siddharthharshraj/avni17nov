@@ -148,7 +148,7 @@ export default function CaseStudyContent({ content }: CaseStudyContentProps) {
               // Links
               a: ({ node, ...props }) => (
                 <a
-                  className="text-[#419372] hover:underline font-medium transition-all"
+                  className="text-[#1F7A63] hover:underline font-medium transition-all"
                   target={props.href?.startsWith('http') ? '_blank' : undefined}
                   rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                   {...props}

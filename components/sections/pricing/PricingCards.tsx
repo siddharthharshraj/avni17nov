@@ -172,7 +172,7 @@ export default function PricingCards() {
                       const parts = hostingTier.split(/(₹\s*[\d,]+\/\s*Month|Custom Quote)/g);
                       return (
                         <li key={index} className="flex items-start gap-2">
-                          <span className="text-[#419372] mt-1 flex-shrink-0">•</span>
+                          <span className="text-[#1F7A63] mt-1 flex-shrink-0">•</span>
                           <span className="font-noto text-[16px] leading-[24px] text-[#000000] opacity-80 break-words">
                             {parts.map((part, i) => 
                               part.match(/₹\s*[\d,]+\/\s*Month|Custom Quote/) ? (
@@ -193,14 +193,14 @@ export default function PricingCards() {
               {tier.cta.variant === "primary" ? (
                 <Link
                   href={tier.cta.link}
-                  className="w-full py-3.5 bg-[#419372] text-white rounded-full font-anek font-semibold text-base text-center hover:bg-[#357a5e] transition-all"
+                  className="w-full py-3.5 bg-[#1F7A63] text-white rounded-full font-anek font-semibold text-base text-center hover:bg-[#155947] transition-all"
                 >
                   {tier.cta.text}
                 </Link>
               ) : (
                 <Link
                   href={tier.cta.link}
-                  className="w-full py-3.5 border-2 border-[#419372] text-[#419372] rounded-full font-anek font-semibold text-base text-center hover:bg-[#419372] hover:text-white transition-all"
+                  className="w-full py-3.5 border-2 border-[#1F7A63] text-[#1F7A63] rounded-full font-anek font-semibold text-base text-center hover:bg-[#1F7A63] hover:text-white transition-all"
                 >
                   {tier.cta.text}
                 </Link>

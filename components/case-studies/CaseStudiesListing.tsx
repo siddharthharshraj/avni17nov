@@ -101,7 +101,7 @@ export default function CaseStudiesListing({ caseStudies }: CaseStudiesListingPr
                 placeholder="Type To Search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-5 py-3.5 pl-12 border border-[#E6E6E6] rounded-full font-noto text-base text-[#000000] placeholder:text-[#999999] focus:outline-none focus:border-[#419372] focus:ring-2 focus:ring-[#419372]/20 transition-all"
+                className="w-full px-5 py-3.5 pl-12 border border-[#E6E6E6] rounded-full font-noto text-base text-[#000000] placeholder:text-[#999999] focus:outline-none focus:border-[#1F7A63] focus:ring-2 focus:ring-[#1F7A63]/20 transition-all"
               />
               <svg
                 width="20"
@@ -159,7 +159,7 @@ export default function CaseStudiesListing({ caseStudies }: CaseStudiesListingPr
                       type="checkbox"
                       checked={selectedSectors.includes(sector)}
                       onChange={() => toggleSector(sector)}
-                      className="w-4 h-4 text-[#419372] border-gray-300 rounded focus:ring-[#419372]"
+                      className="w-4 h-4 text-[#1F7A63] border-gray-300 rounded focus:ring-[#1F7A63]"
                     />
                     <span className="font-noto text-sm text-[#333333]">
                       {sector}
@@ -192,7 +192,7 @@ export default function CaseStudiesListing({ caseStudies }: CaseStudiesListingPr
                     type="checkbox"
                     checked={selectedSectors.includes(sector)}
                     onChange={() => toggleSector(sector)}
-                    className="w-4 h-4 text-[#419372] border-gray-300 rounded focus:ring-[#419372]"
+                    className="w-4 h-4 text-[#1F7A63] border-gray-300 rounded focus:ring-[#1F7A63]"
                   />
                   <span className="font-noto text-sm text-[#333333]">
                     {sector}
@@ -247,7 +247,7 @@ export default function CaseStudiesListing({ caseStudies }: CaseStudiesListingPr
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-anek font-bold text-[18px] sm:text-[20px] lg:text-[22px] leading-[1.3] text-[#0B2540] mb-3 group-hover:text-[#419372] transition-colors flex-grow line-clamp-3">
+                      <h3 className="font-anek font-bold text-[18px] sm:text-[20px] lg:text-[22px] leading-[1.3] text-[#0B2540] mb-3 group-hover:text-[#1F7A63] transition-colors flex-grow line-clamp-3">
                         {caseStudy.title}
                       </h3>
 
@@ -256,7 +256,7 @@ export default function CaseStudiesListing({ caseStudies }: CaseStudiesListingPr
                         <span className="font-noto text-sm text-[#666666]">
                           {caseStudy.readTime}
                         </span>
-                        <span className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#419372] text-white text-[14px] font-anek font-semibold rounded-full group-hover:bg-[#357a5e] transition-all">
+                        <span className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#1F7A63] text-white text-[14px] font-anek font-semibold rounded-full group-hover:bg-[#155947] transition-all">
                           Read More
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path
@@ -309,7 +309,7 @@ export default function CaseStudiesListing({ caseStudies }: CaseStudiesListingPr
                             onClick={() => setCurrentPage(page)}
                             className={`w-10 h-10 rounded-full font-anek font-semibold text-sm transition-all ${
                               page === currentPage
-                                ? 'bg-[#419372] text-white'
+                                ? 'bg-[#1F7A63] text-white'
                                 : 'border border-[#E6E6E6] text-[#0B2540] hover:bg-[#F5F5F5]'
                             }`}
                           >
@@ -369,7 +369,7 @@ export default function CaseStudiesListing({ caseStudies }: CaseStudiesListingPr
             </p>
             <button
               onClick={clearFilters}
-              className="px-8 py-3 bg-[#419372] text-white font-anek font-semibold rounded-full hover:bg-[#357a5e] transition-all"
+              className="px-8 py-3 bg-[#1F7A63] text-white font-anek font-semibold rounded-full hover:bg-[#155947] transition-all"
             >
               Clear All Filters
             </button>

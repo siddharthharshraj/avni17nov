@@ -94,7 +94,7 @@ export default function AnalyticsDashboard() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#419372] mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1F7A63] mx-auto mb-4"></div>
           <p className="font-noto text-gray-600">Loading analytics...</p>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function AnalyticsDashboard() {
           <p className="font-noto text-red-600 mb-4">{error}</p>
           <button
             onClick={fetchAnalytics}
-            className="px-4 py-2 bg-[#419372] text-white rounded-lg hover:bg-[#357a5e] font-anek font-medium"
+            className="px-4 py-2 bg-[#1F7A63] text-white rounded-lg hover:bg-[#155947] font-anek font-medium"
           >
             Retry
           </button>
@@ -135,7 +135,7 @@ export default function AnalyticsDashboard() {
               <select
                 value={days}
                 onChange={(e) => setDays(parseInt(e.target.value))}
-                className="px-4 py-2 border border-gray-300 rounded-lg font-anek text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent"
+                className="px-4 py-2 border border-gray-300 rounded-lg font-anek text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent"
               >
                 <option value={7}>Last 7 days</option>
                 <option value={30}>Last 30 days</option>
@@ -144,7 +144,7 @@ export default function AnalyticsDashboard() {
               </select>
               <button
                 onClick={fetchAnalytics}
-                className="px-4 py-2 bg-[#419372] text-white rounded-lg hover:bg-[#357a5e] font-anek font-medium"
+                className="px-4 py-2 bg-[#1F7A63] text-white rounded-lg hover:bg-[#155947] font-anek font-medium"
               >
                 Refresh
               </button>
@@ -198,7 +198,7 @@ export default function AnalyticsDashboard() {
               onClick={() => setSortBy('pageviews')}
               className={`px-4 py-2 rounded-lg font-anek text-sm ${
                 sortBy === 'pageviews'
-                  ? 'bg-[#419372] text-white'
+                  ? 'bg-[#1F7A63] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -208,7 +208,7 @@ export default function AnalyticsDashboard() {
               onClick={() => setSortBy('visitors')}
               className={`px-4 py-2 rounded-lg font-anek text-sm ${
                 sortBy === 'visitors'
-                  ? 'bg-[#419372] text-white'
+                  ? 'bg-[#1F7A63] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -218,7 +218,7 @@ export default function AnalyticsDashboard() {
               onClick={() => setSortBy('avgTime')}
               className={`px-4 py-2 rounded-lg font-anek text-sm ${
                 sortBy === 'avgTime'
-                  ? 'bg-[#419372] text-white'
+                  ? 'bg-[#1F7A63] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -272,7 +272,7 @@ export default function AnalyticsDashboard() {
                             href={`/blog/${blog.slug}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-anek font-semibold text-[#0b2540] hover:text-[#419372]"
+                            className="font-anek font-semibold text-[#0b2540] hover:text-[#1F7A63]"
                           >
                             {blog.title}
                           </a>
@@ -293,7 +293,7 @@ export default function AnalyticsDashboard() {
                       <span className="font-noto text-sm text-gray-700">{blog.author}</span>
                     </td>
                     <td className="px-6 py-4 text-center">
-                      <span className="font-anek font-bold text-lg text-[#419372]">
+                      <span className="font-anek font-bold text-lg text-[#1F7A63]">
                         {formatNumber(blog.analytics.pageviews)}
                       </span>
                     </td>

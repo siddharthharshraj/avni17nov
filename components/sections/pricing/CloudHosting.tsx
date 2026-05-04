@@ -31,7 +31,7 @@ export default function CloudHosting() {
             <ul className="space-y-3 md:space-y-4">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="text-[#419372] mt-1 md:mt-1.5 text-base md:text-lg flex-shrink-0">•</span>
+                  <span className="text-[#1F7A63] mt-1 md:mt-1.5 text-base md:text-lg flex-shrink-0">•</span>
                   <span className="font-noto font-normal text-base md:text-lg lg:text-[24px] leading-relaxed md:leading-[36px] text-[#000000]">
                     {feature}
                   </span>
@@ -45,7 +45,7 @@ export default function CloudHosting() {
             Refer to our detailed{" "}
             <Link
               href="/faq"
-              className="text-[#000000] underline decoration-[#419372] decoration-[3px] underline-offset-2 hover:text-[#419372] transition-colors"
+              className="text-[#000000] underline decoration-[#1F7A63] decoration-[3px] underline-offset-2 hover:text-[#1F7A63] transition-colors"
             >
               FAQ guide
             </Link>{" "}

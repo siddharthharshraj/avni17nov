@@ -83,7 +83,7 @@ export default async function CaseStudiesPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/trial"
-                  className="px-8 py-3 bg-[#419372] text-white rounded-full font-anek font-medium text-base hover:bg-[#357a5e] transition-colors"
+                  className="px-8 py-3 bg-[#1F7A63] text-white rounded-full font-anek font-medium text-base hover:bg-[#155947] transition-colors"
                 >
                   Start Free Trial
                 </a>
@@ -91,7 +91,7 @@ export default async function CaseStudiesPage() {
                   href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-3 border-2 border-[#419372] text-[#419372] rounded-full font-anek font-medium text-base hover:bg-[#419372] hover:text-white transition-colors"
+                  className="px-8 py-3 border-2 border-[#1F7A63] text-[#1F7A63] rounded-full font-anek font-medium text-base hover:bg-[#1F7A63] hover:text-white transition-colors"
                 >
                   Schedule a Demo
                 </a>

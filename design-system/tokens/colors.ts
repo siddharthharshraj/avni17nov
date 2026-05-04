@@ -6,7 +6,7 @@
 export const colors = {
   // Primary Colors
   primary: {
-    green: '#419372',
+    green: '#1F7A63',
     orange: '#fba47e',
     darkBlue: '#0b2540',
   },

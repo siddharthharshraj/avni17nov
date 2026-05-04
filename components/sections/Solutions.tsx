@@ -100,7 +100,7 @@ export default function Solutions() {
                   {/* CTA Link */}
                   <Link
                     href={solution.ctaLink}
-                    className="font-noto font-bold text-sm leading-tight text-[#419372] hover:underline inline-flex items-center gap-1"
+                    className="font-noto font-bold text-sm leading-tight text-[#1F7A63] hover:underline inline-flex items-center gap-1"
                   >
                     {solution.cta}
                   </Link>

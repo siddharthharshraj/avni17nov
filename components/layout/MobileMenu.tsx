@@ -160,10 +160,10 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   onClick={() => handleSubmenuClick('product-services')}
                   className="flex items-center justify-between w-full py-4 px-4 rounded-lg hover:bg-gray-50 transition-colors group"
                 >
-                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#419372]">
+                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#1F7A63]">
                     Product Services
                   </span>
-                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372]" />
+                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1F7A63]" />
                 </button>
                 <div className="h-px bg-gray-200"></div>
 
@@ -172,10 +172,10 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   onClick={() => handleSubmenuClick('solutions')}
                   className="flex items-center justify-between w-full py-4 px-4 rounded-lg hover:bg-gray-50 transition-colors group"
                 >
-                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#419372]">
+                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#1F7A63]">
                     Solutions
                   </span>
-                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372]" />
+                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1F7A63]" />
                 </button>
                 <div className="h-px bg-gray-200"></div>
 
@@ -185,10 +185,10 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   onClick={handleCloseAll}
                   className="flex items-center justify-between w-full py-4 px-4 rounded-lg hover:bg-gray-50 transition-colors group"
                 >
-                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#419372]">
+                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#1F7A63]">
                     Pricing
                   </span>
-                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372]" />
+                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1F7A63]" />
                 </Link>
                 <div className="h-px bg-gray-200"></div>
 
@@ -198,10 +198,10 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   onClick={handleCloseAll}
                   className="flex items-center justify-between w-full py-4 px-4 rounded-lg hover:bg-gray-50 transition-colors group"
                 >
-                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#419372]">
+                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#1F7A63]">
                     About
                   </span>
-                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372]" />
+                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1F7A63]" />
                 </Link>
                 <div className="h-px bg-gray-200"></div>
 
@@ -210,10 +210,10 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   onClick={() => handleSubmenuClick('resources')}
                   className="flex items-center justify-between w-full py-4 px-4 rounded-lg hover:bg-gray-50 transition-colors group"
                 >
-                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#419372]">
+                  <span className="font-anek font-medium text-base text-[#0b2540] group-hover:text-[#1F7A63]">
                     Resources
                   </span>
-                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372]" />
+                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1F7A63]" />
                 </button>
                 <div className="h-px bg-gray-200"></div>
 
@@ -222,7 +222,7 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   <Link
                     href="/signup"
                     onClick={handleCloseAll}
-                    className="block w-full py-3 text-center font-anek font-semibold text-base text-white bg-[#419372] rounded-full hover:bg-[#357a5e] transition-all shadow-md"
+                    className="block w-full py-3 text-center font-anek font-semibold text-base text-white bg-[#1F7A63] rounded-full hover:bg-[#155947] transition-all shadow-md"
                   >
                     Sign Up for Free Trial
                   </Link>
@@ -232,7 +232,7 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={handleCloseAll}
-                    className="block w-full py-3 text-center font-anek font-semibold text-base text-[#419372] border-2 border-[#419372] rounded-full hover:bg-[#419372] hover:text-white transition-all"
+                    className="block w-full py-3 text-center font-anek font-semibold text-base text-[#1F7A63] border-2 border-[#1F7A63] rounded-full hover:bg-[#1F7A63] hover:text-white transition-all"
                   >
                     Schedule a Demo
                   </a>
@@ -240,7 +240,7 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   <Link
                     href="/login"
                     onClick={handleCloseAll}
-                    className="block w-full min-h-[48px] py-3 text-center font-anek font-semibold text-base text-[#0b2540] border-2 border-gray-300 rounded-full hover:bg-[#419372] hover:border-[#419372] hover:text-white transition-all"
+                    className="block w-full min-h-[48px] py-3 text-center font-anek font-semibold text-base text-[#0b2540] border-2 border-gray-300 rounded-full hover:bg-[#1F7A63] hover:border-[#1F7A63] hover:text-white transition-all"
                   >
                     Login
                   </Link>
@@ -336,14 +336,14 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                         />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-anek font-semibold text-base text-[#0b2540] group-hover:text-[#419372] mb-1">
+                        <h3 className="font-anek font-semibold text-base text-[#0b2540] group-hover:text-[#1F7A63] mb-1">
                           {item.title}
                         </h3>
                         <p className="font-noto text-sm text-gray-600 leading-relaxed">
                           {item.description}
                         </p>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372] flex-shrink-0 mt-1" />
+                      <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1F7A63] flex-shrink-0 mt-1" />
                     </Link>
                   ))}
                 </div>
@@ -359,7 +359,7 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   <Link
                     href="/contact"
                     onClick={handleCloseAll}
-                    className="inline-flex items-center font-anek font-medium text-sm text-[#419372] hover:text-[#357a5e]"
+                    className="inline-flex items-center font-anek font-medium text-sm text-[#1F7A63] hover:text-[#155947]"
                   >
                     Contact Sales →
                   </Link>
@@ -388,14 +388,14 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                           />
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-anek font-semibold text-base text-[#0b2540] group-hover:text-[#419372] mb-1">
+                          <h3 className="font-anek font-semibold text-base text-[#0b2540] group-hover:text-[#1F7A63] mb-1">
                             {item.title}
                           </h3>
                           <p className="font-noto text-sm text-gray-600 leading-relaxed">
                             {item.description}
                           </p>
                         </div>
-                        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372] flex-shrink-0 mt-1" />
+                        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1F7A63] flex-shrink-0 mt-1" />
                       </Link>
                     ))}
                   </div>
@@ -430,14 +430,14 @@ export default function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                         />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-anek font-semibold text-base text-[#0b2540] group-hover:text-[#419372] mb-1">
+                        <h3 className="font-anek font-semibold text-base text-[#0b2540] group-hover:text-[#1F7A63] mb-1">
                           {item.title}
                         </h3>
                         <p className="font-noto text-sm text-gray-600 leading-relaxed">
                           {item.description}
                         </p>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#419372] flex-shrink-0 mt-1" />
+                      <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1F7A63] flex-shrink-0 mt-1" />
                     </Link>
                   ))}
                 </div>

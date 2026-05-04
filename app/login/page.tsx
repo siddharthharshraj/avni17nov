@@ -24,13 +24,13 @@ export default function LoginPage() {
               href="https://app.avniproject.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full py-3 px-4 bg-[#419372] text-white rounded-lg font-anek font-semibold text-center hover:bg-[#357a5e] transition-colors"
+              className="block w-full py-3 px-4 bg-[#1F7A63] text-white rounded-lg font-anek font-semibold text-center hover:bg-[#155947] transition-colors"
             >
               Go to Avni App
             </a>
             <p className="text-sm text-center text-gray-500">
               Don't have an account?{' '}
-              <a href="/signup" className="text-[#419372] hover:underline">
+              <a href="/signup" className="text-[#1F7A63] hover:underline">
                 Sign up for free
               </a>
             </p>

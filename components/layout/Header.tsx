@@ -99,7 +99,7 @@ export default function Header() {
           >
             Product Services
             <ChevronDown className="w-[20px] h-[20px]" />
-            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/services') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#1F7A63] transition-all duration-300 ${isActive('/services') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </button>
         </div>
         
@@ -114,7 +114,7 @@ export default function Header() {
           >
             Solutions
             <ChevronDown className="w-[20px] h-[20px]" />
-            <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
+            <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1F7A63] transition-all duration-300 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"></span>
           </button>
         </div>
         
@@ -132,7 +132,7 @@ export default function Header() {
             className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors relative inline-block"
           >
             Pricing
-            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/pricing') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#1F7A63] transition-all duration-300 ${isActive('/pricing') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </Link>
         </div>
         
@@ -150,7 +150,7 @@ export default function Header() {
             className="font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors relative inline-block"
           >
             About
-            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/about') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#1F7A63] transition-all duration-300 ${isActive('/about') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </Link>
         </div>
         
@@ -163,7 +163,7 @@ export default function Header() {
           <button className="flex items-center gap-[8px] font-anek font-medium text-[16px] leading-[40px] text-[#0b2540] transition-colors relative">
             Resources
             <ChevronDown className="w-[20px] h-[20px]" />
-            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#419372] transition-all duration-300 ${isActive('/resources') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
+            <span className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#1F7A63] transition-all duration-300 ${isActive('/resources') ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'}`}></span>
           </button>
         </div>
         </div>

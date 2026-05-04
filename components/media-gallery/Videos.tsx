@@ -152,7 +152,7 @@ export default function Videos({ category }: VideosProps) {
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
                   <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 5.14v13.72L19 12L8 5.14z" fill="#419372"/>
+                      <path d="M8 5.14v13.72L19 12L8 5.14z" fill="#1F7A63"/>
                     </svg>
                   </div>
                 </div>

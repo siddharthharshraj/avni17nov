@@ -73,13 +73,13 @@ export default function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={status === 'loading'}
-              className="flex-1 h-14 md:h-16 px-6 md:px-8 rounded-full border border-[#E0E0E0] bg-white font-noto text-base md:text-lg text-[#000000] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 h-14 md:h-16 px-6 md:px-8 rounded-full border border-[#E0E0E0] bg-white font-noto text-base md:text-lg text-[#000000] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
               required
             />
             <button 
               type="submit"
               disabled={status === 'loading'}
-              className="h-14 md:h-16 px-8 md:px-10 bg-[#419372] text-white rounded-full font-anek font-semibold text-base md:text-lg hover:bg-[#357a5e] transition-all whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+              className="h-14 md:h-16 px-8 md:px-10 bg-[#1F7A63] text-white rounded-full font-anek font-semibold text-base md:text-lg hover:bg-[#155947] transition-all whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
             </button>

@@ -137,7 +137,7 @@ export default function AuditTrail() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#419372] mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1F7A63] mx-auto mb-4"></div>
           <p className="font-noto text-gray-600">Loading audit trail...</p>
         </div>
       </div>
@@ -151,7 +151,7 @@ export default function AuditTrail() {
         <div className="max-w-[1440px] mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Shield className="w-8 h-8 text-[#419372]" />
+              <Shield className="w-8 h-8 text-[#1F7A63]" />
               <div>
                 <h1 className="font-anek font-bold text-3xl text-[#0b2540]">
                   Audit Trail
@@ -171,7 +171,7 @@ export default function AuditTrail() {
               </button>
               <button
                 onClick={exportLogs}
-                className="px-4 py-2 bg-[#419372] text-white rounded-lg hover:bg-[#357a5e] font-anek font-medium flex items-center gap-2"
+                className="px-4 py-2 bg-[#1F7A63] text-white rounded-lg hover:bg-[#155947] font-anek font-medium flex items-center gap-2"
               >
                 <Download className="w-4 h-4" />
                 Export
@@ -196,7 +196,7 @@ export default function AuditTrail() {
               <select
                 value={actionFilter}
                 onChange={(e) => setActionFilter(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent"
               >
                 <option value="">All Actions</option>
                 <option value="login">Login</option>
@@ -217,7 +217,7 @@ export default function AuditTrail() {
                 value={userFilter}
                 onChange={(e) => setUserFilter(e.target.value)}
                 placeholder="Filter by email..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent"
               />
             </div>
             <div>
@@ -227,7 +227,7 @@ export default function AuditTrail() {
               <select
                 value={dateRange}
                 onChange={(e) => setDateRange(parseInt(e.target.value))}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent"
               >
                 <option value={1}>Last 24 hours</option>
                 <option value={7}>Last 7 days</option>
@@ -286,7 +286,7 @@ export default function AuditTrail() {
                         <span className="font-noto text-sm text-gray-700">
                           {formatAction(action)}
                         </span>
-                        <span className="font-anek font-semibold text-[#419372]">
+                        <span className="font-anek font-semibold text-[#1F7A63]">
                           {count}
                         </span>
                       </div>
@@ -309,7 +309,7 @@ export default function AuditTrail() {
                           {user.email}
                         </span>
                       </div>
-                      <span className="font-anek font-semibold text-[#419372]">
+                      <span className="font-anek font-semibold text-[#1F7A63]">
                         {user.count} actions
                       </span>
                     </div>

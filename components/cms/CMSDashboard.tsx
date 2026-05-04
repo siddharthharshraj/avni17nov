@@ -58,7 +58,7 @@ export default function CMSDashboard() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <Loader2 className="w-12 h-12 text-[#419372] animate-spin" />
+        <Loader2 className="w-12 h-12 text-[#1F7A63] animate-spin" />
       </div>
     );
   }
@@ -98,7 +98,7 @@ export default function CMSDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <Shield className="w-8 h-8 text-[#419372]" />
+              <Shield className="w-8 h-8 text-[#1F7A63]" />
               <h1 className="font-anek font-bold text-xl text-[#0b2540]">
                 Avni CMS
               </h1>
@@ -143,7 +143,7 @@ export default function CMSDashboard() {
         <div className="mb-12">
           <button
             onClick={() => router.push('/cms/blogs/new')}
-            className="flex items-center gap-3 px-6 py-4 bg-[#419372] text-white rounded-lg hover:bg-[#357a5e] transition-colors shadow-lg"
+            className="flex items-center gap-3 px-6 py-4 bg-[#1F7A63] text-white rounded-lg hover:bg-[#155947] transition-colors shadow-lg"
           >
             <Plus className="w-5 h-5" />
             <span className="font-anek font-semibold">Create New Blog</span>
@@ -156,12 +156,12 @@ export default function CMSDashboard() {
             <button
               key={feature.href}
               onClick={() => router.push(feature.href)}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-[#419372] transition-all text-left group"
+              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-[#1F7A63] transition-all text-left group"
             >
               <div className={`inline-flex p-3 rounded-lg ${feature.color} bg-opacity-10 mb-4`}>
                 <feature.icon className={`w-6 h-6 ${feature.color.replace('bg-', 'text-')}`} />
               </div>
-              <h3 className="font-anek font-bold text-xl text-[#0b2540] mb-2 group-hover:text-[#419372]">
+              <h3 className="font-anek font-bold text-xl text-[#0b2540] mb-2 group-hover:text-[#1F7A63]">
                 {feature.title}
               </h3>
               <p className="font-noto text-gray-600 text-sm">

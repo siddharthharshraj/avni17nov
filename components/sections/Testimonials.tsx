@@ -70,7 +70,7 @@ export default function Testimonials() {
                       />
                       <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-all">
                         <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                          <Play className="w-7 h-7 text-[#419372] fill-[#419372] ml-1" />
+                          <Play className="w-7 h-7 text-[#1F7A63] fill-[#1F7A63] ml-1" />
                         </div>
                       </div>
                     </div>
@@ -147,7 +147,7 @@ export default function Testimonials() {
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-all">
                     <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                      <Play className="w-9 h-9 text-[#419372] fill-[#419372] ml-1" />
+                      <Play className="w-9 h-9 text-[#1F7A63] fill-[#1F7A63] ml-1" />
                     </div>
                   </div>
                 </div>

@@ -363,7 +363,7 @@ function SolutionsContent() {
                         />
                       </div>
                       <div className="p-5 space-y-2">
-                        <h3 className="font-anek font-semibold text-[16px] lg:text-[17px] leading-[1.4] text-[#0a1f3d] group-hover:text-[#419372] transition-colors">
+                        <h3 className="font-anek font-semibold text-[16px] lg:text-[17px] leading-[1.4] text-[#0a1f3d] group-hover:text-[#1F7A63] transition-colors">
                           {card.title}
                         </h3>
                         <p className="font-anek text-[14px] text-[#fba57f] uppercase tracking-wide">

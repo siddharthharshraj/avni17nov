@@ -29,7 +29,7 @@ export default function EditorToolbar({ onAddBlock }: EditorToolbarProps) {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-2 bg-[#419372] text-white rounded-lg hover:bg-[#357a5e] font-anek font-medium text-sm"
+        className="px-4 py-2 bg-[#1F7A63] text-white rounded-lg hover:bg-[#155947] font-anek font-medium text-sm"
       >
         + Add Block
       </button>

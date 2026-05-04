@@ -53,7 +53,7 @@ export default function CTASection() {
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
                 <Link
                   href="/signup"
-                  className="px-6 md:px-8 py-3 md:py-3.5 bg-[#419372] text-white rounded-full font-anek font-semibold text-sm md:text-base leading-tight hover:bg-[#357a5e] transition-all text-center"
+                  className="px-6 md:px-8 py-3 md:py-3.5 bg-[#1F7A63] text-white rounded-full font-anek font-semibold text-sm md:text-base leading-tight hover:bg-[#155947] transition-all text-center"
                 >
                   Sign Up for Free Trial
                 </Link>
@@ -61,7 +61,7 @@ export default function CTASection() {
                   href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 md:px-8 py-3 md:py-3.5 border-2 border-[#419372] text-[#419372] rounded-full font-anek font-semibold text-sm md:text-base leading-tight hover:bg-[#419372] hover:text-white transition-all text-center"
+                  className="px-6 md:px-8 py-3 md:py-3.5 border-2 border-[#1F7A63] text-[#1F7A63] rounded-full font-anek font-semibold text-sm md:text-base leading-tight hover:bg-[#1F7A63] hover:text-white transition-all text-center"
                 >
                   Book A Demo
                 </a>
@@ -71,7 +71,7 @@ export default function CTASection() {
               <div className="flex justify-center lg:justify-start">
                 <Link
                   href="/contact"
-                  className="px-6 md:px-8 py-3 md:py-3.5 border-2 border-[#419372] text-[#419372] rounded-full font-anek font-semibold text-sm md:text-base leading-tight hover:bg-[#419372] hover:text-white transition-all text-center"
+                  className="px-6 md:px-8 py-3 md:py-3.5 border-2 border-[#1F7A63] text-[#1F7A63] rounded-full font-anek font-semibold text-sm md:text-base leading-tight hover:bg-[#1F7A63] hover:text-white transition-all text-center"
                 >
                   Contact Sales
                 </Link>

@@ -39,8 +39,8 @@ export default function WhoItsFor() {
               key={title}
               className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#419372]/10 mb-5">
-                <Icon className="w-7 h-7 text-[#419372]" aria-hidden="true" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#1F7A63]/10 mb-5">
+                <Icon className="w-7 h-7 text-[#1F7A63]" aria-hidden="true" />
               </div>
               <h3 className="font-anek font-bold text-2xl text-[#0b2540] mb-3">
                 {title}

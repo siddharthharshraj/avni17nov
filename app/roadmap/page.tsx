@@ -30,7 +30,7 @@ export default function RoadmapPage() {
       */}
       <main className="bg-[#fefefe] pt-[72px]">
         {/* Hero Section - Improved spacing and polish */}
-        <section className="bg-gradient-to-b from-[#419372]/5 to-transparent py-8 md:py-12 lg:py-16">
+        <section className="bg-gradient-to-b from-[#1F7A63]/5 to-transparent py-8 md:py-12 lg:py-16">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
             <div className="max-w-[800px] mx-auto text-center">
               {/* Category Tag - More refined styling */}

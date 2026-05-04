@@ -125,14 +125,14 @@
 
 /* Links */
 .blog-content a {
-  color: #419372;
+  color: #1F7A63;
   font-weight: 500;
   text-decoration: none;
 }
 
 .blog-content a:hover {
   text-decoration: underline;
-  color: #357a5e;
+  color: #155947;
 }
 
 /* Strong/Bold */
@@ -210,7 +210,7 @@
 
 /* Blockquotes - Responsive */
 .blog-content blockquote {
-  border-left: clamp(3px, 0.25rem, 4px) solid #419372;
+  border-left: clamp(3px, 0.25rem, 4px) solid #1F7A63;
   padding-left: clamp(16px, 1rem + 0.5vw, 24px);
   font-style: italic;
   color: #6B7280;

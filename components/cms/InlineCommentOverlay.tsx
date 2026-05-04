@@ -122,7 +122,7 @@ export default function InlineCommentOverlay({
         >
           <button
             onClick={() => setShowCommentBox(true)}
-            className="px-3 py-2 bg-[#419372] text-white rounded-lg shadow-lg hover:bg-[#357a5e] font-anek font-medium text-sm flex items-center gap-2"
+            className="px-3 py-2 bg-[#1F7A63] text-white rounded-lg shadow-lg hover:bg-[#155947] font-anek font-medium text-sm flex items-center gap-2"
           >
             <MessageSquare className="w-4 h-4" />
             Add Comment
@@ -155,7 +155,7 @@ export default function InlineCommentOverlay({
             onChange={(e) => setCommentText(e.target.value)}
             placeholder="Add your comment..."
             rows={3}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent"
             autoFocus
           />
 
@@ -172,7 +172,7 @@ export default function InlineCommentOverlay({
             <button
               onClick={handleAddComment}
               disabled={!commentText.trim() || adding}
-              className="px-4 py-1.5 bg-[#419372] text-white rounded hover:bg-[#357a5e] font-anek font-medium text-sm disabled:opacity-50"
+              className="px-4 py-1.5 bg-[#1F7A63] text-white rounded hover:bg-[#155947] font-anek font-medium text-sm disabled:opacity-50"
             >
               {adding ? 'Adding...' : 'Add Comment'}
             </button>

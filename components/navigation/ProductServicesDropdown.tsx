@@ -199,7 +199,7 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
                 </p>
                 <Link
                   href="/contact-sales"
-                  className="inline-block px-[24px] py-[12px] bg-[#419372] text-white rounded-[24px] font-anek font-semibold text-[16px] leading-[20px] hover:bg-[#357a5e] transition-colors"
+                  className="inline-block px-[24px] py-[12px] bg-[#1F7A63] text-white rounded-[24px] font-anek font-semibold text-[16px] leading-[20px] hover:bg-[#155947] transition-colors"
                   onClick={onClose}
                 >
                   Contact Sales
@@ -249,7 +249,7 @@ export default function ProductServicesDropdown({ isOpen, onClose, onMouseEnter,
                     )}
                   </div>
 
-                  <p className="font-anek font-medium text-[16px] leading-[20px] text-[rgba(0,0,0,0.7)] group-hover:text-[#419372] transition-colors w-[283px] line-clamp-2">
+                  <p className="font-anek font-medium text-[16px] leading-[20px] text-[rgba(0,0,0,0.7)] group-hover:text-[#1F7A63] transition-colors w-[283px] line-clamp-2">
                     {featuredBlog.title}
                   </p>
                 </Link>

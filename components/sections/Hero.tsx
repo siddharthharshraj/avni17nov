@@ -41,7 +41,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 mb-6 md:mb-8 lg:mb-[30px] justify-center lg:justify-start">
             <Link
               href="/signup"
-              className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 h-12 md:h-[48px] bg-[#419372] text-[#f6f9fb] rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#419372]/90 transition-all"
+              className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 h-12 md:h-[48px] bg-[#1F7A63] text-[#f6f9fb] rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#1F7A63]/90 transition-all"
             >
               Sign Up for Free Trial
             </Link>
@@ -49,7 +49,7 @@ export default function Hero() {
               href="https://calendly.com/avni-marketing-samanvayfoundation/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 h-12 md:h-[48px] border-2 border-[#419372] text-[#419372] rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#419372] hover:text-white transition-all"
+              className="flex items-center justify-center w-full sm:w-auto px-6 md:px-8 h-12 md:h-[48px] border-2 border-[#1F7A63] text-[#1F7A63] rounded-[20px] font-anek font-medium text-sm md:text-base hover:bg-[#1F7A63] hover:text-white transition-all"
             >
               Schedule a Demo
             </a>

@@ -65,27 +65,27 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <ul className="space-y-2 md:space-y-3 font-noto text-sm sm:text-base text-[#5a6c7d]">
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Name</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Email address</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Phone number</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Company name</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Job title</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Other details you choose to provide</span>
                     </li>
                   </ul>
@@ -101,15 +101,15 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <ul className="space-y-2 md:space-y-3 font-noto text-sm sm:text-base text-[#5a6c7d]">
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Send you Avni-related promotional materials, newsletters, and other updates via email</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Respond to your inquiries and provide customer support</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Improve our services and tailor content to your interests</span>
                     </li>
                   </ul>
@@ -125,11 +125,11 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <ul className="space-y-2 md:space-y-3 font-noto text-sm sm:text-base text-[#5a6c7d]">
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Avni members (Samanvay Research and Development Foundation employees) who assist us in managing our communications and operations</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Legal authorities if required by law</span>
                     </li>
                   </ul>
@@ -145,11 +145,11 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <ul className="space-y-2 md:space-y-3 font-noto text-sm sm:text-base text-[#5a6c7d]">
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Opt out of receiving promotional emails by following the unsubscribe link in the emails</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 group">
-                      <span className="w-2 h-2 bg-[#419372] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                      <span className="w-2 h-2 bg-[#1F7A63] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                       <span>Access, update, or delete your personal information by contacting us directly</span>
                     </li>
                   </ul>
@@ -183,9 +183,9 @@ export default function PrivacyPolicyPage() {
                   <p className="font-noto text-sm sm:text-base text-[#5a6c7d] leading-relaxed mb-4 md:mb-6">
                     If you have any questions about this Privacy Policy or our data practices, please contact us at:
                   </p>
-                  <div className="bg-gradient-to-br from-[#f8fffe] to-[#f0fdf9] border border-[#419372]/20 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_4px_20px_rgba(65,147,114,0.08)] hover:shadow-[0_8px_30px_rgba(65,147,114,0.12)] transition-shadow">
+                  <div className="bg-gradient-to-br from-[#f8fffe] to-[#f0fdf9] border border-[#1F7A63]/20 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_4px_20px_rgba(65,147,114,0.08)] hover:shadow-[0_8px_30px_rgba(65,147,114,0.12)] transition-shadow">
                     <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#419372] rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#1F7A63] rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-6 sm:h-6">
                           <path d="M3 8L10.89 13.26C11.5 13.67 12.5 13.67 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
@@ -203,7 +203,7 @@ export default function PrivacyPolicyPage() {
                     <div className="space-y-3 md:space-y-4">
                       {/* Address */}
                       <div className="flex items-start gap-2 md:gap-3">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 mt-0.5 sm:mt-1 text-[#419372] sm:w-5 sm:h-5">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 mt-0.5 sm:mt-1 text-[#1F7A63] sm:w-5 sm:h-5">
                           <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
                         </svg>
                         <p className="font-noto text-xs sm:text-sm text-[#5a6c7d] leading-relaxed">
@@ -213,13 +213,13 @@ export default function PrivacyPolicyPage() {
 
                       {/* Email with Copy Button */}
                       <div className="flex items-start sm:items-center gap-2 md:gap-3">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 mt-0.5 sm:mt-0 text-[#419372] sm:w-5 sm:h-5">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 mt-0.5 sm:mt-0 text-[#1F7A63] sm:w-5 sm:h-5">
                           <path d="M3 8L10.89 13.26C11.5 13.67 12.5 13.67 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                         <div className="flex flex-col sm:flex-row sm:items-center gap-2 flex-1 min-w-0">
                           <a 
                             href="mailto:avnisupport@samanvayfoundation.org" 
-                            className="font-noto text-xs sm:text-sm text-[#419372] hover:underline font-medium break-all"
+                            className="font-noto text-xs sm:text-sm text-[#1F7A63] hover:underline font-medium break-all"
                           >
                             avnisupport@samanvayfoundation.org
                           </a>

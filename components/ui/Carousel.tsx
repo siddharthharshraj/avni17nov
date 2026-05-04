@@ -82,7 +82,7 @@ export function Carousel({
             disabled={!canGoPrevious}
             className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
               canGoPrevious
-                ? "bg-[#419372] text-white hover:bg-[#357a5e]"
+                ? "bg-[#1F7A63] text-white hover:bg-[#155947]"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"
             }`}
             aria-label="Previous"
@@ -97,7 +97,7 @@ export function Carousel({
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex ? "bg-[#419372] w-8" : "bg-gray-300"
+                  index === currentIndex ? "bg-[#1F7A63] w-8" : "bg-gray-300"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -109,7 +109,7 @@ export function Carousel({
             disabled={!canGoNext}
             className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
               canGoNext
-                ? "bg-[#419372] text-white hover:bg-[#357a5e]"
+                ? "bg-[#1F7A63] text-white hover:bg-[#155947]"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"
             }`}
             aria-label="Next"

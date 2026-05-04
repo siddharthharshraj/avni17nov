@@ -13,7 +13,7 @@ export default function PricingFAQ() {
           </p>
           <Link
             href="mailto:avnipartnerships@samanvayfoundation.org?subject=Avni%20Support%20Query"
-            className="inline-flex items-center justify-center h-14 md:h-16 px-8 md:px-10 bg-[#419372] text-[#F6F9FC] rounded-full font-anek font-medium text-[20px] leading-[20px] hover:bg-[#357a5e] transition-all whitespace-nowrap"
+            className="inline-flex items-center justify-center h-14 md:h-16 px-8 md:px-10 bg-[#1F7A63] text-[#F6F9FC] rounded-full font-anek font-medium text-[20px] leading-[20px] hover:bg-[#155947] transition-all whitespace-nowrap"
           >
             Contact Support
           </Link>

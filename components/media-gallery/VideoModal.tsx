@@ -130,7 +130,7 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
                 onClick={handleLike}
                 className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full font-anek font-medium text-xs sm:text-sm transition-all whitespace-nowrap ${
                   isLiked
-                    ? 'bg-[#419372] text-white hover:bg-[#357a5e]'
+                    ? 'bg-[#1F7A63] text-white hover:bg-[#155947]'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
                 aria-label={isLiked ? 'Unlike video' : 'Like video'}

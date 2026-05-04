@@ -46,7 +46,7 @@ export default function WhatAvniDoes() {
               <div className="flex justify-center lg:justify-start">
                 <Link 
                   href="/resources/case-studies" 
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#419372] text-[#419372] rounded-[20px] font-anek font-medium text-sm hover:bg-[#419372] hover:text-white transition-all"
+                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#1F7A63] text-[#1F7A63] rounded-[20px] font-anek font-medium text-sm hover:bg-[#1F7A63] hover:text-white transition-all"
                 >
                   Read More →
                 </Link>
@@ -79,7 +79,7 @@ export default function WhatAvniDoes() {
               <div className="flex justify-center lg:justify-start">
                 <Link 
                   href="/resources/case-studies" 
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#419372] text-[#419372] rounded-[20px] font-anek font-medium text-sm hover:bg-[#419372] hover:text-white transition-all"
+                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#1F7A63] text-[#1F7A63] rounded-[20px] font-anek font-medium text-sm hover:bg-[#1F7A63] hover:text-white transition-all"
                 >
                   Read More →
                 </Link>
@@ -112,7 +112,7 @@ export default function WhatAvniDoes() {
               <div className="flex justify-center lg:justify-start">
                 <Link 
                   href="/resources/case-studies" 
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#419372] text-[#419372] rounded-[20px] font-anek font-medium text-sm hover:bg-[#419372] hover:text-white transition-all"
+                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#1F7A63] text-[#1F7A63] rounded-[20px] font-anek font-medium text-sm hover:bg-[#1F7A63] hover:text-white transition-all"
                 >
                   Read More →
                 </Link>

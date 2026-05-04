@@ -108,7 +108,7 @@ export default function RoadmapBoard() {
           <div className="bg-white rounded-[12px] p-6 mb-6 text-left">
             <h4 className="font-anek font-semibold text-[18px] mb-3">Quick Setup:</h4>
             <ol className="font-noto text-[14px] text-gray-700 space-y-2 list-decimal list-inside">
-              <li>Go to <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreferrer" className="text-[#419372] underline">GitHub Settings → Tokens</a></li>
+              <li>Go to <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreferrer" className="text-[#1F7A63] underline">GitHub Settings → Tokens</a></li>
               <li>Click "Generate new token (classic)"</li>
               <li>Select scope: <code className="bg-gray-100 px-2 py-1 rounded">read:project</code></li>
               <li>Copy the token</li>
@@ -120,7 +120,7 @@ export default function RoadmapBoard() {
           </div>
           <button
             onClick={() => fetchData(true)}
-            className="px-6 py-2 bg-[#419372] text-white rounded-full hover:bg-[#357a5e] transition-colors font-anek"
+            className="px-6 py-2 bg-[#1F7A63] text-white rounded-full hover:bg-[#155947] transition-colors font-anek"
           >
             Try Again
           </button>
@@ -172,7 +172,7 @@ export default function RoadmapBoard() {
               href="https://github.com/orgs/avniproject/projects/2/views/7"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-[#419372] text-white rounded-[10px] hover:bg-[#357a5e] hover:shadow-md transition-all font-anek text-[13px] md:text-[14px] font-semibold"
+              className="flex items-center gap-2 px-5 py-2.5 bg-[#1F7A63] text-white rounded-[10px] hover:bg-[#155947] hover:shadow-md transition-all font-anek text-[13px] md:text-[14px] font-semibold"
             >
               <ExternalLink className="w-4 h-4" />
               <span>View on GitHub</span>
@@ -182,7 +182,7 @@ export default function RoadmapBoard() {
               disabled={loading}
               className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-[10px] hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''} text-[#419372]`} />
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''} text-[#1F7A63]`} />
               <span className="font-anek text-[13px] md:text-[14px] font-medium text-gray-700">Refresh</span>
             </button>
           </div>
@@ -211,7 +211,7 @@ export default function RoadmapBoard() {
             overflowX: 'scroll',
             overflowY: 'scroll',
             scrollbarWidth: 'auto',
-            scrollbarColor: '#419372 #e5e7eb',
+            scrollbarColor: '#1F7A63 #e5e7eb',
             scrollbarGutter: 'stable',
           }}
           tabIndex={0}
@@ -242,7 +242,7 @@ export default function RoadmapBoard() {
         /* Main scrollable area - Green scrollbars */
         .roadmap-scroll {
           scrollbar-width: auto !important;
-          scrollbar-color: #419372 #e5e7eb !important;
+          scrollbar-color: #1F7A63 #e5e7eb !important;
         }
         
         .roadmap-scroll::-webkit-scrollbar {
@@ -258,7 +258,7 @@ export default function RoadmapBoard() {
         }
         
         .roadmap-scroll::-webkit-scrollbar-thumb {
-          background: #419372;
+          background: #1F7A63;
           border-radius: 10px;
           border: 4px solid #e5e7eb;
           min-height: 60px;
@@ -266,7 +266,7 @@ export default function RoadmapBoard() {
         }
         
         .roadmap-scroll::-webkit-scrollbar-thumb:hover {
-          background: #357a5e;
+          background: #155947;
           cursor: grab;
         }
         

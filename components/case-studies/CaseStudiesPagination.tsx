@@ -68,7 +68,7 @@ export default function CaseStudiesPagination({ currentPage, totalPages, onPageC
         className={`flex items-center justify-center w-10 h-10 rounded-lg border transition-all ${
           currentPage === 1
             ? 'border-[#D0D5DD] text-[#98A2B3] cursor-not-allowed'
-            : 'border-[#D0D5DD] text-[#344054] hover:bg-[#F9FAFB] hover:border-[#419372]'
+            : 'border-[#D0D5DD] text-[#344054] hover:bg-[#F9FAFB] hover:border-[#1F7A63]'
         }`}
         aria-label="Previous page"
       >
@@ -97,8 +97,8 @@ export default function CaseStudiesPagination({ currentPage, totalPages, onPageC
             onClick={() => handlePageChange(pageNum)}
             className={`flex items-center justify-center w-10 h-10 rounded-lg border font-noto text-sm font-medium transition-all ${
               isActive
-                ? 'bg-[#419372] text-white border-[#419372]'
-                : 'border-[#D0D5DD] text-[#344054] hover:bg-[#F9FAFB] hover:border-[#419372]'
+                ? 'bg-[#1F7A63] text-white border-[#1F7A63]'
+                : 'border-[#D0D5DD] text-[#344054] hover:bg-[#F9FAFB] hover:border-[#1F7A63]'
             }`}
             aria-label={`Page ${pageNum}`}
             aria-current={isActive ? 'page' : undefined}
@@ -115,7 +115,7 @@ export default function CaseStudiesPagination({ currentPage, totalPages, onPageC
         className={`flex items-center justify-center w-10 h-10 rounded-lg border transition-all ${
           currentPage === totalPages
             ? 'border-[#D0D5DD] text-[#98A2B3] cursor-not-allowed'
-            : 'border-[#D0D5DD] text-[#344054] hover:bg-[#F9FAFB] hover:border-[#419372]'
+            : 'border-[#D0D5DD] text-[#344054] hover:bg-[#F9FAFB] hover:border-[#1F7A63]'
         }`}
         aria-label="Next page"
       >

@@ -144,7 +144,7 @@ export default function BlogEditor({ blog, onSave, readOnly = false }: BlogEdito
                 <button
                   onClick={handleSave}
                   disabled={saving}
-                  className="px-6 py-2 bg-[#419372] text-white rounded-lg hover:bg-[#357a5e] font-anek font-semibold disabled:opacity-50"
+                  className="px-6 py-2 bg-[#1F7A63] text-white rounded-lg hover:bg-[#155947] font-anek font-semibold disabled:opacity-50"
                 >
                   {saving ? 'Saving...' : 'Save'}
                 </button>
@@ -168,7 +168,7 @@ export default function BlogEditor({ blog, onSave, readOnly = false }: BlogEdito
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 disabled={readOnly}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg font-anek text-2xl font-bold text-[#0b2540] focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg font-anek text-2xl font-bold text-[#0b2540] focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
                 placeholder="Enter blog title..."
               />
             </div>
@@ -183,7 +183,7 @@ export default function BlogEditor({ blog, onSave, readOnly = false }: BlogEdito
                 onChange={(e) => setDescription(e.target.value)}
                 disabled={readOnly}
                 rows={3}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base text-gray-700 focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base text-gray-700 focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
                 placeholder="Brief description for SEO (min 50 characters)..."
               />
               <p className="text-sm text-gray-500 mt-1">
@@ -201,7 +201,7 @@ export default function BlogEditor({ blog, onSave, readOnly = false }: BlogEdito
                 value={featuredImage}
                 onChange={(e) => setFeaturedImage(e.target.value)}
                 disabled={readOnly}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
                 placeholder="Image URL or upload..."
               />
             </div>
@@ -293,7 +293,7 @@ export default function BlogEditor({ blog, onSave, readOnly = false }: BlogEdito
                 <input
                   type="text"
                   placeholder="Add tag and press Enter..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded font-noto text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded font-noto text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && e.currentTarget.value.trim()) {
                       setTags([...tags, e.currentTarget.value.trim()]);

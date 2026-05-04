@@ -72,7 +72,7 @@ export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         {/* Read More Button */}
         <Link
           href={`/resources/case-studies/${slug}`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#419372] text-white rounded-full font-anek font-medium text-sm hover:bg-[#357a5e] transition-colors"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1F7A63] text-white rounded-full font-anek font-medium text-sm hover:bg-[#155947] transition-colors"
         >
           Read More
           <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

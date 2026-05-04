@@ -135,7 +135,7 @@ export default async function CaseStudyPage({
         <div className="px-4 sm:px-6 lg:px-16 xl:px-24 py-6 border-b border-[#E6E6E6]">
           <Link 
             href="/resources/case-studies" 
-            className="inline-flex items-center gap-2 text-[#419372] font-noto text-base hover:underline transition-all"
+            className="inline-flex items-center gap-2 text-[#1F7A63] font-noto text-base hover:underline transition-all"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

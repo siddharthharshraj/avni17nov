@@ -144,7 +144,7 @@ export default function DemoAccounts() {
                             title="Copy Login ID"
                           >
                             {copiedField === `${account.id}-login` ? (
-                              <Check className="w-3.5 h-3.5 text-[#419372]" />
+                              <Check className="w-3.5 h-3.5 text-[#1F7A63]" />
                             ) : (
                               <Copy className="w-3.5 h-3.5 text-[#6B7280]" />
                             )}
@@ -164,7 +164,7 @@ export default function DemoAccounts() {
                             title="Copy Password"
                           >
                             {copiedField === `${account.id}-password` ? (
-                              <Check className="w-3.5 h-3.5 text-[#419372]" />
+                              <Check className="w-3.5 h-3.5 text-[#1F7A63]" />
                             ) : (
                               <Copy className="w-3.5 h-3.5 text-[#6B7280]" />
                             )}
@@ -177,7 +177,7 @@ export default function DemoAccounts() {
                             href={account.dashboardLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 font-noto font-bold text-[13px] leading-[20px] text-[#419372] hover:text-[#357a5e] transition-colors mt-2"
+                            className="inline-flex items-center gap-1.5 font-noto font-bold text-[13px] leading-[20px] text-[#1F7A63] hover:text-[#155947] transition-colors mt-2"
                           >
                             View Dashboard
                             <ExternalLink className="w-3 h-3" />
@@ -217,9 +217,9 @@ export default function DemoAccounts() {
                                 title="Copy Login ID"
                               >
                                 {copiedField === `${account.id}-login` ? (
-                                  <Check className="w-3 h-3 text-[#419372]" />
+                                  <Check className="w-3 h-3 text-[#1F7A63]" />
                                 ) : (
-                                  <Copy className="w-3 h-3 text-[#6B7280] group-hover:text-[#419372]" />
+                                  <Copy className="w-3 h-3 text-[#6B7280] group-hover:text-[#1F7A63]" />
                                 )}
                               </button>
                             </div>
@@ -235,9 +235,9 @@ export default function DemoAccounts() {
                                 title="Copy Password"
                               >
                                 {copiedField === `${account.id}-password` ? (
-                                  <Check className="w-3 h-3 text-[#419372]" />
+                                  <Check className="w-3 h-3 text-[#1F7A63]" />
                                 ) : (
-                                  <Copy className="w-3 h-3 text-[#6B7280] group-hover:text-[#419372]" />
+                                  <Copy className="w-3 h-3 text-[#6B7280] group-hover:text-[#1F7A63]" />
                                 )}
                               </button>
                             </div>
@@ -249,7 +249,7 @@ export default function DemoAccounts() {
                               href={account.dashboardLink}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 font-noto font-bold text-[16px] leading-[26px] tracking-[0px] text-[#419372] hover:text-[#357a5e] transition-colors"
+                              className="inline-flex items-center gap-2 font-noto font-bold text-[16px] leading-[26px] tracking-[0px] text-[#1F7A63] hover:text-[#155947] transition-colors"
                             >
                               View Dashboard
                               <ExternalLink className="w-4 h-4" />
@@ -306,19 +306,19 @@ export default function DemoAccounts() {
                       href="https://reporting.avniproject.org"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block font-noto text-sm md:text-base text-[#000000] mb-3 md:mb-4 hover:text-[#419372] transition-colors"
+                      className="block font-noto text-sm md:text-base text-[#000000] mb-3 md:mb-4 hover:text-[#1F7A63] transition-colors"
                     >
                       Explore Avni Web Console
                     </Link>
                     <Link
                       href="/signup"
-                      className="block w-full text-center py-2 md:py-2.5 px-4 md:px-6 bg-[#419372] text-white rounded-full font-anek font-semibold text-sm md:text-base hover:bg-[#357a5e] transition-all"
+                      className="block w-full text-center py-2 md:py-2.5 px-4 md:px-6 bg-[#1F7A63] text-white rounded-full font-anek font-semibold text-sm md:text-base hover:bg-[#155947] transition-all"
                     >
                       Sign Up for Free
                     </Link>
                     <Link
                       href="mailto:avnipartnerships@samanvayfoundation.org?subject=Demo%20Inquiry"
-                      className="block w-full text-center py-2 md:py-2.5 px-4 md:px-6 border-2 border-[#419372] text-[#419372] rounded-full font-anek font-semibold text-sm md:text-base hover:bg-[#419372] hover:text-white transition-all"
+                      className="block w-full text-center py-2 md:py-2.5 px-4 md:px-6 border-2 border-[#1F7A63] text-[#1F7A63] rounded-full font-anek font-semibold text-sm md:text-base hover:bg-[#1F7A63] hover:text-white transition-all"
                     >
                       Contact Us
                     </Link>

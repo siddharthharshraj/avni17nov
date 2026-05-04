@@ -40,8 +40,8 @@ export default function TheShift() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
           {pillars.map(({ Icon, title, blurb }) => (
             <div key={title} className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#419372]/10 mb-5">
-                <Icon className="w-8 h-8 text-[#419372]" aria-hidden="true" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#1F7A63]/10 mb-5">
+                <Icon className="w-8 h-8 text-[#1F7A63]" aria-hidden="true" />
               </div>
               <h3 className="font-anek font-bold text-2xl text-[#0b2540] mb-3">
                 {title}

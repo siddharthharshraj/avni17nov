@@ -12,9 +12,9 @@ interface RoadmapCardProps {
 
 export default function RoadmapCard({ item }: RoadmapCardProps) {
   return (
-    <div className="group bg-white rounded-[12px] border-2 border-gray-200 p-4 md:p-5 hover:border-[#419372] hover:shadow-lg transition-all duration-200 cursor-pointer">
+    <div className="group bg-white rounded-[12px] border-2 border-gray-200 p-4 md:p-5 hover:border-[#1F7A63] hover:shadow-lg transition-all duration-200 cursor-pointer">
       {/* Title - Bold and prominent */}
-      <h4 className="font-anek font-bold text-[15px] md:text-[16px] leading-[1.5] text-[#0b2540] mb-3 group-hover:text-[#419372] transition-colors">
+      <h4 className="font-anek font-bold text-[15px] md:text-[16px] leading-[1.5] text-[#0b2540] mb-3 group-hover:text-[#1F7A63] transition-colors">
         {item.title}
       </h4>
 
@@ -50,7 +50,7 @@ export default function RoadmapCard({ item }: RoadmapCardProps) {
               <img
                 src={item.content.author.avatarUrl}
                 alt={item.content.author.login}
-                className="w-6 h-6 rounded-full flex-shrink-0 ring-2 ring-[#419372]/30"
+                className="w-6 h-6 rounded-full flex-shrink-0 ring-2 ring-[#1F7A63]/30"
                 loading="lazy"
               />
               <span className="font-noto text-[11px] md:text-[12px] font-medium text-gray-600 truncate">
@@ -70,7 +70,7 @@ export default function RoadmapCard({ item }: RoadmapCardProps) {
             href={item.content.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-[#419372]/10 text-[#419372] hover:bg-[#419372] hover:text-white transition-all flex-shrink-0 border-2 border-[#419372]/30 hover:border-[#419372]"
+            className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-[#1F7A63]/10 text-[#1F7A63] hover:bg-[#1F7A63] hover:text-white transition-all flex-shrink-0 border-2 border-[#1F7A63]/30 hover:border-[#1F7A63]"
             aria-label="View on GitHub"
             onClick={(e) => e.stopPropagation()}
           >

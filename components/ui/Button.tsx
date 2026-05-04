@@ -10,7 +10,7 @@ import { COLORS, ANIMATIONS } from '@/lib/constants';
 import type { ButtonProps } from '@/lib/types';
 
 const variantStyles = {
-  primary: `bg-[${COLORS.primary}] text-white hover:bg-[#357a5e] border-2 border-[${COLORS.primary}]`,
+  primary: `bg-[${COLORS.primary}] text-white hover:bg-[#155947] border-2 border-[${COLORS.primary}]`,
   secondary: `bg-white text-[${COLORS.darkNavy}] hover:bg-gray-50 border-2 border-gray-200`,
   outline: `bg-transparent text-[${COLORS.primary}] border-2 border-[${COLORS.primary}] hover:bg-[${COLORS.primary}] hover:text-white`,
 } as const;

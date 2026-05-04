@@ -123,8 +123,8 @@ export function generateSEOMetadata({
       'telegram:channel': '@avniproject',
       
       // Additional SEO
-      'theme-color': '#419372',
-      'msapplication-TileColor': '#419372',
+      'theme-color': '#1F7A63',
+      'msapplication-TileColor': '#1F7A63',
       'apple-mobile-web-app-capable': 'yes',
       'apple-mobile-web-app-status-bar-style': 'black-translucent',
       'format-detection': 'telephone=no',

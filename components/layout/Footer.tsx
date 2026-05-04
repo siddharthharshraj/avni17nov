@@ -20,27 +20,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="https://avni.readme.io/docs/getting-started" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/getting-started" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Introduction
                 </a>
               </li>
               <li>
-                <a href="https://avni.readme.io/docs/architecture" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/architecture" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Design
                 </a>
               </li>
               <li>
-                <a href="https://avni.readme.io/docs/database-guide" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/database-guide" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Database Guide
                 </a>
               </li>
               <li>
-                <a href="https://avni.readme.io/docs/environment-setup-guides" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/environment-setup-guides" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Features
                 </a>
               </li>
               <li>
-                <Link href="/roadmap" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/roadmap" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Roadmap
                 </Link>
               </li>
@@ -54,32 +54,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link href="/about" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/about" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/features" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/features" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/pricing" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/contact" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <a href="https://avni.readme.io/docs/avni-code-of-conduct" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/avni-code-of-conduct" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Code Of Conduct
                 </a>
               </li>
               <li>
-                <Link href="/privacy-policy" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/privacy-policy" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Privacy Policy
                 </Link>
               </li>
@@ -93,27 +93,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="https://avni.readme.io/docs/getting-started" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <a href="https://avni.readme.io/docs/getting-started" target="_blank" rel="noopener noreferrer" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Getting Started
                 </a>
               </li>
               <li>
-                <Link href="/resources/case-studies" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/resources/case-studies" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/blog" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/resources/events" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/resources/events" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   Events
                 </Link>
               </li>
               <li>
-                <Link href="/resources/faq" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#419372] transition-colors">
+                <Link href="/resources/faq" className="font-noto font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed tracking-[0px] text-[#FFFFFF] hover:text-[#1F7A63] transition-colors">
                   FAQ
                 </Link>
               </li>
@@ -191,7 +191,7 @@ export default function Footer() {
                 href="https://www.facebook.com/avniproject" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#419372] transition-colors"
+                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1F7A63] transition-colors"
               >
                 <Image
                   src="/footer/fb-new.png"
@@ -205,7 +205,7 @@ export default function Footer() {
                 href="https://github.com/avniproject" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#419372] transition-colors"
+                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1F7A63] transition-colors"
               >
                 <Image
                   src="/footer/github.png"
@@ -219,7 +219,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/showcase/avniproject/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#419372] transition-colors"
+                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1F7A63] transition-colors"
               >
                 <Image
                   src="/footer/linkedin-new.png"
@@ -233,7 +233,7 @@ export default function Footer() {
                 href="https://x.com/avniproject" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#419372] transition-colors"
+                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1F7A63] transition-colors"
               >
                 <Image
                   src="/footer/x-new.png"
@@ -247,7 +247,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@avniproject" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#419372] transition-colors"
+                className="w-[48px] h-[48px] rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1F7A63] transition-colors"
               >
                 <Image
                   src="/footer/ytube.png"

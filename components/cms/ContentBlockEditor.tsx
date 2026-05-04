@@ -43,7 +43,7 @@ export default function ContentBlockEditor({
               value={block.content as string}
               onChange={(e) => onChange({ content: e.target.value })}
               disabled={readOnly}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg font-anek font-bold text-xl text-[#0b2540] focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg font-anek font-bold text-xl text-[#0b2540] focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
               placeholder="Heading text..."
             />
           </div>
@@ -56,7 +56,7 @@ export default function ContentBlockEditor({
             onChange={(e) => onChange({ content: e.target.value })}
             disabled={readOnly}
             rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base text-gray-700 leading-relaxed focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base text-gray-700 leading-relaxed focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
             placeholder="Paragraph text..."
           />
         );
@@ -70,7 +70,7 @@ export default function ContentBlockEditor({
               value={img.src}
               onChange={(e) => onChange({ content: { ...img, src: e.target.value } })}
               disabled={readOnly}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
               placeholder="Image URL..."
             />
             <input
@@ -78,7 +78,7 @@ export default function ContentBlockEditor({
               value={img.alt}
               onChange={(e) => onChange({ content: { ...img, alt: e.target.value } })}
               disabled={readOnly}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
               placeholder="Alt text..."
             />
             <input
@@ -86,7 +86,7 @@ export default function ContentBlockEditor({
               value={img.caption || ''}
               onChange={(e) => onChange({ content: { ...img, caption: e.target.value } })}
               disabled={readOnly}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg font-noto text-sm focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
               placeholder="Caption (optional)..."
             />
             {img.src && (
@@ -106,7 +106,7 @@ export default function ContentBlockEditor({
             onChange={(e) => onChange({ content: e.target.value })}
             disabled={readOnly}
             rows={5}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base text-gray-700 focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base text-gray-700 focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
             placeholder="List items (one per line)..."
           />
         );
@@ -118,7 +118,7 @@ export default function ContentBlockEditor({
             onChange={(e) => onChange({ content: e.target.value })}
             disabled={readOnly}
             rows={3}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base italic text-gray-600 focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-50"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg font-noto text-base italic text-gray-600 focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-50"
             placeholder="Quote text..."
           />
         );
@@ -130,7 +130,7 @@ export default function ContentBlockEditor({
             onChange={(e) => onChange({ content: e.target.value })}
             disabled={readOnly}
             rows={6}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg font-mono text-sm text-gray-800 bg-gray-50 focus:ring-2 focus:ring-[#419372] focus:border-transparent disabled:bg-gray-100"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg font-mono text-sm text-gray-800 bg-gray-50 focus:ring-2 focus:ring-[#1F7A63] focus:border-transparent disabled:bg-gray-100"
             placeholder="Code..."
           />
         );
@@ -141,7 +141,7 @@ export default function ContentBlockEditor({
   };
 
   return (
-    <div className="group relative bg-white border border-gray-200 rounded-lg p-4 hover:border-[#419372] transition-colors">
+    <div className="group relative bg-white border border-gray-200 rounded-lg p-4 hover:border-[#1F7A63] transition-colors">
       {/* Block Header */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">

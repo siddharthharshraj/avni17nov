@@ -63,7 +63,7 @@ export default function AboutPage() {
               </h1>
               
               <p className="text-[16px] sm:text-[18px] lg:text-[20px] leading-[1.6] text-[rgba(0,0,0,0.75)] font-noto pt-2">
-                Avni started in 2016 as an open-source platform to support community health workers at the grassroots level. It has since evolved to serve diverse fieldwork needs across sectors like water, education, social welfare, and health. The name <span className="font-semibold text-[#419372]">Avni (अवनि)</span> means "earth" in Hindi, symbolising its deep connection to the ground realities it serves.
+                Avni started in 2016 as an open-source platform to support community health workers at the grassroots level. It has since evolved to serve diverse fieldwork needs across sectors like water, education, social welfare, and health. The name <span className="font-semibold text-[#1F7A63]">Avni (अवनि)</span> means "earth" in Hindi, symbolising its deep connection to the ground realities it serves.
               </p>
             </div>
 
@@ -160,7 +160,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
               {founders.map((founder, index) => (
                 <div key={index} className="flex flex-col items-center group">
-                  <div className="relative w-[175px] h-[175px] rounded-full overflow-hidden bg-[#FFE5D9] mb-4 ring-4 ring-transparent group-hover:ring-[#419372]/20 transition-all">
+                  <div className="relative w-[175px] h-[175px] rounded-full overflow-hidden bg-[#FFE5D9] mb-4 ring-4 ring-transparent group-hover:ring-[#1F7A63]/20 transition-all">
                     <Image
                       src={founder.image}
                       alt={founder.name}
@@ -201,7 +201,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 max-w-[1200px] mx-auto">
               {team.map((member, index) => (
                 <div key={index} className="flex flex-col items-center group">
-                  <div className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] rounded-full overflow-hidden bg-[#FFE5D9] mb-3 ring-4 ring-transparent group-hover:ring-[#419372]/20 transition-all">
+                  <div className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] rounded-full overflow-hidden bg-[#FFE5D9] mb-3 ring-4 ring-transparent group-hover:ring-[#1F7A63]/20 transition-all">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -280,7 +280,7 @@ export default function AboutPage() {
                     </h3>
                     <a 
                       href="mailto:avnipartnerships@samanvayfoundation.org"
-                      className="font-noto text-[16px] leading-[1.7] text-[#419372] hover:underline break-all"
+                      className="font-noto text-[16px] leading-[1.7] text-[#1F7A63] hover:underline break-all"
                     >
                       avnipartnerships@samanvayfoundation.org
                     </a>

@@ -66,7 +66,7 @@ export default function FeaturedCaseStudy({ caseStudy }: FeaturedCaseStudyProps)
           {/* Read More Button */}
           <Link
             href={`/resources/case-studies/${slug}`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#419372] text-white rounded-full font-anek font-medium text-base hover:bg-[#357a5e] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#1F7A63] text-white rounded-full font-anek font-medium text-base hover:bg-[#155947] transition-colors"
           >
             Read More
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

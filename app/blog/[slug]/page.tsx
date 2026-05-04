@@ -109,7 +109,7 @@ export default async function BlogPostPage({
             <div className="pt-6 sm:pt-8 pb-4 sm:pb-6">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-[#419372] font-noto text-sm font-medium hover:underline"
+                className="inline-flex items-center gap-2 text-[#1F7A63] font-noto text-sm font-medium hover:underline"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span className="hidden sm:inline">Back to All Cases</span>

@@ -45,15 +45,15 @@ export default function HowItWorks() {
         <div className="relative">
           {/* Connecting line on desktop */}
           <div
-            className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-[#419372]/30"
+            className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-[#1F7A63]/30"
             aria-hidden="true"
           />
 
           <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
             {steps.map(({ n, Icon, title, blurb }) => (
               <li key={n} className="text-center relative">
-                <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-white border-2 border-[#419372] mb-5 shadow-sm">
-                  <Icon className="w-10 h-10 text-[#419372]" aria-hidden="true" />
+                <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-white border-2 border-[#1F7A63] mb-5 shadow-sm">
+                  <Icon className="w-10 h-10 text-[#1F7A63]" aria-hidden="true" />
                   <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#FFD84D] text-[#0b2540] font-anek font-bold text-base flex items-center justify-center">
                     {n}
                   </span>
